@@ -1,0 +1,163 @@
+@startuml class_diagram
+
+abstract class Sprite
+{
+    # move()
+}
+
+abstract class Animal 
+{
+    # age: int
+    # gender: int
+
+    + Animal(...)
+    + incAge()
+    + assignGroup(animal: Animal)
+}
+
+abstract class AnimalGroup
+{
+    # animals: Animal<>
+    # places: Position<>
+    # hunger: int
+    # thirst: int
+    # vision: int
+    # femaleCount: int
+    # maleCount: int
+    # averageAge: double
+
+    + detect()
+    'checks other objects in range of vision
+    + mate()
+    'creates a new animal and adds it to the list
+    + die()
+    'checks if an animal is at a dying age or hunger or thirst reach a critical level
+    + decay()
+    'increases hunger and thirst
+    + averageAge()
+    'reassigns average age 
+    + eat()
+    'decreases hunger
+    + drink()
+    'decreases thirst
+
+}
+
+abstract class Carnivore
+abstract class Herbivore
+
+Carnivore -up-|> Animal
+Herbivore -up-|> Animal
+
+class Herbivore1
+class Herbivore2
+class Carnivore1
+class Carnivore2
+
+Herbivore1 -up-|> Herbivore
+Herbivore2 -up-|> Herbivore
+Carnivore1 -up-|> Carnivore
+Carnivore2 -up-|> Carnivore
+
+
+abstract class Plant
+{
+    # count: int 
+    + grow()
+}
+class Grass {}
+class Bush {}
+class Tree {}
+Grass -up-|> Plant 
+Bush -up-|> Plant 
+Tree -up-|> Plant 
+
+class Control
+{
+    # difficulty: int
+    # money: int
+    # time: int
+    # speed: int
+    # daysUntilWin: int
+
+    # popularity: int
+    # ticket: int
+    # visitorsWaiting: int
+    # visitorCount: int
+    # jeeps: Jeep<>
+
+    # animalCount: int
+    # rangers: Ranger<>
+    
+    + checkWin(dif: int)
+    + checkLost()
+    + paycheck()
+    'decreases money for rangers to be payed
+    'if there isn't enough money, remove ranger from list
+    + killAnimal(animal: Animal)
+    'increases money and decreases animalCount after ranger shoots an animal
+}
+
+class Hunter
+{
+    # target: Animal
+    + shoot(animal: Animal) 
+    'calls killAnimal
+    + detect()
+}
+class Ranger
+{
+    # target: Poacher
+}
+class Poacher
+
+Ranger -up-|> Hunter
+Poacher -up-|> Hunter
+
+interface Landscape
+interface Hill 
+interface Water
+interface River
+interface Pond
+class Path 
+{
+    waypoints: Position<>
+}
+
+Hill -up-|> Landscape
+Water -up-|> Landscape
+River -up-|> Water
+Pond -up-|> Water
+Path -right-|> Landscape
+ 
+
+class Jeep
+{
+    # passengers: int
+    # satisfaction: int
+
+    + detect()
+}
+
+abstract class SecuritySystem
+{
+    # range: int
+
+    + detect()
+}
+
+class Camera
+class Drone 
+{
+    # waypoints: Position<>
+    # charger: Position
+    # battery: int
+}
+class AirBalloon
+{
+    # waypoints: Position<>
+}
+
+Camera -up-|> SecuritySystem
+Drone -up-|> SecuritySystem
+AirBalloon -up-|> SecuritySystem
