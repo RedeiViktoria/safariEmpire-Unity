@@ -1,0 +1,15 @@
+@startuml
+    (elindít) as x
+    :játékos: -down- x
+    x -left- (kilép) : precedens
+    x -left- (belépődíjat változtat) : extend
+    x -down- (növényt vesz) : extend
+    x -down- (állatot vesz) : extend
+    x -down- (vizet vesz) : extend
+    x -down- (utat épít) : extend
+    x -right- (vadőrt megbíz) : extend
+    x -right- (megfigyelő rendszert vesz) : extend
+    (megfigyelő rendszert vesz) -down- (fejleszt) : precedes
+    (vadőrt megbíz) -down- (állatot kilövet) : precedes
+    (vadőrt megbíz) -down- (orvvadászt kilövet) : precedes
+@enduml
