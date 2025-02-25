@@ -3,6 +3,10 @@ A játék egy 2 dimenziós felülnézetes pályán játszódik, ahol a cél egy 
 parkigazgatói feladatok ellátásával. A játékot legalább 3 különböző sebességfokozattal játszhatjuk
 (óra / nap / hét), melyek között bármikor válthatunk a program futása közben. A játék 3 nehézségi
 fokozatot kell kínáljon legalább.
+<ul>
+<li>A játék nehézséget a játék elindításakor 3 nehézségi gomb segítségével választhatjuk.</li>
+<li>A játék sebességet a játéktéren a balfelső gombok segítségével állíthatjuk.</li>
+</ul>
 <h2>Növények, vizes területek</h2>
 A pálya területén elszórtan nőnek bokrok és fák, valamint füves területek. A játékos maga is vásárolhat
 növényeket. Kisebb vízlelő helyek kezdetben is találhatók, de építeni is lehet tavakat. Legalább 3 féle
