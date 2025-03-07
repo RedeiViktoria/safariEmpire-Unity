@@ -8,9 +8,9 @@ public class Model : MonoBehaviour
     void Start()
     {
         
-        GameObject obj = GameObject.Find("Square");
+        /*GameObject obj = GameObject.Find("Square");
         SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        sr.color = Color.blue;
+        sr.color = Color.blue;*/
     }
 
     // Update is called once per frame
