@@ -11,6 +11,9 @@ public class ButtonManager : MonoBehaviour
     public GameObject timeButtons;
     public GameObject shop;
     public GameObject safari;
+    public GameObject menu;
+    public GameObject vadorok;
+    public GameObject security;
     void Start()
     {
         shopBtn.onClick.AddListener(OnShopClicked);
@@ -38,7 +41,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
-        Transform switchButtons = safari.transform.Find("Panel/Buttons");
+        Transform switchButtons = safari.transform.Find("Buttons");
         int i = 0;
         foreach (Transform child in switchButtons.transform)
         {
@@ -71,7 +74,7 @@ public class ButtonManager : MonoBehaviour
     }
     void OnSwitchClicked(int id)
     {
-        Transform btns = safari.transform.Find("Panel/Buttons");
+        Transform btns = safari.transform.Find("Buttons");
         for (int i = 0; i < 3; i++)
         {
             if (id==i)
@@ -84,9 +87,7 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
-        GameObject menu = GameObject.Find("SafariMenu/Panel/Menu");
-        GameObject vadorok = GameObject.Find("SafariMenu/Panel/Vadorok");
-        GameObject security = GameObject.Find("SafariMenu/Panel/Security");
+        
         if (id == 0)
         {
             menu.SetActive(true);
