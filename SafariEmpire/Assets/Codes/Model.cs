@@ -48,7 +48,7 @@ public class Model : MonoBehaviour
 
     private void FixedUpdate()
     {
-        obj.transform.position = Vector2.MoveTowards(obj.transform.position, new Vector2(10, 10), fspeed * Time.deltaTime);
+        obj.transform.position = Vector2.MoveTowards(obj.transform.position, new Vector2(11, 10), fspeed * Time.deltaTime);
     }
 
     //constructor

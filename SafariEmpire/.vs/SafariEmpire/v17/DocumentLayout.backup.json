@@ -84,6 +84,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
 =======
           "SelectedChildIndex": 0,
           "Children": [
@@ -92,15 +93,22 @@
               "DocumentIndex": 0,
 >>>>>>> 44b6b39 (.)
               "Title": "Assets\\Codes\\Model.cs",
+=======
+              "Title": "Model.cs",
+>>>>>>> 4fe3a16 (.)
               "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
               "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAABUAAAAAAAAAAAAAACcAAAASAAAAAAAAAA==",
 <<<<<<< HEAD
 >>>>>>> daeeba3 (model váz)
 =======
 >>>>>>> 44b6b39 (.)
+=======
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
+>>>>>>> 4fe3a16 (.)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T09:22:57.654Z",
               "EditorCaption": ""
