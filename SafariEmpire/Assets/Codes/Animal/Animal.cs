@@ -17,6 +17,8 @@ namespace Codes.Animal
 			this.thirst = thirst;
 		}
 
+
+
 		public void IncAge()
 		{
 			this.age++;
