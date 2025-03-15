@@ -1,0 +1,233 @@
+@startuml class_diagram
+
+abstract class Entity
+{
+    # position: Position<>
+    'current position of the entity in the model
+
+    + move(p: Position)
+    'moves the entity to the given location in the model
+    + detect()
+    'detects other objects in the model
+}
+
+class View
+{
+    '# model: Model
+    + move(entity: Entity, p: Position)
+    'draws out the movement of an object
+    + fade(plant: Plant)
+    'changes opacity of a plant depending on their left over "food-value"
+    + detect()
+    'entities can detect nearby entities and other objects
+}
+
+class Model
+{
+    # difficulty: int
+    'needed targets' multiplyer
+    # money: int
+    'the current amount of money the player has
+    # time: int
+    'time passed since game start
+    # speed: int
+    'time passing rate (multiplyer)
+    # daysUntilWin: int
+    'countdown for winning condition
+
+    # popularity: int
+    'sum of the satisfaction of visitors who reached the exit
+    # ticket: int
+    'money got for each quest
+    # visitorsWaiting: int
+    'visitors who not yet have available jeep
+    # visitorCount: int
+    'sum of visitors who entered since the start of game
+    # jeeps: Jeep<>
+    'list of owned jeeps
+
+    # animalCount: int
+    'number of individual animals currently on the field
+    '# animalGroups: AnimalGroup<>
+    'all different groups of animals on the field
+    '# plants: Plant<>
+    'current plants on the field
+    '# rangers: Ranger<>
+    'rangers already hired
+    '# poachers: Poacher<>
+    'poachers currently on the field (somewhere)
+    '# security: SecuritySystem<>
+    'all the different security componens
+    
+    + checkWin(dif: int)
+    'checks winning conditions
+    + checkLost()
+    'checks loosing conditions
+    + paycheck()
+    'decreases money for rangers to be payed
+    'if there isn't enough money, remove ranger from list
+    + killAnimal(animal: Animal)
+    'increases money and decreases animalCount after ranger shoots an animal
+}
+
+abstract class Animal 
+{
+    # age: int
+    # gender: int
+    # hunger: int
+    # thirst: int
+
+    + incAge()
+    'aging
+    + assignGroup(group: AnimalGroup)
+    'give this animal to a given group
+}
+
+abstract class AnimalGroup
+{
+    '# animals: Animal<>
+    'individual animals in the group
+    # places: Position<>
+    'list of eating and drinking places already known my the group members
+    # vision: int
+    'range of which the group can detect
+    # femaleCount: int
+    # maleCount: int
+    'number of gender of individuals
+    # averageAge: double
+    'do we even need this?
+
+    + mate()
+    'creates a new animal and adds it to the list
+    + die()
+    'checks if an animal is at a dying age or hunger or thirst reach a critical level
+    + decay()
+    'increases hunger and thirst
+    + averageAge()
+    'reassigns average age (do we need this?)
+    + eat()
+    'decreases hunger of every animal
+    + drink()
+    'decreases thirst of every animal
+
+}
+
+abstract class Carnivore
+abstract class Herbivore
+
+class Hippo
+class Gazelle
+class Crocodile
+class Gepard
+
+
+abstract class Plant
+{
+    # count: int 
+    'how much "food-value" does this plant has
+    + grow()
+    'regenerating after being eaten of
+}
+
+class Grass {}
+class Bush {}
+class Tree {}
+
+
+class Ranger
+{
+    # target: Animal
+    'the species of animal to be killed
+    # target: Poacher
+    'the detected poacher to be eliminated
+
+    + shoot(animal: Animal)
+    + shoot(poacher: Poacher) 
+    'shooting of animals or poachers
+}
+class Poacher
+{
+    # target: Animal
+    + shoot(animal: Animal) 
+}
+
+
+interface Landscape
+interface Hill 
+interface Water
+interface River
+interface Pond
+class Path 
+{
+    waypoints: Position<>
+    'waypoints which between the jeeps are going to go
+}
+
+
+class Jeep
+{
+    # passengers: int
+    'number of passengers (1-4)
+    # satisfaction: int
+    'number calculated depending on how many and what kind of animals did the jeep detect
+}
+
+
+abstract class SecuritySystem
+{
+    # range: int
+}
+class Camera
+class Drone 
+{
+    # waypoints: Position<>
+    # charger: Position
+    # battery: int
+}
+class AirBalloon
+{
+    # waypoints: Position<>
+}
+
+
+Grass -up-|> Plant 
+Bush -up-|> Plant 
+Tree -up-|> Plant 
+
+Carnivore -up-|> Animal
+Herbivore -up-|> Animal
+
+Hippo -up-|> Herbivore
+Gazelle -up-|> Herbivore
+Crocodile -up-|> Carnivore
+Gepard -up-|> Carnivore
+
+View -down-> Model : model
+View -right->Landscape
+Hill -down-|> Landscape
+Water -down-|> Landscape
+River -left-|> Water
+Pond -right-|> Water
+Path -left-|> Landscape
+
+
+Model -right-> AnimalGroup : *animalGroup 0..n
+Model -left-> Plant : *plants 0..n
+Model -down-> Ranger : *rangers 0..n
+Model -down-> Jeep : *jeeps 0..n
+Model -down-> Poacher :*poachers 0..n
+Model -down-> SecuritySystem : *security 0..n
+AnimalGroup -right-> Animal : *animals 1..m
+
+
+Ranger         -down-|> Entity
+Poacher        -down-|> Entity
+Jeep           -down-|> Entity
+SecuritySystem -down-|> Entity
+AnimalGroup    -down-|> Entity
+
+Camera     -up-|> SecuritySystem
+Drone      -up-|> SecuritySystem
+AirBalloon -up-|> SecuritySystem
+
+@enduml
