@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Codes.Animal
 {
     public abstract class AnimalGroup
@@ -57,7 +58,7 @@ namespace Codes.Animal
 
         public int Eat(int foodAmount)
         {
-            int foodForEach = (int)(MathF.Round(foodAmount / animals.Count, 0));
+            int foodForEach = (int)(System.Math.Round(foodAmount / (double)(animals.Count), 0));
             int leftOver = 0;
             List<Animal> stillHungry = new List<Animal>();
             foreach (Animal animal in animals)
