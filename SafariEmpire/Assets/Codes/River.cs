@@ -1,15 +1,8 @@
 using UnityEngine;
 
-public class River
+public class River : Entity
 {
-    private int x;
-    private int y;
-    public Vector2 spawnPosition;
-
-    public GameObject obj;
-
-    public River(int x, int y)
+    public River(Vector2 spawnPosition) : base(spawnPosition)
     {
-        this.spawnPosition = new Vector2(x, y);
     }
 }
