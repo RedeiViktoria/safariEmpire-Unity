@@ -1,4 +1,8 @@
+# ==========================
 # Unity-specific ignores
+# ==========================
+
+# Folders Unity generates automatically
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -6,10 +10,41 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+CrashReports/
 
-# Ignore auto-generated VS/JetBrains project files
-*.csproj
+# Asset Store packages
+Assets/AssetStoreTools*
+
+# ====================================
+# Unity Editor & Layout-specific files
+# ====================================
+# Personal editor layout files (prevent conflicts)
+*.dwlt
+DocumentLayout.json
+
+# Unity's project settings that don't need to be shared
+ProjectSettings/EditorBuildSettings.asset
+ProjectSettings/QualitySettings.asset
+
+# ============================
+# OS-specific & Cache files
+# ============================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Visual Studio / JetBrains / Rider
+.vs/
+.idea/
 *.sln
+*.csproj
+*.csproj.user
 *.suo
 *.tmp
 *.user
@@ -19,3 +54,13 @@
 *.svd
 *.pdb
 *.opendb
+*.sln.iml
+
+# ==================================
+# Misc
+# ==================================
+# Ignore temp files and backups
+*.bak
+*.swp
+*.lock
+*.meta~
