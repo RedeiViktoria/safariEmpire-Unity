@@ -74,6 +74,7 @@ MonoBehaviour:
     height: 590.6667
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> daeeba3 (model váz)
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
@@ -85,6 +86,10 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
 >>>>>>> 4fe3a16 (.)
+=======
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
+>>>>>>> da3d599 (merge)
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -145,7 +150,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -160,15 +165,21 @@ MonoBehaviour:
   m_ActualView: {fileID: 12}
 =======
     height: 204.66669
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
 >>>>>>> e122b63 (model folytatása, entity mozgatás, terepi akadályok generálása, hill+river+pond osztályok)
+=======
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
+  m_ActualView: {fileID: 12}
+>>>>>>> da3d599 (merge)
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -302,7 +313,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -314,6 +325,7 @@ MonoBehaviour:
     height: 523.3333
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
+<<<<<<< HEAD
 =======
     height: 386
 <<<<<<< HEAD
@@ -325,11 +337,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4002, y: 4026}
 >>>>>>> e122b63 (model folytatása, entity mozgatás, terepi akadályok generálása, hill+river+pond osztályok)
   m_ActualView: {fileID: 15}
+=======
+  m_ActualView: {fileID: 16}
+>>>>>>> da3d599 (merge)
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -386,10 +401,14 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scenes
 =======
     - Assets/Codes
 >>>>>>> daeeba3 (model váz)
+=======
+    - Assets/Scenes
+>>>>>>> da3d599 (merge)
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -400,10 +419,14 @@ MonoBehaviour:
   m_StartGridSize: 16
   m_LastFolders:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Assets/Scenes
 =======
   - Assets/Codes
 >>>>>>> daeeba3 (model váz)
+=======
+  - Assets/Scenes
+>>>>>>> da3d599 (merge)
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\kelle\Desktop\Szofttech\safari-empire\SafariEmpire
   m_LockTracker:
@@ -416,6 +439,7 @@ MonoBehaviour:
     m_ExpandedIDs: 000000005eb3000000ca9a3bffffff7f
 =======
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: 7cb00000
     m_LastClickedID: 45180
@@ -434,6 +458,11 @@ MonoBehaviour:
     m_LastClickedID: 45196
     m_ExpandedIDs: 00000000bcae000000ca9a3bffffff7f
 >>>>>>> e122b63 (model folytatása, entity mozgatás, terepi akadályok generálása, hill+river+pond osztályok)
+=======
+    m_SelectedIDs: 86b00000
+    m_LastClickedID: 45190
+    m_ExpandedIDs: 00000000b0ae000000ca9a3bffffff7f
+>>>>>>> da3d599 (merge)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,6 +493,7 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000005eb30000
 =======
     m_ExpandedIDs: 00000000acae0000
@@ -471,6 +501,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000bcae0000
 >>>>>>> e122b63 (model folytatása, entity mozgatás, terepi akadályok generálása, hill+river+pond osztályok)
+=======
+    m_ExpandedIDs: 00000000b0ae0000
+>>>>>>> da3d599 (merge)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -620,6 +653,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: bef2ffffb8f4ffffc4f5ffff7ef6ffff06fbffff
@@ -640,20 +674,25 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: 0cfbffff
 >>>>>>> 4fe3a16 (.)
+=======
+      m_SelectedIDs: e2b00000
+      m_LastClickedID: 45282
+      m_ExpandedIDs: 12f7ffff96faffff
+>>>>>>> da3d599 (merge)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Circle
-        m_OriginalName: Circle
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -25250
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 4}
@@ -1231,6 +1270,7 @@ MonoBehaviour:
   m_Position:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 936.5328, y: 531.5456, z: -16.324871}
     speed: 2
     m_Value: {x: 936.5328, y: 531.5456, z: -16.324871}
@@ -1244,6 +1284,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 6.0670695, y: 0.97698367, z: -0.044621393}
 >>>>>>> e122b63 (model folytatása, entity mozgatás, terepi akadályok generálása, hill+river+pond osztályok)
+=======
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+>>>>>>> da3d599 (merge)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1295,6 +1340,7 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 644.6109
     speed: 2
     m_Value: 644.6109
@@ -1308,6 +1354,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 5.176285
 >>>>>>> e122b63 (model folytatása, entity mozgatás, terepi akadályok generálása, hill+river+pond osztályok)
+=======
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+>>>>>>> da3d599 (merge)
   m_Ortho:
     m_Target: 1
     speed: 2
