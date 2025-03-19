@@ -8945,6 +8945,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebf93830728ad946845632446b16fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hillObject: {fileID: 3288083199728170672, guid: 48b5b5a3bd17d1c43803ee9bbb36ff41, type: 3}
+  riverObject: {fileID: 3747575812757995866, guid: 0142d1b61f801fc44a46c7b907f4f587, type: 3}
+  pondObject: {fileID: 1828372780372482493, guid: 4ac624286cb8c244080610598b61db19, type: 3}
 --- !u!4 &1898125837
 Transform:
   m_ObjectHideFlags: 0

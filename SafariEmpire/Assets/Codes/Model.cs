@@ -28,32 +28,6 @@ public class Model : MonoBehaviour
     //public List<Poacher> poachers;
     //public List<AnimalGroup> animalGroups;
 
-<<<<<<< HEAD
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    public GameObject obj; // A mozgÛ objektum
-    public Vector3 targetPosition = new Vector2(20, 20); // CÈlpozÌciÛ
-    public float fspeed; // SebessÈg (speed)
-
-    void Start()
-    {
-
-        /*GameObject obj = GameObject.Find("Square");
-        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-        sr.color = Color.blue;*/
-        Debug.Log(PlayerPrefs.GetInt("difficulty"));
-    }
-
-    void Update()
-    {
-
-    }
-
-    private void FixedUpdate()
-    {
-        obj.transform.position = Vector2.MoveTowards(obj.transform.position, new Vector2(11, 10), fspeed * Time.deltaTime);
-    }
-=======
     //terepi akad·lyok:
     public GameObject hillObject;
     public List<Hill> hills;
@@ -61,8 +35,6 @@ public class Model : MonoBehaviour
     public List<River> rivers;
     public GameObject pondObject;
     public List<Pond> ponds;
-    
->>>>>>> e122b63 (model folytat√°sa, entity mozgat√°s, terepi akad√°lyok gener√°l√°sa, hill+river+pond oszt√°lyok)
 
     //constructor
     void Start()
