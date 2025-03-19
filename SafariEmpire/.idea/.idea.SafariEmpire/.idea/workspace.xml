@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Current File" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8e6d9c8-870d-45ff-a224-8119a3e801e2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Animal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Animal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Animal.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Animal.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/AnimalGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/AnimalGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Carnivore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Carnivore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Carnivore.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Carnivore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Crocodile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Crocodile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Crocodile.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Crocodile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Gazella.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Gazella.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Gazella.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Gazella.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Gepard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Gepard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Gepard.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Gepard.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Herbivore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Herbivore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Herbivore.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Herbivore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Hippo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Hippo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Animal/Hippo.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/animal/Hippo.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Security/AirBalloon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/Security/AirBalloon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/Security/Drone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/Security/Drone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/utility/Position.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/utility/Pos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Codes/utility/Position.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Codes/utility/Pos.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/diagramm.plantuml.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Salt Wireframe" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Állatok_és_funkcióik" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPENED&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://szofttech.inf.elte.hu/szofttech-c-2025/group-01/safari-empire&quot;,
+    &quot;second&quot;: &quot;f515ad3a-20e8-4cee-94f8-b0b770aafd3c&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Codes/animal/Animal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Codes/animal/Carnivore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Codes/animal/Crocodile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Codes/animal/Hippo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Codes/utility/Pos.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2uEI3Mkf4QkpSGWtF2lcPNNN6DC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;Salt Wireframe&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Állatok__és__funkcióik&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.41f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\Patrik\Documents\Egyetem\4. félév\Szeftware technológia\safari-empire\SafariEmpire&quot; -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Patrik\Documents\Egyetem\4. félév\Szeftware technológia\safari-empire\SafariEmpire" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.41f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Users\Patrik\Documents\Egyetem\4. félév\Szeftware technológia\safari-empire\SafariEmpire&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Patrik\Documents\Egyetem\4. félév\Szeftware technológia\safari-empire\SafariEmpire" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8e6d9c8-870d-45ff-a224-8119a3e801e2" name="Changes" comment="" />
+      <created>1741807106768</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741807106768</updated>
+      <workItem from="1741807108142" duration="1222000" />
+      <workItem from="1741864099388" duration="9940000" />
+      <workItem from="1742051629073" duration="4233000" />
+      <workItem from="1742296940938" duration="3735000" />
+      <workItem from="1742300796712" duration="1035000" />
+      <workItem from="1742392003993" duration="609000" />
+    </task>
+    <task id="LOCAL-00001" summary="Wire for animals and started the building of Animal Group. &#10;Created the starter logic for eating and drinking. (Could be up for debate)">
+      <option name="closed" value="true" />
+      <created>1741882094009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741882094009</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created Carnivore.cs.">
+      <option name="closed" value="true" />
+      <created>1742053091263</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742053091263</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Skeleton done for animals and security systems.">
+      <option name="closed" value="true" />
+      <created>1742055282126</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742055282126</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed namespace error inside AnimalGroup.cs">
+      <option name="closed" value="true" />
+      <created>1742055880918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742055880918</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Remény hal meg utoljára!">
+      <option name="closed" value="true" />
+      <created>1742297886976</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742297886976</updated>
+    </task>
+    <task id="LOCAL-00006" summary="?">
+      <option name="closed" value="true" />
+      <created>1742298140995</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742298140995</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Wire for animals and started the building of Animal Group. &#10;Created the starter logic for eating and drinking. (Could be up for debate)" />
+    <MESSAGE value="Created Carnivore.cs." />
+    <MESSAGE value="Skeleton done for animals and security systems." />
+    <MESSAGE value="Fixed namespace error inside AnimalGroup.cs" />
+    <MESSAGE value="Remény hal meg utoljára!" />
+    <MESSAGE value="?" />
+    <option name="LAST_COMMIT_MESSAGE" value="?" />
+  </component>
+</project>
