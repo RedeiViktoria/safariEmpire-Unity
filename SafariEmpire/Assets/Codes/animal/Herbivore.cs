@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codes.Animal{
+namespace Codes.animal{
 	public abstract class Herbivore : Animal
 	{
 		

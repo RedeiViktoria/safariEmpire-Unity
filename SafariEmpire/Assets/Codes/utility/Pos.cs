@@ -1,6 +1,6 @@
 ﻿namespace Codes.utility
 {
-    public class Position
+    public class Pos
     {
         private double _x;
         private double _y;

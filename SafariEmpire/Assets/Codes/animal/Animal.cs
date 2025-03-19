@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Codes.Animal
+namespace Codes.animal
 {
 	public abstract class Animal
 	{
@@ -8,7 +8,7 @@ namespace Codes.Animal
 		protected int gender;
 		protected int hunger;
 		protected int thirst;
-		
+
 		protected Animal(int age, int gender, int hunger, int thirst)
 		{
 			this.age = age;
@@ -26,8 +26,9 @@ namespace Codes.Animal
 
 		public void AssignGroup(Animal animal)
 		{
-			
+
 		}
+
 		public int Age
 		{
 			get => age;
@@ -52,4 +53,5 @@ namespace Codes.Animal
 			set => thirst = value;
 		}
 	}
+
 }

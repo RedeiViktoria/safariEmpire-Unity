@@ -1,4 +1,4 @@
-﻿namespace Codes.Animal
+﻿namespace Codes.animal
 {
     public class Crocodile : Carnivore
     {

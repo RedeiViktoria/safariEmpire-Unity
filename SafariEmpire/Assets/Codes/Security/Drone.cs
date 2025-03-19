@@ -4,11 +4,11 @@ namespace Codes.Security
 {
     public class Drone
     {
-       private List<Position> _waypoints;
-       private Position _charger;
+        private List<Pos> _waypoints;
+       private Pos _charger;
        private int _battery;
 
-       public Drone(List<Position> waypoints, Position charger)
+       public Drone(List<Pos> waypoints, Pos charger)
        {
            this._waypoints = waypoints;
            this._charger = charger;

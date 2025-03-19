@@ -5,9 +5,9 @@ namespace Codes.Security
 {
     public class AirBalloon
     {
-        private List<Position> _waypoints;
+        private List<Pos> _waypoints;
 
-        public AirBalloon(List<Position> waypoints)
+        public AirBalloon(List<Pos> waypoints)
         {
             _waypoints = waypoints;
         }
