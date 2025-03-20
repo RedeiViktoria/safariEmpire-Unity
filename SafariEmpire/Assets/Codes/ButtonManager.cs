@@ -123,13 +123,13 @@ public class ButtonManager : MonoBehaviour
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
                     // Get the mouse position in screen coordinates
-                    Vector2 mousePosition = Input.mousePosition;
+                    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     if(toBuy == "path")
                     {
                         mousePosition.x = Mathf.Round(mousePosition.x-mousePosition.x%50);
                         mousePosition.y = Mathf.Round(mousePosition.y-mousePosition.y%50);
                     }
-                    //model.Buy(mousePosition, toBuy);
+                    model.buy(toBuy, mousePosition);
                     Debug.Log(mousePosition);
                 }
                 //DetectObjectUnderMouse2D(); good for detecting 2d objects with colliders

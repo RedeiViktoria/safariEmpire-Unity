@@ -158,7 +158,7 @@ public class Model : MonoBehaviour
         int moneyNeeded = -1;
         switch (obj)
         {
-            case "pond": moneyNeeded = 100; break;
+            case "water": moneyNeeded = 100; break;
              //...
         }
         return moneyNeeded <= this.money;
@@ -169,7 +169,7 @@ public class Model : MonoBehaviour
         {
             switch (obj)
             {
-                case "pond":
+                case "water":
                     Pond pond = new Pond(position);
                     ponds.Add(pond);
                     pond.obj = Instantiate(pondObject, pond.spawnPosition, Quaternion.identity);
