@@ -120,16 +120,35 @@ public class ButtonManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                // Get the mouse position in screen coordinates
-                Vector2 mousePosition = Input.mousePosition;
-                Debug.Log(mousePosition);
-                //model.Buy(mousePosition, toBuy);
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    // Get the mouse position in screen coordinates
+                    Vector2 mousePosition = Input.mousePosition;
+                    if(toBuy == "path")
+                    {
+                        mousePosition.x = Mathf.Round(mousePosition.x-mousePosition.x%50);
+                        mousePosition.y = Mathf.Round(mousePosition.y-mousePosition.y%50);
+                    }
+                    //model.Buy(mousePosition, toBuy);
+                    Debug.Log(mousePosition);
+                }
+                //DetectObjectUnderMouse2D(); good for detecting 2d objects with colliders
             }
         }
     }
-    private bool IsPointerOverUIElement()
+    void DetectObjectUnderMouse2D()
     {
-        return EventSystem.current.IsPointerOverGameObject();
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("Clicked on: " + hit.collider.gameObject.name);
+        }
+        else
+        {
+            Debug.Log("No object clicked");
+        }
     }
 
     void OnShopClicked()
@@ -193,6 +212,7 @@ public class ButtonManager : MonoBehaviour
             toBuy = name;
             shop.SetActive(false);
             exitBtn.gameObject.SetActive(true);
+            layout.GetComponent<Image>().raycastTarget = false;
         //}
     }
 
@@ -208,6 +228,7 @@ public class ButtonManager : MonoBehaviour
 
     void OnPlacementExitClicked()
     {
+        layout.GetComponent<Image>().raycastTarget = true;
         isPlacing = false;
         exitBtn.gameObject.SetActive(false);
     }

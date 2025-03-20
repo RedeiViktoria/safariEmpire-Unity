@@ -44,11 +44,11 @@ MonoBehaviour:
     x: 0
     y: 36
     width: 1280
-    height: 573.3334
+    height: 573.3333
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 37
+  controlID: 98
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -68,7 +68,7 @@ MonoBehaviour:
     x: 1040.6666
     y: 0
     width: 239.33337
-    height: 573.3334
+    height: 573.3333
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 13}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,15 +120,15 @@ MonoBehaviour:
     x: 0
     y: 442.66666
     width: 1040.6666
-    height: 130.66672
-  m_MinSize: {x: 101, y: 126}
-  m_MaxSize: {x: 4001, y: 4026}
-  m_ActualView: {fileID: 17}
+    height: 130.66666
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1280
-    height: 629.3334
+    height: 629.3333
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 609.3334
+    y: 609.3333
     width: 1280
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -220,11 +220,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1040.6666
-    height: 573.3334
+    height: 573.3333
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 38
+  controlID: 146
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -303,7 +303,7 @@ MonoBehaviour:
     x: 0
     y: 521.3334
     width: 1039.6666
-    height: 104.66672
+    height: 104.66666
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -343,9 +343,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 56.00006}
-    m_SelectedIDs: e8b40000
-    m_LastClickedID: 46312
-    m_ExpandedIDs: 000000001ab10000e8b4000000ca9a3bffffff7f
+    m_SelectedIDs: 2ab40000
+    m_LastClickedID: 46122
+    m_ExpandedIDs: 00000000ceb3000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001ab10000
+    m_ExpandedIDs: 00000000ceb30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -400,8 +400,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 28b5ffff
-    m_LastClickedInstanceID: -19160
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300001ecf0000a8b700000eb10000
     m_RenameOverlay:
@@ -428,7 +428,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 34.333282}
+    m_ScrollPosition: {x: 0, y: 34}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -456,7 +456,7 @@ MonoBehaviour:
     x: 1040.6667
     y: 78.66667
     width: 238.33337
-    height: 547.3334
+    height: 547.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -519,10 +519,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f4b70000
-      m_LastClickedID: 47092
-      m_ExpandedIDs: 28b5ffff96f0ffff72fafffffeb5000022b6000016b7000074b70000
+      scrollPos: {x: 0, y: 60}
+      m_SelectedIDs: 1ab00000
+      m_LastClickedID: 45082
+      m_ExpandedIDs: 0cfbffff2caf000050af00006caf0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1325,7 +1325,7 @@ MonoBehaviour:
     x: 0
     y: 521.3334
     width: 1039.6666
-    height: 104.66672
+    height: 104.66666
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
