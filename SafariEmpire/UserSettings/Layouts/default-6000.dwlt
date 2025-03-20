@@ -14,16 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 42.666668
-    width: 1280
-    height: 629.3334
+    x: 7.3333335
+    y: 50
+    width: 1024
+    height: 632
   m_ShowMode: 4
+<<<<<<< HEAD
+  m_Title: Console
+=======
   m_Title: Game
+>>>>>>> 692a17e (idő és pénz kiiratása)
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 1
+  m_Maximized: 0
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -43,12 +47,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 36
-    width: 1280
-    height: 573.3333
+    width: 1024
+    height: 576
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 98
+<<<<<<< HEAD
+  controlID: 149
+=======
+  controlID: 37
+>>>>>>> 692a17e (idő és pénz kiiratása)
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -65,10 +73,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1040.6666
+    x: 832.6667
     y: 0
+<<<<<<< HEAD
+    width: 191.33331
+    height: 576
+=======
     width: 239.33337
-    height: 573.3333
+    height: 590.6667
+>>>>>>> 692a17e (idő és pénz kiiratása)
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 13}
@@ -93,8 +106,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 253.33333
-    height: 442.66666
+    width: 202.66667
+    height: 312.66666
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 14}
@@ -118,9 +131,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 442.66666
-    width: 1040.6666
-    height: 130.66666
+    y: 312.66666
+    width: 832.6667
+    height: 263.33334
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 12}
@@ -149,8 +162,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1280
-    height: 629.3333
+    width: 1024
+    height: 632
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -174,7 +187,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1280
+    width: 1024
     height: 36
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -195,8 +208,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 609.3333
-    width: 1280
+    y: 612
+    width: 1024
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -219,12 +232,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1040.6666
-    height: 573.3333
+    width: 832.6667
+    height: 576
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 146
+  controlID: 150
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -245,12 +258,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1040.6666
-    height: 442.66666
+    width: 832.6667
+    height: 312.66666
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 39
+  controlID: 151
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -267,10 +280,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 253.33333
+    x: 202.66667
     y: 0
-    width: 787.3333
-    height: 442.66666
+    width: 630
+    height: 312.66666
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 16}
@@ -300,10 +313,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 521.3334
-    width: 1039.6666
-    height: 104.66666
+    x: 7.3333335
+    y: 398.6667
+    width: 831.6667
+    height: 237.33334
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -338,14 +351,20 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Codes
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\kelle\Desktop\Szofttech\safari-empire\SafariEmpire
+  m_LastProjectPath: "C:\\Users\\vikto\\OneDrive\\Asztali g\xE9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 56.00006}
-    m_SelectedIDs: 2ab40000
-    m_LastClickedID: 46122
-    m_ExpandedIDs: 00000000ceb3000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 35.333313}
+<<<<<<< HEAD
+    m_SelectedIDs: 36af0000
+    m_LastClickedID: 44854
+    m_ExpandedIDs: 0000000034af000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 16b40000
+    m_LastClickedID: 46102
+    m_ExpandedIDs: 00000000beb3000016b4000000ca9a3bffffff7f
+>>>>>>> 692a17e (idő és pénz kiiratása)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +393,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ceb30000
+<<<<<<< HEAD
+    m_ExpandedIDs: 0000000034af000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 00000000beb30000
+>>>>>>> 692a17e (idő és pénz kiiratása)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -402,7 +425,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300001ecf0000a8b700000eb10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -420,7 +443,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -428,7 +451,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 34}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -453,10 +476,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1040.6667
-    y: 78.66667
-    width: 238.33337
-    height: 547.3333
+    x: 840
+    y: 86
+    width: 190.33331
+    height: 550
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -502,10 +525,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 78.66667
-    width: 252.33333
-    height: 416.66666
+    x: 7.3333335
+    y: 86
+    width: 201.66667
+    height: 286.66666
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -519,10 +542,16 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 60}
-      m_SelectedIDs: 1ab00000
-      m_LastClickedID: 45082
-      m_ExpandedIDs: 0cfbffff2caf000050af00006caf0000
+      scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 66f9ffff
+=======
+      m_SelectedIDs: 3ab10000
+      m_LastClickedID: 45370
+      m_ExpandedIDs: 0cfbffff26af00004aaf000064b10000
+>>>>>>> 692a17e (idő és pénz kiiratása)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -570,8 +599,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 253.33334
     y: 78.66667
-    width: 785.3333
-    height: 348.66666
+    width: 786.00006
+    height: 360
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1112,9 +1141,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 2948.6267, y: 363.8063, z: -19.637142}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 2948.6267, y: 363.8063, z: -19.637142}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1164,9 +1193,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 975.8395
+    m_Target: 10
     speed: 2
-    m_Value: 975.8395
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1221,10 +1250,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 253.33334
-    y: 78.66667
-    width: 785.3333
-    height: 416.66666
+    x: 210
+    y: 86
+    width: 628
+    height: 286.66666
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1242,7 +1271,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 3840, y: 2160}
+  m_TargetSize: {x: 1920, y: 1080}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1251,16 +1280,16 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 06000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -1280
-    m_HBaseRangeMax: 1280
-    m_VBaseRangeMin: -720
-    m_VBaseRangeMax: 720
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1278,23 +1307,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 785.3333
-      height: 395.66666
-    m_Scale: {x: 0.2747685, y: 0.2747685}
-    m_Translation: {x: 392.66666, y: 197.83333}
+      width: 628
+      height: 265.66666
+    m_Scale: {x: 0.36898148, y: 0.36898148}
+    m_Translation: {x: 314, y: 132.83333}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1429.0818
-      y: -720
-      width: 2858.1636
-      height: 1440
+      x: -850.9912
+      y: -360
+      width: 1701.9824
+      height: 720
     m_MinimalGUI: 1
-  m_defaultScale: 0.2747685
-  m_LastWindowPixelSize: {x: 1178, y: 625}
+  m_defaultScale: 0.36898148
+  m_LastWindowPixelSize: {x: 942, y: 430}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1323,9 +1352,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 521.3334
+    y: 399.33334
     width: 1039.6666
-    height: 104.66666
+    height: 244.00003
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0

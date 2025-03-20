@@ -8,11 +8,11 @@ using UnityEditor.Experimental.GraphView;
 using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
-
+using TMPro;
 
 public class Model : MonoBehaviour
 {
-    private int difficulty; //0: easy, 1:medium, 2:hard
+    private int difficulty; //1: easy, 2:medium, 3:hard
     private int money;
     private int time;
     private int timeSpeed; //0: óra, 1: nap, 2: hét (?)
@@ -36,15 +36,24 @@ public class Model : MonoBehaviour
     public GameObject pondObject;
     public List<Pond> ponds;
 
+    //view cuccai:
+    public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI timeText;
+
     //constructor
     void Start()
     {
+        this.difficulty = PlayerPrefs.GetInt("difficulty");
+        this.timeSpeed = 0; //viewból setTimeSpeed-del módosítódik
+        this.ticketPrice = 100; //viewból setTicketPrice-szal módosítódik
+        this.time = 0;
+
         //terepi akadályok generálása
         //HEGYEK
         hills = new List<Hill>();
-        Hill hill1 = new Hill(2, 2);
-        Hill hill2 = new Hill(-2, 1);
-        Hill hill3 = new Hill(0, 0);
+        Hill hill1 = new Hill(new Vector2(2, 2));
+        Hill hill2 = new Hill(new Vector2(-2, 1));
+        Hill hill3 = new Hill(new Vector2(0, 0));
         hills.Add(hill1);
         hills.Add(hill2);
         hills.Add(hill3);
@@ -54,8 +63,8 @@ public class Model : MonoBehaviour
         }
         //FOLYÓK
         rivers = new List<River>();
-        River river1 = new River(-3, -3);
-        River river2 = new River(-5, 3);
+        River river1 = new River(new Vector2(-3, -3));
+        River river2 = new River(new Vector2(-5, 3));
         rivers.Add(river1);
         rivers.Add(river2);
         foreach (River river in rivers)
@@ -65,15 +74,13 @@ public class Model : MonoBehaviour
         }
         //TAVAK
         ponds = new List<Pond>();
-        Pond pond1 = new Pond(4, -4);
+        Pond pond1 = new Pond(new Vector2(4, -4));
         ponds.Add(pond1);
         foreach (Pond pond in ponds)
         {
             pond.obj = Instantiate(pondObject, pond.spawnPosition, Quaternion.identity);
 
         }
-
-        move(hill1, new Vector2(-2,-2));
 
         //entityk generálása
         //NÖVÉNYEK
@@ -90,27 +97,32 @@ public class Model : MonoBehaviour
 
 
         //felülírandók
-        this.time = 0;
-        this.timeSpeed = 0;
         this.popularity = 1;
-        this.ticketPrice = 100;
         this.visitorsWaiting = 0;
         this.visitorCount = 0;
         switch (difficulty)
         {
-            case 0:
+            case 1:
                 DaysUntilWin = 3 * 30;
                 money = 1000;
                 break;
-            case 1:
+            case 2:
                 DaysUntilWin = 6 * 30;
                 money = 2000;
                 break;
-            case 2:
+            case 3:
                 DaysUntilWin = 12 * 30;
                 money = 3000;
                 break;
         }
+
+        //metódus tesztelések
+        buy("pond", new Vector2(0,0));
+        move(hill1, new Vector2(-2, -2));
+        
+        
+        
+        updateView();
     }
 
     //MOZGÁS
@@ -122,7 +134,7 @@ public class Model : MonoBehaviour
     private SpriteRenderer sr;
     private float fspeed = 1f;
     //hill helyett entity lesz
-    public void move(Hill entity, Vector2 p)
+    public void move(Entity entity, Vector2 p)
     {
         this.sr = entity.obj.GetComponent<SpriteRenderer>();
         this.targetPosition1 = p;
@@ -140,10 +152,46 @@ public class Model : MonoBehaviour
         }
     }
 
+    //VÁSÁRLÁS
+    public bool canBuy(string obj)
+    {
+        int moneyNeeded = -1;
+        switch (obj)
+        {
+            case "pond": moneyNeeded = 100; break;
+             //...
+        }
+        return moneyNeeded <= this.money;
+    }
+    public void buy(string obj, Vector2 position)
+    {
+        if(canBuy(obj))
+        {
+            switch (obj)
+            {
+                case "pond":
+                    Pond pond = new Pond(position);
+                    ponds.Add(pond);
+                    pond.obj = Instantiate(pondObject, pond.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
+                    break;
+                    //...
+            }
+        }
+        updateView();
+    }
+
+    //VIEW FRISSÍTÉSE
+    public void updateView()
+    {
+        moneyText.text = "Pénz: " + this.money;
+        timeText.text = "0. hét, 0. nap, 00:00";
+
+    }
 
     void Update()
     {
-
+        
     }
 
 
@@ -159,6 +207,7 @@ public class Model : MonoBehaviour
      * kills the oldest animal in a group
      */
     /*
+     *rossz mappában van az animalgroup
     public AnimalGroup killAnimal(AnimalGroup group)
     {
         int maxage = 0;
@@ -174,7 +223,7 @@ public class Model : MonoBehaviour
         group.RemoveAt(maxind);
 
         return group;
-    }*/
+    }
 
     /*
      * checks if we win or lose

@@ -1,15 +1,8 @@
 using UnityEngine;
 
-public class Pond
+public class Pond : Entity
 {
-    private int x;
-    private int y;
-    public Vector2 spawnPosition;
-
-    public GameObject obj;
-
-    public Pond(int x, int y)
+    public Pond(Vector2 spawnPosition) : base(spawnPosition)
     {
-        this.spawnPosition = new Vector2(x, y);
     }
 }
