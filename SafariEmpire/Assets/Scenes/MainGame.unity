@@ -9205,6 +9205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebf93830728ad946845632446b16fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jeepObject: {fileID: 8279535778963259092, guid: ceb5cb2798d29e34d91da3d493bd0bb9, type: 3}
+  plantObject: {fileID: 6078847435932381657, guid: d886dbfb057370541b9db817dc6a1412, type: 3}
+  securiryObject: {fileID: 3744815083820784596, guid: b8ea89a9414e5784fa2af8058e0f9b17, type: 3}
+  animalGroupObject: {fileID: 6789840038990992241, guid: 0d0d098ba46dced4db32d793f8bdd9e1, type: 3}
+  pathObject: {fileID: 5867483904573936895, guid: 2bee146998b76a644b7ef08263d1c47d, type: 3}
   hillObject: {fileID: 3288083199728170672, guid: 48b5b5a3bd17d1c43803ee9bbb36ff41, type: 3}
   riverObject: {fileID: 3747575812757995866, guid: 0142d1b61f801fc44a46c7b907f4f587, type: 3}
   pondObject: {fileID: 1828372780372482493, guid: 4ac624286cb8c244080610598b61db19, type: 3}
