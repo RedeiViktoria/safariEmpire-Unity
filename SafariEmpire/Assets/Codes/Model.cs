@@ -38,7 +38,7 @@ public class Model : MonoBehaviour
 
     //view cuccai:
     public TextMeshProUGUI moneyText;
-    //public TextMeshProUGUI timeText;
+    public TextMeshProUGUI timeText;
 
     //constructor
     void Start()
@@ -185,7 +185,7 @@ public class Model : MonoBehaviour
     public void updateView()
     {
         moneyText.text = "Pénz: " + this.money;
-        //timeText.text = "Idõ: " + this.time;
+        timeText.text = "0. hét, 0. nap, 00:00";
 
     }
 

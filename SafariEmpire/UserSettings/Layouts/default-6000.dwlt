@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 1024
     height: 632
   m_ShowMode: 4
+<<<<<<< HEAD
   m_Title: Console
+=======
+  m_Title: Game
+>>>>>>> 692a17e (idő és pénz kiiratása)
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +52,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 149
+=======
+  controlID: 37
+>>>>>>> 692a17e (idő és pénz kiiratása)
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -67,8 +75,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 832.6667
     y: 0
+<<<<<<< HEAD
     width: 191.33331
     height: 576
+=======
+    width: 239.33337
+    height: 590.6667
+>>>>>>> 692a17e (idő és pénz kiiratása)
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 13}
@@ -343,9 +356,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 35.333313}
+<<<<<<< HEAD
     m_SelectedIDs: 36af0000
     m_LastClickedID: 44854
     m_ExpandedIDs: 0000000034af000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 16b40000
+    m_LastClickedID: 46102
+    m_ExpandedIDs: 00000000beb3000016b4000000ca9a3bffffff7f
+>>>>>>> 692a17e (idő és pénz kiiratása)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +393,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000034af000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 00000000beb30000
+>>>>>>> 692a17e (idő és pénz kiiratása)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,9 +543,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 66f9ffff
+=======
+      m_SelectedIDs: 3ab10000
+      m_LastClickedID: 45370
+      m_ExpandedIDs: 0cfbffff26af00004aaf000064b10000
+>>>>>>> 692a17e (idő és pénz kiiratása)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
