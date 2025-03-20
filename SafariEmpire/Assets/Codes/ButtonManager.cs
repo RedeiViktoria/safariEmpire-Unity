@@ -124,11 +124,6 @@ public class ButtonManager : MonoBehaviour
                 {
                     // Get the mouse position in screen coordinates
                     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    if(toBuy == "path")
-                    {
-                        mousePosition.x = Mathf.Round(mousePosition.x-mousePosition.x%50);
-                        mousePosition.y = Mathf.Round(mousePosition.y-mousePosition.y%50);
-                    }
                     model.buy(toBuy, mousePosition);
                     Debug.Log(mousePosition);
                 }

@@ -8,7 +8,6 @@ using UnityEditor.Experimental.GraphView;
 using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
-using TMPro;
 
 public class Model : MonoBehaviour
 {
@@ -165,7 +164,13 @@ public class Model : MonoBehaviour
     }
     public void buy(string obj, Vector2 position)
     {
-        if(canBuy(obj))
+        if (obj == "path")
+        {
+            position.x = Mathf.Round(position.x - position.x % 50); //Kép mérettel kell majd %
+            position.y = Mathf.Round(position.y - position.y % 50);
+        }
+
+        if (canBuy(obj))
         {
             switch (obj)
             {

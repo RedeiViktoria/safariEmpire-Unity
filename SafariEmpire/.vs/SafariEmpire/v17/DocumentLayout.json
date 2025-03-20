@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\",
+  "WorkspaceRootPath": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Pond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:Assets\\Codes\\Pond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\River.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:Assets\\Codes\\River.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:Assets\\Codes\\Hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,107 +26,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AnimalGroup.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
-<<<<<<< HEAD
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOySURBVEhL7VTNbxNXEJ99u951Xa\u002BjGDuxglMOtqiUSAihVoET7gna3hBe/gIOqAcoOZlTOXKoqxwSiYpL4bbJiUNEggwuIiQKIqVBaeRkaWzZSbxsbJyNv9bZj87bOmlVtVJ7rfJbvX37MW9\u002BM/Ob9\u002BAI/38w3RnW1tYEQzCiz7efC5n1DChVBeqdOvA8D/FgnM7a1JUpjdpu6VvhcrUcvpW5BUpd0aY/n9Z7\u002Bnqi95fvC3d/umugSUm5rtAZCL1RUOcWY6XBAZnhGJlwxB0sw8qEIbLH8SS7puC1vUkbbBlXy8QhSeqcBTbt2A59TzumM9g1/T2DN8U3iXKzfPll6aWkNtUwjbxH6AGe5YEjnDsYYG5fHbk6Tp0/zj9OLm0vJZ7kn0ClVclGxejK\u002BRPnpVwlF361/UrDgCYJkMnc17ksRwl22juJaqv61bPiMxB5EU71nzJOR06X\u002Bnx9BjqGzb1N6FgdzWf7AhaxLmztbQ2/KL0A3dDBcZxhta4OZgvZQKPToO8BhmEu4PwLus6ylCDyRSSxsbuR0Ns6YCRw6eNLBR/vu2mC\u002BT36n2w0G5OmYy6eOXFGq7frC8e8xwJD4aFPV3dWqU4/SMPSxLVPrp21HCuIWRQwqJs2a89UH1WbbgbL75ZBYAU4Lh4Hn8eXjfgjUxjBfCAQcEU9wBW8EEplt6KhBm4JsRTajbM3FNTOmPtgjpbSQB3e5q7n3LWuyNgVUGvXYEAcgNZ\u002B60dRFMf/6pyCdppaU2NFvRjCQcuGNHZobH4shpEL71vvkccRbMaOxcfiYbrGJaAisoQ9FPSfcNAtT/NPpfRCGlALMC1TklfldCqTGpz9dRZM24wiybe0u\u002BgalyDkC4Hf4we1oUK\u002Blqef/hYosI4lmcFMV85Fz4EoiMAQZqX/w/4Z1E6P9cYABdaRYJZxGCoyuOGeDJ6EfXsfSnqJphhKTaeGRj4agSAfhA5ehWoBcNIGAgO0bBNaTWPQWd9r9TXstnanHiYfPkLywXtL9\u002BL47a1lWd\u002Btj64rhwQX4xdBa2rw4OcHwLGchHklWIcFQgiwNpaO5aDtaU9Q59ReIIJsgZWlz9gt71AvXdO1UcdyBHRu4EYt0n8U7kab35hPlPfKlxeKC1KtUwvTbHq9veDlvOBhPcATnqZ\u002BO/VZ6ht31X/A4VmUWcvEsDXTi5uL8bniHJTrZVoud0djz4Of80/c\u002BfLOeNf8X\u002BOPswiMkrlvjqL60sHAjSNhH0pIJNHzqGt6hCP8GQC/AUWYxGG0O6mbAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-03-19T16:37:03.479Z"
-=======
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T16:37:03.479Z",
-              "EditorCaption": ""
->>>>>>> 692a17e (idő és pénz kiiratása)
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Entity.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
-              "RelativeToolTip": "Assets\\Codes\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-<<<<<<< HEAD
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOySURBVEhL7VTNbxNXEJ99u951Xa\u002BjGDuxglMOtqiUSAihVoET7gna3hBe/gIOqAcoOZlTOXKoqxwSiYpL4bbJiUNEggwuIiQKIqVBaeRkaWzZSbxsbJyNv9bZj87bOmlVtVJ7rfJbvX37MW9\u002BM/Ob9\u002BAI/38w3RnW1tYEQzCiz7efC5n1DChVBeqdOvA8D/FgnM7a1JUpjdpu6VvhcrUcvpW5BUpd0aY/n9Z7\u002Bnqi95fvC3d/umugSUm5rtAZCL1RUOcWY6XBAZnhGJlwxB0sw8qEIbLH8SS7puC1vUkbbBlXy8QhSeqcBTbt2A59TzumM9g1/T2DN8U3iXKzfPll6aWkNtUwjbxH6AGe5YEjnDsYYG5fHbk6Tp0/zj9OLm0vJZ7kn0ClVclGxejK\u002BRPnpVwlF361/UrDgCYJkMnc17ksRwl22juJaqv61bPiMxB5EU71nzJOR06X\u002Bnx9BjqGzb1N6FgdzWf7AhaxLmztbQ2/KL0A3dDBcZxhta4OZgvZQKPToO8BhmEu4PwLus6ylCDyRSSxsbuR0Ns6YCRw6eNLBR/vu2mC\u002BT36n2w0G5OmYy6eOXFGq7frC8e8xwJD4aFPV3dWqU4/SMPSxLVPrp21HCuIWRQwqJs2a89UH1WbbgbL75ZBYAU4Lh4Hn8eXjfgjUxjBfCAQcEU9wBW8EEplt6KhBm4JsRTajbM3FNTOmPtgjpbSQB3e5q7n3LWuyNgVUGvXYEAcgNZ\u002B60dRFMf/6pyCdppaU2NFvRjCQcuGNHZobH4shpEL71vvkccRbMaOxcfiYbrGJaAisoQ9FPSfcNAtT/NPpfRCGlALMC1TklfldCqTGpz9dRZM24wiybe0u\u002BgalyDkC4Hf4we1oUK\u002Blqef/hYosI4lmcFMV85Fz4EoiMAQZqX/w/4Z1E6P9cYABdaRYJZxGCoyuOGeDJ6EfXsfSnqJphhKTaeGRj4agSAfhA5ehWoBcNIGAgO0bBNaTWPQWd9r9TXstnanHiYfPkLywXtL9\u002BL47a1lWd\u002Btj64rhwQX4xdBa2rw4OcHwLGchHklWIcFQgiwNpaO5aDtaU9Q59ReIIJsgZWlz9gt71AvXdO1UcdyBHRu4EYt0n8U7kab35hPlPfKlxeKC1KtUwvTbHq9veDlvOBhPcATnqZ\u002BO/VZ6ht31X/A4VmUWcvEsDXTi5uL8bniHJTrZVoud0djz4Of80/c\u002BfLOeNf8X\u002BOPswiMkrlvjqL60sHAjSNhH0pIJNHzqGt6hCP8GQC/AUWYxGG0O6mbAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-03-19T15:36:08.42Z"
-=======
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T15:36:08.42Z",
-              "EditorCaption": ""
->>>>>>> 692a17e (idő és pénz kiiratása)
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Pond.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Pond.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Pond.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Pond.cs",
-              "RelativeToolTip": "Assets\\Codes\\Pond.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
-<<<<<<< HEAD
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOySURBVEhL7VTNbxNXEJ99u951Xa\u002BjGDuxglMOtqiUSAihVoET7gna3hBe/gIOqAcoOZlTOXKoqxwSiYpL4bbJiUNEggwuIiQKIqVBaeRkaWzZSbxsbJyNv9bZj87bOmlVtVJ7rfJbvX37MW9\u002BM/Ob9\u002BAI/38w3RnW1tYEQzCiz7efC5n1DChVBeqdOvA8D/FgnM7a1JUpjdpu6VvhcrUcvpW5BUpd0aY/n9Z7\u002Bnqi95fvC3d/umugSUm5rtAZCL1RUOcWY6XBAZnhGJlwxB0sw8qEIbLH8SS7puC1vUkbbBlXy8QhSeqcBTbt2A59TzumM9g1/T2DN8U3iXKzfPll6aWkNtUwjbxH6AGe5YEjnDsYYG5fHbk6Tp0/zj9OLm0vJZ7kn0ClVclGxejK\u002BRPnpVwlF361/UrDgCYJkMnc17ksRwl22juJaqv61bPiMxB5EU71nzJOR06X\u002Bnx9BjqGzb1N6FgdzWf7AhaxLmztbQ2/KL0A3dDBcZxhta4OZgvZQKPToO8BhmEu4PwLus6ylCDyRSSxsbuR0Ns6YCRw6eNLBR/vu2mC\u002BT36n2w0G5OmYy6eOXFGq7frC8e8xwJD4aFPV3dWqU4/SMPSxLVPrp21HCuIWRQwqJs2a89UH1WbbgbL75ZBYAU4Lh4Hn8eXjfgjUxjBfCAQcEU9wBW8EEplt6KhBm4JsRTajbM3FNTOmPtgjpbSQB3e5q7n3LWuyNgVUGvXYEAcgNZ\u002B60dRFMf/6pyCdppaU2NFvRjCQcuGNHZobH4shpEL71vvkccRbMaOxcfiYbrGJaAisoQ9FPSfcNAtT/NPpfRCGlALMC1TklfldCqTGpz9dRZM24wiybe0u\u002BgalyDkC4Hf4we1oUK\u002Blqef/hYosI4lmcFMV85Fz4EoiMAQZqX/w/4Z1E6P9cYABdaRYJZxGCoyuOGeDJ6EfXsfSnqJphhKTaeGRj4agSAfhA5ehWoBcNIGAgO0bBNaTWPQWd9r9TXstnanHiYfPkLywXtL9\u002BL47a1lWd\u002Btj64rhwQX4xdBa2rw4OcHwLGchHklWIcFQgiwNpaO5aDtaU9Q59ReIIJsgZWlz9gt71AvXdO1UcdyBHRu4EYt0n8U7kab35hPlPfKlxeKC1KtUwvTbHq9veDlvOBhPcATnqZ\u002BO/VZ6ht31X/A4VmUWcvEsDXTi5uL8bniHJTrZVoud0djz4Of80/c\u002BfLOeNf8X\u002BOPswiMkrlvjqL60sHAjSNhH0pIJNHzqGt6hCP8GQC/AUWYxGG0O6mbAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-03-19T10:18:52.778Z"
-=======
+              "Title": "MenuManager.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\MenuManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\MenuManager.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\MenuManager.cs",
+              "RelativeToolTip": "Assets\\Codes\\MenuManager.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAmwBgAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T10:18:52.778Z",
-              "EditorCaption": ""
->>>>>>> 692a17e (idő és pénz kiiratása)
+              "WhenOpened": "2025-03-14T11:46:26.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "River.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\River.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\River.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\River.cs",
-              "RelativeToolTip": "Assets\\Codes\\River.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
-<<<<<<< HEAD
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOySURBVEhL7VTNbxNXEJ99u951Xa\u002BjGDuxglMOtqiUSAihVoET7gna3hBe/gIOqAcoOZlTOXKoqxwSiYpL4bbJiUNEggwuIiQKIqVBaeRkaWzZSbxsbJyNv9bZj87bOmlVtVJ7rfJbvX37MW9\u002BM/Ob9\u002BAI/38w3RnW1tYEQzCiz7efC5n1DChVBeqdOvA8D/FgnM7a1JUpjdpu6VvhcrUcvpW5BUpd0aY/n9Z7\u002Bnqi95fvC3d/umugSUm5rtAZCL1RUOcWY6XBAZnhGJlwxB0sw8qEIbLH8SS7puC1vUkbbBlXy8QhSeqcBTbt2A59TzumM9g1/T2DN8U3iXKzfPll6aWkNtUwjbxH6AGe5YEjnDsYYG5fHbk6Tp0/zj9OLm0vJZ7kn0ClVclGxejK\u002BRPnpVwlF361/UrDgCYJkMnc17ksRwl22juJaqv61bPiMxB5EU71nzJOR06X\u002Bnx9BjqGzb1N6FgdzWf7AhaxLmztbQ2/KL0A3dDBcZxhta4OZgvZQKPToO8BhmEu4PwLus6ylCDyRSSxsbuR0Ns6YCRw6eNLBR/vu2mC\u002BT36n2w0G5OmYy6eOXFGq7frC8e8xwJD4aFPV3dWqU4/SMPSxLVPrp21HCuIWRQwqJs2a89UH1WbbgbL75ZBYAU4Lh4Hn8eXjfgjUxjBfCAQcEU9wBW8EEplt6KhBm4JsRTajbM3FNTOmPtgjpbSQB3e5q7n3LWuyNgVUGvXYEAcgNZ\u002B60dRFMf/6pyCdppaU2NFvRjCQcuGNHZobH4shpEL71vvkccRbMaOxcfiYbrGJaAisoQ9FPSfcNAtT/NPpfRCGlALMC1TklfldCqTGpz9dRZM24wiybe0u\u002BgalyDkC4Hf4we1oUK\u002Blqef/hYosI4lmcFMV85Fz4EoiMAQZqX/w/4Z1E6P9cYABdaRYJZxGCoyuOGeDJ6EfXsfSnqJphhKTaeGRj4agSAfhA5ehWoBcNIGAgO0bBNaTWPQWd9r9TXstnanHiYfPkLywXtL9\u002BL47a1lWd\u002Btj64rhwQX4xdBa2rw4OcHwLGchHklWIcFQgiwNpaO5aDtaU9Q59ReIIJsgZWlz9gt71AvXdO1UcdyBHRu4EYt0n8U7kab35hPlPfKlxeKC1KtUwvTbHq9veDlvOBhPcATnqZ\u002BO/VZ6ht31X/A4VmUWcvEsDXTi5uL8bniHJTrZVoud0djz4Of80/c\u002BfLOeNf8X\u002BOPswiMkrlvjqL60sHAjSNhH0pIJNHzqGt6hCP8GQC/AUWYxGG0O6mbAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-03-19T10:18:52.782Z"
-=======
+              "DocumentIndex": 2,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\CameraController.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Codes\\CameraController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA2wBUAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T10:18:52.782Z",
-              "EditorCaption": ""
->>>>>>> 692a17e (idő és pénz kiiratása)
+              "WhenOpened": "2025-03-14T09:22:57.654Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Hill.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Hill.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
-              "RelativeToolTip": "Assets\\Codes\\Hill.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ButtonManager.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\ButtonManager.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
+              "RelativeToolTip": "Assets\\Codes\\ButtonManager.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAhwH0AAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T10:18:52.782Z"
+              "WhenOpened": "2025-03-07T17:04:47.859Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\projekt\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
-<<<<<<< HEAD
-              "ViewState": "AgIAALMAAAAAAAAAAAAAAL4AAAAAAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAdAAAAAAAAAA==",
->>>>>>> 692a17e (idő és pénz kiiratása)
+              "ViewState": "AQIAAJwAAAAAAAAAAAAIwKgAAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T14:12:06.248Z",
+              "WhenOpened": "2025-03-07T14:59:20.032Z",
               "EditorCaption": ""
             }
           ]
