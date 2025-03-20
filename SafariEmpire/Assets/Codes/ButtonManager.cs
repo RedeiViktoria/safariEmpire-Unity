@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Net;
 using UnityEngine.EventSystems;
+using System;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject menu;
     public GameObject poachers;
     public GameObject security;
+    public GameObject priceInput;
     private bool isPlacing;
     private string toBuy;
     void Start()
@@ -27,6 +29,7 @@ public class ButtonManager : MonoBehaviour
         safariBtn.onClick.AddListener(OnSafariClicked);
         exitBtn.onClick.AddListener(OnPlacementExitClicked);
         layout.GetComponent<Button>().onClick.AddListener(OnLayoutClicked);
+
         //Adding listeners to the time buttons in the mainUI
         foreach (Transform child in timeButtons.transform)
         {
@@ -77,17 +80,17 @@ public class ButtonManager : MonoBehaviour
         }
 
         //Adding listener to ticket price setter button
-        foreach(Transform child in menu.transform)
+        foreach (Transform child in menu.transform)
         {
             Button priceButton = child.GetComponent<Button>();
             if (priceButton != null)
             {
-                priceButton.onClick.AddListener(() => Debug.Log("Price set"));
+                priceButton.onClick.AddListener(OnSetPriceClicked);
             }
         }
 
         //Adding listeners to poacher target buttons
-        foreach(Transform parent in poachers.transform)
+        foreach (Transform parent in poachers.transform)
         {
             foreach (Transform child in parent)
             {
@@ -125,7 +128,6 @@ public class ButtonManager : MonoBehaviour
                     // Get the mouse position in screen coordinates
                     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     model.buy(toBuy, mousePosition);
-                    Debug.Log(mousePosition);
                 }
                 //DetectObjectUnderMouse2D(); good for detecting 2d objects with colliders
             }
@@ -151,9 +153,15 @@ public class ButtonManager : MonoBehaviour
         shop.SetActive(!shop.activeSelf);
         safari.SetActive(false);
     }
+    void OnSetPriceClicked()
+    {
+        int price = int.Parse(priceInput.GetComponent<TMP_InputField>().text);
+        model.setTicketPrice(price);
+    }
     void OnSafariClicked()
     {
         safari.SetActive(!safari.activeSelf);
+        priceInput.GetComponent<TMP_InputField>().text = model.getTicketPrice().ToString();
         shop.SetActive(false);
     }
     void OnLayoutClicked()
@@ -163,14 +171,14 @@ public class ButtonManager : MonoBehaviour
     }
     void OnTimeClicked(int timeSpeed)
     {
-        Debug.Log(timeSpeed);
+        model.setTime(timeSpeed);
     }
     void OnSwitchClicked(int id)
     {
         Transform btns = safari.transform.Find("Buttons");
         for (int i = 0; i < 3; i++)
         {
-            if (id==i)
+            if (id == i)
             {
                 btns.GetChild(i).GetComponent<Image>().color = Color.green;
             }
@@ -180,14 +188,14 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
-        
+
         if (id == 0)
         {
             menu.SetActive(true);
             poachers.SetActive(false);
             security.SetActive(false);
         }
-        else if(id == 1)
+        else if (id == 1)
         {
             menu.SetActive(false);
             poachers.SetActive(true);
@@ -202,13 +210,14 @@ public class ButtonManager : MonoBehaviour
     }
     void OnShopButtonClicked(string name)
     {
-        //if(model.canBuy(name)){
+        if (model.canBuy(name))
+        {
             isPlacing = true;
             toBuy = name;
             shop.SetActive(false);
             exitBtn.gameObject.SetActive(true);
             layout.GetComponent<Image>().raycastTarget = false;
-        //}
+        }
     }
 
     void OnPoacherTargetClicked()

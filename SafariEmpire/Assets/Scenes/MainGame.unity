@@ -8640,6 +8640,7 @@ MonoBehaviour:
   menu: {fileID: 839176623}
   poachers: {fileID: 1374222628}
   security: {fileID: 712300874}
+  priceInput: {fileID: 1501728098}
 --- !u!4 &1834496602
 Transform:
   m_ObjectHideFlags: 0
