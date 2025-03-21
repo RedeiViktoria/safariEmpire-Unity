@@ -35,7 +35,7 @@ public class Model : MonoBehaviour
     //public List<AnimalGroup> animalGroups;
     public GameObject animalGroupObject;
 
-    //public List<Path> paths;
+    public List<Path> paths;
     public GameObject pathObject;
 
     //terepi akadályok:
@@ -94,7 +94,7 @@ public class Model : MonoBehaviour
 
         //entityk generálása
         //NÖVÉNYEK
-        
+
         //ÁLLATOK
 
         //ORVVADÁSZOK
@@ -104,6 +104,7 @@ public class Model : MonoBehaviour
         //MEGFIGYELÕ RENDSZER
 
         //JEEPS
+        paths = new List<Path>();
 
 
         //felülírandók
@@ -192,8 +193,9 @@ public class Model : MonoBehaviour
         {
             if (obj == "path")
             {
-                position.x = Mathf.Round(position.x - position.x % 50); //Kép mérettel kell majd %
-                position.y = Mathf.Round(position.y - position.y % 50);
+                float pathSize = 1.0f;
+                position.x = Mathf.Round(position.x / pathSize) * pathSize;
+                position.y = Mathf.Round(position.y / pathSize) * pathSize;
             }
 
             switch (obj)
@@ -258,11 +260,10 @@ public class Model : MonoBehaviour
                      this.money -= 100;*/
                     break;
                 case "path":
-                    /*
-                     * Path path = new Path(position);
-                     * paths.add(path);
-                     * path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                    Path path = new Path(position);
+                    paths.Add(path);
+                    path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "camera":
                     /* SecuritySystem securityItem = new SecuritySystem(position, "camera");
