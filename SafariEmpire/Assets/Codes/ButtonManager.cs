@@ -2,25 +2,34 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Net;
+using UnityEngine.EventSystems;
+using System;
 
 public class ButtonManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Model model;
     public Button shopBtn;
     public Button safariBtn;
+    public Button exitBtn;
     public GameObject layout;
     public GameObject timeButtons;
     public GameObject shop;
     public GameObject safari;
     public GameObject menu;
-    public GameObject vadorok;
+    public GameObject poachers;
     public GameObject security;
+    public GameObject priceInput;
+    private bool isPlacing;
+    private string toBuy;
     void Start()
     {
         //Adding listeners to open the shop and the safari menu, and close if something else.
         shopBtn.onClick.AddListener(OnShopClicked);
         safariBtn.onClick.AddListener(OnSafariClicked);
+        exitBtn.onClick.AddListener(OnPlacementExitClicked);
         layout.GetComponent<Button>().onClick.AddListener(OnLayoutClicked);
+
         //Adding listeners to the time buttons in the mainUI
         foreach (Transform child in timeButtons.transform)
         {
@@ -71,17 +80,17 @@ public class ButtonManager : MonoBehaviour
         }
 
         //Adding listener to ticket price setter button
-        foreach(Transform child in menu.transform)
+        foreach (Transform child in menu.transform)
         {
             Button priceButton = child.GetComponent<Button>();
             if (priceButton != null)
             {
-                priceButton.onClick.AddListener(() => Debug.Log("Price set"));
+                priceButton.onClick.AddListener(OnSetPriceClicked);
             }
         }
 
         //Adding listeners to poacher target buttons
-        foreach(Transform parent in vadorok.transform)
+        foreach (Transform parent in poachers.transform)
         {
             foreach (Transform child in parent)
             {
@@ -110,7 +119,33 @@ public class ButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isPlacing)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    // Get the mouse position in screen coordinates
+                    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    model.buy(toBuy, mousePosition);
+                }
+                //DetectObjectUnderMouse2D(); good for detecting 2d objects with colliders
+            }
+        }
+    }
+    void DetectObjectUnderMouse2D()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            Debug.Log("Clicked on: " + hit.collider.gameObject.name);
+        }
+        else
+        {
+            Debug.Log("No object clicked");
+        }
     }
 
     void OnShopClicked()
@@ -118,9 +153,15 @@ public class ButtonManager : MonoBehaviour
         shop.SetActive(!shop.activeSelf);
         safari.SetActive(false);
     }
+    void OnSetPriceClicked()
+    {
+        int price = int.Parse(priceInput.GetComponent<TMP_InputField>().text);
+        model.setTicketPrice(price);
+    }
     void OnSafariClicked()
     {
         safari.SetActive(!safari.activeSelf);
+        priceInput.GetComponent<TMP_InputField>().text = model.getTicketPrice().ToString();
         shop.SetActive(false);
     }
     void OnLayoutClicked()
@@ -130,14 +171,14 @@ public class ButtonManager : MonoBehaviour
     }
     void OnTimeClicked(int timeSpeed)
     {
-        Debug.Log(timeSpeed);
+        model.setTime(timeSpeed);
     }
     void OnSwitchClicked(int id)
     {
         Transform btns = safari.transform.Find("Buttons");
         for (int i = 0; i < 3; i++)
         {
-            if (id==i)
+            if (id == i)
             {
                 btns.GetChild(i).GetComponent<Image>().color = Color.green;
             }
@@ -147,29 +188,36 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
-        
+
         if (id == 0)
         {
             menu.SetActive(true);
-            vadorok.SetActive(false);
+            poachers.SetActive(false);
             security.SetActive(false);
         }
-        else if(id == 1)
+        else if (id == 1)
         {
             menu.SetActive(false);
-            vadorok.SetActive(true);
+            poachers.SetActive(true);
             security.SetActive(false);
         }
         else
         {
             menu.SetActive(false);
-            vadorok.SetActive(false);
+            poachers.SetActive(false);
             security.SetActive(true);
         }
     }
     void OnShopButtonClicked(string name)
     {
-        Debug.Log(name);
+        if (model.canBuy(name))
+        {
+            isPlacing = true;
+            toBuy = name;
+            shop.SetActive(false);
+            exitBtn.gameObject.SetActive(true);
+            layout.GetComponent<Image>().raycastTarget = false;
+        }
     }
 
     void OnPoacherTargetClicked()
@@ -180,5 +228,12 @@ public class ButtonManager : MonoBehaviour
     void OnSecurityPathClicked()
     {
         Debug.Log("Security path clicked");
+    }
+
+    void OnPlacementExitClicked()
+    {
+        layout.GetComponent<Image>().raycastTarget = true;
+        isPlacing = false;
+        exitBtn.gameObject.SetActive(false);
     }
 }

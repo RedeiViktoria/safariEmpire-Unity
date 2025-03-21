@@ -9,10 +9,9 @@ using TMPro;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 
-
 public class Model : MonoBehaviour
 {
-    private int difficulty; //0: easy, 1:medium, 2:hard
+    private int difficulty; //1: easy, 2:medium, 3:hard
     private int money;
     private int time;
     private int timeSpeed; //0: óra, 1: nap, 2: hét (?)
@@ -21,12 +20,23 @@ public class Model : MonoBehaviour
     private int ticketPrice; //ticket az UML-ben
     private int visitorsWaiting;
     private int visitorCount;
+
+    //entityk
+    public GameObject jeepObject;
     //public List<Jeep> jeeps;
+    public GameObject plantObject;
     //public List<Plant> plants;
     //public List<SecuritySystem> security;
+    public GameObject securiryObject;
     //public List<Ranger> rangers;
+    //rangerObject
     //public List<Poacher> poachers;
+    //poacherObject
     //public List<AnimalGroup> animalGroups;
+    public GameObject animalGroupObject;
+
+    public List<Path> paths;
+    public GameObject pathObject;
 
     //terepi akadályok:
     public GameObject hillObject;
@@ -36,15 +46,24 @@ public class Model : MonoBehaviour
     public GameObject pondObject;
     public List<Pond> ponds;
 
+    //view cuccai:
+    public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI timeText;
+
     //constructor
     void Start()
     {
+        this.difficulty = PlayerPrefs.GetInt("difficulty");
+        this.timeSpeed = 0; //viewból setTimeSpeed-del módosítódik
+        this.ticketPrice = 100; //viewból setTicketPrice-szal módosítódik
+        this.time = 0;
+
         //terepi akadályok generálása
         //HEGYEK
         hills = new List<Hill>();
-        Hill hill1 = new Hill(2, 2);
-        Hill hill2 = new Hill(-2, 1);
-        Hill hill3 = new Hill(0, 0);
+        Hill hill1 = new Hill(new Vector2(2, 2));
+        Hill hill2 = new Hill(new Vector2(-2, 1));
+        Hill hill3 = new Hill(new Vector2(0, 0));
         hills.Add(hill1);
         hills.Add(hill2);
         hills.Add(hill3);
@@ -54,8 +73,8 @@ public class Model : MonoBehaviour
         }
         //FOLYÓK
         rivers = new List<River>();
-        River river1 = new River(-3, -3);
-        River river2 = new River(-5, 3);
+        River river1 = new River(new Vector2(-3, -3));
+        River river2 = new River(new Vector2(-5, 3));
         rivers.Add(river1);
         rivers.Add(river2);
         foreach (River river in rivers)
@@ -65,7 +84,7 @@ public class Model : MonoBehaviour
         }
         //TAVAK
         ponds = new List<Pond>();
-        Pond pond1 = new Pond(4, -4);
+        Pond pond1 = new Pond(new Vector2(4, -4));
         ponds.Add(pond1);
         foreach (Pond pond in ponds)
         {
@@ -73,11 +92,9 @@ public class Model : MonoBehaviour
 
         }
 
-        move(hill1, new Vector2(-2,-2));
-
         //entityk generálása
         //NÖVÉNYEK
-        
+
         //ÁLLATOK
 
         //ORVVADÁSZOK
@@ -87,30 +104,36 @@ public class Model : MonoBehaviour
         //MEGFIGYELÕ RENDSZER
 
         //JEEPS
+        paths = new List<Path>();
 
 
         //felülírandók
-        this.time = 0;
-        this.timeSpeed = 0;
         this.popularity = 1;
-        this.ticketPrice = 100;
         this.visitorsWaiting = 0;
         this.visitorCount = 0;
         switch (difficulty)
         {
-            case 0:
+            case 1:
                 DaysUntilWin = 3 * 30;
                 money = 1000;
                 break;
-            case 1:
+            case 2:
                 DaysUntilWin = 6 * 30;
                 money = 2000;
                 break;
-            case 2:
+            case 3:
                 DaysUntilWin = 12 * 30;
                 money = 3000;
                 break;
         }
+
+        //metódus tesztelések
+        buy("pond", new Vector2(0,0));
+        move(hill1, new Vector2(-2, -2));
+        
+        
+        
+        updateView();
     }
 
     //MOZGÁS
@@ -121,8 +144,7 @@ public class Model : MonoBehaviour
     private Vector2 targetPosition1;
     private SpriteRenderer sr;
     private float fspeed = 1f;
-    //hill helyett entity lesz
-    public void move(Hill entity, Vector2 p)
+    public void move(Entity entity, Vector2 p)
     {
         this.sr = entity.obj.GetComponent<SpriteRenderer>();
         this.targetPosition1 = p;
@@ -140,9 +162,150 @@ public class Model : MonoBehaviour
         }
     }
 
+    //VÁSÁRLÁS
+    public bool canBuy(string obj)
+    {
+        //még nincs megcsinálva, hogy ne lehessen egymásra helyezni itemeket
+        int moneyNeeded = -1;
+        switch (obj)
+        {
+            case "water": moneyNeeded = 100; break;
+            case "grass": moneyNeeded = 100; break;
+            case "bush": moneyNeeded = 100; break;
+            case "tree": moneyNeeded = 100; break;
+            case "cheetah": moneyNeeded = 100; break;
+            case "crocodile": moneyNeeded = 100; break;
+            case "gazelle": moneyNeeded = 100; break;
+            case "hipo": moneyNeeded = 100; break;
+            case "jeep": moneyNeeded = 100; break;
+            case "path": moneyNeeded = 100; break;
+            case "camera": moneyNeeded = 100; break;
+            case "charger": moneyNeeded = 100; break;
+            case "drone": moneyNeeded = 100; break;
+            case "airballon": moneyNeeded = 100; break;
+            
+        }
+        return moneyNeeded <= this.money;
+    }
+    public void buy(string obj, Vector2 position)
+    {
+        if (canBuy(obj))
+        {
+            if (obj == "path")
+            {
+                float pathSize = 1.0f;
+                position.x = Mathf.Round(position.x / pathSize) * pathSize;
+                position.y = Mathf.Round(position.y / pathSize) * pathSize;
+            }
+
+            switch (obj)
+            {
+                //max mennyiséget kell írni bele(?)
+                case "water":
+                    Pond pond = new Pond(position);
+                    ponds.Add(pond);
+                    pond.obj = Instantiate(pondObject, pond.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
+                    break;
+                case "grass":
+                    /* Plant plant = new Plant(position, "grass");
+                     * plants.add(Plant);
+                     * plant.obj = Instantiate(plantObject, plant.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "bush":
+                    /* Plant plant = new Plant(position, "bush");
+                     * plants.add(Plant);
+                     * plant.obj = Instantiate(plantObject, plant.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "tree":
+                    /* Plant plant = new Plant(position, "tree");
+                     * plants.add(plant);
+                     * plant.obj = Instantiate(plantObject, plant.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "cheetah":
+                    /*
+                     * AnimalGroup animal = new AnimalGroup(position, "cheetah");
+                     * animalGroups.add(animal);
+                     * animal.obj = Instantiate(animalGroupObject, animal.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "crocodile":
+                    /*
+                     * AnimalGroup animal = new AnimalGroup(position, "crocodile");
+                     * animalGroups.add(animal);
+                     * animal.obj = Instantiate(animalGroupObject, animal.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "gazelle":
+                    /*
+                     * AnimalGroup animal = new AnimalGroup(position, "gazelle");
+                     * animalGroups.add(animal);
+                     * animal.obj = Instantiate(animalGroupObject, animal.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "hipo":
+                    /*
+                     * AnimalGroup animal = new AnimalGroup(position, "hipo");
+                     * animalGroups.add(animal);
+                     * animal.obj = Instantiate(animalGroupObject, animal.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "jeep":
+                    /* Jeep jeep = new Jeep(position);
+                     * jeeps.add(jeep);
+                     * jeep.obj = Instantiate(jeepObject, jeep.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "path":
+                    Path path = new Path(position);
+                    paths.Add(path);
+                    path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
+                    break;
+                case "camera":
+                    /* SecuritySystem securityItem = new SecuritySystem(position, "camera");
+                     * security.add(securityItem);
+                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    //ellenõrizni kell még, hogy van-e hozzá már töltõ
+                    break;
+                case "charger":
+                    /* SecuritySystem securityItem = new SecuritySystem(position, "charger");
+                     * security.add(securityItem);
+                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "drone":
+                    /* SecuritySystem securityItem = new SecuritySystem(position, "drone");
+                     * security.add(securityItem);
+                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+                case "airballon":
+                    /* SecuritySystem securityItem = new SecuritySystem(position, "airballon");
+                     * security.add(securityItem);
+                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
+                     this.money -= 100;*/
+                    break;
+            }
+        }
+        updateView();
+    }
+
+    //VIEW FRISSÍTÉSE
+    public void updateView()
+    {
+        moneyText.text = "Pénz: " + this.money;
+        timeText.text = "0. hét, 0. nap, 00:00";
+
+    }
+
     void Update()
     {
-
+        
     }
 
 
@@ -158,6 +321,7 @@ public class Model : MonoBehaviour
      * kills the oldest animal in a group
      */
     /*
+     *rossz mappában van az animalgroup
     public AnimalGroup killAnimal(AnimalGroup group)
     {
         int maxage = 0;
@@ -173,7 +337,7 @@ public class Model : MonoBehaviour
         group.RemoveAt(maxind);
 
         return group;
-    }*/
+    }
 
     /*
      * checks if we win or lose
@@ -200,6 +364,7 @@ public class Model : MonoBehaviour
     public void setMoney(int money)
     {
         this.money = money;
+        updateView();
     }
     public int getMoney()
     {
@@ -209,6 +374,7 @@ public class Model : MonoBehaviour
     public void setTime(int time)
     {
         this.time = time;
+        updateView();
     }
     public int getTime()
     {

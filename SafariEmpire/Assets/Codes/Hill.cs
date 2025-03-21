@@ -1,17 +1,8 @@
 using UnityEngine;
 
-public class Hill
+public class Hill : Entity
 {
-    private int x;
-    private int y;
-    public Vector2 spawnPosition;
-
-    public GameObject obj;
-
-    public Hill(int x, int y)
+    public Hill(Vector2 spawnPosition) : base(spawnPosition)
     {
-        this.spawnPosition = new Vector2(x, y);
     }
-
-
 }
