@@ -264,6 +264,8 @@ public class Model : MonoBehaviour
                     paths.Add(path);
                     path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
                     this.money -= 100;
+
+                    ConnectPaths(path);
                     break;
                 case "camera":
                     /* SecuritySystem securityItem = new SecuritySystem(position, "camera");
@@ -293,6 +295,92 @@ public class Model : MonoBehaviour
             }
         }
         updateView();
+    }
+
+    private void ConnectPaths(Path newPath)
+    {
+        bool connected = false;
+
+        // Iterate through existing paths to find neighboring paths
+        foreach (Path path in paths)
+        {
+            if (path != newPath && path.IsAdjacent(newPath))
+            {
+                // If the new path is adjacent to an existing path, connect them
+                newPath.neighbors.Add(path);
+                path.neighbors.Add(newPath);
+                connected = true;
+            }
+        }
+
+        // If no connection is made, you might want to create intermediate paths
+        if (!connected)
+        {
+            CreateIntermediatePaths(newPath);
+        }
+    }
+
+    private void CreateIntermediatePaths(Path newPath)
+    {
+        // Find the nearest existing path to connect to
+        Path nearestPath = FindNearestPath(newPath);
+        if (nearestPath != null)
+        {
+            // Determine direction to create intermediate paths
+            Vector2 direction = (nearestPath.spawnPosition - newPath.spawnPosition).normalized;
+
+            // Calculate the distance between the two paths
+            float distance = Vector2.Distance(newPath.spawnPosition, nearestPath.spawnPosition);
+
+            // Create intermediate paths along the path between them
+            int intermediateCount = Mathf.FloorToInt(distance / 1.0f); // grid size
+            for (int i = 1; i <= intermediateCount; i++)
+            {
+                Vector2 intermediatePosition = newPath.spawnPosition + direction * i * 1.0f;
+                intermediatePosition.x = Mathf.Round(intermediatePosition.x);
+                intermediatePosition.y = Mathf.Round(intermediatePosition.y);
+
+                // Create the intermediate path
+                Path intermediatePath = new Path(intermediatePosition);
+                paths.Add(intermediatePath);
+                intermediatePath.obj = Instantiate(pathObject, intermediatePath.spawnPosition, Quaternion.identity);
+
+                // Connect the intermediate path to the newPath and nearestPath
+                newPath.neighbors.Add(intermediatePath);
+                intermediatePath.neighbors.Add(newPath);
+
+                nearestPath.neighbors.Add(intermediatePath);
+                intermediatePath.neighbors.Add(nearestPath);
+            }
+
+            // Now connect the original path and the nearest path
+            newPath.neighbors.Add(nearestPath);
+            nearestPath.neighbors.Add(newPath);
+        }
+    }
+
+
+
+    // Helper method to find the nearest existing path to the new path
+    private Path FindNearestPath(Path newPath)
+    {
+        Path nearest = null;
+        float minDistance = float.MaxValue;
+
+        // Iterate through all paths to find the nearest one (this could be more efficient)
+        foreach (Path path in paths)
+        {
+            if (path == newPath) continue;
+
+            float distance = Vector2.Distance(newPath.spawnPosition, path.spawnPosition);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearest = path;
+            }
+        }
+
+        return nearest;
     }
 
     //VIEW FRISSÍTÉSE
