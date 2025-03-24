@@ -2,19 +2,19 @@
 
 namespace Codes.animal
 {
-	public abstract class Animal
+	public class Animal
 	{
 		protected int age;
 		protected int gender;
 		protected int hunger;
 		protected int thirst;
 
-		protected Animal(int age, int gender, int hunger, int thirst)
+		public Animal()
 		{
-			this.age = age;
-			this.gender = gender;
-			this.hunger = hunger;
-			this.thirst = thirst;
+			this.age = 0;
+			this.gender = 1; //randomizálni
+			this.hunger = 100;
+			this.thirst = 100;
 		}
 
 

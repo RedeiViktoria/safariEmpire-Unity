@@ -171,7 +171,7 @@ public class ButtonManager : MonoBehaviour
     }
     void OnTimeClicked(int timeSpeed)
     {
-        model.setTime(timeSpeed);
+        model.setTimeSpeed(timeSpeed);
     }
     void OnSwitchClicked(int id)
     {
