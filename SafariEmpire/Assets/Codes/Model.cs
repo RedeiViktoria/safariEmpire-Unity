@@ -50,7 +50,7 @@ public class Model : MonoBehaviour
     public GameObject bushObject;
     public List<Plant> plants;
 
-    //public List<Path> paths;
+    public List<Path> paths;
     public GameObject pathObject;
 
     //terepi akadályok:
@@ -68,6 +68,7 @@ public class Model : MonoBehaviour
     //constructor
     void Start()
     {
+        this.paths = new List<Path>();
         //idõ telés:
         StartCoroutine(TimerCoroutine());
 
@@ -82,9 +83,9 @@ public class Model : MonoBehaviour
         //terepi akadályok generálása
         //HEGYEK
         hills = new List<Hill>();
-        Hill hill1 = new Hill(new Vector2(2, 2));
-        Hill hill2 = new Hill(new Vector2(-2, 1));
-        Hill hill3 = new Hill(new Vector2(0, 0));
+        Hill hill1 = new Hill(new Vector2(5, 1));
+        Hill hill2 = new Hill(new Vector2(-3, 3));
+        Hill hill3 = new Hill(new Vector2(-7, -7));
         hills.Add(hill1);
         hills.Add(hill2);
         hills.Add(hill3);
@@ -94,8 +95,8 @@ public class Model : MonoBehaviour
         }
         //FOLYÓK
         rivers = new List<River>();
-        River river1 = new River(new Vector2(-3, -3));
-        River river2 = new River(new Vector2(-5, 3));
+        River river1 = new River(new Vector2(-4, -2));
+        River river2 = new River(new Vector2(-10, 6));
         rivers.Add(river1);
         rivers.Add(river2);
         foreach (River river in rivers)
@@ -116,7 +117,7 @@ public class Model : MonoBehaviour
         //entityk generálása
         //NÖVÉNYEK
         plants = new List<Plant>();
-        Bush plant1 = new Bush(new Vector2(3, 1));
+        Bush plant1 = new Bush(new Vector2(6, 8));
         Tree plant2 = new Tree(new Vector2(5, 5));
         Grass plant3 = new Grass(new Vector2(7, 3));
         Grass plant4 = new Grass(new Vector2(-4, -6));
@@ -295,10 +296,10 @@ public class Model : MonoBehaviour
         {
             if (obj == "path")
             {
-                position.x = Mathf.Round(position.x - position.x % 50); //Kép mérettel kell majd %
-                position.y = Mathf.Round(position.y - position.y % 50);
+                float pathSize = 1.0f;
+                position.x = Mathf.Round(position.x / pathSize) * pathSize;
+                position.y = Mathf.Round(position.y / pathSize) * pathSize;
             }
-
             switch (obj)
             {
                 //max mennyiséget kell írni bele(?)
@@ -357,11 +358,11 @@ public class Model : MonoBehaviour
                      this.money -= 100;*/
                     break;
                 case "path":
-                    /*
-                     * Path path = new Path(position);
-                     * paths.add(path);
-                     * path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                     Path path = new Path(position);
+                     paths.Add(path);
+                     path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
+                     this.money -= 100;
+                     ConnectPaths(path);
                     break;
                 case "camera":
                     /* SecuritySystem securityItem = new SecuritySystem(position, "camera");
@@ -445,6 +446,94 @@ public class Model : MonoBehaviour
             //lose
         }
     }
+
+    //összefüggõ utak
+    private void ConnectPaths(Path newPath)
+    {
+        bool connected = false;
+
+        // Iterate through existing paths to find neighboring paths
+        foreach (Path path in paths)
+        {
+            if (path != newPath && path.IsAdjacent(newPath))
+            {
+                // If the new path is adjacent to an existing path, connect them
+                newPath.neighbors.Add(path);
+                path.neighbors.Add(newPath);
+                connected = true;
+            }
+        }
+
+        // If no connection is made, you might want to create intermediate paths
+        if (!connected)
+        {
+            CreateIntermediatePaths(newPath);
+        }
+    }
+
+    private void CreateIntermediatePaths(Path newPath)
+    {
+        // Find the nearest existing path to connect to
+        Path nearestPath = FindNearestPath(newPath);
+        if (nearestPath != null)
+        {
+            // Determine direction to create intermediate paths
+            Vector2 direction = (nearestPath.spawnPosition - newPath.spawnPosition).normalized;
+
+            // Calculate the distance between the two paths
+            float distance = Vector2.Distance(newPath.spawnPosition, nearestPath.spawnPosition);
+
+            // Create intermediate paths along the path between them
+            int intermediateCount = Mathf.FloorToInt(distance / 1.0f); // grid size
+            for (int i = 1; i <= intermediateCount; i++)
+            {
+                Vector2 intermediatePosition = newPath.spawnPosition + direction * i * 1.0f;
+                intermediatePosition.x = Mathf.Round(intermediatePosition.x);
+                intermediatePosition.y = Mathf.Round(intermediatePosition.y);
+
+                // Create the intermediate path
+                Path intermediatePath = new Path(intermediatePosition);
+                paths.Add(intermediatePath);
+                intermediatePath.obj = Instantiate(pathObject, intermediatePath.spawnPosition, Quaternion.identity);
+
+                // Connect the intermediate path to the newPath and nearestPath
+                newPath.neighbors.Add(intermediatePath);
+                intermediatePath.neighbors.Add(newPath);
+
+                nearestPath.neighbors.Add(intermediatePath);
+                intermediatePath.neighbors.Add(nearestPath);
+            }
+
+            // Now connect the original path and the nearest path
+            newPath.neighbors.Add(nearestPath);
+            nearestPath.neighbors.Add(newPath);
+        }
+    }
+
+
+
+    // Helper method to find the nearest existing path to the new path
+    private Path FindNearestPath(Path newPath)
+    {
+        Path nearest = null;
+        float minDistance = float.MaxValue;
+
+        // Iterate through all paths to find the nearest one (this could be more efficient)
+        foreach (Path path in paths)
+        {
+            if (path == newPath) continue;
+
+            float distance = Vector2.Distance(newPath.spawnPosition, path.spawnPosition);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearest = path;
+            }
+        }
+
+        return nearest;
+    }
+
 
 
     //GETTEREK, SETTEREK
