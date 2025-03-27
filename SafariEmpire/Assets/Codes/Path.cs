@@ -10,10 +10,11 @@ public class Path : Entity
 
     public bool IsAdjacent(Path other)
     {
-        float gridSize = 1.0f; // The grid size you're using
+        float gridSize = 1.0f; // A rács mérete
         float distanceX = Mathf.Abs(spawnPosition.x - other.spawnPosition.x);
         float distanceY = Mathf.Abs(spawnPosition.y - other.spawnPosition.y);
 
-        return distanceX <= gridSize && distanceY <= gridSize && (distanceX == gridSize || distanceY == gridSize);
+        // Csak akkor igaz, ha pontosan egy tengelyen tér el gridSize távolsággal
+        return (distanceX == gridSize && distanceY == 0) || (distanceY == gridSize && distanceX == 0);
     }
 }

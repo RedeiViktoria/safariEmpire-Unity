@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gaselle_0: -2112680458858066958
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
