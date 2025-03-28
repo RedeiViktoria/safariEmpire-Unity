@@ -33,32 +33,31 @@ public class Model : MonoBehaviour
     public GameObject jeepObject;
     //public List<Jeep> jeeps;
     //public List<SecuritySystem> security;
-    public GameObject securityObject;
+    //public GameObject securityObject;
     //public List<Ranger> rangers;
     //rangerObject
-    //public List<Poacher> poachers;
-    //poacherObject
 
+    //orvvadászok
+    public List<Poacher> poachers;
+    public GameObject poacherObject;
     //állatok
     public List<AnimalGroup> animalGroups;
     public GameObject cheetahObject;
     public GameObject hippoObject;
     public GameObject gazelleObject;
     public GameObject crocodileObject;
-
     //növények
     public GameObject treeObject;
     public GameObject grassObject;
     public GameObject bushObject;
     public List<Plant> plants;
-
+    //utak
     public List<Path> paths;
     public List<List<Path>> validPaths;
     public GameObject pathObject;
     public GameObject myJeep;
     public GameObject startObj;
     public GameObject endObj;
-
     //terepi akadályok:
     public GameObject hillObject;
     public List<Hill> hills;
@@ -155,10 +154,10 @@ public class Model : MonoBehaviour
 
         //ÁLLATOK
         animalGroups = new List<AnimalGroup>();
-        AnimalGroup animal1 = new AnimalGroup(new Vector2(0, 0), "cheetah");
-        AnimalGroup animal2 = new AnimalGroup(new Vector2(0, 0), "crocodile");
-        AnimalGroup animal3 = new AnimalGroup(new Vector2(0, 0), "hippo");
-        AnimalGroup animal4 = new AnimalGroup(new Vector2(0, 0), "gazelle");
+        AnimalGroup animal1 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Gepard);
+        AnimalGroup animal2 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Crocodile);
+        AnimalGroup animal3 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Hippo);
+        AnimalGroup animal4 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Gazella);
         animalGroups.Add(animal1);
         animalGroups.Add(animal2);
         animalGroups.Add(animal3);
@@ -183,6 +182,11 @@ public class Model : MonoBehaviour
         }
 
         //ORVVADÁSZOK
+        this.poachers = new List<Poacher>();
+        Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
+        this.poachers.Add(poacher1);
+        poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
+        InvokeRepeating("makePoacher", 0f, 30f);
 
         //VADÕRÖK
 
@@ -256,13 +260,31 @@ public class Model : MonoBehaviour
      * moves an entity to a position
      */
     private float fspeed = 1f;
-    public void move(AnimalGroup entity, Vector2 p)
+    public void move(Entity entity, Vector2 p)
     {
-        //this.targetPosition1 = p;
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
         if (Vector2.Distance(entity.obj.transform.position, p) < 0.01f)
         {
             entity.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
+        }
+    }
+    public void movePoacher(Poacher poacher, Vector2 p)
+    {
+        poacher.obj.transform.position = Vector2.MoveTowards(poacher.obj.transform.position, p, fspeed * Time.deltaTime);
+        if (Vector2.Distance(poacher.obj.transform.position, p) < 0.01f)
+        {
+            AnimalGroup group = detectAnimal(poacher.targetAnimal, poacher.obj.transform.position, poacher.visionRange);
+            if (null!=group)
+            {
+                //killAnimal();
+                Destroy(group.obj);
+                this.animalGroups.Remove(group);
+                this.poachers.Remove(poacher);
+                Destroy(poacher.obj);
+            } else
+            {
+                poacher.targetPosition = new Vector2(poacher.obj.transform.position.x + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1), poacher.obj.transform.position.y + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1));
+            }
         }
     }
     private void FixedUpdate()
@@ -277,6 +299,47 @@ public class Model : MonoBehaviour
         {
             move(group, group.targetPosition);
         }
+        if (this.poachers.Count > 0)
+        {
+            for (int i = 0; i < this.poachers.Count; i++)
+            {
+                Poacher poacher = this.poachers[i];
+                movePoacher(poacher, poacher.targetPosition);
+            }
+        }
+    }
+
+    //POACHER GENERÁTOR
+    public void makePoacher()
+    {
+        Poacher poacher = new Poacher(new Vector2(0, 0));
+        this.poachers.Add(poacher);
+        poacher.obj = Instantiate(poacherObject, poacher.spawnPosition, Quaternion.identity);
+    }
+
+    //DETECT
+    //mit keresünk, hol, milyen range-ben
+    public AnimalGroup detectAnimal(AnimalGroup group, Vector2 position, int range)
+    {
+        List<AnimalGroup> list = new List<AnimalGroup>();
+        for(int i = 0; i<this.animalGroups.Count; i++)
+        {
+            if (this.animalGroups[i].animals[0].GetType() == group.animals[0].GetType())
+            {
+                list.Add(animalGroups[i]);
+            }
+        }
+        foreach (AnimalGroup a in list)
+        {
+            
+            float x = a.obj.transform.position.x;
+            float y = a.obj.transform.position.y;
+            if ((x<position.x+range && x>position.x-range) && (y<position.y+range && y > position.y - range))
+            {
+                return a;
+            }
+        }
+        return null;
     }
 
     public int idx = 0;
@@ -364,25 +427,25 @@ public class Model : MonoBehaviour
                     this.money -= 100;
                     break;
                 case "cheetah":
-                     AnimalGroup cheetah = new AnimalGroup(position, "cheetah");
+                     AnimalGroup cheetah = new AnimalGroup(position, Codes.animal.AnimalType.Gepard);
                      animalGroups.Add(cheetah);
                      cheetah.obj = Instantiate(cheetahObject, cheetah.spawnPosition, Quaternion.identity);
                      this.money -= 100;
                     break;
                 case "crocodile":
-                     AnimalGroup crocodile = new AnimalGroup(position, "crocodile");
+                     AnimalGroup crocodile = new AnimalGroup(position, Codes.animal.AnimalType.Crocodile);
                      animalGroups.Add(crocodile);
                     crocodile.obj = Instantiate(crocodileObject, crocodile.spawnPosition, Quaternion.identity);
                      this.money -= 100;
                     break;
                 case "gazelle":
-                     AnimalGroup gazelle = new AnimalGroup(position, "gazelle");
+                     AnimalGroup gazelle = new AnimalGroup(position, Codes.animal.AnimalType.Gazella);
                      animalGroups.Add(gazelle);
                     gazelle.obj = Instantiate(gazelleObject, gazelle.spawnPosition, Quaternion.identity);
                      this.money -= 100;
                     break;
                 case "hippo":
-                     AnimalGroup hippo = new AnimalGroup(position, "hippo");
+                     AnimalGroup hippo = new AnimalGroup(position, Codes.animal.AnimalType.Hippo);
                      animalGroups.Add(hippo);
                      hippo.obj = Instantiate(hippoObject, hippo.spawnPosition, Quaternion.identity);
                      this.money -= 100;
