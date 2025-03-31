@@ -1,20 +1,36 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using Codes.utility;
+using UnityEngine;
+
+
 namespace Codes.Security
 {
-    public class AirBalloon
+    public class AirBalloon : SecuritySystem
     {
-        private List<Pos> _waypoints;
+        private List<Vector2> _waypoints;
+        private int _waypoint_index;
+        private GameObject obj;
+        private float fspeed;
 
-        public AirBalloon(List<Pos> waypoints)
+        public AirBalloon(Vector2 spawnpoint, List<Vector2> waypoints) : base(spawnpoint)
         {
+            //example range (idk)
+            range = 10;
             _waypoints = waypoints;
+            _waypoint_index = 0;
+            fspeed = 1f;
         }
 
         public void Travel()
         {
+            obj.transform.position = Vector2.MoveTowards(obj.transform.position, _waypoints[_waypoint_index], fspeed * Time.deltaTime);
             
+            if (_waypoint_index + 1 < _waypoints.Count)
+            {
+                _waypoint_index++;
+            }
+            else _waypoint_index = 0;
+
         }
     }
 }
