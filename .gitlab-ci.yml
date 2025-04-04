@@ -1,0 +1,56 @@
+image: unityci/editor:6000.0.41f1-base # Use a Unity CI Docker image (update version as needed)
+
+stages:
+  - test
+  - build
+
+variables:
+  UNITY_VERSION: "6000.0.41f1"
+  PROJECT_PATH: "SafariEmpire"
+  BUILD_PATH: "$CI_PROJECT_DIR/Builds"
+
+before_script:
+  - echo "Setting up Unity..."
+  - mkdir -p ~/.local/share/unity3d/Unity # Ensure Unity's config folder exists
+  - unity-editor -batchmode -nographics -quit -logFile # Auto-activate Unity
+
+test:
+  stage: test
+  script:
+    - echo "Running Unity EditMode tests..."
+    - unity-editor -batchmode -nographics -quit -runTests -testPlatform EditMode -projectPath $PROJECT_PATH -logFile
+  artifacts:
+    when: always
+    paths:
+      - Logs/
+
+build_windows:
+  stage: build
+  script:
+    - echo "Building for Windows..."
+    - unity-editor -batchmode -nographics -quit -buildTarget Win64 -projectPath $PROJECT_PATH -logFile -output "$BUILD_PATH/Windows/"
+  artifacts:
+    paths:
+      - Builds/Windows/
+
+build_linux:
+  stage: build
+  script:
+    - echo "Building for Linux..."
+    - unity-editor -batchmode -nographics -quit -buildTarget Linux64 -projectPath $PROJECT_PATH -logFile -output "$BUILD_PATH/Linux/"
+  artifacts:
+    paths:
+      - Builds/Linux/
+
+build_mac:
+  stage: build
+  script:
+    - echo "Building for macOS..."
+    - unity-editor -batchmode -nographics -quit -buildTarget MacOSX -projectPath $PROJECT_PATH -logFile -output "$BUILD_PATH/Mac/"
+  artifacts:
+    paths:
+      - Builds/Mac/
+
+after_script:
+  - echo "Returning Unity license..."
+  - unity-editor -batchmode -nographics -quit -returnlicense || true # Ignore errors if already returned
