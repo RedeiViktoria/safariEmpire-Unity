@@ -9217,6 +9217,8 @@ MonoBehaviour:
   bushObject: {fileID: 326443460968108324, guid: 7d5ec783770bea446b9b549a35b55dd0, type: 3}
   pathObject: {fileID: 5867483904573936895, guid: 2bee146998b76a644b7ef08263d1c47d, type: 3}
   myJeep: {fileID: 375955981}
+  startObj: {fileID: 1618581597}
+  endObj: {fileID: 134058078}
   hillObject: {fileID: 3288083199728170672, guid: 48b5b5a3bd17d1c43803ee9bbb36ff41, type: 3}
   riverObject: {fileID: 3747575812757995866, guid: 0142d1b61f801fc44a46c7b907f4f587, type: 3}
   pondObject: {fileID: 1828372780372482493, guid: 4ac624286cb8c244080610598b61db19, type: 3}

@@ -56,6 +56,8 @@ public class Model : MonoBehaviour
     public List<List<Path>> validPaths;
     public GameObject pathObject;
     public GameObject myJeep;
+    public GameObject startObj;
+    public GameObject endObj;
 
     //terepi akadályok:
     public GameObject hillObject;
@@ -74,6 +76,12 @@ public class Model : MonoBehaviour
     {
         this.paths = new List<Path>();
         this.validPaths = new List<List<Path>>();
+        Path startPath = new Path(new Vector2(0,0));
+        startPath.obj = startObj;
+        Path endPath = new Path(new Vector2(3, 3));
+        endPath.obj = endObj;
+        paths.Add(startPath);
+        paths.Add(endPath);
         //idõ telés:
         StartCoroutine(TimerCoroutine());
 
@@ -315,6 +323,17 @@ public class Model : MonoBehaviour
     }
     public void buy(string obj, Vector2 position)
     {
+        if (obj == "path")
+        {
+            float pathSize = 1.0f;
+            position.x = Mathf.Round(position.x / pathSize) * pathSize;
+            position.y = Mathf.Round(position.y / pathSize) * pathSize;
+        }
+        if (IsPositionOccupied(position))
+        {   
+            Debug.Log("Arra a mezõre nem helyezhetünk le.");
+            return;
+        }
         if (canBuy(obj))
         {
             switch (obj)
@@ -375,15 +394,22 @@ public class Model : MonoBehaviour
                      this.money -= 100;*/
                     break;
                 case "path":
-                    float pathSize = 1.0f;
-                    position.x = Mathf.Round(position.x / pathSize) * pathSize;
-                    position.y = Mathf.Round(position.y / pathSize) * pathSize;
+                    Path tempPath = new Path(position);
+                    Path nearestPath = FindNearestPath(tempPath);
+                    List<Vector2> fullPath = (nearestPath != null) ?
+                        FindPathAvoidingObstacles(nearestPath.spawnPosition, position) : new List<Vector2>();
+
+                    int totalCost = fullPath.Count * 100;
+                    if (this.money < totalCost)
+                    {
+                        Debug.Log("Nincs elég pénz az út lerakásához!");
+                        break;
+                    }
+
                     Path path = new Path(position);
-                    paths.Add(path);
-                    path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
-                    this.money -= 100;
-                    ConnectPaths(path);
-                    validPaths = CreateValidPaths(new Vector2(0, 0), new Vector2(3, 3), paths);
+                    CreateIntermediatePaths(path);
+                        
+                    validPaths = CreateValidPaths(startObj.transform.position, endObj.transform.position, paths);
                     Debug.Log(validPaths.Count);
                     break;
                 case "camera":
@@ -423,19 +449,6 @@ public class Model : MonoBehaviour
         timeText.text = this.week + ". hét, " + this.day + ". nap, " + this.hour + ". óra";
 
     }
-    /*
-    public bool validPathPlacement(Vector2 position)
-    {
-        foreach (Path path in paths)
-        {
-            if (path.IsAdjacent(position))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    */
 
     /*
      * pays for the rangers every month(?)
@@ -530,27 +543,15 @@ public class Model : MonoBehaviour
         visited.Remove(current);
     }
 
-    //összefüggõ utak
-    private void ConnectPaths(Path newPath)
+    private void connectNeighbourPaths(Path newPath)
     {
-        bool connected = false;
-
-        // Iterate through existing paths to find neighboring paths
         foreach (Path path in paths)
         {
             if (path != newPath && path.IsAdjacent(newPath))
             {
-                // If the new path is adjacent to an existing path, connect them
                 newPath.neighbors.Add(path);
                 path.neighbors.Add(newPath);
-                connected = true;
             }
-        }
-
-        // If no connection is made, you might want to create intermediate paths
-        if (!connected)
-        {
-            CreateIntermediatePaths(newPath);
         }
     }
 
@@ -559,56 +560,102 @@ public class Model : MonoBehaviour
         Path nearestPath = FindNearestPath(newPath);
         if (nearestPath != null)
         {
-            Vector2 currentPosition = newPath.spawnPosition;
-            Vector2 targetPosition = nearestPath.spawnPosition;
+            Vector2 start = nearestPath.spawnPosition;
+            Vector2 end = newPath.spawnPosition;
 
-            List<Vector2> intermediatePositions = new List<Vector2>();
+            List<Vector2> intermediatePositions = FindPathAvoidingObstacles(start, end);
 
-            while (currentPosition != targetPosition)
+            // Számoljuk ki, mennyibe kerülne az út, és ha nincs rá pénz, kilépünk
+            int totalCost = intermediatePositions.Count * 100;
+            if (this.money < totalCost)
             {
-                // Ha a következõ lépés már a nearestPath lenne, kilépünk
-                Vector2 nextPosition = currentPosition;
-
-                if (Mathf.Abs(targetPosition.x - currentPosition.x) > Mathf.Abs(targetPosition.y - currentPosition.y))
-                {
-                    nextPosition.x += Mathf.Sign(targetPosition.x - currentPosition.x);
-                }
-                else
-                {
-                    nextPosition.y += Mathf.Sign(targetPosition.y - currentPosition.y);
-                }
-
-                // Ellenõrizzük, hogy a következõ lépés már a nearestPath pozíció-e
-                if (nextPosition == targetPosition)
-                    break; // Ne adjunk hozzá feleslegesen egy már létezõ Path objektumot
-
-                currentPosition = nextPosition;
-                intermediatePositions.Add(currentPosition);
+                Debug.Log("Nincs elég pénz az út építéséhez!");
+                return;
             }
 
-            // Köztes utak létrehozása
-            Path previousPath = newPath;
+            // Most már biztosak vagyunk benne, hogy van elég pénz, elkezdhetjük az építést
+            Path previousPath = nearestPath;
             foreach (Vector2 pos in intermediatePositions)
             {
                 Path intermediatePath = new Path(pos);
                 paths.Add(intermediatePath);
                 intermediatePath.obj = Instantiate(pathObject, pos, Quaternion.identity);
 
-                previousPath.neighbors.Add(intermediatePath);
-                intermediatePath.neighbors.Add(previousPath);
-
-                previousPath = intermediatePath;
+                connectNeighbourPaths(intermediatePath);
+                this.money -= 100; // Levonjuk a pénzt
             }
-
-            // Kapcsolódás a legközelebbi úthoz
-            previousPath.neighbors.Add(nearestPath);
-            nearestPath.neighbors.Add(previousPath);
+            connectNeighbourPaths(newPath);
         }
     }
 
 
 
 
+
+
+    private List<Vector2> FindPathAvoidingObstacles(Vector2 start, Vector2 end)
+    {
+        List<Vector2> path = new List<Vector2>();
+        HashSet<Vector2> visited = new HashSet<Vector2>();
+        Queue<Vector2> queue = new Queue<Vector2>();
+
+        Dictionary<Vector2, Vector2> cameFrom = new Dictionary<Vector2, Vector2>();
+
+        queue.Enqueue(start);
+        visited.Add(start);
+
+        Vector2[] directions = new Vector2[]
+        {
+        new Vector2(1, 0),  // Jobbra
+        new Vector2(-1, 0), // Balra
+        new Vector2(0, 1),  // Felfelé
+        new Vector2(0, -1)  // Lefelé
+        };
+
+        bool pathFound = false;
+
+        while (queue.Count > 0)
+        {
+            Vector2 current = queue.Dequeue();
+
+            if (current == end)
+            {
+                pathFound = true;
+                break;
+            }
+
+            foreach (Vector2 dir in directions)
+            {
+                Vector2 next = current + dir;
+
+                if (!visited.Contains(next) && !IsPositionOccupied(next))
+                {
+                    queue.Enqueue(next);
+                    visited.Add(next);
+                    cameFrom[next] = current;
+                }
+            }
+        }
+
+        if (pathFound)
+        {
+            Vector2 step = end;
+            while (step != start)
+            {
+                path.Add(step);
+                step = cameFrom[step];
+            }
+            path.Reverse();
+        }
+
+        return path;
+    }
+
+    private bool IsPositionOccupied(Vector2 position)
+    {
+        float checkRadius = 0.4f; // Ez legyen kisebb, mint a grid méret
+        return Physics2D.OverlapCircle(position, checkRadius) != null;
+    }
 
     // Helper method to find the nearest existing path to the new path
     private Path FindNearestPath(Path newPath)
@@ -620,6 +667,7 @@ public class Model : MonoBehaviour
         foreach (Path path in paths)
         {
             if (path == newPath) continue;
+            if (path.obj.transform.position == endObj.transform.position) continue;
 
             float distance = Vector2.Distance(newPath.spawnPosition, path.spawnPosition);
             if (distance < minDistance)
