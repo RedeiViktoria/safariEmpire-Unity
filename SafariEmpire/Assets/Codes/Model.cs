@@ -13,7 +13,7 @@ using System.Threading;
 using System.Linq;
 using static UnityEngine.EventSystems.EventTrigger;
 using UnityEditor.Sprites;
-
+using NUnit;
 public class Model : MonoBehaviour
 {
     private int difficulty; //1: easy, 2:medium, 3:hard
@@ -32,7 +32,7 @@ public class Model : MonoBehaviour
 
     //entityk
     public GameObject jeepObject;
-    //public List<Jeep> jeeps;
+    public List<Jeep> jeeps;
     //public List<SecuritySystem> security;
     //public GameObject securityObject;
 
@@ -76,9 +76,10 @@ public class Model : MonoBehaviour
     //constructor
     void Start()
     {
+        this.jeeps = new List<Jeep>();
         this.paths = new List<Path>();
         this.validPaths = new List<List<Path>>();
-        Path startPath = new Path(new Vector2(0,0));
+        Path startPath = new Path(new Vector2(0, 0));
         startPath.obj = startObj;
         Path endPath = new Path(new Vector2(3, 3));
         endPath.obj = endObj;
@@ -86,6 +87,8 @@ public class Model : MonoBehaviour
         paths.Add(endPath);
         //idõ telés:
         StartCoroutine(TimerCoroutine());
+        StartCoroutine(visitorsComing());
+        StartCoroutine(sendJeep());
 
 
         this.difficulty = PlayerPrefs.GetInt("difficulty");
@@ -168,7 +171,7 @@ public class Model : MonoBehaviour
         foreach (AnimalGroup animal in animalGroups)
         {
             Debug.Log(animal.animals[0].GetType());
-            if(animal.animals[0].GetType() == typeof(Crocodile))
+            if (animal.animals[0].GetType() == typeof(Crocodile))
             {
                 animal.obj = Instantiate(crocodileObject, animal.spawnPosition, Quaternion.identity);
             } else if (animal.animals[0].GetType() == typeof(Gazella))
@@ -222,8 +225,6 @@ public class Model : MonoBehaviour
                 break;
         }
 
-        Debug.Log(difficulty);
-
         //metódus tesztelések
         buy("pond", new Vector2(0, 0));
         //move(hill1, new Vector2(-2, -2));
@@ -259,6 +260,36 @@ public class Model : MonoBehaviour
             }
             updateTime();
             yield return new WaitForSeconds(1f); // 1 másodperces várakozás
+        }
+    }
+    IEnumerator visitorsComing()
+    {
+        while (true) // Végtelen ciklus
+        {
+            visitorsWaiting += 10; //popularityval kell majd vmi szorzó 
+            yield return new WaitForSeconds(24f); // 24 másodperces várakozás
+        }
+    }
+    IEnumerator sendJeep()
+    {
+        while (true) // Végtelen ciklus
+        {
+            if (visitorsWaiting >= 4)
+            {
+                int i = 0;
+                while (i < jeeps.Count && jeeps[i].moving == true)
+                {
+                    i += 1;
+                }
+
+                if (i < jeeps.Count && validPaths.Count > 0)
+                {
+                    jeeps[i].chooseRandomPath(validPaths);
+                    jeeps[i].moving = true;
+                    visitorsWaiting -= 4;
+                }
+            }
+            yield return new WaitForSeconds(4f); // 4 másodperces várakozás
         }
     }
 
@@ -420,6 +451,14 @@ public class Model : MonoBehaviour
     {
         if (validPaths.Count > 0)
         {
+            foreach (Jeep jeep in jeeps)
+            {
+                if (jeep.moving)
+                {
+                    jeep.move();
+                }
+            }
+            /*
             List<Path> currentPath = validPaths[0];
             
             if (idx < currentPath.Count)
@@ -430,6 +469,7 @@ public class Model : MonoBehaviour
                     idx += 1;
                 }
             }
+            */
         }
     }
     
@@ -468,7 +508,7 @@ public class Model : MonoBehaviour
             position.y = Mathf.Round(position.y / pathSize) * pathSize;
         }
         if (IsPositionOccupied(position))
-        {   
+        {
             Debug.Log("Arra a mezõre nem helyezhetünk le.");
             return;
         }
@@ -484,10 +524,10 @@ public class Model : MonoBehaviour
                     this.money -= 100;
                     break;
                 case "grass":
-                     Grass grass = new Grass(position);
-                     plants.Add(grass);
-                     grass.obj = Instantiate(grassObject, grass.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    Grass grass = new Grass(position);
+                    plants.Add(grass);
+                    grass.obj = Instantiate(grassObject, grass.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "bush":
                     Bush bush = new Bush(position);
@@ -502,34 +542,34 @@ public class Model : MonoBehaviour
                     this.money -= 100;
                     break;
                 case "cheetah":
-                     AnimalGroup cheetah = new AnimalGroup(position, Codes.animal.AnimalType.Gepard);
-                     animalGroups.Add(cheetah);
-                     cheetah.obj = Instantiate(cheetahObject, cheetah.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    AnimalGroup cheetah = new AnimalGroup(position, Codes.animal.AnimalType.Gepard);
+                    animalGroups.Add(cheetah);
+                    cheetah.obj = Instantiate(cheetahObject, cheetah.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "crocodile":
-                     AnimalGroup crocodile = new AnimalGroup(position, Codes.animal.AnimalType.Crocodile);
-                     animalGroups.Add(crocodile);
+                    AnimalGroup crocodile = new AnimalGroup(position, Codes.animal.AnimalType.Crocodile);
+                    animalGroups.Add(crocodile);
                     crocodile.obj = Instantiate(crocodileObject, crocodile.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    this.money -= 100;
                     break;
                 case "gazelle":
-                     AnimalGroup gazelle = new AnimalGroup(position, Codes.animal.AnimalType.Gazella);
-                     animalGroups.Add(gazelle);
+                    AnimalGroup gazelle = new AnimalGroup(position, Codes.animal.AnimalType.Gazella);
+                    animalGroups.Add(gazelle);
                     gazelle.obj = Instantiate(gazelleObject, gazelle.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    this.money -= 100;
                     break;
                 case "hippo":
-                     AnimalGroup hippo = new AnimalGroup(position, Codes.animal.AnimalType.Hippo);
-                     animalGroups.Add(hippo);
-                     hippo.obj = Instantiate(hippoObject, hippo.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    AnimalGroup hippo = new AnimalGroup(position, Codes.animal.AnimalType.Hippo);
+                    animalGroups.Add(hippo);
+                    hippo.obj = Instantiate(hippoObject, hippo.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "jeep":
-                    /* Jeep jeep = new Jeep(position);
-                     * jeeps.add(jeep);
-                     * jeep.obj = Instantiate(jeepObject, jeep.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                    Jeep jeep = new Jeep(startObj.transform.position);
+                    jeeps.Add(jeep);
+                    jeep.obj = Instantiate(jeepObject, jeep.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "path":
                     Path tempPath = new Path(position);
@@ -546,8 +586,11 @@ public class Model : MonoBehaviour
 
                     Path path = new Path(position);
                     CreateIntermediatePaths(path);
-                        
+                    Path start = paths.Find(p => p.spawnPosition == (Vector2)startObj.transform.position);
+                    Path end = paths.Find(p => p.spawnPosition == (Vector2)endObj.transform.position);
+                    var uniquePaths = new HashSet<string>();
                     validPaths = CreateValidPaths(startObj.transform.position, endObj.transform.position, paths);
+
                     Debug.Log(validPaths.Count);
                     break;
                 case "camera":
@@ -677,7 +720,7 @@ public class Model : MonoBehaviour
         HashSet<Path> visited = new HashSet<Path>();
 
         DFS(startPath, endPath, currentPath, visited, allPaths, uniquePaths);
-        return allPaths;
+        return FilterPaths(allPaths);
     }
 
     private void DFS(Path current, Path target, List<Path> currentPath, HashSet<Path> visited, List<List<Path>> allPaths, HashSet<string> uniquePaths)
@@ -715,14 +758,45 @@ public class Model : MonoBehaviour
         visited.Remove(current);
     }
 
+    private List<List<Path>> FilterPaths(List<List<Path>> rawPaths)
+    {
+        var filtered = new List<List<Path>>();
+
+        foreach (var path in rawPaths)
+        {
+            bool contains = false;
+            foreach (var item in path)
+            {
+                if (item.obj == null || item.obj.transform == null || !item.obj.activeInHierarchy)
+                {
+                    contains = true;
+                    
+                }
+            }
+
+            if (contains)
+            {
+                continue;
+            }
+            filtered.Add(path);
+            
+        }
+
+        return filtered;
+    }
+
+
     private void connectNeighbourPaths(Path newPath)
     {
         foreach (Path path in paths)
         {
             if (path != newPath && path.IsAdjacent(newPath))
             {
-                newPath.neighbors.Add(path);
-                path.neighbors.Add(newPath);
+                if (!newPath.neighbors.Contains(path))
+                    newPath.neighbors.Add(path);
+
+                if (!path.neighbors.Contains(newPath))
+                    path.neighbors.Add(newPath);
             }
         }
     }
