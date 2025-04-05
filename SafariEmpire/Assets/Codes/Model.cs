@@ -12,6 +12,7 @@ using Codes.animal;
 using System.Threading;
 using System.Linq;
 using static UnityEngine.EventSystems.EventTrigger;
+using UnityEditor.Sprites;
 
 public class Model : MonoBehaviour
 {
@@ -34,8 +35,10 @@ public class Model : MonoBehaviour
     //public List<Jeep> jeeps;
     //public List<SecuritySystem> security;
     //public GameObject securityObject;
-    //public List<Ranger> rangers;
-    //rangerObject
+
+    //vadõrök
+    public List<Ranger> rangers;
+    public GameObject rangerObject;
 
     //orvvadászok
     public List<Poacher> poachers;
@@ -186,9 +189,13 @@ public class Model : MonoBehaviour
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 30f);
+        InvokeRepeating("makePoacher", 0f, 5f);
 
         //VADÕRÖK
+        this.rangers = new List<Ranger>();
+        Ranger ranger1 = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
+        this.rangers.Add(ranger1);
+        ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);
 
         //MEGFIGYELÕ RENDSZER
 
@@ -270,20 +277,65 @@ public class Model : MonoBehaviour
     }
     public void movePoacher(Poacher poacher, Vector2 p)
     {
+        //mozogjon a p position felé
         poacher.obj.transform.position = Vector2.MoveTowards(poacher.obj.transform.position, p, fspeed * Time.deltaTime);
-        if (Vector2.Distance(poacher.obj.transform.position, p) < 0.01f)
+        if (Vector2.Distance(poacher.obj.transform.position, p) < 0.01f) //ha elérte a p positiont
         {
+            //melyik animalgroup van a közelében ami targetanimal type-pal megfelel
             AnimalGroup group = detectAnimal(poacher.targetAnimal, poacher.obj.transform.position, poacher.visionRange);
             if (null!=group)
             {
+                //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
                 //killAnimal();
                 Destroy(group.obj);
+                Debug.Log(group.animals[0].GetType());
                 this.animalGroups.Remove(group);
                 this.poachers.Remove(poacher);
                 Destroy(poacher.obj);
             } else
             {
+                //ha nem volt a közelében target type animalGroup akkor új random pozíció irányába indul cxy
                 poacher.targetPosition = new Vector2(poacher.obj.transform.position.x + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1), poacher.obj.transform.position.y + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1));
+            }
+        }
+    }
+    public void moveRanger(Ranger ranger, Vector2 p)
+    {
+        //mozogjon a p position felé
+        ranger.obj.transform.position = Vector2.MoveTowards(ranger.obj.transform.position, p, fspeed * Time.deltaTime);
+        if (Vector2.Distance(ranger.obj.transform.position, p) < 0.01f)  //ha elérte a p positiont
+        {
+            if (ranger.target == "poacher") //és poacher a targetje
+            {
+                Poacher poacher = detectPoacher(ranger.obj.transform.position, ranger.visionRange);
+                if (null != poacher)
+                {
+                    Destroy(poacher.obj);
+                    Debug.Log("ranger");
+                    this.poachers.Remove(poacher);
+                }
+                //ha talált poachert, ha nem, új targetPosition-t kap
+                ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
+            } else //és valamilyen állat a targetje
+            {
+                AnimalGroup tempgroup = null;
+                switch (ranger.target)
+                {
+                    case ("cheetah"): tempgroup = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Gepard); break;
+                    case ("crocodile"): tempgroup = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Crocodile); break;
+                }
+                AnimalGroup group = detectAnimal(tempgroup, ranger.obj.transform.position, ranger.visionRange);
+                if (null != group)
+                {
+                    //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
+                    //killAnimal();
+                    this.money += 500; //amit a kilõtt állatért kapunk
+                    Destroy(group.obj);
+                    this.animalGroups.Remove(group);
+                }
+                //mindenképp új targetPosition-t kap
+                ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
+                ranger.target = "poacher"; //legyen megint poacher a targetje
             }
         }
     }
@@ -305,6 +357,14 @@ public class Model : MonoBehaviour
             {
                 Poacher poacher = this.poachers[i];
                 movePoacher(poacher, poacher.targetPosition);
+            }
+        }
+        if (this.rangers.Count > 0)
+        {
+            for(int i = 0; i< this.rangers.Count; i++)
+            {
+                Ranger ranger = this.rangers[i];
+                moveRanger(ranger, ranger.targetPosition);
             }
         }
     }
@@ -341,6 +401,20 @@ public class Model : MonoBehaviour
         }
         return null;
     }
+    //hol, milyen rangeben keresünk
+    public Poacher detectPoacher(Vector2 position, int range)
+    {
+        foreach (Poacher p in this.poachers)
+        {
+            float x = p.obj.transform.position.x;
+            float y = p.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return p;
+            }
+        }
+        return null;
+    }
 
     public int idx = 0;
     public void jeepMove()
@@ -359,10 +433,12 @@ public class Model : MonoBehaviour
             }
         }
     }
+    
     //VÁSÁRLÁS
     public bool canBuy(string obj)
     {
         //még nincs megcsinálva, hogy ne lehessen egymásra helyezni itemeket
+        //a drón vásárlásnak elõfeltétele a töltõállomás
         int moneyNeeded = -1;
         switch (obj)
         {
@@ -373,13 +449,14 @@ public class Model : MonoBehaviour
             case "cheetah": moneyNeeded = 100; break;
             case "crocodile": moneyNeeded = 100; break;
             case "gazelle": moneyNeeded = 100; break;
-            case "hipo": moneyNeeded = 100; break;
+            case "hippo": moneyNeeded = 100; break;
             case "jeep": moneyNeeded = 100; break;
             case "path": moneyNeeded = 100; break;
             case "camera": moneyNeeded = 100; break;
             case "charger": moneyNeeded = 100; break;
             case "drone": moneyNeeded = 100; break;
             case "airballon": moneyNeeded = 100; break;
+            case "ranger": moneyNeeded = 100; break;
 
         }
         return moneyNeeded <= this.money;
@@ -500,6 +577,12 @@ public class Model : MonoBehaviour
                      * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
                      this.money -= 100;*/
                     break;
+                case "ranger":
+                    Ranger ranger = new Ranger(position);
+                    rangers.Add(ranger);
+                    ranger.obj = Instantiate(rangerObject, ranger.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
+                    break;
             }
         }
         updateView();
@@ -515,10 +598,12 @@ public class Model : MonoBehaviour
 
     /*
      * pays for the rangers every month(?)
+     * be kell még állítani hogy havi szinten hívódjon meg
      */
     public void payCheck()
     {
-        //this.money -= this.rangers.count * rangerPrice; //rangerPrice is undefined
+        int rangerPrice = 30;
+        this.money -= this.rangers.Count * rangerPrice;
     }
 
     /*

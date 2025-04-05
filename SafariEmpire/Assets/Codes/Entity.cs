@@ -7,6 +7,9 @@ public class Entity
 
     public Vector2 spawnPosition;
     public Vector2 targetPosition;
+    
+    
+
 
     public Entity(Vector2 spawnPosition)
     {
