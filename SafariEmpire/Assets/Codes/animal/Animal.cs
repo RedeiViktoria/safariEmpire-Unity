@@ -9,10 +9,10 @@ namespace Codes.animal
 		protected int hunger;
 		protected int thirst;
 
-		public Animal()
+		public Animal(int gender)
 		{
 			this.age = 0;
-			this.gender = 1; //randomizálni
+			this.gender = gender;
 			this.hunger = 100;
 			this.thirst = 100;
 		}
@@ -24,10 +24,6 @@ namespace Codes.animal
 			this.age++;
 		}
 
-		public void AssignGroup(Animal animal)
-		{
-
-		}
 
 		public int Age
 		{

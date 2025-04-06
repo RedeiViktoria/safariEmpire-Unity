@@ -64,3 +64,6 @@ Desktop.ini
 *.swp
 *.lock
 *.meta~
+*.dwlt
+*/DocumentLayout.backup.json
+*/DocumentLayout.json
