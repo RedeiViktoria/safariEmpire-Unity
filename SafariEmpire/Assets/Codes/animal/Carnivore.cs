@@ -2,7 +2,7 @@
 {
     public class Carnivore : Animal
     {
-        public Carnivore() : base()
+        public Carnivore(int gender) : base(gender)
         {
         } 
     }
