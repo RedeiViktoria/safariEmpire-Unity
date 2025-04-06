@@ -58,7 +58,6 @@ public class Model : MonoBehaviour
     public List<Path> paths;
     public List<List<Path>> validPaths;
     public GameObject pathObject;
-    public GameObject myJeep;
     public GameObject startObj;
     public GameObject endObj;
     //terepi akadályok:
@@ -79,12 +78,15 @@ public class Model : MonoBehaviour
         this.jeeps = new List<Jeep>();
         this.paths = new List<Path>();
         this.validPaths = new List<List<Path>>();
-        Path startPath = new Path(new Vector2(0, 0));
+        Path startPath = new Path((Vector2)startObj.transform.position);
         startPath.obj = startObj;
-        Path endPath = new Path(new Vector2(3, 3));
+        Path endPath = new Path((Vector2)endObj.transform.position);
         endPath.obj = endObj;
+        Path between = new Path(new Vector2(0, -1));
+        between.obj = Instantiate(pathObject, between.spawnPosition, Quaternion.identity);
         paths.Add(startPath);
         paths.Add(endPath);
+        paths.Add(between); //Start és end között
         //idõ telés:
         StartCoroutine(TimerCoroutine());
         StartCoroutine(visitorsComing());
@@ -302,7 +304,7 @@ public class Model : MonoBehaviour
     public void move(Entity entity, Vector2 p)
     {
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
-        if (Vector2.Distance(entity.obj.transform.position, p) < 0.01f)
+        if ((Vector2)entity.obj.transform.position == p)
         {
             entity.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
         }
@@ -458,18 +460,6 @@ public class Model : MonoBehaviour
                     jeep.move();
                 }
             }
-            /*
-            List<Path> currentPath = validPaths[0];
-            
-            if (idx < currentPath.Count)
-            {
-                myJeep.transform.position = Vector2.MoveTowards(myJeep.transform.position, currentPath[idx].obj.transform.position, 2.0f * Time.deltaTime);
-                if (myJeep.transform.position == currentPath[idx].obj.transform.position)
-                {
-                    idx += 1;
-                }
-            }
-            */
         }
     }
     
@@ -767,10 +757,9 @@ public class Model : MonoBehaviour
             bool contains = false;
             foreach (var item in path)
             {
-                if (item.obj == null || item.obj.transform == null || !item.obj.activeInHierarchy)
+                if (item.obj == null || item.obj.transform == null || !item.obj.activeInHierarchy || item == paths[2])
                 {
                     contains = true;
-                    
                 }
             }
 
@@ -913,6 +902,7 @@ public class Model : MonoBehaviour
         foreach (Path path in paths)
         {
             if (path == newPath) continue;
+            if (path == paths[2]) continue;
             if (path.obj.transform.position == endObj.transform.position) continue;
 
             float distance = Vector2.Distance(newPath.spawnPosition, path.spawnPosition);

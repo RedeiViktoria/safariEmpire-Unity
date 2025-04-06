@@ -17,12 +17,21 @@ public class Jeep : Entity
     }
     public void move()
     {
-        if (idx < path.Count)
+        if (this.idx < path.Count)
         {
-            this.obj.transform.position = Vector2.MoveTowards(this.obj.transform.position, path[idx].obj.transform.position, 2.0f * Time.deltaTime);
-            if (this.obj.transform.position == path[idx].obj.transform.position)
+            this.obj.transform.position = Vector2.MoveTowards(this.obj.transform.position, path[this.idx].obj.transform.position, 2.0f * Time.deltaTime);
+            if (this.obj.transform.position == path[this.idx].obj.transform.position)
             {
-                idx += 1;
+                this.idx += 1;
+            }
+        }
+        else
+        {
+            this.obj.transform.position = Vector2.MoveTowards(this.obj.transform.position, this.spawnPosition, 2.0f * Time.deltaTime);
+            if ((Vector2)this.obj.transform.position == this.spawnPosition)
+            {
+                moving = false;
+                this.idx = 0;
             }
         }
     }
