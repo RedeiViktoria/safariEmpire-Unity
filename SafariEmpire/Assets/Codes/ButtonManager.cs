@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject shop;
     public GameObject safari;
     public GameObject menu;
-    public GameObject poachers;
+    public GameObject rangers;
     public GameObject security;
     public GameObject priceInput;
     private bool isPlacing;
@@ -89,15 +89,73 @@ public class ButtonManager : MonoBehaviour
             }
         }
 
-        //Adding listeners to poacher target buttons
-        foreach (Transform parent in poachers.transform)
+        //Adding listeners to ranger target buttons
+        foreach (Transform parent in rangers.transform)
         {
+            Debug.Log("szia");
+
+            Button targetButton = null; // ide mentjük a target gombot
+
             foreach (Transform child in parent)
             {
                 Button button = child.GetComponent<Button>();
                 if (button != null)
                 {
-                    button.onClick.AddListener(() => OnPoacherTargetClicked());
+                    Debug.Log(parent.name);
+
+                    if (button.name == "target")
+                    {
+                        button.GetComponent<Image>().color = Color.gray;
+                        targetButton = button; // elmentjük a target gombot
+
+                        button.onClick.AddListener(() =>
+                        {
+                            int felirat = model.rangerTargetChange(parent.name);
+                            switch (felirat)
+                            {
+                                case 0: button.GetComponentInChildren<TextMeshProUGUI>().text = "Orvvadász"; break;
+                                case 1: button.GetComponentInChildren<TextMeshProUGUI>().text = "Gepárd"; break;
+                                case 2: button.GetComponentInChildren<TextMeshProUGUI>().text = "Krokodil"; break;
+                            }
+                        });
+                    }
+                    else
+                    {
+                        button.GetComponentInChildren<TextMeshProUGUI>().text = "Megvesz";
+
+                        // másik gombra (nem target), viszont targetButton kelleni fog
+                        Button thisButton = button; // fontos a closure miatt
+
+                        button.onClick.AddListener(() =>
+                        {
+                            var textComponent = thisButton.GetComponentInChildren<TextMeshProUGUI>();
+
+                            if (textComponent.text == "Megvesz")
+                            {
+                                model.buyRanger(parent.name);
+                                textComponent.text = "Eladás";
+                                button.GetComponent<Image>().color = new Color(0.8553459f, 0.5890589f, 0.6054696f);
+
+                                if (targetButton != null)
+                                {
+                                    targetButton.GetComponentInChildren<TextMeshProUGUI>().text = "Orvvadász";
+                                    targetButton.GetComponent<Image>().color = Color.white;
+                                }
+                            }
+                            else
+                            {
+                                model.sellRanger(parent.name);
+                                textComponent.text = "Megvesz";
+                                button.GetComponent<Image>().color = Color.green;
+
+                                if (targetButton != null)
+                                {
+                                    targetButton.GetComponentInChildren<TextMeshProUGUI>().text = "Célpont";
+                                    targetButton.GetComponent<Image>().color = Color.gray;
+                                }
+                            }
+                        });
+                    }
                 }
             }
         }
@@ -192,19 +250,19 @@ public class ButtonManager : MonoBehaviour
         if (id == 0)
         {
             menu.SetActive(true);
-            poachers.SetActive(false);
+            rangers.SetActive(false);
             security.SetActive(false);
         }
         else if (id == 1)
         {
             menu.SetActive(false);
-            poachers.SetActive(true);
+            rangers.SetActive(true);
             security.SetActive(false);
         }
         else
         {
             menu.SetActive(false);
-            poachers.SetActive(false);
+            rangers.SetActive(false);
             security.SetActive(true);
         }
     }
@@ -220,9 +278,9 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    void OnPoacherTargetClicked()
+    void OnRangerTargetClicked()
     {
-        Debug.Log("Poacher clicked");
+        Debug.Log("Ranger clicked");
     }
 
     void OnSecurityPathClicked()
