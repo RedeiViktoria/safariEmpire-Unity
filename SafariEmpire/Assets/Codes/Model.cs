@@ -189,13 +189,13 @@ public class Model : MonoBehaviour
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 5f);
+        InvokeRepeating("makePoacher", 0f, 30f);
 
         //VADÕRÖK
         this.rangers = new List<Ranger>();
-        Ranger ranger1 = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
+        /*Ranger ranger1 = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), "0");
         this.rangers.Add(ranger1);
-        ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);
+        ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
 
         //MEGFIGYELÕ RENDSZER
 
@@ -327,10 +327,10 @@ public class Model : MonoBehaviour
                     this.money += 500; //amit a kilõtt állatért kapunk
                     Destroy(group.obj);
                     this.animalGroups.Remove(group);
+                    //ranger.target = 0; //legyen megint poacher a targetje
                 }
                 //mindenképp új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
-                ranger.target = 0; //legyen megint poacher a targetje
             }
         }
     }
@@ -455,7 +455,6 @@ public class Model : MonoBehaviour
             case "charger": moneyNeeded = 100; break;
             case "drone": moneyNeeded = 100; break;
             case "airballon": moneyNeeded = 100; break;
-            case "ranger": moneyNeeded = 100; break;
 
         }
         return moneyNeeded <= this.money;
@@ -576,15 +575,41 @@ public class Model : MonoBehaviour
                      * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
                      this.money -= 100;*/
                     break;
-                case "ranger":
-                    Ranger ranger = new Ranger(position);
-                    rangers.Add(ranger);
-                    ranger.obj = Instantiate(rangerObject, ranger.spawnPosition, Quaternion.identity);
-                    this.money -= 100;
-                    break;
             }
         }
         updateView();
+    }
+
+    //RANGER KEZELÉSEK
+    public void buyRanger(string id)
+    {
+        Ranger ranger = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), id);
+        this.rangers.Add(ranger);
+        ranger.obj = Instantiate(rangerObject, ranger.spawnPosition, Quaternion.identity);
+    }
+
+    public void sellRanger(string id)
+    {
+        foreach (Ranger ranger in this.rangers)
+        {
+            if(id == ranger.id)
+            {
+                this.rangers.Remove(ranger);
+                Destroy(ranger.obj);
+                break;
+            }
+        }
+    }
+    public int rangerTargetChange(string id)
+    {
+        foreach (Ranger ranger in this.rangers)
+        {
+            if (id == ranger.id)
+            {
+                return ranger.toggleTarget();
+            }
+        }
+        return -1;
     }
 
     //VIEW FRISSÍTÉSE
