@@ -189,7 +189,7 @@ public class Model : MonoBehaviour
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 5f);
+        InvokeRepeating("makePoacher", 0f, 30f);
 
         //VADÕRÖK
         this.rangers = new List<Ranger>();
@@ -267,6 +267,7 @@ public class Model : MonoBehaviour
      * moves an entity to a position
      */
     private float fspeed = 1f;
+    //a move jelenleg az animalGroupokat mozgatja random p hely felé
     public void move(Entity entity, Vector2 p)
     {
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
@@ -372,7 +373,7 @@ public class Model : MonoBehaviour
     //POACHER GENERÁTOR
     public void makePoacher()
     {
-        Poacher poacher = new Poacher(new Vector2(0, 0));
+        Poacher poacher = new Poacher(new Vector2(UnityEngine.Random.Range(-15,16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher);
         poacher.obj = Instantiate(poacherObject, poacher.spawnPosition, Quaternion.identity);
     }
