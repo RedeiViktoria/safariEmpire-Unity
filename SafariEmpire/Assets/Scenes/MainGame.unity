@@ -9207,7 +9207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jeepObject: {fileID: 8279535778963259092, guid: ceb5cb2798d29e34d91da3d493bd0bb9, type: 3}
-  securityObject: {fileID: 0}
+  rangerObject: {fileID: 7670175353959525270, guid: ecc42244dcc682a479bdbde88e466d2f, type: 3}
+  poacherObject: {fileID: 1168272361583774332, guid: 8e9db66be1287b64aa93dd7910816b97, type: 3}
   cheetahObject: {fileID: 4479318961361759205, guid: 3fd15287b03305947839b019f2568ee4, type: 3}
   hippoObject: {fileID: 3644249307539628401, guid: c1ad362aee8a798418ce16f8729a58e9, type: 3}
   gazelleObject: {fileID: 1236764785368479370, guid: e8a7c15a395d29b4391949703f2e8063, type: 3}
