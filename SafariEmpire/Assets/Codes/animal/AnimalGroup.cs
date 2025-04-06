@@ -14,10 +14,9 @@ namespace Codes.animal
             protected int maleCount;
             protected double averageAge;
             public List<Animal> animals;
-            protected AnimalType animalType;
+            public AnimalType animalType;
             protected Animal father;
             protected bool merged;
-            public Vector2 targetPosition;
 
             public AnimalGroup(Vector2 spawnPosition, AnimalType type) : base(spawnPosition)
             {

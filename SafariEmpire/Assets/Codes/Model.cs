@@ -189,7 +189,7 @@ public class Model : MonoBehaviour
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 30f);
+        InvokeRepeating("makePoacher", 0f, 5f);
 
         //VADÕRÖK
         this.rangers = new List<Ranger>();
@@ -306,7 +306,7 @@ public class Model : MonoBehaviour
         ranger.obj.transform.position = Vector2.MoveTowards(ranger.obj.transform.position, p, fspeed * Time.deltaTime);
         if (Vector2.Distance(ranger.obj.transform.position, p) < 0.01f)  //ha elérte a p positiont
         {
-            if (ranger.target == "poacher") //és poacher a targetje
+            if (ranger.target == 0) //ha poacher a targetje
             {
                 Poacher poacher = detectPoacher(ranger.obj.transform.position, ranger.visionRange);
                 if (null != poacher)
@@ -317,15 +317,9 @@ public class Model : MonoBehaviour
                 }
                 //ha talált poachert, ha nem, új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
-            } else //és valamilyen állat a targetje
+            } else //ha valamilyen állat a targetje
             {
-                AnimalGroup tempgroup = null;
-                switch (ranger.target)
-                {
-                    case ("cheetah"): tempgroup = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Gepard); break;
-                    case ("crocodile"): tempgroup = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Crocodile); break;
-                }
-                AnimalGroup group = detectAnimal(tempgroup, ranger.obj.transform.position, ranger.visionRange);
+                AnimalGroup group = detectAnimal(ranger.targetAnimal, ranger.obj.transform.position, ranger.visionRange);
                 if (null != group)
                 {
                     //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
@@ -336,7 +330,7 @@ public class Model : MonoBehaviour
                 }
                 //mindenképp új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
-                ranger.target = "poacher"; //legyen megint poacher a targetje
+                ranger.target = 0; //legyen megint poacher a targetje
             }
         }
     }
@@ -379,17 +373,20 @@ public class Model : MonoBehaviour
     }
 
     //DETECT
-    //mit keresünk, hol, milyen range-ben
-    public AnimalGroup detectAnimal(AnimalGroup group, Vector2 position, int range)
+    //paraméterek: milyen typeot keresünk, hol, milyen range-ben
+    //visszatér a megtalált animalGroup-pal ha van, ha nincs akkor null-lal
+    public AnimalGroup detectAnimal(Codes.animal.AnimalType type, Vector2 position, int range)
     {
+        //leszûri a megfelelõ type-ú animalGroupokat
         List<AnimalGroup> list = new List<AnimalGroup>();
         for(int i = 0; i<this.animalGroups.Count; i++)
         {
-            if (this.animalGroups[i].animals[0].GetType() == group.animals[0].GetType())
+            if (this.animalGroups[i].animalType == type)
             {
                 list.Add(animalGroups[i]);
             }
         }
+        //végigmegy a leszûrt listán hogy van-e valamelyik a közelben
         foreach (AnimalGroup a in list)
         {
             
@@ -402,7 +399,8 @@ public class Model : MonoBehaviour
         }
         return null;
     }
-    //hol, milyen rangeben keresünk
+    //paraméterek: hol, milyen rangeben keresünk
+    //visszatér a megtalált poacher-rel ha van, ha nincs akkor null-lal
     public Poacher detectPoacher(Vector2 position, int range)
     {
         foreach (Poacher p in this.poachers)
