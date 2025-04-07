@@ -287,10 +287,13 @@ public class Model : MonoBehaviour
             if (null!=group)
             {
                 //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
-                //killAnimal();
-                Destroy(group.obj);
-                Debug.Log(group.animals[0].GetType());
-                this.animalGroups.Remove(group);
+                int survirors = group.killAnimal();
+                if (survirors <= 0)
+                {
+                    Destroy(group.obj);
+                    Debug.Log(group.animals[0].GetType());
+                    this.animalGroups.Remove(group);
+                }
                 this.poachers.Remove(poacher);
                 Destroy(poacher.obj);
             } else

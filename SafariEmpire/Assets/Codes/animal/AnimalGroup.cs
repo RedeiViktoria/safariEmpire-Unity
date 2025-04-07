@@ -31,6 +31,16 @@ namespace Codes.animal
                 this.animalType = type;
                 this.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
         }
+        public void SortAnimals()
+        {
+            animals.Sort((a, b) => a.Age.CompareTo(b.Age));
+        }
+        private Animal ElectFather()
+        {
+            SortAnimals();
+            return animals[-1];
+
+        }
         private static int CountGender(AnimalGroup animalGroup, int gender)
         {
             int c = 0;
@@ -140,6 +150,7 @@ namespace Codes.animal
                     this.averageAge = CountAverage(this);
                     this.maleCount = CountGender(this, 1);
                     this.femaleCount = CountGender(this, 0);
+                    father = ElectFather();
                 }
 
             }
@@ -149,7 +160,18 @@ namespace Codes.animal
         {
             this.merged = true;
         }
-
+        public int killAnimal()
+        {
+            if (animals.Count() == 1)
+            {
+                animals.Clear();
+                this.Decay();
+                return 0;
+            }
+            animals.Remove(father);
+            father = ElectFather();
+            return animals.Count();
+        }
         public void AverageAge()
         {
             double sum = 0;
