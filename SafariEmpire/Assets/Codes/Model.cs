@@ -89,7 +89,6 @@ public class Model : MonoBehaviour
         paths.Add(between); //Start és end között
         //idõ telés:
         StartCoroutine(TimerCoroutine());
-        StartCoroutine(visitorsComing());
         StartCoroutine(sendJeep());
 
 
@@ -242,6 +241,7 @@ public class Model : MonoBehaviour
         {
             this.hour = 0;
             this.day++;
+            this.visitorsWaiting += 10*popularity;
         }
         if (this.day >= 7)
         {
@@ -257,19 +257,11 @@ public class Model : MonoBehaviour
             switch (this.timeSpeed)
             {
                 case 1: this.hour++; break;
-                case 2: this.day++; break;
-                case 3: this.week++; break;
+                case 2: this.day++; this.visitorsWaiting += 10*popularity; break;
+                case 3: this.week++; this.visitorsWaiting += 70*popularity; break;
             }
             updateTime();
             yield return new WaitForSeconds(1f); // 1 másodperces várakozás
-        }
-    }
-    IEnumerator visitorsComing()
-    {
-        while (true) // Végtelen ciklus
-        {
-            visitorsWaiting += 10; //popularityval kell majd vmi szorzó 
-            yield return new WaitForSeconds(24f); // 24 másodperces várakozás
         }
     }
     IEnumerator sendJeep()
