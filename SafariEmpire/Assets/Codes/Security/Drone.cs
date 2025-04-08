@@ -5,20 +5,18 @@ namespace Codes.Security
 {
     public class Drone : SecuritySystem
     {
-        private List<Vector2> _waypoints;
-        private Vector2 _current_waypoint;
-        private Vector2 _charger;
-        private int _battery;
-        private int _waypoint_index;
-        private float fspeed;
-        private GameObject obj;
+        public List<Vector2> _waypoints;
+        public Vector2 _charger;
+        public int _battery;
+        public int _waypoint_index;
+        public float fspeed;
+        public GameObject obj;
 
         public Drone(Vector2 spawnpoint, List<Vector2> waypoints, Vector2 charger) : base(spawnpoint)
         {
             //example range (idk)
             range = 5;
             this._waypoints = waypoints;
-            this._current_waypoint = charger;
             this._waypoint_index = 0;
             this._charger = charger;
             _battery = 100;
