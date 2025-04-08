@@ -268,6 +268,12 @@ public class ButtonManager : MonoBehaviour
     }
     void OnShopButtonClicked(string name)
     {
+        if (name == "jeep" && model.canBuy(name))
+        {
+            Debug.Log("got here");
+            model.buy(name, new Vector2(0,0));
+            return;
+        }
         if (model.canBuy(name))
         {
             isPlacing = true;

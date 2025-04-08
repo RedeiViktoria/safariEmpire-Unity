@@ -13,7 +13,7 @@ using System.Threading;
 using System.Linq;
 using static UnityEngine.EventSystems.EventTrigger;
 using UnityEditor.Sprites;
-
+using NUnit;
 public class Model : MonoBehaviour
 {
     private int difficulty; //1: easy, 2:medium, 3:hard
@@ -32,7 +32,7 @@ public class Model : MonoBehaviour
 
     //entityk
     public GameObject jeepObject;
-    //public List<Jeep> jeeps;
+    public List<Jeep> jeeps;
     //public List<SecuritySystem> security;
     //public GameObject securityObject;
 
@@ -58,7 +58,6 @@ public class Model : MonoBehaviour
     public List<Path> paths;
     public List<List<Path>> validPaths;
     public GameObject pathObject;
-    public GameObject myJeep;
     public GameObject startObj;
     public GameObject endObj;
     //terepi akadályok:
@@ -76,16 +75,22 @@ public class Model : MonoBehaviour
     //constructor
     void Start()
     {
+        this.jeeps = new List<Jeep>();
         this.paths = new List<Path>();
         this.validPaths = new List<List<Path>>();
-        Path startPath = new Path(new Vector2(0,0));
+        Path startPath = new Path((Vector2)startObj.transform.position);
         startPath.obj = startObj;
-        Path endPath = new Path(new Vector2(3, 3));
+        Path endPath = new Path((Vector2)endObj.transform.position);
         endPath.obj = endObj;
+        Path between = new Path(new Vector2(0, -1));
+        between.obj = Instantiate(pathObject, between.spawnPosition, Quaternion.identity);
         paths.Add(startPath);
         paths.Add(endPath);
+        paths.Add(between); //Start és end között
         //idõ telés:
         StartCoroutine(TimerCoroutine());
+        StartCoroutine(visitorsComing());
+        StartCoroutine(sendJeep());
 
 
         this.difficulty = PlayerPrefs.GetInt("difficulty");
@@ -168,7 +173,7 @@ public class Model : MonoBehaviour
         foreach (AnimalGroup animal in animalGroups)
         {
             Debug.Log(animal.animals[0].GetType());
-            if(animal.animals[0].GetType() == typeof(Crocodile))
+            if (animal.animals[0].GetType() == typeof(Crocodile))
             {
                 animal.obj = Instantiate(crocodileObject, animal.spawnPosition, Quaternion.identity);
             } else if (animal.animals[0].GetType() == typeof(Gazella))
@@ -222,8 +227,6 @@ public class Model : MonoBehaviour
                 break;
         }
 
-        Debug.Log(difficulty);
-
         //metódus tesztelések
         buy("pond", new Vector2(0, 0));
         //move(hill1, new Vector2(-2, -2));
@@ -261,6 +264,36 @@ public class Model : MonoBehaviour
             yield return new WaitForSeconds(1f); // 1 másodperces várakozás
         }
     }
+    IEnumerator visitorsComing()
+    {
+        while (true) // Végtelen ciklus
+        {
+            visitorsWaiting += 10; //popularityval kell majd vmi szorzó 
+            yield return new WaitForSeconds(24f); // 24 másodperces várakozás
+        }
+    }
+    IEnumerator sendJeep()
+    {
+        while (true) // Végtelen ciklus
+        {
+            if (visitorsWaiting >= 4)
+            {
+                int i = 0;
+                while (i < jeeps.Count && jeeps[i].moving == true)
+                {
+                    i += 1;
+                }
+
+                if (i < jeeps.Count && validPaths.Count > 0)
+                {
+                    jeeps[i].chooseRandomPath(validPaths);
+                    jeeps[i].moving = true;
+                    visitorsWaiting -= 4;
+                }
+            }
+            yield return new WaitForSeconds(4f); // 4 másodperces várakozás
+        }
+    }
 
     //MOZGÁS
     /*
@@ -271,7 +304,7 @@ public class Model : MonoBehaviour
     public void move(Entity entity, Vector2 p)
     {
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
-        if (Vector2.Distance(entity.obj.transform.position, p) < 0.01f)
+        if ((Vector2)entity.obj.transform.position == p)
         {
             entity.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
         }
@@ -420,14 +453,11 @@ public class Model : MonoBehaviour
     {
         if (validPaths.Count > 0)
         {
-            List<Path> currentPath = validPaths[0];
-            
-            if (idx < currentPath.Count)
+            foreach (Jeep jeep in jeeps)
             {
-                myJeep.transform.position = Vector2.MoveTowards(myJeep.transform.position, currentPath[idx].obj.transform.position, 2.0f * Time.deltaTime);
-                if (myJeep.transform.position == currentPath[idx].obj.transform.position)
+                if (jeep.moving)
                 {
-                    idx += 1;
+                    jeep.move();
                 }
             }
         }
@@ -467,8 +497,8 @@ public class Model : MonoBehaviour
             position.x = Mathf.Round(position.x / pathSize) * pathSize;
             position.y = Mathf.Round(position.y / pathSize) * pathSize;
         }
-        if (IsPositionOccupied(position))
-        {   
+        if (IsPositionOccupied(position) && obj!="jeep")
+        {
             Debug.Log("Arra a mezõre nem helyezhetünk le.");
             return;
         }
@@ -484,10 +514,10 @@ public class Model : MonoBehaviour
                     this.money -= 100;
                     break;
                 case "grass":
-                     Grass grass = new Grass(position);
-                     plants.Add(grass);
-                     grass.obj = Instantiate(grassObject, grass.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    Grass grass = new Grass(position);
+                    plants.Add(grass);
+                    grass.obj = Instantiate(grassObject, grass.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "bush":
                     Bush bush = new Bush(position);
@@ -502,34 +532,34 @@ public class Model : MonoBehaviour
                     this.money -= 100;
                     break;
                 case "cheetah":
-                     AnimalGroup cheetah = new AnimalGroup(position, Codes.animal.AnimalType.Gepard);
-                     animalGroups.Add(cheetah);
-                     cheetah.obj = Instantiate(cheetahObject, cheetah.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    AnimalGroup cheetah = new AnimalGroup(position, Codes.animal.AnimalType.Gepard);
+                    animalGroups.Add(cheetah);
+                    cheetah.obj = Instantiate(cheetahObject, cheetah.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "crocodile":
-                     AnimalGroup crocodile = new AnimalGroup(position, Codes.animal.AnimalType.Crocodile);
-                     animalGroups.Add(crocodile);
+                    AnimalGroup crocodile = new AnimalGroup(position, Codes.animal.AnimalType.Crocodile);
+                    animalGroups.Add(crocodile);
                     crocodile.obj = Instantiate(crocodileObject, crocodile.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    this.money -= 100;
                     break;
                 case "gazelle":
-                     AnimalGroup gazelle = new AnimalGroup(position, Codes.animal.AnimalType.Gazella);
-                     animalGroups.Add(gazelle);
+                    AnimalGroup gazelle = new AnimalGroup(position, Codes.animal.AnimalType.Gazella);
+                    animalGroups.Add(gazelle);
                     gazelle.obj = Instantiate(gazelleObject, gazelle.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    this.money -= 100;
                     break;
                 case "hippo":
-                     AnimalGroup hippo = new AnimalGroup(position, Codes.animal.AnimalType.Hippo);
-                     animalGroups.Add(hippo);
-                     hippo.obj = Instantiate(hippoObject, hippo.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
+                    AnimalGroup hippo = new AnimalGroup(position, Codes.animal.AnimalType.Hippo);
+                    animalGroups.Add(hippo);
+                    hippo.obj = Instantiate(hippoObject, hippo.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "jeep":
-                    /* Jeep jeep = new Jeep(position);
-                     * jeeps.add(jeep);
-                     * jeep.obj = Instantiate(jeepObject, jeep.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                    Jeep jeep = new Jeep(startObj.transform.position);
+                    jeeps.Add(jeep);
+                    jeep.obj = Instantiate(jeepObject, jeep.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "path":
                     Path tempPath = new Path(position);
@@ -546,8 +576,11 @@ public class Model : MonoBehaviour
 
                     Path path = new Path(position);
                     CreateIntermediatePaths(path);
-                        
+                    Path start = paths.Find(p => p.spawnPosition == (Vector2)startObj.transform.position);
+                    Path end = paths.Find(p => p.spawnPosition == (Vector2)endObj.transform.position);
+                    var uniquePaths = new HashSet<string>();
                     validPaths = CreateValidPaths(startObj.transform.position, endObj.transform.position, paths);
+
                     Debug.Log(validPaths.Count);
                     break;
                 case "camera":
@@ -677,7 +710,7 @@ public class Model : MonoBehaviour
         HashSet<Path> visited = new HashSet<Path>();
 
         DFS(startPath, endPath, currentPath, visited, allPaths, uniquePaths);
-        return allPaths;
+        return FilterPaths(allPaths);
     }
 
     private void DFS(Path current, Path target, List<Path> currentPath, HashSet<Path> visited, List<List<Path>> allPaths, HashSet<string> uniquePaths)
@@ -715,14 +748,44 @@ public class Model : MonoBehaviour
         visited.Remove(current);
     }
 
+    private List<List<Path>> FilterPaths(List<List<Path>> rawPaths)
+    {
+        var filtered = new List<List<Path>>();
+
+        foreach (var path in rawPaths)
+        {
+            bool contains = false;
+            foreach (var item in path)
+            {
+                if (item.obj == null || item.obj.transform == null || !item.obj.activeInHierarchy || item == paths[2])
+                {
+                    contains = true;
+                }
+            }
+
+            if (contains)
+            {
+                continue;
+            }
+            filtered.Add(path);
+            
+        }
+
+        return filtered;
+    }
+
+
     private void connectNeighbourPaths(Path newPath)
     {
         foreach (Path path in paths)
         {
             if (path != newPath && path.IsAdjacent(newPath))
             {
-                newPath.neighbors.Add(path);
-                path.neighbors.Add(newPath);
+                if (!newPath.neighbors.Contains(path))
+                    newPath.neighbors.Add(path);
+
+                if (!path.neighbors.Contains(newPath))
+                    path.neighbors.Add(newPath);
             }
         }
     }
@@ -839,6 +902,7 @@ public class Model : MonoBehaviour
         foreach (Path path in paths)
         {
             if (path == newPath) continue;
+            if (path == paths[2]) continue;
             if (path.obj.transform.position == endObj.transform.position) continue;
 
             float distance = Vector2.Distance(newPath.spawnPosition, path.spawnPosition);

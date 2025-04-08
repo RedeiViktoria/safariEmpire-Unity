@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 43.2
-    width: 1536
-    height: 772.8
+    x: 7.3333335
+    y: 50
+    width: 1265.3334
+    height: 615.3334
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 1
+  m_Maximized: 0
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -43,12 +43,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 36
-    width: 1536
-    height: 716.8
+    width: 1265.3334
+    height: 559.3333
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 37
+  controlID: 193
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -65,10 +65,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 998
+    x: 1028.6666
     y: 0
-    width: 282
-    height: 590.6667
+<<<<<<< HEAD
+    width: 236.66675
+    height: 559.3333
+=======
+    width: 239.33337
+    height: 573.3333
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
@@ -93,10 +98,22 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 261.33334
-    height: 389.33334
+<<<<<<< HEAD
+    width: 252
+    height: 348
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
+=======
+    width: 254.66667
+    height: 356.66666
+<<<<<<< HEAD
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
+>>>>>>> f0729f7 (Updated jeep buying)
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -118,12 +135,27 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 389.33334
-    width: 998
-    height: 201.33334
+<<<<<<< HEAD
+    y: 348
+    width: 1028.6666
+    height: 211.33331
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
+=======
+    y: 356.66666
+    width: 1040.6666
+    height: 216.66666
+<<<<<<< HEAD
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
+  m_ActualView: {fileID: 12}
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
+>>>>>>> f0729f7 (Updated jeep buying)
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
@@ -149,8 +181,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
-    height: 772.8
+    width: 1265.3334
+    height: 615.3333
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -174,7 +206,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
+    width: 1265.3334
     height: 36
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -195,8 +227,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 752.8
-    width: 1536
+    y: 595.3333
+    width: 1265.3334
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -219,12 +251,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 998
-    height: 590.6667
+    width: 1028.6666
+    height: 559.3333
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 38
+  controlID: 148
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -245,12 +277,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 998
-    height: 389.33334
+<<<<<<< HEAD
+    width: 1028.6666
+    height: 348
+=======
+    width: 1040.6666
+    height: 356.66666
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 39
+  controlID: 149
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -267,10 +304,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 261.33334
+    x: 252
     y: 0
-    width: 736.6666
-    height: 389.33334
+<<<<<<< HEAD
+    width: 776.6666
+    height: 348
+=======
+    width: 785.99994
+    height: 356.66666
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 15}
@@ -301,9 +343,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 468
-    width: 997
-    height: 175.33334
+    y: 435.33334
+    width: 1039.6666
+    height: 190.66666
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -326,7 +368,15 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Codes/Security
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - Assets/Codes
+=======
+    - Assets/Pics
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+    - Assets/Codes
+>>>>>>> f0729f7 (Updated jeep buying)
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -336,16 +386,36 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 36
   m_LastFolders:
-  - Assets/Codes/Security
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - Assets/Codes
+=======
+  - Assets/Pics
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+  - Assets/Codes
+>>>>>>> f0729f7 (Updated jeep buying)
   m_LastFoldersGridSize: 36
-  m_LastProjectPath: C:\Users\Acer\Documents\4felev\0Szofftech\safari-empire\SafariEmpire
+  m_LastProjectPath: C:\Users\kelle\Desktop\Szofttech\safari-empire\SafariEmpire
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 51}
-    m_SelectedIDs: fab40000
-    m_LastClickedID: 46330
-    m_ExpandedIDs: 0000000090b4000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 73.33331}
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedIDs: 1ab50000
+    m_LastClickedID: 46362
+    m_ExpandedIDs: 0000000058af000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 58b10000
+    m_LastClickedID: 45400
+    m_ExpandedIDs: 00000000fcb0000000ca9a3bffffff7f
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+    m_SelectedIDs: 1ab50000
+    m_LastClickedID: 46362
+    m_ExpandedIDs: 00000000c6b4000000ca9a3bffffff7f
+>>>>>>> f0729f7 (Updated jeep buying)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +444,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000090b40000
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 0000000058af000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 00000000fcb00000
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+    m_ExpandedIDs: 00000000c6b40000
+>>>>>>> f0729f7 (Updated jeep buying)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -400,9 +478,19 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3cb10000
-    m_LastClickedInstanceID: 45372
-    m_HadKeyboardFocusLastEvent: 0
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedInstanceIDs: 3a510000
+    m_LastClickedInstanceID: 20794
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+    m_SelectedInstanceIDs: 3a510000
+    m_LastClickedInstanceID: 20794
+>>>>>>> f0729f7 (Updated jeep buying)
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300001ecf0000a8b700000eb100008ab20000000000008cb20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -428,7 +516,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 22.666656}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 36
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -453,10 +541,17 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 998
+<<<<<<< HEAD
+    x: 1036
+    y: 86
+    width: 235.66675
+    height: 533.3333
+=======
+    x: 1040.6667
     y: 78.66667
-    width: 281
-    height: 564.6667
+    width: 238.33337
+    height: 547.3333
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -502,10 +597,17 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 7.3333335
+    y: 86
+    width: 251
+    height: 322
+=======
     x: 0
     y: 78.66667
-    width: 260.33334
-    height: 363.33334
+    width: 253.66667
+    height: 330.66666
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -520,9 +622,21 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 64b00000
-      m_LastClickedID: 45156
-      m_ExpandedIDs: 1ae6ffff0cfbffff50af00000eb0000064b00000
+<<<<<<< HEAD
+<<<<<<< HEAD
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 78f8ffff
+=======
+      m_SelectedIDs: 30d60000
+      m_LastClickedID: 54832
+      m_ExpandedIDs: 1cafffff
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+      m_SelectedIDs: 3a510000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 38faffffd0af00000ab00000
+>>>>>>> f0729f7 (Updated jeep buying)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -568,10 +682,17 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 261.33334
+<<<<<<< HEAD
+    x: 259.33334
+    y: 86
+    width: 774.6666
+    height: 322
+=======
+    x: 254.66667
     y: 78.66667
-    width: 734.6666
-    height: 363.33334
+    width: 783.99994
+    height: 330.66666
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1126,9 +1247,21 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1105.9764, y: 531.6806, z: -4.7179737}
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 1105.9764, y: 531.6806, z: -4.7179737}
+    m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 0.00017499737, y: -0.058912493, z: 0.00017623283}
+    speed: 2
+    m_Value: {x: 0.00017499737, y: -0.058912493, z: 0.00017623283}
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+    m_Target: {x: 1.1066468, y: -1.2033, z: -9.968407}
+    speed: 2
+    m_Value: {x: 1.1066468, y: -1.2033, z: -9.968407}
+>>>>>>> f0729f7 (Updated jeep buying)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1178,9 +1311,21 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 481.7957
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: 10
     speed: 2
-    m_Value: 481.7957
+    m_Value: 10
+=======
+    m_Target: 0.6489371
+    speed: 2
+    m_Value: 0.6489371
+>>>>>>> 90a1da2 (Kód tisztítás)
+=======
+    m_Target: 8.964664
+    speed: 2
+    m_Value: 8.964664
+>>>>>>> f0729f7 (Updated jeep buying)
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1235,10 +1380,17 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 261.33334
+<<<<<<< HEAD
+    x: 259.33334
+    y: 86
+    width: 774.6666
+    height: 322
+=======
+    x: 254.66667
     y: 78.66667
-    width: 734.6666
-    height: 363.33334
+    width: 783.99994
+    height: 330.66666
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1271,10 +1423,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -768
-    m_HBaseRangeMax: 768
-    m_VBaseRangeMin: -432
-    m_VBaseRangeMax: 432
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1292,23 +1444,40 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 734.6666
-      height: 342.33334
-    m_Scale: {x: 0.47546297, y: 0.47546297}
-    m_Translation: {x: 367.3333, y: 171.16667}
+<<<<<<< HEAD
+      width: 774.6666
+      height: 301
+    m_Scale: {x: 0.41805556, y: 0.41805556}
+    m_Translation: {x: 387.3333, y: 150.5}
+=======
+      width: 783.99994
+      height: 309.66666
+    m_Scale: {x: 0.43009257, y: 0.43009257}
+    m_Translation: {x: 391.99997, y: 154.83333}
+>>>>>>> 90a1da2 (Kód tisztítás)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -772.58026
+<<<<<<< HEAD
+      x: -926.51154
       y: -360
-      width: 1545.1605
+      width: 1853.0231
       height: 720
     m_MinimalGUI: 1
-  m_defaultScale: 0.47546297
-  m_LastWindowPixelSize: {x: 1102, y: 545}
+  m_defaultScale: 0.41805556
+  m_LastWindowPixelSize: {x: 1162, y: 483}
+=======
+      x: -911.43164
+      y: -360
+      width: 1822.8633
+      height: 720
+    m_MinimalGUI: 1
+  m_defaultScale: 0.43009257
+  m_LastWindowPixelSize: {x: 1175.9999, y: 496}
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1336,10 +1505,17 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 7.3333335
+    y: 434
+    width: 1027.6666
+    height: 185.33331
+=======
     x: 0
-    y: 468
-    width: 997
-    height: 175.33334
+    y: 435.33334
+    width: 1039.6666
+    height: 190.66666
+>>>>>>> 90a1da2 (Kód tisztítás)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
