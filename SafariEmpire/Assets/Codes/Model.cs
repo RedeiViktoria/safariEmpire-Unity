@@ -10,6 +10,9 @@ using Unity.VisualScripting;
 using JetBrains.Annotations;
 using Codes.animal;
 using System.Threading;
+using System.Linq;
+using static UnityEngine.EventSystems.EventTrigger;
+using UnityEditor.Sprites;
 
 public class Model : MonoBehaviour
 {
@@ -31,28 +34,33 @@ public class Model : MonoBehaviour
     public GameObject jeepObject;
     //public List<Jeep> jeeps;
     //public List<SecuritySystem> security;
-    public GameObject securityObject;
-    //public List<Ranger> rangers;
-    //rangerObject
-    //public List<Poacher> poachers;
-    //poacherObject
+    //public GameObject securityObject;
 
+    //vadõrök
+    public List<Ranger> rangers;
+    public GameObject rangerObject;
+
+    //orvvadászok
+    public List<Poacher> poachers;
+    public GameObject poacherObject;
     //állatok
     public List<AnimalGroup> animalGroups;
     public GameObject cheetahObject;
     public GameObject hippoObject;
     public GameObject gazelleObject;
     public GameObject crocodileObject;
-
     //növények
     public GameObject treeObject;
     public GameObject grassObject;
     public GameObject bushObject;
     public List<Plant> plants;
-
+    //utak
     public List<Path> paths;
+    public List<List<Path>> validPaths;
     public GameObject pathObject;
-
+    public GameObject myJeep;
+    public GameObject startObj;
+    public GameObject endObj;
     //terepi akadályok:
     public GameObject hillObject;
     public List<Hill> hills;
@@ -69,6 +77,13 @@ public class Model : MonoBehaviour
     void Start()
     {
         this.paths = new List<Path>();
+        this.validPaths = new List<List<Path>>();
+        Path startPath = new Path(new Vector2(0,0));
+        startPath.obj = startObj;
+        Path endPath = new Path(new Vector2(3, 3));
+        endPath.obj = endObj;
+        paths.Add(startPath);
+        paths.Add(endPath);
         //idõ telés:
         StartCoroutine(TimerCoroutine());
 
@@ -142,10 +157,10 @@ public class Model : MonoBehaviour
 
         //ÁLLATOK
         animalGroups = new List<AnimalGroup>();
-        AnimalGroup animal1 = new AnimalGroup(new Vector2(0, 0), "cheetah");
-        AnimalGroup animal2 = new AnimalGroup(new Vector2(0, 0), "crocodile");
-        AnimalGroup animal3 = new AnimalGroup(new Vector2(0, 0), "hippo");
-        AnimalGroup animal4 = new AnimalGroup(new Vector2(0, 0), "gazelle");
+        AnimalGroup animal1 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Gepard);
+        AnimalGroup animal2 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Crocodile);
+        AnimalGroup animal3 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Hippo);
+        AnimalGroup animal4 = new AnimalGroup(new Vector2(0, 0), Codes.animal.AnimalType.Gazella);
         animalGroups.Add(animal1);
         animalGroups.Add(animal2);
         animalGroups.Add(animal3);
@@ -170,8 +185,17 @@ public class Model : MonoBehaviour
         }
 
         //ORVVADÁSZOK
+        this.poachers = new List<Poacher>();
+        Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
+        this.poachers.Add(poacher1);
+        poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
+        InvokeRepeating("makePoacher", 0f, 30f);
 
         //VADÕRÖK
+        this.rangers = new List<Ranger>();
+        /*Ranger ranger1 = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), "0");
+        this.rangers.Add(ranger1);
+        ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
 
         //MEGFIGYELÕ RENDSZER
 
@@ -243,18 +267,77 @@ public class Model : MonoBehaviour
      * moves an entity to a position
      */
     private float fspeed = 1f;
-    public void move(AnimalGroup entity, Vector2 p)
+    //a move jelenleg az animalGroupokat mozgatja random p hely felé
+    public void move(Entity entity, Vector2 p)
     {
-        //this.targetPosition1 = p;
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
         if (Vector2.Distance(entity.obj.transform.position, p) < 0.01f)
         {
             entity.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
         }
     }
+    public void movePoacher(Poacher poacher, Vector2 p)
+    {
+        //mozogjon a p position felé
+        poacher.obj.transform.position = Vector2.MoveTowards(poacher.obj.transform.position, p, fspeed * Time.deltaTime);
+        if (Vector2.Distance(poacher.obj.transform.position, p) < 0.01f) //ha elérte a p positiont
+        {
+            //melyik animalgroup van a közelében ami targetanimal type-pal megfelel
+            AnimalGroup group = detectAnimal(poacher.targetAnimal, poacher.obj.transform.position, poacher.visionRange);
+            if (null!=group)
+            {
+                //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
+                //killAnimal();
+                Destroy(group.obj);
+                Debug.Log(group.animals[0].GetType());
+                this.animalGroups.Remove(group);
+                this.poachers.Remove(poacher);
+                Destroy(poacher.obj);
+            } else
+            {
+                //ha nem volt a közelében target type animalGroup akkor új random pozíció irányába indul cxy
+                poacher.targetPosition = new Vector2(poacher.obj.transform.position.x + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1), poacher.obj.transform.position.y + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1));
+            }
+        }
+    }
+    public void moveRanger(Ranger ranger, Vector2 p)
+    {
+        //mozogjon a p position felé
+        ranger.obj.transform.position = Vector2.MoveTowards(ranger.obj.transform.position, p, fspeed * Time.deltaTime);
+        if (Vector2.Distance(ranger.obj.transform.position, p) < 0.01f)  //ha elérte a p positiont
+        {
+            if (ranger.target == 0) //ha poacher a targetje
+            {
+                Poacher poacher = detectPoacher(ranger.obj.transform.position, ranger.visionRange);
+                if (null != poacher)
+                {
+                    Destroy(poacher.obj);
+                    Debug.Log("ranger");
+                    this.poachers.Remove(poacher);
+                }
+                //ha talált poachert, ha nem, új targetPosition-t kap
+                ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
+            } else //ha valamilyen állat a targetje
+            {
+                AnimalGroup group = detectAnimal(ranger.targetAnimal, ranger.obj.transform.position, ranger.visionRange);
+                if (null != group)
+                {
+                    //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
+                    //killAnimal();
+                    this.money += 500; //amit a kilõtt állatért kapunk
+                    Destroy(group.obj);
+                    this.animalGroups.Remove(group);
+                    //ranger.target = 0; //legyen megint poacher a targetje
+                }
+                //mindenképp új targetPosition-t kap
+                ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
+            }
+        }
+    }
     private void FixedUpdate()
     {
         tempMove();
+        jeepMove();
     }
     //ideiglenes mozgás
     public void tempMove()
@@ -263,12 +346,98 @@ public class Model : MonoBehaviour
         {
             move(group, group.targetPosition);
         }
+        if (this.poachers.Count > 0)
+        {
+            for (int i = 0; i < this.poachers.Count; i++)
+            {
+                Poacher poacher = this.poachers[i];
+                movePoacher(poacher, poacher.targetPosition);
+            }
+        }
+        if (this.rangers.Count > 0)
+        {
+            for(int i = 0; i< this.rangers.Count; i++)
+            {
+                Ranger ranger = this.rangers[i];
+                moveRanger(ranger, ranger.targetPosition);
+            }
+        }
     }
 
+    //POACHER GENERÁTOR
+    public void makePoacher()
+    {
+        Poacher poacher = new Poacher(new Vector2(UnityEngine.Random.Range(-15,16), UnityEngine.Random.Range(-15, 16)));
+        this.poachers.Add(poacher);
+        poacher.obj = Instantiate(poacherObject, poacher.spawnPosition, Quaternion.identity);
+    }
+
+    //DETECT
+    //paraméterek: milyen typeot keresünk, hol, milyen range-ben
+    //visszatér a megtalált animalGroup-pal ha van, ha nincs akkor null-lal
+    public AnimalGroup detectAnimal(Codes.animal.AnimalType type, Vector2 position, int range)
+    {
+        //leszûri a megfelelõ type-ú animalGroupokat
+        List<AnimalGroup> list = new List<AnimalGroup>();
+        for(int i = 0; i<this.animalGroups.Count; i++)
+        {
+            if (this.animalGroups[i].animalType == type)
+            {
+                list.Add(animalGroups[i]);
+            }
+        }
+        //végigmegy a leszûrt listán hogy van-e valamelyik a közelben
+        foreach (AnimalGroup a in list)
+        {
+            
+            float x = a.obj.transform.position.x;
+            float y = a.obj.transform.position.y;
+            if ((x<position.x+range && x>position.x-range) && (y<position.y+range && y > position.y - range))
+            {
+                return a;
+            }
+        }
+        return null;
+    }
+    //paraméterek: hol, milyen rangeben keresünk
+    //visszatér a megtalált poacher-rel ha van, ha nincs akkor null-lal
+    public Poacher detectPoacher(Vector2 position, int range)
+    {
+        foreach (Poacher p in this.poachers)
+        {
+            float x = p.obj.transform.position.x;
+            float y = p.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public int idx = 0;
+    public void jeepMove()
+    {
+        if (validPaths.Count > 0)
+        {
+            List<Path> currentPath = validPaths[0];
+            
+            if (idx < currentPath.Count)
+            {
+                myJeep.transform.position = Vector2.MoveTowards(myJeep.transform.position, currentPath[idx].obj.transform.position, 2.0f * Time.deltaTime);
+                if (myJeep.transform.position == currentPath[idx].obj.transform.position)
+                {
+                    idx += 1;
+                }
+            }
+        }
+    }
+    
     //VÁSÁRLÁS
     public bool canBuy(string obj)
     {
         //még nincs megcsinálva, hogy ne lehessen egymásra helyezni itemeket
+        //a drón vásárlásnak elõfeltétele a töltõállomás
         int moneyNeeded = -1;
         switch (obj)
         {
@@ -279,7 +448,7 @@ public class Model : MonoBehaviour
             case "cheetah": moneyNeeded = 100; break;
             case "crocodile": moneyNeeded = 100; break;
             case "gazelle": moneyNeeded = 100; break;
-            case "hipo": moneyNeeded = 100; break;
+            case "hippo": moneyNeeded = 100; break;
             case "jeep": moneyNeeded = 100; break;
             case "path": moneyNeeded = 100; break;
             case "camera": moneyNeeded = 100; break;
@@ -292,14 +461,19 @@ public class Model : MonoBehaviour
     }
     public void buy(string obj, Vector2 position)
     {
+        if (obj == "path")
+        {
+            float pathSize = 1.0f;
+            position.x = Mathf.Round(position.x / pathSize) * pathSize;
+            position.y = Mathf.Round(position.y / pathSize) * pathSize;
+        }
+        if (IsPositionOccupied(position))
+        {   
+            Debug.Log("Arra a mezõre nem helyezhetünk le.");
+            return;
+        }
         if (canBuy(obj))
         {
-            if (obj == "path")
-            {
-                float pathSize = 1.0f;
-                position.x = Mathf.Round(position.x / pathSize) * pathSize;
-                position.y = Mathf.Round(position.y / pathSize) * pathSize;
-            }
             switch (obj)
             {
                 //max mennyiséget kell írni bele(?)
@@ -328,25 +502,25 @@ public class Model : MonoBehaviour
                     this.money -= 100;
                     break;
                 case "cheetah":
-                     AnimalGroup cheetah = new AnimalGroup(position, "cheetah");
+                     AnimalGroup cheetah = new AnimalGroup(position, Codes.animal.AnimalType.Gepard);
                      animalGroups.Add(cheetah);
                      cheetah.obj = Instantiate(cheetahObject, cheetah.spawnPosition, Quaternion.identity);
                      this.money -= 100;
                     break;
                 case "crocodile":
-                     AnimalGroup crocodile = new AnimalGroup(position, "crocodile");
+                     AnimalGroup crocodile = new AnimalGroup(position, Codes.animal.AnimalType.Crocodile);
                      animalGroups.Add(crocodile);
                     crocodile.obj = Instantiate(crocodileObject, crocodile.spawnPosition, Quaternion.identity);
                      this.money -= 100;
                     break;
                 case "gazelle":
-                     AnimalGroup gazelle = new AnimalGroup(position, "gazelle");
+                     AnimalGroup gazelle = new AnimalGroup(position, Codes.animal.AnimalType.Gazella);
                      animalGroups.Add(gazelle);
                     gazelle.obj = Instantiate(gazelleObject, gazelle.spawnPosition, Quaternion.identity);
                      this.money -= 100;
                     break;
                 case "hippo":
-                     AnimalGroup hippo = new AnimalGroup(position, "hippo");
+                     AnimalGroup hippo = new AnimalGroup(position, Codes.animal.AnimalType.Hippo);
                      animalGroups.Add(hippo);
                      hippo.obj = Instantiate(hippoObject, hippo.spawnPosition, Quaternion.identity);
                      this.money -= 100;
@@ -358,11 +532,23 @@ public class Model : MonoBehaviour
                      this.money -= 100;*/
                     break;
                 case "path":
-                     Path path = new Path(position);
-                     paths.Add(path);
-                     path.obj = Instantiate(pathObject, path.spawnPosition, Quaternion.identity);
-                     this.money -= 100;
-                     ConnectPaths(path);
+                    Path tempPath = new Path(position);
+                    Path nearestPath = FindNearestPath(tempPath);
+                    List<Vector2> fullPath = (nearestPath != null) ?
+                        FindPathAvoidingObstacles(nearestPath.spawnPosition, position) : new List<Vector2>();
+
+                    int totalCost = fullPath.Count * 100;
+                    if (this.money < totalCost)
+                    {
+                        Debug.Log("Nincs elég pénz az út lerakásához!");
+                        break;
+                    }
+
+                    Path path = new Path(position);
+                    CreateIntermediatePaths(path);
+                        
+                    validPaths = CreateValidPaths(startObj.transform.position, endObj.transform.position, paths);
+                    Debug.Log(validPaths.Count);
                     break;
                 case "camera":
                     /* SecuritySystem securityItem = new SecuritySystem(position, "camera");
@@ -394,6 +580,38 @@ public class Model : MonoBehaviour
         updateView();
     }
 
+    //RANGER KEZELÉSEK
+    public void buyRanger(string id)
+    {
+        Ranger ranger = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), id);
+        this.rangers.Add(ranger);
+        ranger.obj = Instantiate(rangerObject, ranger.spawnPosition, Quaternion.identity);
+    }
+
+    public void sellRanger(string id)
+    {
+        foreach (Ranger ranger in this.rangers)
+        {
+            if(id == ranger.id)
+            {
+                this.rangers.Remove(ranger);
+                Destroy(ranger.obj);
+                break;
+            }
+        }
+    }
+    public int rangerTargetChange(string id)
+    {
+        foreach (Ranger ranger in this.rangers)
+        {
+            if (id == ranger.id)
+            {
+                return ranger.toggleTarget();
+            }
+        }
+        return -1;
+    }
+
     //VIEW FRISSÍTÉSE
     public void updateView()
     {
@@ -402,17 +620,14 @@ public class Model : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     /*
      * pays for the rangers every month(?)
+     * be kell még állítani hogy havi szinten hívódjon meg
      */
     public void payCheck()
     {
-        //this.money -= this.rangers.count * rangerPrice; //rangerPrice is undefined
+        int rangerPrice = 30;
+        this.money -= this.rangers.Count * rangerPrice;
     }
 
     /*
@@ -447,70 +662,172 @@ public class Model : MonoBehaviour
         }
     }
 
-    //összefüggõ utak
-    private void ConnectPaths(Path newPath)
+    public List<List<Path>> CreateValidPaths(Vector2 startPosition, Vector2 endPosition, List<Path> paths)
     {
-        bool connected = false;
+        List<List<Path>> allPaths = new List<List<Path>>();
+        HashSet<string> uniquePaths = new HashSet<string>(); // Egyediség ellenõrzés
 
-        // Iterate through existing paths to find neighboring paths
+        Path startPath = paths.Find(p => p.spawnPosition == startPosition);
+        Path endPath = paths.Find(p => p.spawnPosition == endPosition);
+
+        if (startPath == null || endPath == null)
+            return allPaths; // Ha nincs kezdõ vagy végpont, nincs érvényes út
+
+        List<Path> currentPath = new List<Path>();
+        HashSet<Path> visited = new HashSet<Path>();
+
+        DFS(startPath, endPath, currentPath, visited, allPaths, uniquePaths);
+        return allPaths;
+    }
+
+    private void DFS(Path current, Path target, List<Path> currentPath, HashSet<Path> visited, List<List<Path>> allPaths, HashSet<string> uniquePaths)
+    {
+        // Hozzáadjuk az aktuális csomópontot az úthoz
+        currentPath.Add(current);
+        visited.Add(current);
+
+        // Ha elértük a célt, elmentjük az útvonalat
+        if (current == target)
+        {
+            string pathString = string.Join("->", currentPath.Select(p => p.spawnPosition.ToString()));
+
+            // Csak akkor adjuk hozzá, ha még nincs benne
+            if (!uniquePaths.Contains(pathString))
+            {
+                allPaths.Add(new List<Path>(currentPath)); // Mélymásolat
+                uniquePaths.Add(pathString);
+            }
+        }
+        else
+        {
+            // Továbbhaladunk a szomszédok mentén
+            foreach (Path neighbor in current.neighbors)
+            {
+                if (!visited.Contains(neighbor)) // Ne menjünk vissza ugyanoda
+                {
+                    DFS(neighbor, target, currentPath, visited, allPaths, uniquePaths);
+                }
+            }
+        }
+
+        // Visszalépés: eltávolítjuk az utolsó elemet, hogy más utak is kereshetõk legyenek
+        currentPath.RemoveAt(currentPath.Count - 1);
+        visited.Remove(current);
+    }
+
+    private void connectNeighbourPaths(Path newPath)
+    {
         foreach (Path path in paths)
         {
             if (path != newPath && path.IsAdjacent(newPath))
             {
-                // If the new path is adjacent to an existing path, connect them
                 newPath.neighbors.Add(path);
                 path.neighbors.Add(newPath);
-                connected = true;
             }
-        }
-
-        // If no connection is made, you might want to create intermediate paths
-        if (!connected)
-        {
-            CreateIntermediatePaths(newPath);
         }
     }
 
     private void CreateIntermediatePaths(Path newPath)
     {
-        // Find the nearest existing path to connect to
         Path nearestPath = FindNearestPath(newPath);
         if (nearestPath != null)
         {
-            // Determine direction to create intermediate paths
-            Vector2 direction = (nearestPath.spawnPosition - newPath.spawnPosition).normalized;
+            Vector2 start = nearestPath.spawnPosition;
+            Vector2 end = newPath.spawnPosition;
 
-            // Calculate the distance between the two paths
-            float distance = Vector2.Distance(newPath.spawnPosition, nearestPath.spawnPosition);
+            List<Vector2> intermediatePositions = FindPathAvoidingObstacles(start, end);
 
-            // Create intermediate paths along the path between them
-            int intermediateCount = Mathf.FloorToInt(distance / 1.0f); // grid size
-            for (int i = 1; i <= intermediateCount; i++)
+            // Számoljuk ki, mennyibe kerülne az út, és ha nincs rá pénz, kilépünk
+            int totalCost = intermediatePositions.Count * 100;
+            if (this.money < totalCost)
             {
-                Vector2 intermediatePosition = newPath.spawnPosition + direction * i * 1.0f;
-                intermediatePosition.x = Mathf.Round(intermediatePosition.x);
-                intermediatePosition.y = Mathf.Round(intermediatePosition.y);
-
-                // Create the intermediate path
-                Path intermediatePath = new Path(intermediatePosition);
-                paths.Add(intermediatePath);
-                intermediatePath.obj = Instantiate(pathObject, intermediatePath.spawnPosition, Quaternion.identity);
-
-                // Connect the intermediate path to the newPath and nearestPath
-                newPath.neighbors.Add(intermediatePath);
-                intermediatePath.neighbors.Add(newPath);
-
-                nearestPath.neighbors.Add(intermediatePath);
-                intermediatePath.neighbors.Add(nearestPath);
+                Debug.Log("Nincs elég pénz az út építéséhez!");
+                return;
             }
 
-            // Now connect the original path and the nearest path
-            newPath.neighbors.Add(nearestPath);
-            nearestPath.neighbors.Add(newPath);
+            // Most már biztosak vagyunk benne, hogy van elég pénz, elkezdhetjük az építést
+            Path previousPath = nearestPath;
+            foreach (Vector2 pos in intermediatePositions)
+            {
+                Path intermediatePath = new Path(pos);
+                paths.Add(intermediatePath);
+                intermediatePath.obj = Instantiate(pathObject, pos, Quaternion.identity);
+
+                connectNeighbourPaths(intermediatePath);
+                this.money -= 100; // Levonjuk a pénzt
+            }
+            connectNeighbourPaths(newPath);
         }
     }
 
 
+
+
+
+
+    private List<Vector2> FindPathAvoidingObstacles(Vector2 start, Vector2 end)
+    {
+        List<Vector2> path = new List<Vector2>();
+        HashSet<Vector2> visited = new HashSet<Vector2>();
+        Queue<Vector2> queue = new Queue<Vector2>();
+
+        Dictionary<Vector2, Vector2> cameFrom = new Dictionary<Vector2, Vector2>();
+
+        queue.Enqueue(start);
+        visited.Add(start);
+
+        Vector2[] directions = new Vector2[]
+        {
+        new Vector2(1, 0),  // Jobbra
+        new Vector2(-1, 0), // Balra
+        new Vector2(0, 1),  // Felfelé
+        new Vector2(0, -1)  // Lefelé
+        };
+
+        bool pathFound = false;
+
+        while (queue.Count > 0)
+        {
+            Vector2 current = queue.Dequeue();
+
+            if (current == end)
+            {
+                pathFound = true;
+                break;
+            }
+
+            foreach (Vector2 dir in directions)
+            {
+                Vector2 next = current + dir;
+
+                if (!visited.Contains(next) && !IsPositionOccupied(next))
+                {
+                    queue.Enqueue(next);
+                    visited.Add(next);
+                    cameFrom[next] = current;
+                }
+            }
+        }
+
+        if (pathFound)
+        {
+            Vector2 step = end;
+            while (step != start)
+            {
+                path.Add(step);
+                step = cameFrom[step];
+            }
+            path.Reverse();
+        }
+
+        return path;
+    }
+
+    private bool IsPositionOccupied(Vector2 position)
+    {
+        float checkRadius = 0.4f; // Ez legyen kisebb, mint a grid méret
+        return Physics2D.OverlapCircle(position, checkRadius) != null;
+    }
 
     // Helper method to find the nearest existing path to the new path
     private Path FindNearestPath(Path newPath)
@@ -522,6 +839,7 @@ public class Model : MonoBehaviour
         foreach (Path path in paths)
         {
             if (path == newPath) continue;
+            if (path.obj.transform.position == endObj.transform.position) continue;
 
             float distance = Vector2.Distance(newPath.spawnPosition, path.spawnPosition);
             if (distance < minDistance)

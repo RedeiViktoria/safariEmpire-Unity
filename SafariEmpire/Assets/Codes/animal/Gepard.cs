@@ -2,7 +2,7 @@
 {
     public class Gepard : Carnivore
     {
-        public Gepard()
+        public Gepard(int gender):base(gender)
         {
 
         }

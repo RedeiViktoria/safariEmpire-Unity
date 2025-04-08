@@ -4,7 +4,7 @@ namespace Codes.animal{
 	public abstract class Herbivore : Animal
 	{
 		
-		public Herbivore() : base()
+		public Herbivore(int gender) : base(gender)
 		{
 	
 		} 
