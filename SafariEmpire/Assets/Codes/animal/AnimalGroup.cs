@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Analytics;
 using Random = System.Random;
 
 namespace Codes.animal
@@ -10,7 +11,6 @@ namespace Codes.animal
     public class AnimalGroup : Entity
     {
         protected List<Vector2> waterPlaces;
-        protected int vision;
         protected int femaleCount;
         protected int maleCount;
         protected double averageAge;
@@ -18,12 +18,15 @@ namespace Codes.animal
         public AnimalType animalType;
         protected Animal father;
         protected bool merged;
+        protected int vision;
+        protected int reach;
+        protected bool panicked;
 
         public AnimalGroup(Vector2 spawnPosition, AnimalType type) : base(spawnPosition)
         {
             this.merged = false;
+            this.vision = 2;
             this.animals = new List<Animal>();
-
             this.animals.Add(Born(type));
             this.waterPlaces = new List<Vector2>();
             this.femaleCount = CountGender(this, 0);
@@ -277,21 +280,47 @@ namespace Codes.animal
                 this.Decay();
             }
         }
-
-        public void TryToEat()
-        {
-            if (this.father.IsCarnivore())
-            {
-
-            }
-            else if (this.father.IsHerbivore())
-            {
-
-            }
-        }
         public bool IsHungry()
         {
             return CountAverageHunger(this) <= 0.6;
+        }
+        public bool IsHerbivore()
+        {
+            return father.IsHerbivore();
+        }
+        public bool IsCarnivore()
+        {
+            return father.IsCarnivore();
+        }
+        public int Vision
+        {
+            get => vision;
+            set => vision = value;
+        }
+        public bool Panicked
+        {
+            get => panicked;
+            set => panicked = value;
+        }
+        public int Reach
+        {
+            get => reach;
+        }
+        public int AmountToEat()
+        {
+            if (this.IsCarnivore())
+            {
+                return animals.Count / 5;
+            }
+            else if (this.IsHerbivore())
+            {
+                if (animals.Count >= 10)
+                {
+                    return animals.Count / 10;
+                }
+                return 1;
+            }
+            return 0;
         }
     }
 }

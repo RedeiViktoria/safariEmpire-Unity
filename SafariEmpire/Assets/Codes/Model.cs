@@ -417,7 +417,8 @@ public class Model : MonoBehaviour
         }
         return null;
     }
-    //-------------------
+    //Animal Stufff
+    //------------------
     public AnimalGroup detectHervivore(Vector2 position, int range)
     {
 
@@ -429,7 +430,6 @@ public class Model : MonoBehaviour
                 list.Add(animalGroups[i]);
             }
         }
-        //végigmegy a leszûrt listán hogy van-e valamelyik a közelben
         foreach (AnimalGroup a in list)
         {
             float x = a.obj.transform.position.x;
@@ -440,6 +440,71 @@ public class Model : MonoBehaviour
             }
         }
         return null;
+    }
+    public List<Plant> detectPlants(Vector2 postion, int range)
+    {
+        List<Plant> list = new List<Plant>();
+        foreach (Plant plant in this.plants)
+        {
+            float x = plant.obj.transform.position.x;
+            float y = plant.obj.transform.position.y;
+            if ((x < postion.x + range && x > postion.x - range) && (y < postion.y + range && y > postion.y - range))
+            {
+                list.Add(plant);
+            }
+        }
+        if (list.Count == 0)
+        {
+            return null;
+        }
+        return list;
+       
+    }
+    public bool FoodSourceCloseEnough(Vector2 eater, Vector2 feeder)
+    {
+        float x1 = eater.x;
+        float y1= eater.y;
+        float x2 = feeder.x;
+        float y2 = feeder.y;
+        if ((x1 < x2 + 1 && x1 > x2 - 1 ) && (y1 <y2 +1 && y1 >y2 - 1))
+        {
+            return true;
+        }
+        return false;
+    }
+    public void TryToEat(AnimalGroup group)
+    {
+        if (group.IsCarnivore())
+        {
+            AnimalGroup meal = detectHervivore(group.obj.transform.position, group.Vision);
+            if (FoodSourceCloseEnough(group.obj.transform.position, meal.obj.transform.position))
+            {
+                for (int i = 0; i < group.AmountToEat(); i++)
+                {
+                    group.Eat(150);
+                    int remaining = meal.killAnimal();
+                    if (remaining <= 0)
+                    {
+                        return;
+                    }
+
+                }
+            }
+            else
+            {
+                group.targetPosition = meal.obj.transform.position;
+            }
+        }
+        else if (group.IsHerbivore())
+        {
+            List<Plant> meals = detectPlants(group.obj.transform.position, group.Vision);
+            int needed = group.AmountToEat();
+            for (int i = 0; i < needed && i < meals.Count; i++)
+            {
+                group.Eat(meals[i].GetEaten());
+            }
+
+        }
     }
     //------------
     public int idx = 0;
