@@ -417,7 +417,31 @@ public class Model : MonoBehaviour
         }
         return null;
     }
+    //-------------------
+    public AnimalGroup detectHervivore(Vector2 position, int range)
+    {
 
+        List<AnimalGroup> list = new List<AnimalGroup>();
+        for (int i = 0; i < this.animalGroups.Count; i++)
+        {
+            if (this.animalGroups[i].animalType == AnimalType.Gazella || this.animalGroups[i].animalType == AnimalType.Hippo)
+            {
+                list.Add(animalGroups[i]);
+            }
+        }
+        //végigmegy a leszûrt listán hogy van-e valamelyik a közelben
+        foreach (AnimalGroup a in list)
+        {
+            float x = a.obj.transform.position.x;
+            float y = a.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return a;
+            }
+        }
+        return null;
+    }
+    //------------
     public int idx = 0;
     public void jeepMove()
     {

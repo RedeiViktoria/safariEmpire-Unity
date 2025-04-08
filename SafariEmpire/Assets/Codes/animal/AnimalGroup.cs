@@ -1,35 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = System.Random;
 
 namespace Codes.animal
 {
     public class AnimalGroup : Entity
+    {
+        protected List<Vector2> waterPlaces;
+        protected int vision;
+        protected int femaleCount;
+        protected int maleCount;
+        protected double averageAge;
+        public List<Animal> animals;
+        public AnimalType animalType;
+        protected Animal father;
+        protected bool merged;
+
+        public AnimalGroup(Vector2 spawnPosition, AnimalType type) : base(spawnPosition)
         {
-            protected List<int> places;
-            protected int vision;
-            protected int femaleCount;
-            protected int maleCount;
-            protected double averageAge;
-            public List<Animal> animals;
-            public AnimalType animalType;
-            protected Animal father;
-            protected bool merged;
+            this.merged = false;
+            this.animals = new List<Animal>();
 
-            public AnimalGroup(Vector2 spawnPosition, AnimalType type) : base(spawnPosition)
-            {
-                this.merged = false;
-                this.animals = new List<Animal>();
-
-                this.animals.Add(Born(type));
-                this.places = new List<int>();
-                this.femaleCount = CountGender(this, 0);
-                this.maleCount = CountGender(this, 1);
-                this.averageAge = CountAverage(this);
-                this.animalType = type;
-                this.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
+            this.animals.Add(Born(type));
+            this.waterPlaces = new List<Vector2>();
+            this.femaleCount = CountGender(this, 0);
+            this.maleCount = CountGender(this, 1);
+            this.averageAge = CountAverage(this);
+            this.animalType = type;
+            this.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
         }
         public void SortAnimals()
         {
@@ -53,12 +54,21 @@ namespace Codes.animal
             }
             return c;
         }
-        private static double CountAverage(AnimalGroup animalGroup)
+        public static double CountAverage(AnimalGroup animalGroup)
         {
             double sum = 0;
             foreach (var a in animalGroup.animals)
             {
                 sum += a.Age;
+            }
+            return sum / animalGroup.animals.Count;
+        }
+        public static double CountAverageHunger(AnimalGroup animalGroup)
+        {
+            double sum = 0;
+            foreach (var a in animalGroup.animals)
+            {
+                sum += a.Hunger;
             }
             return sum / animalGroup.animals.Count;
         }
@@ -254,9 +264,9 @@ namespace Codes.animal
                     this.animals.Add(a);
                 }
 
-                foreach (var p in animalGroup.places)
+                foreach (var p in animalGroup.waterPlaces)
                 {
-                    this.places.Add(p);
+                    this.waterPlaces.Add(p);
                 }
                 this.averageAge = CountAverage(animalGroup);
                 this.femaleCount = CountGender(animalGroup, 0);
@@ -267,7 +277,22 @@ namespace Codes.animal
                 this.Decay();
             }
         }
-       
+
+        public void TryToEat()
+        {
+            if (this.father.IsCarnivore())
+            {
+
+            }
+            else if (this.father.IsHerbivore())
+            {
+
+            }
         }
+        public bool IsHungry()
+        {
+            return CountAverageHunger(this) <= 0.6;
+        }
+    }
 }
     

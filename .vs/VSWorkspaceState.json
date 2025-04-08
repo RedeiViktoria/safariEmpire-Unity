@@ -1,12 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Dokumentáció rajzok",
     "\\SafariEmpire",
     "\\SafariEmpire\\Assets",
-    "\\SafariEmpire\\Assets\\Codes\\Animal",
+    "\\SafariEmpire\\Assets\\Codes",
+    "\\SafariEmpire\\Assets\\Codes\\animal",
     "\\SafariEmpire\\Packages"
   ],
-  "SelectedNode": "\\Dokumentáció rajzok\\esetdiagramm.png",
+  "SelectedNode": "\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
   "PreviewInSolutionExplorer": false
 }

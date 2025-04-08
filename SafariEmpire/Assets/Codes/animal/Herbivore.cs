@@ -7,7 +7,10 @@ namespace Codes.animal{
 		public Herbivore(int gender) : base(gender)
 		{
 	
-		} 
-
-	}
+		}
+        public override bool IsHerbivore()
+        {
+            return true;
+        }
+    }
 }

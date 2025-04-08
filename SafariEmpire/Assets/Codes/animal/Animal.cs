@@ -1,8 +1,9 @@
 ﻿using System;
+using UnityEngine.EventSystems;
 
 namespace Codes.animal
 {
-	public class Animal
+	public abstract class Animal
 	{
 		protected int age;
 		protected int gender;
@@ -48,6 +49,14 @@ namespace Codes.animal
 			get => thirst;
 			set => thirst = value;
 		}
-	}
+		public virtual  bool IsCarnivore()
+        {
+			return false;
+        }
+		public virtual bool IsHerbivore()
+		{
+			return false;
+		}
+    }
 
 }
