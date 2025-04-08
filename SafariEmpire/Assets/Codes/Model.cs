@@ -497,7 +497,7 @@ public class Model : MonoBehaviour
             position.x = Mathf.Round(position.x / pathSize) * pathSize;
             position.y = Mathf.Round(position.y / pathSize) * pathSize;
         }
-        if (IsPositionOccupied(position))
+        if (IsPositionOccupied(position) && obj!="jeep")
         {
             Debug.Log("Arra a mezõre nem helyezhetünk le.");
             return;
