@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1280
     height: 629.3334
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -49,10 +49,14 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 39
 =======
   controlID: 93
 >>>>>>> 253c3ba (Added sample tests)
+=======
+  controlID: 95
+>>>>>>> 57e14ec (Added buildcommands file)
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -347,11 +351,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 467.33334
     width: 997
     height: 176.00003
 =======
     y: 399.33334
+=======
+    y: 454
+>>>>>>> 57e14ec (Added buildcommands file)
     width: 1039.6666
     height: 171.99997
 >>>>>>> 253c3ba (Added sample tests)
@@ -377,7 +385,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Tests/PlayMode
+    - Assets/Codes/Editor
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -387,7 +395,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 36
   m_LastFolders:
-  - Assets/Tests/PlayMode
+  - Assets/Codes/Editor
   m_LastFoldersGridSize: 36
   m_LastProjectPath: C:\Users\kelle\Desktop\Szofttech\safari-empire\SafariEmpire
   m_LockTracker:
@@ -400,10 +408,16 @@ MonoBehaviour:
     m_ExpandedIDs: 0000000018b5000000ca9a3bffffff7f
 =======
     scrollPos: {x: 0, y: 73.33331}
+<<<<<<< HEAD
     m_SelectedIDs: 9cb50000
     m_LastClickedID: 46492
     m_ExpandedIDs: 0000000066b40000
 >>>>>>> 253c3ba (Added sample tests)
+=======
+    m_SelectedIDs: 3eb50000
+    m_LastClickedID: 46398
+    m_ExpandedIDs: 0000000066b40000bab40000c4b4000000ca9a3bffffff7f
+>>>>>>> 57e14ec (Added buildcommands file)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -482,7 +496,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -516,6 +530,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 998
     y: 78.66667
     width: 281
@@ -523,6 +538,10 @@ MonoBehaviour:
 =======
     x: 1041.6666
     y: 24
+=======
+    x: 1040.6667
+    y: 78.66667
+>>>>>>> 57e14ec (Added buildcommands file)
     width: 238.33337
     height: 547.3333
 >>>>>>> 253c3ba (Added sample tests)
@@ -573,11 +592,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 78.66667
     width: 237
     height: 362.66666
 =======
     y: 24
+=======
+    y: 78.66667
+>>>>>>> 57e14ec (Added buildcommands file)
     width: 253.66667
     height: 349.33334
 >>>>>>> 253c3ba (Added sample tests)
@@ -596,6 +619,7 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_SelectedIDs: dcaf0000
       m_LastClickedID: 45020
       m_ExpandedIDs: 6afaffffbeaf0000
@@ -604,6 +628,11 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: b4f9ffff
 >>>>>>> 253c3ba (Added sample tests)
+=======
+      m_SelectedIDs: 8eb50000
+      m_LastClickedID: 0
+      m_ExpandedIDs: fafaffff
+>>>>>>> 57e14ec (Added buildcommands file)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -650,6 +679,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 238
     y: 78.66667
     width: 758
@@ -657,6 +687,10 @@ MonoBehaviour:
 =======
     x: 255.66667
     y: 24
+=======
+    x: 254.66667
+    y: 78.66667
+>>>>>>> 57e14ec (Added buildcommands file)
     width: 783.99994
     height: 349.33334
 >>>>>>> 253c3ba (Added sample tests)
@@ -1419,8 +1453,12 @@ MonoBehaviour:
   m_LastWindowPixelSize: {x: 1137, y: 544}
 =======
   m_defaultScale: 0.47175926
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 783.99994, y: 360.66666}
 >>>>>>> 253c3ba (Added sample tests)
+=======
+  m_LastWindowPixelSize: {x: 1175.9999, y: 541}
+>>>>>>> 57e14ec (Added buildcommands file)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1449,9 +1487,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 467.33334
     width: 997
     height: 176.00003
+=======
+    y: 454
+    width: 1039.6666
+    height: 171.99997
+>>>>>>> 57e14ec (Added buildcommands file)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
