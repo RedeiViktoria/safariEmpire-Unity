@@ -10,7 +10,8 @@ namespace Codes.animal
 {
     public class AnimalGroup : Entity
     {
-        protected List<Vector2> waterPlaces;
+        protected HashSet<Vector2> waterPlaces;
+        protected HashSet<Vector2> plantPlaces;
         protected int femaleCount;
         protected int maleCount;
         protected double averageAge;
@@ -28,7 +29,7 @@ namespace Codes.animal
             this.vision = 2;
             this.animals = new List<Animal>();
             this.animals.Add(Born(type));
-            this.waterPlaces = new List<Vector2>();
+            this.waterPlaces = new HashSet<Vector2>();
             this.femaleCount = CountGender(this, 0);
             this.maleCount = CountGender(this, 1);
             this.averageAge = CountAverage(this);
@@ -266,14 +267,10 @@ namespace Codes.animal
                 {
                     this.animals.Add(a);
                 }
-
-                foreach (var p in animalGroup.waterPlaces)
-                {
-                    this.waterPlaces.Add(p);
-                }
                 this.averageAge = CountAverage(animalGroup);
                 this.femaleCount = CountGender(animalGroup, 0);
                 this.maleCount = CountGender(animalGroup, 1);
+                this.waterPlaces.UnionWith(animalGroup.WaterPlaces);
             }
             else
             {
@@ -305,6 +302,10 @@ namespace Codes.animal
         public int Reach
         {
             get => reach;
+        }
+        public HashSet<Vector2> WaterPlaces
+        {
+            get => waterPlaces;
         }
         public int AmountToEat()
         {

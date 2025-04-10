@@ -477,6 +477,7 @@ public class Model : MonoBehaviour
         if (group.IsCarnivore())
         {
             AnimalGroup meal = detectHervivore(group.obj.transform.position, group.Vision);
+            if (meal == null) return;
             if (FoodSourceCloseEnough(group.obj.transform.position, meal.obj.transform.position))
             {
                 for (int i = 0; i < group.AmountToEat(); i++)
@@ -498,6 +499,8 @@ public class Model : MonoBehaviour
         else if (group.IsHerbivore())
         {
             List<Plant> meals = detectPlants(group.obj.transform.position, group.Vision);
+            if (meals.Count < 0) return;
+            
             int needed = group.AmountToEat();
             for (int i = 0; i < needed && i < meals.Count; i++)
             {
