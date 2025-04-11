@@ -1,0 +1,8 @@
+{
+  "name": "EditModeTests",
+  "references": [
+    "nunit.framework"
+  ],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "testAssemblies": true
+}

@@ -4,7 +4,7 @@
     "UnityEngine.TestRunner",
     "nunit.framework"
   ],
-  "optionalUnityReferences": [],
+  "optionalUnityReferences": ["TestAssemblies"],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,
