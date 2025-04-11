@@ -5,6 +5,7 @@
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,13 +26,29 @@
       "AbsoluteMoniker": "D:0:0:{85773D73-2388-9DFA-BDFC-F50BB51CD3FC}|PlayModeTests.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\tests\\playmode\\myplaymodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
 =======
       "AbsoluteMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\editor\\buildpostprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87852DCD-4FBE-C53D-B47C-F996D1427289}|PlayMode.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\tests\\playmode\\playmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87852DCD-4FBE-C53D-B47C-F996D1427289}|PlayMode.csproj|solutionrelative:assets\\tests\\playmode\\playmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07BA2F77-3237-AAD9-7ED1-7AAF6F495197}|EditMode.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\tests\\editmode\\editmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{07BA2F77-3237-AAD9-7ED1-7AAF6F495197}|EditMode.csproj|solutionrelative:assets\\tests\\editmode\\editmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\editor\\buildpostprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> 496ba6b (Teszt beállítások update)
       "RelativeMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\codes\\editor\\buildpostprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{85773D73-2388-9DFA-BDFC-F50BB51CD3FC}|PlayModeTests.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\tests\\playmode\\myplaymodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
 >>>>>>> 57e14ec (Added buildcommands file)
       "RelativeMoniker": "D:0:0:{85773D73-2388-9DFA-BDFC-F50BB51CD3FC}|PlayModeTests.csproj|solutionrelative:assets\\tests\\playmode\\myplaymodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -41,6 +58,8 @@
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\tests\\editmode\\myeditmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+=======
+>>>>>>> 496ba6b (Teszt beállítások update)
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -63,7 +82,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
 >>>>>>> 253c3ba (Added sample tests)
+=======
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\EditMode\\MyEditModeTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Tests\\EditMode\\MyEditModeTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.asmdef||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Tests\\PlayMode\\PlayModeTests.asmdef||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\MyPlayModeTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Tests\\PlayMode\\MyPlayModeTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 496ba6b (Teszt beállítások update)
     }
   ],
   "DocumentGroupContainers": [
@@ -79,11 +113,15 @@
               "$type": "Document",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
               "DocumentIndex": 7,
 =======
               "DocumentIndex": 9,
 >>>>>>> 57e14ec (Added buildcommands file)
+=======
+              "DocumentIndex": 10,
+>>>>>>> 496ba6b (Teszt beállítások update)
               "Title": "Hill.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Hill.cs",
@@ -101,19 +139,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BuildPostProcess.cs",
-              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildPostProcess.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\BuildPostProcess.cs",
-              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildPostProcess.cs",
-              "RelativeToolTip": "Assets\\Codes\\Editor\\BuildPostProcess.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAEcAAAAAAAAA",
+              "Title": "CallbacksDelegator.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAcwEIAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T17:43:05.141Z",
+              "WhenOpened": "2025-04-11T12:30:53.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
@@ -121,36 +159,48 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BuildCommand.cs",
-              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildCommand.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\BuildCommand.cs",
-              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildCommand.cs",
-              "RelativeToolTip": "Assets\\Codes\\Editor\\BuildCommand.cs",
-              "ViewState": "AQIAAMEAAAAAAAAAAIAwwM4AAAAIAAAA",
+              "Title": "PlayModeTests.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "RelativeToolTip": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA6wAwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T17:40:32.383Z",
+              "WhenOpened": "2025-04-11T12:25:08.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MyPlayModeTests.cs",
-              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
-              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
-              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
-              "RelativeToolTip": "Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAPAAAA",
+              "Title": "EditModeTests.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\EditMode\\EditModeTests.cs",
+              "RelativeDocumentMoniker": "Assets\\Tests\\EditMode\\EditModeTests.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\EditMode\\EditModeTests.cs",
+              "RelativeToolTip": "Assets\\Tests\\EditMode\\EditModeTests.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA6wAwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T16:53:03.349Z"
+              "WhenOpened": "2025-04-11T12:22:39.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
+              "Title": "PlayModeTests.asmdef",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "RelativeToolTip": "Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001874|",
+              "WhenOpened": "2025-04-11T12:16:54.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MyEditModeTests.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\EditMode\\MyEditModeTests.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\EditMode\\MyEditModeTests.cs",
@@ -162,7 +212,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "BuildPostProcess.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildPostProcess.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\BuildPostProcess.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildPostProcess.cs",
+              "RelativeToolTip": "Assets\\Codes\\Editor\\BuildPostProcess.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAIBTwEcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T17:43:05.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BuildCommand.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildCommand.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\BuildCommand.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildCommand.cs",
+              "RelativeToolTip": "Assets\\Codes\\Editor\\BuildCommand.cs",
+              "ViewState": "AQIAAMEAAAAAAAAAAIAwwM4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T17:40:32.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MyPlayModeTests.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
+              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
+              "RelativeToolTip": "Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T16:53:03.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Gepard.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Gepard.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Gepard.cs",
@@ -175,11 +261,15 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 253c3ba (Added sample tests)
               "DocumentIndex": 3,
 =======
               "DocumentIndex": 5,
 >>>>>>> 57e14ec (Added buildcommands file)
+=======
+              "DocumentIndex": 6,
+>>>>>>> 496ba6b (Teszt beállítások update)
               "Title": "AnimalGroup.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
@@ -237,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Animal.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Animal.cs",
@@ -249,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Plant.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Plant.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Plant.cs",
@@ -262,11 +352,15 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 253c3ba (Added sample tests)
               "DocumentIndex": 2,
 =======
               "DocumentIndex": 4,
 >>>>>>> 57e14ec (Added buildcommands file)
+=======
+              "DocumentIndex": 5,
+>>>>>>> 496ba6b (Teszt beállítások update)
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
