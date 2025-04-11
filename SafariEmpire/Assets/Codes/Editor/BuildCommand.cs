@@ -209,6 +209,10 @@ static class BuildCommand
         var buildReport = BuildPipeline.BuildPlayer(GetEnabledScenes(), fixedBuildPath, buildTarget, buildOptions);
 
         if (buildReport.summary.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
+            Console.WriteLine($"Build Status: {buildReport.summary.result}");
+            Console.WriteLine($"Build Duration: {buildReport.summary.totalTime}");
+            Console.WriteLine($"Build Warnings: {buildReport.summary.totalWarnings}");
+            Console.WriteLine($"Build Errors: {buildReport.summary.totalErrors}");
             throw new Exception($"Build ended with {buildReport.summary.result} status");
 
         Console.WriteLine(":: Done with build");
