@@ -1,19 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
 using UnityEngine;
-using UnityEngine.UIElements;
-using System;
-using UnityEditor.Experimental.GraphView;
 using TMPro;
-using Unity.VisualScripting;
-using JetBrains.Annotations;
 using Codes.animal;
-using System.Threading;
 using System.Linq;
-using static UnityEngine.EventSystems.EventTrigger;
-using UnityEditor.Sprites;
-using NUnit;
+
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
