@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\ranger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\ranger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\gepard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,11 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Hill.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Hill.cs",
@@ -66,24 +74,38 @@
               "IsPinned": true
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Poacher.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Poacher.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
+              "RelativeToolTip": "Assets\\Codes\\Poacher.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T10:29:12.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ranger.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Ranger.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Ranger.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Ranger.cs",
+              "RelativeToolTip": "Assets\\Codes\\Ranger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T10:29:03.824Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Jeep.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Jeep.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Jeep.cs",
@@ -95,20 +117,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
               "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAIA/wFsAAAAjAAAA",
+              "ViewState": "AQIAAJABAAAAAAAAAIAywJwBAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T12:11:51.159Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ButtonManager.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\ButtonManager.cs",
@@ -120,19 +142,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Entity.cs",
               "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
               "RelativeToolTip": "Assets\\Codes\\Entity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBCwBAAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T21:08:58.302Z"
+              "WhenOpened": "2025-03-27T21:08:58.302Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "AnimalGroup.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
+              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAmwB4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:36:40.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Path.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Path.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Path.cs",
@@ -143,8 +187,12 @@
               "WhenOpened": "2025-03-27T19:42:46.039Z"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Gepard.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Gepard.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Gepard.cs",
@@ -156,19 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AnimalGroup.cs",
-              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAmwCEAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T12:36:40.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Animal.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Animal.cs",
@@ -180,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Plant.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Plant.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Plant.cs",

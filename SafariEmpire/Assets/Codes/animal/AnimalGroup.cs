@@ -29,7 +29,6 @@ namespace Codes.animal
                 this.maleCount = CountGender(this, 1);
                 this.averageAge = CountAverage(this);
                 this.animalType = type;
-                this.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
         }
         private static int CountGender(AnimalGroup animalGroup, int gender)
         {

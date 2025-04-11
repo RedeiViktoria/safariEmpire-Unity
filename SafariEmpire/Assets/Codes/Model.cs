@@ -299,6 +299,7 @@ public class Model : MonoBehaviour
         if ((Vector2)entity.obj.transform.position == p)
         {
             entity.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
+            changeSortingOrder(entity);
         }
     }
     public void movePoacher(Poacher poacher, Vector2 p)
@@ -322,6 +323,7 @@ public class Model : MonoBehaviour
             {
                 //ha nem volt a közelében target type animalGroup akkor új random pozíció irányába indul cxy
                 poacher.targetPosition = new Vector2(poacher.obj.transform.position.x + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1), poacher.obj.transform.position.y + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1));
+                changeSortingOrder(poacher);
             }
         }
     }
@@ -342,6 +344,7 @@ public class Model : MonoBehaviour
                 }
                 //ha talált poachert, ha nem, új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
+                changeSortingOrder(ranger);
             } else //ha valamilyen állat a targetje
             {
                 AnimalGroup group = detectAnimal(ranger.targetAnimal, ranger.obj.transform.position, ranger.visionRange);
@@ -356,7 +359,20 @@ public class Model : MonoBehaviour
                 }
                 //mindenképp új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
+                changeSortingOrder(ranger);
             }
+        }
+    }
+    public void changeSortingOrder(Entity entity)
+    {
+        SpriteRenderer sr = entity.obj.GetComponent<SpriteRenderer>();
+        if (entity.targetPosition.y < entity.obj.transform.position.y)
+        {
+            sr.sortingOrder = 0;
+        }
+        else
+        {
+            sr.sortingOrder = 10;
         }
     }
     private void FixedUpdate()
