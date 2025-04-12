@@ -2,7 +2,7 @@
 
 namespace Codes.animal
 {
-    public class Carnivore : Animal
+    public abstract class Carnivore : Animal
     {
         public Carnivore(int gender) : base(gender)
         {

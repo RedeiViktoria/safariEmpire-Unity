@@ -86,6 +86,7 @@ public class Model : MonoBehaviour
         paths.Add(endPath);
         //idõ telés:
         StartCoroutine(TimerCoroutine());
+        StartCoroutine(AnimalTimeCoroutine());
 
 
         this.difficulty = PlayerPrefs.GetInt("difficulty");
@@ -185,11 +186,11 @@ public class Model : MonoBehaviour
         }
 
         //ORVVADÁSZOK
-        this.poachers = new List<Poacher>();
-        Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
-        this.poachers.Add(poacher1);
-        poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 30f);
+        //this.poachers = new List<Poacher>();
+        //Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
+        //this.poachers.Add(poacher1);
+        //poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
+        //InvokeRepeating("makePoacher", 0f, 30f);
 
         //VADÕRÖK
         this.rangers = new List<Ranger>();
@@ -345,18 +346,22 @@ public class Model : MonoBehaviour
     //ideiglenes mozgás
     public void tempMove()
     {
-        foreach (AnimalGroup group in this.animalGroups)
+        if (this.animalGroups.Count > 0)
         {
-            move(group, group.targetPosition);
-        }
-        if (this.poachers.Count > 0)
-        {
-            for (int i = 0; i < this.poachers.Count; i++)
+            for (int i = 0; i < this.animalGroups.Count; i++)
             {
-                Poacher poacher = this.poachers[i];
-                movePoacher(poacher, poacher.targetPosition);
+                move(animalGroups[i], animalGroups[i].targetPosition);
             }
         }
+
+        //if (this.poachers.Count > 0)
+        //{
+        //    for (int i = 0; i < this.poachers.Count; i++)
+        //    {
+        //        Poacher poacher = this.poachers[i];
+        //        movePoacher(poacher, poacher.targetPosition);
+        //    }
+        //}
         if (this.rangers.Count > 0)
         {
             for(int i = 0; i< this.rangers.Count; i++)
@@ -419,6 +424,109 @@ public class Model : MonoBehaviour
     }
     //Animal Stufff
     //------------------
+    public void clearAnimals()
+    {
+        for(int i = 0; i < this.animalGroups.Count; i++)
+        {
+            if (animalGroups[i].Merged)
+            {
+                this.animalGroups.Remove(animalGroups[i]);
+                Destroy(animalGroups[i].obj);
+            }
+        }
+    }
+    IEnumerator AnimalTimeCoroutine()
+    {
+        while (true) // Végtelen ciklus
+        {
+            for (int i = 0; i < this.animalGroups.Count; i++)
+            {
+                Debug.Log("animalGroup is doing cycle!");
+                animalGroups[i].Die();
+                animalGroups[i].Starve();
+                clearAnimals();
+                LookForObject(animalGroups[i]);
+                if (animalGroups[i].Panicked > 0) animalGroups[i].Panicked--;
+                doAnimalCycle(animalGroups[i]);
+                move(animalGroups[i], animalGroups[i].targetPosition);
+
+            }
+            for (int j = 0; j < this.plants.Count; j++)
+            {
+                plants[j].Grow();
+            }
+            yield return new WaitForSeconds(1f); // 1 másodperces várakozás
+        }
+    }
+    public void doAnimalCycle(AnimalGroup group)
+    {
+        if (group.Panicked >= 0)
+        { 
+            return;
+        }
+        if (group.IsHungry())
+        {
+            TryToEat(group);
+        }
+        else if (group.IsThirsty())
+        {
+            GoDrink(group);
+        }
+    }
+    //GetGroupType() = animalType (adattag) Csak elfelejtettem hogy hivatkozhatunk rá 
+    public void LookForObject(AnimalGroup group)
+    {
+        if (group.IsHerbivore())
+        {
+            List<Plant> plants = detectPlants(group);
+            if (plants != null)
+            {
+                foreach (Plant plant in plants)
+                {
+                    if (group.addPlantPlace(plant))
+                    {
+                        Debug.Log(group.GetGroupType() +" found Plant");
+                    }
+                }
+            }
+            
+        }
+        for (int i = 0; i < this.animalGroups.Count; i++)
+        {
+            if (animalGroups[i].GetGroupType() == group.GetGroupType())
+            {
+                if (FoodSourceCloseEnough(animalGroups[i].Position, group.Position, 1))
+                {
+                    Debug.Log(group.GetGroupType() + "Tried to merge");
+                    animalGroups[i].MergeGroups(group);
+                    group.MergeGroups(animalGroups[i]);
+
+                }
+            }
+        }
+        foreach (Pond pond in this.ponds)
+        {
+            if (Vector2.Distance(pond.Position, group.Position) <= group.Vision)
+            {
+
+                if (group.addWaterPlace(pond.Position))
+                {
+                    Debug.Log(group.animalType + " found Pond");
+                }
+            }
+        }
+        foreach (River river in this.rivers)
+        {
+            if (Vector2.Distance(river.Position, group.Position) <= group.Vision)
+            {
+                if (group.addWaterPlace(river.Position))
+                {
+                    Debug.Log(group.animalType + " found River");
+                }
+            }
+        }
+        
+    }
     public AnimalGroup detectHervivore(Vector2 position, int range)
     {
 
@@ -441,47 +549,50 @@ public class Model : MonoBehaviour
         }
         return null;
     }
-    public List<Plant> detectPlants(Vector2 postion, int range)
+    public List<Plant> detectPlants(AnimalGroup group)
     {
         List<Plant> list = new List<Plant>();
+        if (group.Merged)
+        {
+            
+        }
+        Vector2 position = group.obj.transform.position;
+        int range = group.Vision;
         foreach (Plant plant in this.plants)
         {
             float x = plant.obj.transform.position.x;
             float y = plant.obj.transform.position.y;
-            if ((x < postion.x + range && x > postion.x - range) && (y < postion.y + range && y > postion.y - range))
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
             {
                 list.Add(plant);
+                group.addPlantPlace(plant);
             }
         }
-        if (list.Count == 0)
-        {
-            return null;
-        }
+        if (list.Count == 0) return null;
         return list;
        
     }
-    public bool FoodSourceCloseEnough(Vector2 eater, Vector2 feeder)
+    public bool FoodSourceCloseEnough(Vector2 eater, Vector2 feeder, int distance)
     {
-        float x1 = eater.x;
-        float y1= eater.y;
-        float x2 = feeder.x;
-        float y2 = feeder.y;
-        if ((x1 < x2 + 1 && x1 > x2 - 1 ) && (y1 <y2 +1 && y1 >y2 - 1))
+
+        if (Vector2.Distance(eater, feeder) <= distance)
         {
             return true;
         }
         return false;
     }
+
     public void TryToEat(AnimalGroup group)
     {
         if (group.IsCarnivore())
         {
             AnimalGroup meal = detectHervivore(group.obj.transform.position, group.Vision);
             if (meal == null) return;
-            if (FoodSourceCloseEnough(group.obj.transform.position, meal.obj.transform.position))
+            if (FoodSourceCloseEnough(group.obj.transform.position, meal.obj.transform.position, 1))
             {
                 for (int i = 0; i < group.AmountToEat(); i++)
                 {
+                    Debug.Log(group.animalType + " is eating " + meal.animalType);
                     group.Eat(150);
                     int remaining = meal.killAnimal();
                     if (remaining <= 0)
@@ -493,21 +604,55 @@ public class Model : MonoBehaviour
             }
             else
             {
-                group.targetPosition = meal.obj.transform.position;
+                meal.Panicked = 3;
+                group.targetPosition = meal.Position;
+                return;
             }
         }
         else if (group.IsHerbivore())
         {
-            List<Plant> meals = detectPlants(group.obj.transform.position, group.Vision);
-            if (meals.Count < 0) return;
-            
-            int needed = group.AmountToEat();
-            for (int i = 0; i < needed && i < meals.Count; i++)
-            {
-                group.Eat(meals[i].GetEaten());
-            }
+            Plant target = Herbivore.SelectClosestPlantTarget(group);
+            if (target == null) return;
 
+            if (FoodSourceCloseEnough(group.Position, target.Position, 1))
+            {
+                group.Eat(target.GetEaten());
+                group.Panicked++;
+                return;
+            }
+            else
+            {
+                group.targetPosition = target.Position;
+                return;
+            }
         }
+    }
+    public void GoDrink(AnimalGroup group)
+    {
+        if (group.WaterPlaces.Count == 0)
+        {
+            return;
+        }
+        Vector2 goal = group.targetPosition;
+        HashSet<Vector2> waterSources = group.WaterPlaces;
+        float minDistance = float.MaxValue;
+        foreach (Vector2 source in waterSources)
+        {
+            float distance = Vector2.Distance(source, group.Position);
+            if(distance < 1)
+            {
+                group.Drink();
+                return;
+            }    
+           
+            if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    goal = source;
+                }
+                
+        }
+        group.targetPosition = goal;
     }
     //------------
     public int idx = 0;

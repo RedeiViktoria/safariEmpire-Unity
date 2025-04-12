@@ -11,7 +11,7 @@ namespace Codes.animal
     public class AnimalGroup : Entity
     {
         protected HashSet<Vector2> waterPlaces;
-        protected HashSet<Vector2> plantPlaces;
+        protected HashSet<Plant> plantPlaces;
         protected int femaleCount;
         protected int maleCount;
         protected double averageAge;
@@ -21,20 +21,22 @@ namespace Codes.animal
         protected bool merged;
         protected int vision;
         protected int reach;
-        protected bool panicked;
+        protected int sleep;
 
         public AnimalGroup(Vector2 spawnPosition, AnimalType type) : base(spawnPosition)
         {
             this.merged = false;
-            this.vision = 2;
+            this.vision = 4;
             this.animals = new List<Animal>();
-            this.animals.Add(Born(type));
+            this.father = Born(type);
+            this.animals.Add(father);
             this.waterPlaces = new HashSet<Vector2>();
             this.femaleCount = CountGender(this, 0);
             this.maleCount = CountGender(this, 1);
             this.averageAge = CountAverage(this);
             this.animalType = type;
             this.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
+            this.plantPlaces = new HashSet<Plant>();
         }
         public void SortAnimals()
         {
@@ -49,6 +51,11 @@ namespace Codes.animal
         private static int CountGender(AnimalGroup animalGroup, int gender)
         {
             int c = 0;
+            if (animalGroup.animals.Count <= 0)
+            {
+                animalGroup.merged = true;
+                return 0;
+            }
             foreach (var a in animalGroup.animals)
             {
                 if (a.Gender == gender)
@@ -61,6 +68,11 @@ namespace Codes.animal
         public static double CountAverage(AnimalGroup animalGroup)
         {
             double sum = 0;
+            if (animalGroup.animals.Count <= 0)
+            {
+                animalGroup.merged = true;
+                return 0;
+            }
             foreach (var a in animalGroup.animals)
             {
                 sum += a.Age;
@@ -70,6 +82,11 @@ namespace Codes.animal
         public static double CountAverageHunger(AnimalGroup animalGroup)
         {
             double sum = 0;
+            if (animalGroup.animals.Count <= 0)
+            {
+                animalGroup.merged = true;
+                return 0;
+            }
             foreach (var a in animalGroup.animals)
             {
                 sum += a.Hunger;
@@ -145,13 +162,20 @@ namespace Codes.animal
         public void Die()
         {
             bool removed = false;
-            foreach (var a in animals)
+            if (animals.Count <= 0)
             {
-                if (a.Age >= 100)
+                this.merged = true;
+                return;
+            } 
+            
+            foreach (Animal a in animals)
+            {
+                if (/*a.Age >= 100 ||*/ a.Thirst < 0 || a.Hunger < 0)
                 {
                     animals.Remove(a);
                     removed = true;
                 }
+
             }
             if (removed)
             {
@@ -189,6 +213,11 @@ namespace Codes.animal
         public void AverageAge()
         {
             double sum = 0;
+            if (this.animals.Count <= 0)
+            {
+                this.merged = true;
+                return;
+            }
             foreach (Animal animal in animals)
             {
                 sum += animal.Age;
@@ -199,6 +228,7 @@ namespace Codes.animal
 
         public int Eat(int foodAmount)
         {
+            Debug.Log("Animal is eating");
             int foodForEach = (int)(System.Math.Round(foodAmount / (double)(animals.Count), 0));
             int leftOver = 0;
             List<Animal> stillHungry = new List<Animal>();
@@ -234,16 +264,29 @@ namespace Codes.animal
 
             return leftOver;
         }
-
-        public void Drink(int waterAmount)
+        public int AverageThirst()
+        {
+            int sum = 0;
+            if (this.animals.Count <= 0)
+            {
+                this.merged = true;
+                return 0;
+            }
+            foreach (Animal animal in this.animals)
+            {
+                sum += animal.Thirst;
+            }
+            return sum / this.animals.Count;
+        }
+        public bool IsThirsty()
+        {
+            return AverageThirst() < 40;
+        }
+        public void Drink()
         {
             foreach (Animal animal in animals)
             {
-                animal.Thirst += waterAmount;
-                if (animal.Thirst > 100)
-                {
-                    animal.Thirst = 100;
-                }
+                animal.Thirst = 100;
             }
         }
 
@@ -271,6 +314,10 @@ namespace Codes.animal
                 this.femaleCount = CountGender(animalGroup, 0);
                 this.maleCount = CountGender(animalGroup, 1);
                 this.waterPlaces.UnionWith(animalGroup.WaterPlaces);
+                if (this.IsHerbivore())
+                {
+                    this.plantPlaces.UnionWith(animalGroup.PlantPlaces);
+                }
             }
             else
             {
@@ -294,18 +341,38 @@ namespace Codes.animal
             get => vision;
             set => vision = value;
         }
-        public bool Panicked
+        public int Panicked
         {
-            get => panicked;
-            set => panicked = value;
+            get => sleep;
+            set => sleep = value;
         }
         public int Reach
         {
             get => reach;
         }
+        public bool Merged
+        {
+            get => merged;
+        }
         public HashSet<Vector2> WaterPlaces
         {
             get => waterPlaces;
+        }
+        public HashSet<Plant> PlantPlaces
+        {
+            get => plantPlaces;
+        }
+        public bool addWaterPlace(Vector2 place)
+        {
+            return this.waterPlaces.Add(place);
+        }
+        public bool addPlantPlace(Plant p)
+        {
+            return this.plantPlaces.Add(p);
+        }
+        public void changePlaceValue(Vector2 place)
+        {
+
         }
         public int AmountToEat()
         {
@@ -322,6 +389,18 @@ namespace Codes.animal
                 return 1;
             }
             return 0;
+        }
+        public void Starve()
+        {
+            foreach (Animal a in this.animals)
+            {
+                a.Hunger -= (int) Math.Round(1 + 0.5 * a.Age, 0);
+                a.Thirst -= (int)Math.Round(1 + 0.3 * a.Age, 0);
+            }
+        }
+        public AnimalType GetGroupType()
+        {
+            return this.father.GetAnimalType();
         }
     }
 }

@@ -15,10 +15,10 @@ namespace Codes.animal
 			this.age = 0;
 			this.gender = gender;
 			this.hunger = 100;
-			this.thirst = 100;
+			this.thirst = 200;
 		}
 
-
+		public abstract AnimalType GetAnimalType();
 
 		public void IncAge()
 		{
