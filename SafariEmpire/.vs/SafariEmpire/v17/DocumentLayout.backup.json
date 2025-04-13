@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\patrik\\documents\\egyetem\\4. f\u00E9l\u00E9v\\szeftware technol\u00F3gia\\safari-empire\\safariempire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\patrik\\documents\\egyetem\\4. f\u00E9l\u00E9v\\szeftware technol\u00F3gia\\safari-empire\\safariempire\\assets\\codes\\animal\\herbivore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\patrik\\documents\\egyetem\\4. f\u00E9l\u00E9v\\szeftware technol\u00F3gia\\safari-empire\\safariempire\\assets\\codes\\animal\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\herbivore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\herbivore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\patrik\\documents\\egyetem\\4. f\u00E9l\u00E9v\\szeftware technol\u00F3gia\\safari-empire\\safariempire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Animal.cs",
+              "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
+              "RelativeToolTip": "Assets\\Codes\\animal\\Animal.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T11:30:22.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Entity.cs",
@@ -43,26 +60,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Herbivore.cs",
               "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Herbivore.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Herbivore.cs",
               "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Herbivore.cs",
               "RelativeToolTip": "Assets\\Codes\\animal\\Herbivore.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBkAAAByAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T08:49:43.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AnimalGroup.cs",
               "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
               "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
               "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAnwKkAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T08:20:45.216Z",
               "EditorCaption": ""
@@ -75,7 +92,7 @@
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
               "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
-              "ViewState": "AgIAAJ4BAAAAAAAAAAAiwP4BAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEsBAAAAAAAAAAAnwFsBAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T08:20:04.03Z",
               "EditorCaption": ""

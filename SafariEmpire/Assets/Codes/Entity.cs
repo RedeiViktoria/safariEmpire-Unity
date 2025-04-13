@@ -16,7 +16,7 @@ public class Entity
         this.spawnPosition = spawnPosition;
     }
     public Vector2 Position
-    {
+    { 
         get => this.obj.transform.position;
     }
 }
