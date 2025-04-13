@@ -14,6 +14,7 @@ public class Entity
     public Entity(Vector2 spawnPosition)
     {
         this.spawnPosition = spawnPosition;
+        this.targetPosition = spawnPosition;
     }
     public Vector2 Position
     { 

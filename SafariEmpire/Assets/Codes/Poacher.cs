@@ -18,6 +18,5 @@ public class Poacher : Entity
             case 3: this.targetAnimal = this.targetAnimal = Codes.animal.AnimalType.Crocodile; break;
             case 4: this.targetAnimal = this.targetAnimal = Codes.animal.AnimalType.Gepard; break;
         }
-        this.targetPosition = new Vector2(UnityEngine.Random.Range(spawnPosition.x-visionRange, spawnPosition.x+visionRange+1), UnityEngine.Random.Range(spawnPosition.y-visionRange, spawnPosition.y+visionRange+1));
     }
 }
