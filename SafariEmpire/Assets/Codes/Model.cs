@@ -4,15 +4,7 @@ using UnityEngine;
 using TMPro;
 using Codes.animal;
 using System.Linq;
-<<<<<<< HEAD
-
-=======
-using static UnityEngine.EventSystems.EventTrigger;
-using UnityEditor.Sprites;
-using NUnit;
-using NUnit.Framework;
-using System.Text.RegularExpressions;
->>>>>>> 2bffa7f (Added satisfaction system)
+using System;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -253,7 +245,7 @@ public class Model : MonoBehaviour
         {
             this.day = 0;
             this.week++;
-            //havonta=4 hetente fizess¸k ki a vadırˆket
+            //havonta=4 hetente fizessÔøΩk ki a vadÔøΩrÔøΩket
             if (this.week % 4 == 0)
             {
                 payCheck();
@@ -269,24 +261,18 @@ public class Model : MonoBehaviour
             switch (this.timeSpeed)
             {
                 case 1: this.hour++; break;
-<<<<<<< HEAD
-                case 2: this.day++; this.visitorsWaiting += 10*popularity; break;
+                case 2: this.day++; this.visitorsWaiting += newVisitors(); break;
                 case 3:
                     this.week++;
-                    this.visitorsWaiting += 70 * popularity;
-                    //havonta=4 hetente fizess¸k ki a vadırˆket
+                    this.visitorsWaiting += 7*newVisitors();
+                    //havonta=4 hetente fizessÔøΩk ki a vadÔøΩrÔøΩket
                     if (this.week % 4 == 0)
                     {
                         payCheck();
                     }
                     checkWin();
                     break;
-=======
-                case 2: this.day++; this.visitorsWaiting += newVisitors(); break;
-                case 3: this.week++; this.visitorsWaiting += 7*newVisitors(); break;
->>>>>>> 9db658e (Fixed satisfaction calculation)
             }
-            //Debug.Log("VisitorsWaiting: " + visitorsWaiting);
             updateTime();
             yield return new WaitForSeconds(1f); // 1 m√°sodperces v√°rakoz√°s
         }
@@ -367,10 +353,7 @@ public class Model : MonoBehaviour
             AnimalGroup group = detectAnimal(poacher.targetAnimal, poacher.obj.transform.position, poacher.visionRange);
             if (null!=group)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                //ha volt a kˆzelÈben target type animalGroup akkor megˆl belıle egy ·llatot, majd elt˚nik ı maga is
-<<<<<<< HEAD
+                //ha volt a kÔøΩzelÔøΩben target type animalGroup akkor megÔøΩl belÔøΩle egy ÔøΩllatot, majd eltÔøΩnik ÔøΩ maga is
                 int survivors = group.killAnimal();
                 Debug.Log("poacher killed");
                 if (survivors <= 0)
@@ -378,21 +361,6 @@ public class Model : MonoBehaviour
                     this.animalGroups.Remove(group);
                     Destroy(group.obj);
                 }
-=======
-=======
-                //ha volt a kÔøΩzelÔøΩben target type animalGroup akkor megÔøΩl belÔøΩle egy ÔøΩllatot, majd eltÔøΩnik ÔøΩ maga is
->>>>>>> 9db658e (Fixed satisfaction calculation)
-                int survirors = group.killAnimal();
-                //ha volt a k√∂zel√©ben target type animalGroup akkor meg√∂l bel≈ële egy √°llatot, majd elt≈±nik ≈ë maga is
-                //killAnimal();
-                //Debug.Log(group.animals[0].GetType());
-                this.animalGroups.Remove(group);
-<<<<<<< HEAD
->>>>>>> 9885e5c (Added satisfaction system)
->>>>>>> 2bffa7f (Added satisfaction system)
-=======
-                Destroy(group.obj);
->>>>>>> 9db658e (Fixed satisfaction calculation)
                 this.poachers.Remove(poacher);
                 Destroy(poacher.obj);
             } else
@@ -428,19 +396,13 @@ public class Model : MonoBehaviour
                 {
                     //ha volt a k√∂zel√©ben target type animalGroup akkor meg√∂l bel≈ële egy √°llatot, majd elt≈±nik ≈ë maga is
                     //killAnimal();
-<<<<<<< HEAD
                     int survivors = group.killAnimal();
-                    this.money += 500; //amit a kilıtt ·llatÈrt kapunk
+                    this.money += 500; //amit a kilÔøΩtt ÔøΩllatÔøΩrt kapunk
                     if (survivors <= 0)
                     {
                         Destroy(group.obj);
                         this.animalGroups.Remove(group);
                     }
-=======
-                    this.money += 500; //amit a kil≈ëtt √°llat√©rt kapunk
-                    Destroy(group.obj);
-                    this.animalGroups.Remove(group);
->>>>>>> 2bffa7f (Added satisfaction system)
                     //ranger.target = 0; //legyen megint poacher a targetje
                 }
                 //mindenk√©pp √∫j targetPosition-t kap
@@ -500,8 +462,7 @@ public class Model : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
-    //POACHER F‹GGV…NYEK
+    //POACHER FÔøΩGGVÔøΩNYEK
     public void poacherVisibility()
     {
         bool visible = false;
@@ -511,7 +472,7 @@ public class Model : MonoBehaviour
             poacher.setVisibility(visible);
         }
     }
-    //poacher-nek kell hogy van-e a kˆzelÈben jeep vagy ranger
+    //poacher-nek kell hogy van-e a kÔøΩzelÔøΩben jeep vagy ranger
     public bool detectRangerOrJeep(Vector2 position, int range)
     {
         foreach (Ranger r in this.rangers)
@@ -534,9 +495,7 @@ public class Model : MonoBehaviour
         }
         return false;
     }
-=======
     //POACHER GENER√ÅTOR
->>>>>>> 2bffa7f (Added satisfaction system)
     public void makePoacher()
     {
         Poacher poacher = new Poacher(new Vector2(UnityEngine.Random.Range(-15,16), UnityEngine.Random.Range(-15, 16)));
