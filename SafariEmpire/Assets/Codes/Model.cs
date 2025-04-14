@@ -1,10 +1,18 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Codes.animal;
 using System.Linq;
+<<<<<<< HEAD
 
+=======
+using static UnityEngine.EventSystems.EventTrigger;
+using UnityEditor.Sprites;
+using NUnit;
+using NUnit.Framework;
+using System.Text.RegularExpressions;
+>>>>>>> 2bffa7f (Added satisfaction system)
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -19,9 +27,9 @@ public class Model : MonoBehaviour
     private int hour;
     private int day;
     private int week;
-    private int timeSpeed; //0: Ûra, 1: nap, 2: hÈt (?)
+    private int timeSpeed; //0: √≥ra, 1: nap, 2: h√©t (?)
 
-    private int DaysUntilWin; //1 hÛnap = 30 nap
+    private int DaysUntilWin; //1 h√≥nap = 30 nap
     private int popularity;
     private int ticketPrice; //ticket az UML-ben
     private int visitorsWaiting;
@@ -33,20 +41,20 @@ public class Model : MonoBehaviour
     //public List<SecuritySystem> security;
     //public GameObject securityObject;
 
-    //vadırˆk
+    //vad≈ër√∂k
     public List<Ranger> rangers;
     public GameObject rangerObject;
 
-    //orvvad·szok
+    //orvvad√°szok
     public List<Poacher> poachers;
     public GameObject poacherObject;
-    //·llatok
+    //√°llatok
     public List<AnimalGroup> animalGroups;
     public GameObject cheetahObject;
     public GameObject hippoObject;
     public GameObject gazelleObject;
     public GameObject crocodileObject;
-    //nˆvÈnyek
+    //n√∂v√©nyek
     public GameObject treeObject;
     public GameObject grassObject;
     public GameObject bushObject;
@@ -57,7 +65,7 @@ public class Model : MonoBehaviour
     public GameObject pathObject;
     public GameObject startObj;
     public GameObject endObj;
-    //terepi akad·lyok:
+    //terepi akad√°lyok:
     public GameObject hillObject;
     public List<Hill> hills;
     public GameObject riverObject;
@@ -83,8 +91,8 @@ public class Model : MonoBehaviour
         between.obj = Instantiate(pathObject, between.spawnPosition, Quaternion.identity);
         paths.Add(startPath);
         paths.Add(endPath);
-        paths.Add(between); //Start Ès end kˆzˆtt
-        //idı telÈs:
+        paths.Add(between); //Start √©s end k√∂z√∂tt
+        //id≈ë tel√©s:
         StartCoroutine(TimerCoroutine());
         StartCoroutine(sendJeep());
 
@@ -92,13 +100,13 @@ public class Model : MonoBehaviour
 
 
         this.difficulty = PlayerPrefs.GetInt("difficulty");
-        this.timeSpeed = 1; //viewbÛl setTimeSpeed-del mÛdosÌtÛdik
-        this.ticketPrice = 100; //viewbÛl setTicketPrice-szal mÛdosÌtÛdik
+        this.timeSpeed = 1; //viewb√≥l setTimeSpeed-del m√≥dos√≠t√≥dik
+        this.ticketPrice = 100; //viewb√≥l setTicketPrice-szal m√≥dos√≠t√≥dik
         this.hour = 0;
         this.day = 0;
         this.week = 0;
 
-        //terepi akad·lyok gener·l·sa
+        //terepi akad√°lyok gener√°l√°sa
         //HEGYEK
         hills = new List<Hill>();
         Hill hill1 = new Hill(new Vector2(5, 1));
@@ -111,7 +119,7 @@ public class Model : MonoBehaviour
         {
             hill.obj = Instantiate(hillObject, hill.spawnPosition, Quaternion.identity);
         }
-        //FOLY”K
+        //FOLY√ìK
         rivers = new List<River>();
         River river1 = new River(new Vector2(-4, -2));
         River river2 = new River(new Vector2(-10, 6));
@@ -132,8 +140,8 @@ public class Model : MonoBehaviour
 
         }
 
-        //entityk gener·l·sa
-        //N÷V…NYEK
+        //entityk gener√°l√°sa
+        //N√ñV√âNYEK
         plants = new List<Plant>();
         Bush plant1 = new Bush(new Vector2(6, 8));
         Tree plant2 = new Tree(new Vector2(5, 5));
@@ -158,7 +166,7 @@ public class Model : MonoBehaviour
 
         }
 
-        //¡LLATOK
+        //√ÅLLATOK
         animalGroups = new List<AnimalGroup>();
         AnimalGroup animal1 = new AnimalGroup(new Vector2(10, 0), Codes.animal.AnimalType.Gepard);
         AnimalGroup animal2 = new AnimalGroup(new Vector2(0, 10), Codes.animal.AnimalType.Crocodile);
@@ -187,25 +195,25 @@ public class Model : MonoBehaviour
 
         }
 
-        //ORVVAD¡SZOK
+        //ORVVAD√ÅSZOK
         this.poachers = new List<Poacher>();
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
         InvokeRepeating("makePoacher", 0f, 5f);
 
-        //VAD’R÷K
+        //VAD≈êR√ñK
         this.rangers = new List<Ranger>();
         /*Ranger ranger1 = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), "0");
         this.rangers.Add(ranger1);
         ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
 
-        //MEGFIGYEL’ RENDSZER
+        //MEGFIGYEL≈ê RENDSZER
 
         //JEEPS
 
 
-        //fel¸lÌrandÛk
+        //fel√ºl√≠rand√≥k
         this.popularity = 1;
         this.visitorsWaiting = 0;
         this.visitorCount = 0;
@@ -225,7 +233,7 @@ public class Model : MonoBehaviour
                 break;
         }
 
-        //metÛdus tesztelÈsek
+        //met√≥dus tesztel√©sek
         buy("pond", new Vector2(0, 0));
         //move(hill1, new Vector2(-2, -2));
 
@@ -257,7 +265,7 @@ public class Model : MonoBehaviour
     }
     IEnumerator TimerCoroutine()
     {
-        while (true) // VÈgtelen ciklus
+        while (true) // V√©gtelen ciklus
         {
             switch (this.timeSpeed)
             {
@@ -275,12 +283,12 @@ public class Model : MonoBehaviour
                     break;
             }
             updateTime();
-            yield return new WaitForSeconds(1f); // 1 m·sodperces v·rakoz·s
+            yield return new WaitForSeconds(1f); // 1 m√°sodperces v√°rakoz√°s
         }
     }
     IEnumerator sendJeep()
     {
-        while (true) // VÈgtelen ciklus
+        while (true) // V√©gtelen ciklus
         {
             if (visitorsWaiting >= 4)
             {
@@ -294,19 +302,46 @@ public class Model : MonoBehaviour
                 {
                     jeeps[i].chooseRandomPath(validPaths);
                     jeeps[i].moving = true;
+                    jeeps[i].isFinished = false;
                     visitorsWaiting -= 4;
+
+                    //bev√©tel a jegyv√°s√°rl√°sb√≥l
+                    money += ticketPrice * 4;
                 }
             }
-            yield return new WaitForSeconds(4f); // 4 m·sodperces v·rakoz·s
+            yield return new WaitForSeconds(4f); // 4 m√°sodperces v√°rakoz√°s
         }
     }
+    public int newVisitors()
+    {
+        //based on: ticketprice, popularity
+        //ticketprice: sz√°zas/ezres nagys√°grend (felt√©telez√©s kb. 100-10.000)
+        //popularity: folyton n≈ë max. kb 40-nel (a calulateSatisfaction() alapj√°n)
+        //c√©l: [hetente?] 1-30 l√°togat√≥ 
 
-    //MOZG¡S
+        //normaliz√°l√°s: kisebb ticketprice -> nagyobb embi sz√°m
+        //1, ha a ticketprice minim√°lis (100); 0, ha maxim√°lis (10000)
+        double normA = 1.0 - ((ticketPrice - 100.0) / (10000.0 - 100.0)); 
+
+        //normaliz√°l√°s: ugyan√∫gy 0 √©s 1 k√∂z√©
+        //ez egy smooth n√∂veked√©s, 200 felett stagn√°lni kezd (hogy ne v√°rakozzon t√∫l sok embi folyamatosan)
+        double normB = Math.Tanh(popularity / 200.0); 
+
+        //magasabb ticketprice + alacsonyabb populatiry -> kevesebb ember
+        //alacsonyabb ticketprice + magasabb popularity -> t√∂bb ember
+        //a 0 √©s 1 k√∂z√∂tti sz√°mok kihozz√°k az ar√°nyokat
+        double c = 1 + 29 * normA * normB; 
+
+        //1 a minimum l√°togat√≥, 30 a max, aki egy [h√©t?] alatt j√∂n
+        return (int)Math.Round(c);
+    }
+
+    //MOZG√ÅS
     /*
      * moves an entity to a position
      */
     private float fspeed = 1f;
-    //a move jelenleg az animalGroupokat mozgatja random p hely felÈ
+    //a move jelenleg az animalGroupokat mozgatja random p hely fel√©
     public void move(Entity entity, Vector2 p)
     {
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
@@ -318,15 +353,17 @@ public class Model : MonoBehaviour
     }
     public void movePoacher(Poacher poacher, Vector2 p)
     {
-        //mozogjon a p position felÈ
+        //mozogjon a p position fel√©
         poacher.obj.transform.position = Vector2.MoveTowards(poacher.obj.transform.position, p, fspeed * Time.deltaTime);
-        if (Vector2.Distance(poacher.obj.transform.position, p) < 0.01f) //ha elÈrte a p positiont
+        if (Vector2.Distance(poacher.obj.transform.position, p) < 0.01f) //ha el√©rte a p positiont
         {
-            //melyik animalgroup van a kˆzelÈben ami targetanimal type-pal megfelel
+            //melyik animalgroup van a k√∂zel√©ben ami targetanimal type-pal megfelel
             AnimalGroup group = detectAnimal(poacher.targetAnimal, poacher.obj.transform.position, poacher.visionRange);
             if (null!=group)
             {
+<<<<<<< HEAD
                 //ha volt a kˆzelÈben target type animalGroup akkor megˆl belıle egy ·llatot, majd elt˚nik ı maga is
+<<<<<<< HEAD
                 int survivors = group.killAnimal();
                 Debug.Log("poacher killed");
                 if (survivors <= 0)
@@ -334,11 +371,21 @@ public class Model : MonoBehaviour
                     this.animalGroups.Remove(group);
                     Destroy(group.obj);
                 }
+=======
+                int survirors = group.killAnimal();
+=======
+                //ha volt a k√∂zel√©ben target type animalGroup akkor meg√∂l bel≈ële egy √°llatot, majd elt≈±nik ≈ë maga is
+                //killAnimal();
+                Destroy(group.obj);
+                Debug.Log(group.animals[0].GetType());
+                this.animalGroups.Remove(group);
+>>>>>>> 9885e5c (Added satisfaction system)
+>>>>>>> 2bffa7f (Added satisfaction system)
                 this.poachers.Remove(poacher);
                 Destroy(poacher.obj);
             } else
             {
-                //ha nem volt a kˆzelÈben target type animalGroup akkor ˙j random pozÌciÛ ir·ny·ba indul cxy
+                //ha nem volt a k√∂zel√©ben target type animalGroup akkor √∫j random poz√≠ci√≥ ir√°ny√°ba indul cxy
                 poacher.targetPosition = new Vector2(poacher.obj.transform.position.x + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1), poacher.obj.transform.position.y + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1));
                 changeSortingOrder(poacher);
             }
@@ -346,9 +393,9 @@ public class Model : MonoBehaviour
     }
     public void moveRanger(Ranger ranger, Vector2 p)
     {
-        //mozogjon a p position felÈ
+        //mozogjon a p position fel√©
         ranger.obj.transform.position = Vector2.MoveTowards(ranger.obj.transform.position, p, fspeed * Time.deltaTime);
-        if (Vector2.Distance(ranger.obj.transform.position, p) < 0.01f)  //ha elÈrte a p positiont
+        if (Vector2.Distance(ranger.obj.transform.position, p) < 0.01f)  //ha el√©rte a p positiont
         {
             if (ranger.target == 0) //ha poacher a targetje
             {
@@ -359,16 +406,17 @@ public class Model : MonoBehaviour
                     Debug.Log("ranger");
                     this.poachers.Remove(poacher);
                 }
-                //ha tal·lt poachert, ha nem, ˙j targetPosition-t kap
+                //ha tal√°lt poachert, ha nem, √∫j targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
                 changeSortingOrder(ranger);
-            } else //ha valamilyen ·llat a targetje
+            } else //ha valamilyen √°llat a targetje
             {
                 AnimalGroup group = detectAnimal(ranger.targetAnimal, ranger.obj.transform.position, ranger.visionRange);
                 if (null != group)
                 {
-                    //ha volt a kˆzelÈben target type animalGroup akkor megˆl belıle egy ·llatot, majd elt˚nik ı maga is
+                    //ha volt a k√∂zel√©ben target type animalGroup akkor meg√∂l bel≈ële egy √°llatot, majd elt≈±nik ≈ë maga is
                     //killAnimal();
+<<<<<<< HEAD
                     int survivors = group.killAnimal();
                     this.money += 500; //amit a kilıtt ·llatÈrt kapunk
                     if (survivors <= 0)
@@ -376,9 +424,14 @@ public class Model : MonoBehaviour
                         Destroy(group.obj);
                         this.animalGroups.Remove(group);
                     }
+=======
+                    this.money += 500; //amit a kil≈ëtt √°llat√©rt kapunk
+                    Destroy(group.obj);
+                    this.animalGroups.Remove(group);
+>>>>>>> 2bffa7f (Added satisfaction system)
                     //ranger.target = 0; //legyen megint poacher a targetje
                 }
-                //mindenkÈpp ˙j targetPosition-t kap
+                //mindenk√©pp √∫j targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
                 changeSortingOrder(ranger);
             }
@@ -402,7 +455,7 @@ public class Model : MonoBehaviour
         jeepMove();
         poacherVisibility();
     }
-    //ideiglenes mozg·s
+    //ideiglenes mozg√°s
     public void tempMove()
     {
         if (this.animalGroups.Count > 0)
@@ -435,6 +488,7 @@ public class Model : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     //POACHER F‹GGV…NYEK
     public void poacherVisibility()
     {
@@ -468,6 +522,9 @@ public class Model : MonoBehaviour
         }
         return false;
     }
+=======
+    //POACHER GENER√ÅTOR
+>>>>>>> 2bffa7f (Added satisfaction system)
     public void makePoacher()
     {
         Poacher poacher = new Poacher(new Vector2(UnityEngine.Random.Range(-15,16), UnityEngine.Random.Range(-15, 16)));
@@ -476,11 +533,11 @@ public class Model : MonoBehaviour
     }
 
     //DETECT
-    //paramÈterek: milyen typeot keres¸nk, hol, milyen range-ben
-    //visszatÈr a megtal·lt animalGroup-pal ha van, ha nincs akkor null-lal
+    //param√©terek: milyen typeot keres√ºnk, hol, milyen range-ben
+    //visszat√©r a megtal√°lt animalGroup-pal ha van, ha nincs akkor null-lal
     public AnimalGroup detectAnimal(Codes.animal.AnimalType type, Vector2 position, int range)
     {
-        //lesz˚ri a megfelelı type-˙ animalGroupokat
+        //lesz≈±ri a megfelel≈ë type-√∫ animalGroupokat
         List<AnimalGroup> list = new List<AnimalGroup>();
         for(int i = 0; i<this.animalGroups.Count; i++)
         {
@@ -489,7 +546,7 @@ public class Model : MonoBehaviour
                 list.Add(animalGroups[i]);
             }
         }
-        //vÈgigmegy a lesz˚rt list·n hogy van-e valamelyik a kˆzelben
+        //v√©gigmegy a lesz≈±rt list√°n hogy van-e valamelyik a k√∂zelben
         foreach (AnimalGroup a in list)
         {
             
@@ -502,8 +559,22 @@ public class Model : MonoBehaviour
         }
         return null;
     }
-    //paramÈterek: hol, milyen rangeben keres¸nk
-    //visszatÈr a megtal·lt poacher-rel ha van, ha nincs akkor null-lal
+
+    public Codes.animal.AnimalType? detectForSatisfaction(Vector2 position, int range) 
+    {
+        foreach (AnimalGroup a in this.animalGroups)
+        {
+            float x = a.obj.transform.position.x;
+            float y = a.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return a.animalType;
+            }
+        }
+        return null;
+    }
+    //param√©terek: hol, milyen rangeben keres√ºnk
+    //visszat√©r a megtal√°lt poacher-rel ha van, ha nincs akkor null-lal
     public Poacher detectPoacher(Vector2 position, int range)
     {
         foreach (Poacher p in this.poachers)
@@ -520,6 +591,7 @@ public class Model : MonoBehaviour
     //Animal Stufff
     //------------------
 
+<<<<<<< HEAD
     public void clearAnimals()
     {
         for (int i = animalGroups.Count - 1; i >= 0; i--)
@@ -777,6 +849,50 @@ public class Model : MonoBehaviour
         group.targetPosition = goal;
     }
     //------------
+=======
+    public int calculateSatisfaction(List<AnimalType?> encounteredAnimals) 
+    {
+        //a legritk√°bb √°llatfaj √©ri a legt√∂bbet
+        //ennek aktu√°lis √°ll√°s√°t (az egyszer≈±s√©g kedv√©√©rt) a be√©rkez√©skor sz√°m√≠tjuk ki
+        List<(AnimalType type, int count)> typeCounts = new List<(AnimalType type, int count)> ();
+        int hippoCount = 0, gepardCount = 0, gazellaCount = 0, crocoCount = 0;
+        
+        foreach(AnimalGroup a in this.animalGroups)
+        {
+            switch(a.animalType)
+            {
+                case AnimalType.Hippo:     hippoCount += a.animals.Count(); break;
+                case AnimalType.Gazella: gazellaCount += a.animals.Count(); break;
+                case AnimalType.Gepard:   gepardCount += a.animals.Count(); break;
+                case AnimalType.Crocodile: crocoCount += a.animals.Count(); break;
+            }
+        }
+
+        typeCounts.Add(new (AnimalType.Hippo, hippoCount));
+        typeCounts.Add(new (AnimalType.Gazella, gazellaCount));
+        typeCounts.Add(new (AnimalType.Gepard, gepardCount));
+        typeCounts.Add(new (AnimalType.Crocodile, crocoCount));
+
+        //cs√∂kken≈ëen sorba rendezi az √°llatok √∂sszes√≠tett sz√°ma alapj√°n (kevesebb => ritk√°bb)
+        typeCounts.Sort((a, b) => b.count.CompareTo(a.count));
+
+        int satisfaction = 0;
+
+        foreach (AnimalType? a in encounteredAnimals)
+        {
+            for (int i = 0; i < typeCounts.Count; i++) 
+            {
+                //az el√©gedetts√©g a l√°tott √°llatok ritkas√°ga alapj√°n 1/2/3/4-gyel n≈ë 
+                if (a == typeCounts[i].type)
+                {
+                    satisfaction += i + 1;
+                }
+            }
+        }
+        return satisfaction; 
+    }
+
+>>>>>>> 9885e5c (Added satisfaction system)
     public int idx = 0;
     public void jeepMove()
     {
@@ -786,17 +902,26 @@ public class Model : MonoBehaviour
             {
                 if (jeep.moving)
                 {
-                    jeep.move();
+                    //ha be√©rt a jeep
+                    if (jeep.move())
+                    {
+                        popularity += calculateSatisfaction(jeep.encounteredAnimals);
+                    }
+                    else
+                    {
+                        AnimalType? a = detectForSatisfaction(jeep.obj.transform.position, 5);
+                        if (a != null) { jeep.encounteredAnimals.Add(a); }
+                    }
                 }
             }
         }
     }
-    
-    //V¡S¡RL¡S
+
+    //V√ÅS√ÅRL√ÅS
     public bool canBuy(string obj)
     {
-        //mÈg nincs megcsin·lva, hogy ne lehessen egym·sra helyezni itemeket
-        //a drÛn v·s·rl·snak elıfeltÈtele a tˆltı·llom·s
+        //m√©g nincs megcsin√°lva, hogy ne lehessen egym√°sra helyezni itemeket
+        //a dr√≥n v√°s√°rl√°snak el≈ëfelt√©tele a t√∂lt≈ë√°llom√°s
         int moneyNeeded = -1;
         switch (obj)
         {
@@ -828,14 +953,14 @@ public class Model : MonoBehaviour
         }
         if (IsPositionOccupied(position) && obj!="jeep")
         {
-            Debug.Log("Arra a mezıre nem helyezhet¸nk le.");
+            Debug.Log("Arra a mez≈ëre nem helyezhet√ºnk le.");
             return;
         }
         if (canBuy(obj))
         {
             switch (obj)
             {
-                //max mennyisÈget kell Ìrni bele(?)
+                //max mennyis√©get kell √≠rni bele(?)
                 case "water":
                     Pond pond = new Pond(position);
                     ponds.Add(pond);
@@ -899,7 +1024,7 @@ public class Model : MonoBehaviour
                     int totalCost = fullPath.Count * 100;
                     if (this.money < totalCost)
                     {
-                        Debug.Log("Nincs elÈg pÈnz az ˙t lerak·s·hoz!");
+                        Debug.Log("Nincs el√©g p√©nz az √∫t lerak√°s√°hoz!");
                         break;
                     }
 
@@ -917,7 +1042,7 @@ public class Model : MonoBehaviour
                      * security.add(securityItem);
                      * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
                      this.money -= 100;*/
-                    //ellenırizni kell mÈg, hogy van-e hozz· m·r tˆltı
+                    //ellen≈ërizni kell m√©g, hogy van-e hozz√° m√°r t√∂lt≈ë
                     break;
                 case "charger":
                     /* SecuritySystem securityItem = new SecuritySystem(position, "charger");
@@ -942,7 +1067,7 @@ public class Model : MonoBehaviour
         updateView();
     }
 
-    //RANGER KEZEL…SEK
+    //RANGER KEZEL√âSEK
     public void buyRanger(string id)
     {
         Ranger ranger = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), id);
@@ -974,17 +1099,17 @@ public class Model : MonoBehaviour
         return -1;
     }
 
-    //VIEW FRISSÕT…SE
+    //VIEW FRISS√çT√âSE
     public void updateView()
     {
-        moneyText.text = "PÈnz: " + this.money;
-        timeText.text = this.week + ". hÈt, " + this.day + ". nap, " + this.hour + ". Ûra";
+        moneyText.text = "P√©nz: " + this.money;
+        timeText.text = this.week + ". h√©t, " + this.day + ". nap, " + this.hour + ". √≥ra";
 
     }
 
     /*
      * pays for the rangers every month(?)
-     * be kell mÈg ·llÌtani hogy havi szinten hÌvÛdjon meg
+     * be kell m√©g √°ll√≠tani hogy havi szinten h√≠v√≥djon meg
      */
     public void payCheck()
     {
@@ -1041,13 +1166,13 @@ public class Model : MonoBehaviour
     public List<List<Path>> CreateValidPaths(Vector2 startPosition, Vector2 endPosition, List<Path> paths)
     {
         List<List<Path>> allPaths = new List<List<Path>>();
-        HashSet<string> uniquePaths = new HashSet<string>(); // EgyedisÈg ellenırzÈs
+        HashSet<string> uniquePaths = new HashSet<string>(); // Egyedis√©g ellen≈ërz√©s
 
         Path startPath = paths.Find(p => p.spawnPosition == startPosition);
         Path endPath = paths.Find(p => p.spawnPosition == endPosition);
 
         if (startPath == null || endPath == null)
-            return allPaths; // Ha nincs kezdı vagy vÈgpont, nincs ÈrvÈnyes ˙t
+            return allPaths; // Ha nincs kezd≈ë vagy v√©gpont, nincs √©rv√©nyes √∫t
 
         List<Path> currentPath = new List<Path>();
         HashSet<Path> visited = new HashSet<Path>();
@@ -1058,35 +1183,35 @@ public class Model : MonoBehaviour
 
     private void DFS(Path current, Path target, List<Path> currentPath, HashSet<Path> visited, List<List<Path>> allPaths, HashSet<string> uniquePaths)
     {
-        // Hozz·adjuk az aktu·lis csomÛpontot az ˙thoz
+        // Hozz√°adjuk az aktu√°lis csom√≥pontot az √∫thoz
         currentPath.Add(current);
         visited.Add(current);
 
-        // Ha elÈrt¸k a cÈlt, elmentj¸k az ˙tvonalat
+        // Ha el√©rt√ºk a c√©lt, elmentj√ºk az √∫tvonalat
         if (current == target)
         {
             string pathString = string.Join("->", currentPath.Select(p => p.spawnPosition.ToString()));
 
-            // Csak akkor adjuk hozz·, ha mÈg nincs benne
+            // Csak akkor adjuk hozz√°, ha m√©g nincs benne
             if (!uniquePaths.Contains(pathString))
             {
-                allPaths.Add(new List<Path>(currentPath)); // MÈlym·solat
+                allPaths.Add(new List<Path>(currentPath)); // M√©lym√°solat
                 uniquePaths.Add(pathString);
             }
         }
         else
         {
-            // Tov·bbhaladunk a szomszÈdok mentÈn
+            // Tov√°bbhaladunk a szomsz√©dok ment√©n
             foreach (Path neighbor in current.neighbors)
             {
-                if (!visited.Contains(neighbor)) // Ne menj¸nk vissza ugyanoda
+                if (!visited.Contains(neighbor)) // Ne menj√ºnk vissza ugyanoda
                 {
                     DFS(neighbor, target, currentPath, visited, allPaths, uniquePaths);
                 }
             }
         }
 
-        // VisszalÈpÈs: elt·volÌtjuk az utolsÛ elemet, hogy m·s utak is kereshetık legyenek
+        // Visszal√©p√©s: elt√°vol√≠tjuk az utols√≥ elemet, hogy m√°s utak is kereshet≈ëk legyenek
         currentPath.RemoveAt(currentPath.Count - 1);
         visited.Remove(current);
     }
@@ -1143,15 +1268,15 @@ public class Model : MonoBehaviour
 
             List<Vector2> intermediatePositions = FindPathAvoidingObstacles(start, end);
 
-            // Sz·moljuk ki, mennyibe ker¸lne az ˙t, Ès ha nincs r· pÈnz, kilÈp¸nk
+            // Sz√°moljuk ki, mennyibe ker√ºlne az √∫t, √©s ha nincs r√° p√©nz, kil√©p√ºnk
             int totalCost = intermediatePositions.Count * 100;
             if (this.money < totalCost)
             {
-                Debug.Log("Nincs elÈg pÈnz az ˙t ÈpÌtÈsÈhez!");
+                Debug.Log("Nincs el√©g p√©nz az √∫t √©p√≠t√©s√©hez!");
                 return;
             }
 
-            // Most m·r biztosak vagyunk benne, hogy van elÈg pÈnz, elkezdhetj¸k az ÈpÌtÈst
+            // Most m√°r biztosak vagyunk benne, hogy van el√©g p√©nz, elkezdhetj√ºk az √©p√≠t√©st
             Path previousPath = nearestPath;
             foreach (Vector2 pos in intermediatePositions)
             {
@@ -1160,7 +1285,7 @@ public class Model : MonoBehaviour
                 intermediatePath.obj = Instantiate(pathObject, pos, Quaternion.identity);
 
                 connectNeighbourPaths(intermediatePath);
-                this.money -= 100; // Levonjuk a pÈnzt
+                this.money -= 100; // Levonjuk a p√©nzt
             }
             connectNeighbourPaths(newPath);
         }
@@ -1186,8 +1311,8 @@ public class Model : MonoBehaviour
         {
         new Vector2(1, 0),  // Jobbra
         new Vector2(-1, 0), // Balra
-        new Vector2(0, 1),  // FelfelÈ
-        new Vector2(0, -1)  // LefelÈ
+        new Vector2(0, 1),  // Felfel√©
+        new Vector2(0, -1)  // Lefel√©
         };
 
         bool pathFound = false;
@@ -1231,7 +1356,7 @@ public class Model : MonoBehaviour
 
     private bool IsPositionOccupied(Vector2 position)
     {
-        float checkRadius = 0.4f; // Ez legyen kisebb, mint a grid mÈret
+        float checkRadius = 0.4f; // Ez legyen kisebb, mint a grid m√©ret
         return Physics2D.OverlapCircle(position, checkRadius) != null;
     }
 
