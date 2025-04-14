@@ -20,10 +20,14 @@ MonoBehaviour:
     height: 615.3334
   m_ShowMode: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Title: Console
 =======
   m_Title: Scene
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+  m_Title: Game
+>>>>>>> fabca18 (Tesztek létrehozva)
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -82,9 +86,14 @@ MonoBehaviour:
 =======
     width: 239.33337
     height: 573.3333
+<<<<<<< HEAD
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
+=======
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> fabca18 (Tesztek létrehozva)
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -107,10 +116,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 252
     height: 348
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
+=======
+    width: 254.66667
+    height: 356.66666
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> fabca18 (Tesztek létrehozva)
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -143,10 +159,16 @@ MonoBehaviour:
     y: 356.66666
     width: 1040.6666
     height: 216.66666
+<<<<<<< HEAD
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+  m_MinSize: {x: 231, y: 276}
+  m_MaxSize: {x: 10001, y: 10026}
+  m_ActualView: {fileID: 12}
+>>>>>>> fabca18 (Tesztek létrehozva)
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
@@ -338,10 +360,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 7.3333335
-    y: 434
-    width: 1027.6666
-    height: 185.33331
+    x: 0
+    y: 435.33334
+    width: 1039.6666
+    height: 190.66666
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -381,6 +403,7 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 62af0000
     m_LastClickedID: 44898
@@ -391,6 +414,12 @@ MonoBehaviour:
     m_LastClickedID: 46346
     m_ExpandedIDs: 000000005eb4000060b40000
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 4ab50000
+    m_LastClickedID: 46410
+    m_ExpandedIDs: 00000000886f0000f2b400004ab5000000ca9a3bffffff7f
+>>>>>>> fabca18 (Tesztek létrehozva)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -420,10 +449,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000060af000000ca9a3bffffff7f
 =======
     m_ExpandedIDs: 000000005eb4000060b40000
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+    m_ExpandedIDs: 00000000886f0000f2b40000
+>>>>>>> fabca18 (Tesztek létrehozva)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -451,7 +484,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300001ecf0000a8b700000eb100008ab20000000000008cb20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -579,10 +612,14 @@ MonoBehaviour:
       m_SelectedIDs: 
       m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_ExpandedIDs: 96f7ffff
 =======
       m_ExpandedIDs: 54f5ffff02f7ffff0cfbffff
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+      m_ExpandedIDs: 3cd4ffff72d6ffffcee3ffffc2eaffff50efffff9ef4ffff38f9ffffc4b50000e8b5000026b60000
+>>>>>>> fabca18 (Tesztek létrehozva)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

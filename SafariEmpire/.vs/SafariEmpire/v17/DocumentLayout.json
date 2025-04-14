@@ -4,6 +4,7 @@
   "Documents": [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,6 +19,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{87852DCD-4FBE-C53D-B47C-F996D1427289}|PlayMode.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\tests\\playmode\\playmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87852DCD-4FBE-C53D-B47C-F996D1427289}|PlayMode.csproj|solutionrelative:assets\\tests\\playmode\\playmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> fabca18 (Tesztek létrehozva)
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\Model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -56,6 +61,13 @@
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:Assets\\Codes\\Hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
+=======
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> fabca18 (Tesztek létrehozva)
       "AbsoluteMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A71638B-C116-7AB7-B35E-86E79F715A15}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\codes\\editor\\buildcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -88,14 +100,18 @@
         {
           "DockedWidth": 200,
 <<<<<<< HEAD
+<<<<<<< HEAD
           "SelectedChildIndex": 7,
 =======
           "SelectedChildIndex": 8,
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+          "SelectedChildIndex": 4,
+>>>>>>> fabca18 (Tesztek létrehozva)
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Hill.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Hill.cs",
@@ -111,16 +127,23 @@
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 5,
+<<<<<<< HEAD
+=======
+              "Title": "PlayModeTests.asmdef",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "RelativeToolTip": "Assets\\Tests\\PlayMode\\PlayModeTests.asmdef",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001874|",
+              "WhenOpened": "2025-04-11T12:16:54.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+>>>>>>> fabca18 (Tesztek létrehozva)
               "Title": "MyEditModeTests.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\EditMode\\MyEditModeTests.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\EditMode\\MyEditModeTests.cs",
@@ -132,6 +155,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
 <<<<<<< HEAD
               "Title": "PlayModeTests.cs",
@@ -158,23 +182,22 @@
               "$type": "Document",
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> fabca18 (Tesztek létrehozva)
               "DocumentIndex": 0,
-              "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
-              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
-              "RelativeToolTip": "Assets\\Codes\\Model.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAATAAAA",
+              "Title": "PlayModeTests.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "RelativeToolTip": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAAwEgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T12:11:51.159Z",
+              "WhenOpened": "2025-04-11T12:25:08.09Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 13,
               "Title": "AnimalGroup.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
@@ -188,6 +211,9 @@
               "$type": "Document",
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
               "DocumentIndex": 2,
+=======
+              "DocumentIndex": 1,
+>>>>>>> fabca18 (Tesztek létrehozva)
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\Model.cs",
@@ -198,7 +224,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 8,
+=======
+              "DocumentIndex": 7,
+>>>>>>> fabca18 (Tesztek létrehozva)
               "Title": "AnimalGroup.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\animal\\AnimalGroup.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\animal\\AnimalGroup.cs",
@@ -209,6 +239,7 @@
               "WhenOpened": "2025-04-11T14:34:36.242Z"
             },
             {
+<<<<<<< HEAD
               "$type": "Document",
 <<<<<<< HEAD
               "DocumentIndex": 9,
@@ -267,23 +298,31 @@
               "ViewState": "AQIAAAUAAAAAAAAAAAA6wAwAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T12:22:39.828Z"
+=======
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+>>>>>>> fabca18 (Tesztek létrehozva)
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlayModeTests.cs",
-              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
-              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
-              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
-              "RelativeToolTip": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAA6wAwAAAAiAAAA",
+              "DocumentIndex": 8,
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\Entity.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Editor\\Entity.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\Entity.cs",
+              "RelativeToolTip": "Assets\\Codes\\Editor\\Entity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-04-11T12:25:08.09Z"
 >>>>>>> 779b268 (Removed nunit tests, using only junit.)
+=======
+              "WhenOpened": "2025-04-11T14:32:17.566Z"
+>>>>>>> fabca18 (Tesztek létrehozva)
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CallbacksDelegator.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.test-framework@5ac417e07314\\UnityEditor.TestRunner\\Api\\CallbacksDelegator.cs",
@@ -295,7 +334,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 7,
+=======
+              "DocumentIndex": 6,
+>>>>>>> fabca18 (Tesztek létrehozva)
               "Title": "MyPlayModeTests.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\MyPlayModeTests.cs",
@@ -307,6 +350,21 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+=======
+              "DocumentIndex": 10,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "RelativeToolTip": "Assets\\Codes\\Model.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAawDkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:11:51.159Z"
+            },
+            {
+              "$type": "Document",
+>>>>>>> fabca18 (Tesztek létrehozva)
               "DocumentIndex": 11,
               "Title": "BuildCommand.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Editor\\BuildCommand.cs",
@@ -318,6 +376,17 @@
               "WhenOpened": "2025-04-08T17:40:32.383Z"
             },
             {
+<<<<<<< HEAD
+=======
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+>>>>>>> fabca18 (Tesztek létrehozva)
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "AnimalGroup.cs",
@@ -330,7 +399,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
+=======
+              "DocumentIndex": 3,
+>>>>>>> fabca18 (Tesztek létrehozva)
               "Title": "EditModeTests.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\EditMode\\EditModeTests.cs",
               "RelativeDocumentMoniker": "Assets\\Tests\\EditMode\\EditModeTests.cs",
