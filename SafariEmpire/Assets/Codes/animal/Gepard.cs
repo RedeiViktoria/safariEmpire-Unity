@@ -6,6 +6,11 @@
         {
 
         }
+        override
+        public AnimalType GetAnimalType()
+        {
+            return AnimalType.Gepard;
+        }
     }
 
 

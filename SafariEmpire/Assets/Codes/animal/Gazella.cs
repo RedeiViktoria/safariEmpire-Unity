@@ -5,5 +5,10 @@
         public Gazella(int gender) : base(gender)
         {
         }
+        override
+        public AnimalType GetAnimalType()
+        {
+            return AnimalType.Gazella;
+        }
     }
 }

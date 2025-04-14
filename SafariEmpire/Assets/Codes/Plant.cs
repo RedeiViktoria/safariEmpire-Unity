@@ -18,7 +18,18 @@ public class Plant : Entity
         if (value < max_growth) value += grow_rate;
         else value = max_growth;
     }
+    public int Value
+    {
+        get => value;
+    }
+    public int GetEaten()
+    {
+        int v = this.value;
+        this.value = 0;
+        return v;
+    }
 }
+
 
 //the value/grow_rate are just examples, changeable for balance
 public class Tree : Plant
