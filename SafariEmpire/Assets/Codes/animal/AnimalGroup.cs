@@ -239,7 +239,7 @@ namespace Codes.animal
 
         public int Eat(int foodAmount)
         {
-            Debug.Log("Animal is eating");
+            //Debug.Log("Animal is eating");
             int foodForEach = (int)(System.Math.Round(foodAmount / (double)(animals.Count), 0));
             int leftOver = 0;
             List<Animal> stillHungry = new List<Animal>();

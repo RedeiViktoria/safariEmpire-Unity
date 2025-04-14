@@ -178,7 +178,7 @@ public class Model : MonoBehaviour
         animalGroups.Add(animal4);
         foreach (AnimalGroup animal in animalGroups)
         {
-            Debug.Log(animal.animals[0].GetType());
+            //Debug.Log(animal.animals[0].GetType());
             if (animal.animals[0].GetType() == typeof(Crocodile))
             {
                 animal.obj = Instantiate(crocodileObject, animal.spawnPosition, Quaternion.identity);
@@ -232,7 +232,6 @@ public class Model : MonoBehaviour
                 money = 3000;
                 break;
         }
-
         //metódus tesztelések
         buy("pond", new Vector2(0, 0));
         //move(hill1, new Vector2(-2, -2));
@@ -248,7 +247,7 @@ public class Model : MonoBehaviour
         {
             this.hour = 0;
             this.day++;
-            this.visitorsWaiting += 10*popularity;
+            this.visitorsWaiting += (int)Math.Round((decimal)newVisitors()/4);
         }
         if (this.day >= 7)
         {
@@ -270,6 +269,7 @@ public class Model : MonoBehaviour
             switch (this.timeSpeed)
             {
                 case 1: this.hour++; break;
+<<<<<<< HEAD
                 case 2: this.day++; this.visitorsWaiting += 10*popularity; break;
                 case 3:
                     this.week++;
@@ -281,7 +281,12 @@ public class Model : MonoBehaviour
                     }
                     checkWin();
                     break;
+=======
+                case 2: this.day++; this.visitorsWaiting += newVisitors(); break;
+                case 3: this.week++; this.visitorsWaiting += 7*newVisitors(); break;
+>>>>>>> 9db658e (Fixed satisfaction calculation)
             }
+            //Debug.Log("VisitorsWaiting: " + visitorsWaiting);
             updateTime();
             yield return new WaitForSeconds(1f); // 1 másodperces várakozás
         }
@@ -303,6 +308,7 @@ public class Model : MonoBehaviour
                     jeeps[i].chooseRandomPath(validPaths);
                     jeeps[i].moving = true;
                     jeeps[i].isFinished = false;
+                    jeeps[i].encounteredAnimals.Clear();
                     visitorsWaiting -= 4;
 
                     //bevétel a jegyvásárlásból
@@ -317,7 +323,7 @@ public class Model : MonoBehaviour
         //based on: ticketprice, popularity
         //ticketprice: százas/ezres nagyságrend (feltételezés kb. 100-10.000)
         //popularity: folyton nő max. kb 40-nel (a calulateSatisfaction() alapján)
-        //cél: [hetente?] 1-30 látogató 
+        //cél: naponta 1-30 látogató 
 
         //normalizálás: kisebb ticketprice -> nagyobb embi szám
         //1, ha a ticketprice minimális (100); 0, ha maximális (10000)
@@ -325,14 +331,14 @@ public class Model : MonoBehaviour
 
         //normalizálás: ugyanúgy 0 és 1 közé
         //ez egy smooth növekedés, 200 felett stagnálni kezd (hogy ne várakozzon túl sok embi folyamatosan)
-        double normB = Math.Tanh(popularity / 200.0); 
+        double normB = Math.Tanh(popularity / 100.0); 
 
         //magasabb ticketprice + alacsonyabb populatiry -> kevesebb ember
         //alacsonyabb ticketprice + magasabb popularity -> több ember
         //a 0 és 1 közötti számok kihozzák az arányokat
-        double c = 1 + 29 * normA * normB; 
+        double c = 4 + 16 * normA * normB;
 
-        //1 a minimum látogató, 30 a max, aki egy [hét?] alatt jön
+        //4 a minimum látogató, 20 a max, aki egy nap alatt jön
         return (int)Math.Round(c);
     }
 
@@ -362,6 +368,7 @@ public class Model : MonoBehaviour
             if (null!=group)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 //ha volt a k�zel�ben target type animalGroup akkor meg�l bel�le egy �llatot, majd elt�nik � maga is
 <<<<<<< HEAD
                 int survivors = group.killAnimal();
@@ -372,15 +379,20 @@ public class Model : MonoBehaviour
                     Destroy(group.obj);
                 }
 =======
-                int survirors = group.killAnimal();
 =======
+                //ha volt a k�zel�ben target type animalGroup akkor meg�l bel�le egy �llatot, majd elt�nik � maga is
+>>>>>>> 9db658e (Fixed satisfaction calculation)
+                int survirors = group.killAnimal();
                 //ha volt a közelében target type animalGroup akkor megöl belőle egy állatot, majd eltűnik ő maga is
                 //killAnimal();
-                Destroy(group.obj);
-                Debug.Log(group.animals[0].GetType());
+                //Debug.Log(group.animals[0].GetType());
                 this.animalGroups.Remove(group);
+<<<<<<< HEAD
 >>>>>>> 9885e5c (Added satisfaction system)
 >>>>>>> 2bffa7f (Added satisfaction system)
+=======
+                Destroy(group.obj);
+>>>>>>> 9db658e (Fixed satisfaction calculation)
                 this.poachers.Remove(poacher);
                 Destroy(poacher.obj);
             } else
@@ -403,7 +415,7 @@ public class Model : MonoBehaviour
                 if (null != poacher)
                 {
                     Destroy(poacher.obj);
-                    Debug.Log("ranger");
+                    //Debug.Log("ranger");
                     this.poachers.Remove(poacher);
                 }
                 //ha talált poachert, ha nem, új targetPosition-t kap
@@ -560,15 +572,18 @@ public class Model : MonoBehaviour
         return null;
     }
 
-    public Codes.animal.AnimalType? detectForSatisfaction(Vector2 position, int range) 
+    public AnimalGroup detectForSatisfaction(Jeep jeep, int range) 
     {
         foreach (AnimalGroup a in this.animalGroups)
         {
             float x = a.obj.transform.position.x;
             float y = a.obj.transform.position.y;
-            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            float jeep_x = jeep.obj.transform.position.x;
+            float jeep_y = jeep.obj.transform.position.y;
+            if ((x < jeep_x + range && x > jeep_x - range) && (y < jeep_y + range && y > jeep_y - range))
             {
-                return a.animalType;
+                if(!jeep.encounteredAnimals.Contains(a)) 
+                return a;
             }
         }
         return null;
@@ -591,7 +606,6 @@ public class Model : MonoBehaviour
     //Animal Stufff
     //------------------
 
-<<<<<<< HEAD
     public void clearAnimals()
     {
         for (int i = animalGroups.Count - 1; i >= 0; i--)
@@ -608,7 +622,7 @@ public class Model : MonoBehaviour
     }
     IEnumerator AnimalTimeCoroutine()
     {
-        while (true) // V�gtelen ciklus
+        while (true) // V�gtelen ciklus
         {
             for (int i = 0; i < this.animalGroups.Count; i++)
             {
@@ -637,7 +651,7 @@ public class Model : MonoBehaviour
             {
                 plants[j].Grow();
             }
-            yield return new WaitForSeconds(1f); // 1 m�sodperces v�rakoz�s
+            yield return new WaitForSeconds(1f); // 1 m�sodperces v�rakoz�s
         }
     }
     public void DoAnimalCycle(AnimalGroup group)
@@ -661,7 +675,7 @@ public class Model : MonoBehaviour
             group.Mate();
         }
     }
-    //GetGroupType() = animalType (adattag) Csak elfelejtettem hogy hivatkozhatunk r� 
+    //GetGroupType() = animalType (adattag) Csak elfelejtettem hogy hivatkozhatunk r� 
     public void LookForObject(AnimalGroup group)
     {
         if (group.IsHerbivore())
@@ -849,8 +863,7 @@ public class Model : MonoBehaviour
         group.targetPosition = goal;
     }
     //------------
-=======
-    public int calculateSatisfaction(List<AnimalType?> encounteredAnimals) 
+    public int calculateSatisfaction(List<AnimalGroup> encounteredAnimals) 
     {
         //a legritkább állatfaj éri a legtöbbet
         //ennek aktuális állását (az egyszerűség kedvéért) a beérkezéskor számítjuk ki
@@ -878,21 +891,25 @@ public class Model : MonoBehaviour
 
         int satisfaction = 0;
 
-        foreach (AnimalType? a in encounteredAnimals)
+        if (encounteredAnimals.Count < 1)
+        {
+            return -(int)Math.Round(popularity * 0.2);
+        }
+
+        foreach (AnimalGroup a in encounteredAnimals)
         {
             for (int i = 0; i < typeCounts.Count; i++) 
             {
                 //az elégedettség a látott állatok ritkasága alapján 1/2/3/4-gyel nő 
-                if (a == typeCounts[i].type)
+                if (a.animalType == typeCounts[i].type)
                 {
-                    satisfaction += i + 1;
+                    satisfaction += i + 1 * a.animals.Count();
                 }
             }
         }
         return satisfaction; 
     }
 
->>>>>>> 9885e5c (Added satisfaction system)
     public int idx = 0;
     public void jeepMove()
     {
@@ -906,16 +923,18 @@ public class Model : MonoBehaviour
                     if (jeep.move())
                     {
                         popularity += calculateSatisfaction(jeep.encounteredAnimals);
+                        Debug.Log("Popularity: " + popularity);
                     }
                     else
                     {
-                        AnimalType? a = detectForSatisfaction(jeep.obj.transform.position, 5);
+                        AnimalGroup a = detectForSatisfaction(jeep, 5);
                         if (a != null) { jeep.encounteredAnimals.Add(a); }
                     }
                 }
             }
         }
     }
+    
 
     //VÁSÁRLÁS
     public bool canBuy(string obj)

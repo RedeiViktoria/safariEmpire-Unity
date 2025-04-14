@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jeep : Entity
 {
     public List<Path> path = new List<Path>();
-    public List<AnimalType?> encounteredAnimals = new List<AnimalType?>();
+    public List<AnimalGroup> encounteredAnimals = new List<AnimalGroup>();
     public int idx = 0;
     public bool moving = false;
     public bool isFinished = false; 
