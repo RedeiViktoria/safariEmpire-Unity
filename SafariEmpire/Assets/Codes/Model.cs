@@ -16,6 +16,12 @@ using UnityEditor.Sprites;
 using NUnit;
 public class Model : MonoBehaviour
 {
+    //win conditions -> balanceolni kell
+    public const int herbivoreNeed = 5;
+    public const int carnivoreNeed = 3;
+    public const int visitorsNeed = 0;
+    public const int moneyNeed = 0;
+    public int weeksUntilWin;
     private int difficulty; //1: easy, 2:medium, 3:hard
     private int money;
     //time
@@ -195,7 +201,7 @@ public class Model : MonoBehaviour
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 30f);
+        InvokeRepeating("makePoacher", 0f, 5f);
 
         //VADÕRÖK
         this.rangers = new List<Ranger>();
@@ -249,6 +255,12 @@ public class Model : MonoBehaviour
         {
             this.day = 0;
             this.week++;
+            //havonta=4 hetente fizessük ki a vadõröket
+            if (this.week % 4 == 0)
+            {
+                payCheck();
+            }
+            checkWin();
         }
         updateView();
     }
@@ -260,7 +272,16 @@ public class Model : MonoBehaviour
             {
                 case 1: this.hour++; break;
                 case 2: this.day++; this.visitorsWaiting += 10*popularity; break;
-                case 3: this.week++; this.visitorsWaiting += 70*popularity; break;
+                case 3:
+                    this.week++;
+                    this.visitorsWaiting += 70 * popularity;
+                    //havonta=4 hetente fizessük ki a vadõröket
+                    if (this.week % 4 == 0)
+                    {
+                        payCheck();
+                    }
+                    checkWin();
+                    break;
             }
             updateTime();
             yield return new WaitForSeconds(1f); // 1 másodperces várakozás
@@ -315,7 +336,13 @@ public class Model : MonoBehaviour
             if (null!=group)
             {
                 //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
-                int survirors = group.killAnimal();
+                int survivors = group.killAnimal();
+                Debug.Log("poacher killed");
+                if (survivors <= 0)
+                {
+                    this.animalGroups.Remove(group);
+                    Destroy(group.obj);
+                }
                 this.poachers.Remove(poacher);
                 Destroy(poacher.obj);
             } else
@@ -351,9 +378,13 @@ public class Model : MonoBehaviour
                 {
                     //ha volt a közelében target type animalGroup akkor megöl belõle egy állatot, majd eltûnik õ maga is
                     //killAnimal();
+                    int survivors = group.killAnimal();
                     this.money += 500; //amit a kilõtt állatért kapunk
-                    Destroy(group.obj);
-                    this.animalGroups.Remove(group);
+                    if (survivors <= 0)
+                    {
+                        Destroy(group.obj);
+                        this.animalGroups.Remove(group);
+                    }
                     //ranger.target = 0; //legyen megint poacher a targetje
                 }
                 //mindenképp új targetPosition-t kap
@@ -378,6 +409,7 @@ public class Model : MonoBehaviour
     {
         tempMove();
         jeepMove();
+        poacherVisibility();
     }
     //ideiglenes mozgás
     public void tempMove()
@@ -412,7 +444,39 @@ public class Model : MonoBehaviour
         }
     }
 
-    //POACHER GENERÁTOR
+    //POACHER FÜGGVÉNYEK
+    public void poacherVisibility()
+    {
+        bool visible = false;
+        foreach (Poacher poacher in this.poachers)
+        {
+            visible = detectRangerOrJeep(poacher.obj.transform.position, 5);
+            poacher.setVisibility(visible);
+        }
+    }
+    //poacher-nek kell hogy van-e a közelében jeep vagy ranger
+    public bool detectRangerOrJeep(Vector2 position, int range)
+    {
+        foreach (Ranger r in this.rangers)
+        {
+            float x = r.obj.transform.position.x;
+            float y = r.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return true;
+            }
+        }
+        foreach(Jeep j in this.jeeps)
+        {
+            float x = j.obj.transform.position.x;
+            float y = j.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void makePoacher()
     {
         Poacher poacher = new Poacher(new Vector2(UnityEngine.Random.Range(-15,16), UnityEngine.Random.Range(-15, 16)));
@@ -935,37 +999,51 @@ public class Model : MonoBehaviour
     {
         int rangerPrice = 30;
         this.money -= this.rangers.Count * rangerPrice;
+        updateView();
+        if (this.money <= 0)
+        {
+            //lose()
+        }
     }
 
-    /*
-     * kills the oldest animal in a group
-     */
-    /*
-    public AnimalGroup killAnimal(AnimalGroup group)
-    {
-        int maxage = 0;
-        int maxind = -1;
-        for(int i = 0; i<group.getAnimals().count; i++)
-        {
-            if (group.getAnimals()[i].age > maxage)
-            {
-                maxage = group.getAnimals()[i].age;
-                maxind = i;
-            }
-        }
-        group.getAnimals().RemoveAt(maxind);
-
-        return group;
-    }*/
+   
 
     /*
      * checks if we win or lose
      */
-    public void checkWinLose()
+    public void checkWin()
     {
-        if (money <= 0)
+        int carnivores = 0;
+        int herbivores = 0;
+        foreach (AnimalGroup group in this.animalGroups)
         {
-            //lose
+            if (group.animalType == AnimalType.Crocodile || group.animalType == AnimalType.Gepard)
+            {
+                ++carnivores;
+            }
+            else
+            {
+                ++herbivores;
+            }
+        }
+        if (this.money >= moneyNeed && this.visitorsWaiting >= visitorsNeed && carnivores >= carnivoreNeed && herbivores >= herbivoreNeed)
+        {
+            ++this.weeksUntilWin;
+            int weeksToWin = 0;
+            switch (this.difficulty)
+            {
+                case 1: weeksToWin = 3 * 4; break;
+                case 2: weeksToWin = 6 * 4; break;
+                case 3: weeksToWin = 12 * 4; break;
+            }
+            if (this.weeksUntilWin >= weeksToWin)
+            {
+                //win()
+            }
+        }
+        else
+        {
+            this.weeksUntilWin = 0;
         }
     }
 

@@ -1,26 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\",
+  "WorkspaceRootPath": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\acer\\documents\\4felev\\0szofftech\\safari-empire\\safariempire\\assets\\codes\\security\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\security\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\ranger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\ranger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\patrik\\documents\\egyetem\\4. f\u00E9l\u00E9v\\szeftware technol\u00F3gia\\safari-empire\\safariempire\\assets\\codes\\animal\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\jeep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\jeep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\hill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\gepard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\gepard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\herbivore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\herbivore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\assets\\codes\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\plant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,163 +58,173 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Animal.cs",
-              "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Animal.cs",
-              "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\Animal.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwAwAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Hill.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Hill.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Hill.cs",
+              "RelativeToolTip": "Assets\\Codes\\Hill.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T11:30:22.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Entity.cs",
-              "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
-              "RelativeToolTip": "Assets\\Codes\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:52:16.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Herbivore.cs",
-              "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Herbivore.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Herbivore.cs",
-              "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Herbivore.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\Herbivore.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:49:43.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-24T12:19:38.527Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AnimalGroup.cs",
-              "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAnwKkAAAApAAAAAAAAAA==",
+              "Title": "Poacher.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Poacher.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
+              "RelativeToolTip": "Assets\\Codes\\Poacher.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:20:45.216Z",
+              "WhenOpened": "2025-04-11T10:29:12.434Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
-              "ToolTip": "C:\\Users\\Patrik\\Documents\\Egyetem\\4. f\u00E9l\u00E9v\\Szeftware technol\u00F3gia\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
-              "RelativeToolTip": "Assets\\Codes\\Model.cs",
-              "ViewState": "AgIAAEsBAAAAAAAAAAAnwFsBAAAnAAAAAAAAAA==",
+              "Title": "Ranger.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Ranger.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Ranger.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Ranger.cs",
+              "RelativeToolTip": "Assets\\Codes\\Ranger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:55:32.228Z",
+              "WhenOpened": "2025-04-11T10:29:03.824Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AirBalloon.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\AirBalloon.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Security\\AirBalloon.cs",
-              "ToolTip": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\AirBalloon.cs",
-              "RelativeToolTip": "Assets\\Codes\\Security\\AirBalloon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T19:31:20.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Camera.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Camera.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Security\\Camera.cs",
-              "ToolTip": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Camera.cs",
-              "RelativeToolTip": "Assets\\Codes\\Security\\Camera.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T09:47:43.67Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
-              "ToolTip": "C:\\Users\\Acer\\Documents\\4felev\\0Szofftech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
-              "RelativeToolTip": "Assets\\Codes\\Model.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAQwPgAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T18:31:10.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Ranger.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Ranger.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Ranger.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Ranger.cs",
-              "RelativeToolTip": "Assets\\Codes\\Ranger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T13:14:02.329Z",
-              "EditorCaption": ""
+              "Title": "Jeep.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Jeep.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Jeep.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Jeep.cs",
+              "RelativeToolTip": "Assets\\Codes\\Jeep.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAIBCwB8AAAANAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO8SURBVEhL7ZTBTxtXEMa/93a967rYFgQDckw52EolkKIoakVysntK2t6iePkLcoh6SBpOzik55lBXHEBKlUuT28IpBxSInLhRCIgolBIRZHAKyMbYWeyYxWDv4rfTS0yVSFV7rvhJI81hvvn03owGOOZ/D2slq6urqqVaoefbz9XUWgrZShY1uwZFURDpiEBRFGNiaMIAgIJZCBQrxcDN1E1ka1lj8ttJ09/lD91fuq/e/f2uBSCfvZa1AIC3DCzVCgkmkiDoTGY6l7nOZa5LTNI547qLXPFWrdtxxx04Ojh0Tjzu7/KHJEhJckjnxJPUpN5WLQOA17nXseJB8fLL/EutdFAK1Owa/KofiqRA5jJkLoOB3b4yeGXU7bjjjzcexxe2F2JPNp6gXC\u002BnQ97QcrQvqmXKmcCr7VcGZ3ycg49nfsykZQDYaezEKvXKD89yz\u002BBVvDjdfdo603Mm3\u002BXpshgYtva2YAvb8Dgen\u002BDiQmGvMPAi/wKmZYKIBkq1Um96M\u002B3bt/dBRD7G2AUiegMgLQFAz3c9sfXd9ZjZMBHti\u002BLSl5c2PYrnRhPNX8Awvn\u002BwP96k5vzZvrNGrVGbO\u002BE\u002B4esP9H\u002B9srOCml37VRvQxq5\u002BdfWcINGRKWc2GdgNR3KmKo8qBzIALL1bgiqpOOk9CY/Lk\u002B5p65kgolmfz2e0/hIAhjAEANnybtlw4ECRFHBw4/q561kQrJnPZsDALE78beZaxkBryAWzgGqjiqA3iPph/Tev1zv6aXN82LRStRTOmbnOnJmDLWw4cDpHZkfCmXJGfV9/DwKpDnPCkZFI4MhA5jIkLh0N9J9obcvTjadaci6Jwl4BTdHU9BU9mUgleqf/nEbTaYYI9BMnHkfLoNPTiTZXG0r7JWxUNz7te4TgwuTgU0FvcPl86Dy8qheMs\u002BXuz7unon1RM9weBmPMJNA0I/YGAGQAONVxCofOIfJmHgTqTEwm\u002Bge/GESH0gEbNjYrm4ANI\u002BgLGgDGjKrBwu3hrsXSInbruxMP4w8fCS567y3ciyyWFt8KIX5eG17LHhlcjFyEcWDgwR8PIEuyBo6YRBI455AcCbIko\u002BFqjAEYAwCVq7qASAOAIznvfD6faZjGMAlShRAWk1mu9WoGALPrs7HiXvHyXG5Oq9rVwKFziHZ3O9yyGy7JBYUrYIzdTnyTuNUS/leOblFqNRUmouT81nxkJjeDYq0IAsGv\u002BtEf6Eeb3DZ25/s7ox/L/52/bxGsfPOwOcyJa60QJDQ40Aikccb1j6XHHPOBvwBFmMRhXMHP0QAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-04-05T11:33:42.204Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Poacher.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Poacher.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
-              "RelativeToolTip": "Assets\\Codes\\Poacher.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABaAAAAAAAAAA==",
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "RelativeToolTip": "Assets\\Codes\\Model.cs",
+              "ViewState": "AQIAAJABAAAAAAAAAIAywJwBAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:09:29.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AnimalGroup.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwA8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:59:30.338Z",
+              "WhenOpened": "2025-04-10T08:20:04.03Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ButtonManager.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\ButtonManager.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
+              "RelativeToolTip": "Assets\\Codes\\ButtonManager.cs",
+              "ViewState": "AQIAAMoAAAAAAAAAAIAywNYAAAAiAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO8SURBVEhL7ZTBTxtXEMa/93a967rYFgQDckw52EolkKIoakVysntK2t6iePkLcoh6SBpOzik55lBXHEBKlUuT28IpBxSInLhRCIgolBIRZHAKyMbYWeyYxWDv4rfTS0yVSFV7rvhJI81hvvn03owGOOZ/D2slq6urqqVaoefbz9XUWgrZShY1uwZFURDpiEBRFGNiaMIAgIJZCBQrxcDN1E1ka1lj8ttJ09/lD91fuq/e/f2uBSCfvZa1AIC3DCzVCgkmkiDoTGY6l7nOZa5LTNI547qLXPFWrdtxxx04Ojh0Tjzu7/KHJEhJckjnxJPUpN5WLQOA17nXseJB8fLL/EutdFAK1Owa/KofiqRA5jJkLoOB3b4yeGXU7bjjjzcexxe2F2JPNp6gXC\u002BnQ97QcrQvqmXKmcCr7VcGZ3ycg49nfsykZQDYaezEKvXKD89yz\u002BBVvDjdfdo603Mm3\u002BXpshgYtva2YAvb8Dgen\u002BDiQmGvMPAi/wKmZYKIBkq1Um96M\u002B3bt/dBRD7G2AUiegMgLQFAz3c9sfXd9ZjZMBHti\u002BLSl5c2PYrnRhPNX8Awvn\u002BwP96k5vzZvrNGrVGbO\u002BE\u002B4esP9H\u002B9srOCml37VRvQxq5\u002BdfWcINGRKWc2GdgNR3KmKo8qBzIALL1bgiqpOOk9CY/Lk\u002B5p65kgolmfz2e0/hIAhjAEANnybtlw4ECRFHBw4/q561kQrJnPZsDALE78beZaxkBryAWzgGqjiqA3iPph/Tev1zv6aXN82LRStRTOmbnOnJmDLWw4cDpHZkfCmXJGfV9/DwKpDnPCkZFI4MhA5jIkLh0N9J9obcvTjadaci6Jwl4BTdHU9BU9mUgleqf/nEbTaYYI9BMnHkfLoNPTiTZXG0r7JWxUNz7te4TgwuTgU0FvcPl86Dy8qheMs\u002BXuz7unon1RM9weBmPMJNA0I/YGAGQAONVxCofOIfJmHgTqTEwm\u002Bge/GESH0gEbNjYrm4ANI\u002BgLGgDGjKrBwu3hrsXSInbruxMP4w8fCS567y3ciyyWFt8KIX5eG17LHhlcjFyEcWDgwR8PIEuyBo6YRBI455AcCbIko\u002BFqjAEYAwCVq7qASAOAIznvfD6faZjGMAlShRAWk1mu9WoGALPrs7HiXvHyXG5Oq9rVwKFziHZ3O9yyGy7JBYUrYIzdTnyTuNUS/leOblFqNRUmouT81nxkJjeDYq0IAsGv\u002BtEf6Eeb3DZ25/s7ox/L/52/bxGsfPOwOcyJa60QJDQ40Aikccb1j6XHHPOBvwBFmMRhXMHP0QAAAABJRU5ErkJggg==",
+              "WhenOpened": "2025-03-29T12:49:21.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Entity.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
               "RelativeToolTip": "Assets\\Codes\\Entity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBCwBAAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:26:12.288Z",
+              "WhenOpened": "2025-03-27T21:08:58.302Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnimalGroup.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
+              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAmwB4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:36:40.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Path.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Path.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Path.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Path.cs",
+              "RelativeToolTip": "Assets\\Codes\\Path.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T19:42:46.039Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Gepard.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Gepard.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Gepard.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Gepard.cs",
+              "RelativeToolTip": "Assets\\Codes\\animal\\Gepard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T13:10:50.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Animal.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
+              "RelativeToolTip": "Assets\\Codes\\animal\\Animal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:36:26.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Plant.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Plant.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Plant.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Plant.cs",
+              "RelativeToolTip": "Assets\\Codes\\Plant.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:17:31.642Z"
             }
           ]
         }

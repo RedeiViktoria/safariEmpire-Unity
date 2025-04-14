@@ -96,7 +96,7 @@ namespace Codes.animal
         }
         public bool AbleToMate()
         {
-            Debug.Log(this.femaleCount +" Nő és Hím: "+ this.maleCount);
+            //Debug.Log(this.femaleCount +" Nő és Hím: "+ this.maleCount);
             if (femaleCount >= 1 && maleCount >= 1)
             {
 
