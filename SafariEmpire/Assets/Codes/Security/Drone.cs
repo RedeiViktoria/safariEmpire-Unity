@@ -10,7 +10,6 @@ namespace Codes.Security
         public int _battery;
         public int _waypoint_index;
         public float fspeed;
-        public GameObject obj;
 
         public Drone(Vector2 spawnpoint, List<Vector2> waypoints, Vector2 charger) : base(spawnpoint)
         {

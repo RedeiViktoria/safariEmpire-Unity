@@ -3,16 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\security\\airballoon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\security\\airballoon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\security\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\security\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\security\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\security\\drone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\poacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\jeep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\jeep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\buttonManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +40,108 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AnimalGroup.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwGIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T15:57:01.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Poacher.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Poacher.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Poacher.cs",
-              "RelativeToolTip": "Assets\\Codes\\Poacher.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwBcAAADiAAAAAAAAAA==",
+              "Title": "Drone.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Drone.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Security\\Drone.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Drone.cs",
+              "RelativeToolTip": "Assets\\Codes\\Security\\Drone.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T10:29:12.434Z",
+              "WhenOpened": "2025-04-14T21:02:14.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Camera.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Security\\Camera.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Camera.cs",
+              "RelativeToolTip": "Assets\\Codes\\Security\\Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:02:05.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AirBalloon.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\AirBalloon.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Security\\AirBalloon.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\AirBalloon.cs",
+              "RelativeToolTip": "Assets\\Codes\\Security\\AirBalloon.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:01:57.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Jeep.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Jeep.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Jeep.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Jeep.cs",
+              "RelativeToolTip": "Assets\\Codes\\Jeep.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T20:48:09.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ButtonManager.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\ButtonManager.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
+              "RelativeToolTip": "Assets\\Codes\\ButtonManager.cs",
+              "ViewState": "AgIAACoBAAAAAAAAAIA2wDQBAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T19:53:56.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "buttonManager.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\buttonManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\buttonManager.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\buttonManager.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\buttonManager.cs",
+              "ViewState": "AgIAANsAAAAAAAAAAAAAANgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T19:53:53.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "model.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\model.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\model.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\model.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\model.cs",
+              "ViewState": "AgIAAPgCAAAAAAAAAAAAAPwCAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T19:53:48.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
               "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
-              "ViewState": "AgIAAE0CAAAAAAAAAAAYwM8BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACgBAAAAAAAAAAAAwDcBAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T08:20:04.03Z",
               "EditorCaption": ""

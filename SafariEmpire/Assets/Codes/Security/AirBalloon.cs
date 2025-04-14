@@ -9,7 +9,6 @@ namespace Codes.Security
     {
         private List<Vector2> _waypoints;
         private int _waypoint_index;
-        private GameObject obj;
         private float fspeed;
 
         public AirBalloon(Vector2 spawnpoint, List<Vector2> waypoints) : base(spawnpoint)

@@ -9,9 +9,9 @@ public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
     public const int herbivoreNeed = 5;
-    public const int carnivoreNeed = 3;
-    public const int visitorsNeed = 0;
-    public const int moneyNeed = 0;
+    public const int carnivoreNeed = 5;
+    public const int visitorsNeed = 10;
+    public const int moneyNeed = 1000;
     public int weeksUntilWin;
     private int difficulty; //1: easy, 2:medium, 3:hard
     private int money;
@@ -68,6 +68,14 @@ public class Model : MonoBehaviour
     //view cuccai:
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI timeText;
+    public TextMeshProUGUI elegedettsegText;
+    public TextMeshProUGUI visitorsText;
+    //win conditions page
+    public TextMeshProUGUI latogatokText;
+    public TextMeshProUGUI novenyevokText;
+    public TextMeshProUGUI ragadozokText;
+    public TextMeshProUGUI penzText;
+    public TextMeshProUGUI hetekText;
 
     //constructor
     void Start()
@@ -84,9 +92,6 @@ public class Model : MonoBehaviour
         paths.Add(startPath);
         paths.Add(endPath);
         paths.Add(between); //Start és end között
-        //idő telés:
-        StartCoroutine(TimerCoroutine());
-        StartCoroutine(sendJeep());
 
 
 
@@ -192,7 +197,7 @@ public class Model : MonoBehaviour
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
-        InvokeRepeating("makePoacher", 0f, 5f);
+        InvokeRepeating("makePoacher", 0f, 30f);
 
         //VADŐRÖK
         this.rangers = new List<Ranger>();
@@ -230,6 +235,9 @@ public class Model : MonoBehaviour
 
 
         StartCoroutine(AnimalTimeCoroutine());
+        //idő telés:
+        StartCoroutine(TimerCoroutine());
+        StartCoroutine(sendJeep());
         updateView();
     }
     //TIME SYSTEM
@@ -301,7 +309,7 @@ public class Model : MonoBehaviour
                     money += ticketPrice * 4;
                 }
             }
-            yield return new WaitForSeconds(4f); // 4 másodperces várakozás
+            yield return new WaitForSeconds(0.5f); // 4 másodperces várakozás
         }
     }
     public int newVisitors()
@@ -1080,8 +1088,48 @@ public class Model : MonoBehaviour
     //VIEW FRISSÍTÉSE
     public void updateView()
     {
-        moneyText.text = "Pénz: " + this.money;
+        moneyText.text = "|  Pénz: " + this.money;
         timeText.text = this.week + ". hét, " + this.day + ". nap, " + this.hour + ". óra";
+        elegedettsegText.text = "Elégedettség: " + this.popularity;
+        visitorsText.text = "|  Várakozó látogatók: " + this.visitorsWaiting;
+
+        //winConditions page
+        int herbivores = 0;
+        int carnivores = 0;
+        foreach (AnimalGroup group in this.animalGroups)
+        {
+            if (group.animalType == AnimalType.Crocodile || group.animalType == AnimalType.Gepard)
+            {
+                carnivores += group.animals.Count();
+            }
+            else
+            {
+                herbivores += group.animals.Count();
+            }
+        }
+        int weeks = 0;
+        switch (difficulty)
+        {
+            case 1: weeks = 3 * 4; break;
+            case 2: weeks = 6 * 4; break;
+            case 3: weeks = 12 * 4; break;
+        }
+        latogatokText.text = "Látogatók: " + this.visitorsWaiting + "/" + visitorsNeed;
+        novenyevokText.text = "Növényevők: " + herbivores + "/" + herbivoreNeed;
+        ragadozokText.text = "Ragadozók: " + carnivores + "/" + carnivoreNeed;
+        penzText.text = "Pénz: " + this.money + "/" + moneyNeed;
+        hetekText.text = "Teljesített hetek: " + this.weeksUntilWin + "/" + weeks;
+
+        //colors:
+        latogatokText.color = new Color(0.8941177f, 0.003921553f, 0.1770464f);
+        novenyevokText.color = new Color(0.8941177f, 0.003921553f, 0.1770464f);
+        ragadozokText.color = new Color(0.8941177f, 0.003921553f, 0.1770464f);
+        penzText.color = new Color(0.8941177f, 0.003921553f, 0.1770464f);
+        Color g = new Color(0.0352202f, 0.4276729f, 0f);
+        if (this.visitorsWaiting >= visitorsNeed) { latogatokText.color = g; }
+        if (herbivores >= herbivoreNeed) { novenyevokText.color = g; }
+        if (carnivores >= carnivoreNeed) { ragadozokText.color = g; }
+        if (this.money >= moneyNeed) { penzText.color = g; }
 
     }
 
@@ -1113,11 +1161,11 @@ public class Model : MonoBehaviour
         {
             if (group.animalType == AnimalType.Crocodile || group.animalType == AnimalType.Gepard)
             {
-                ++carnivores;
+                carnivores += group.animals.Count();
             }
             else
             {
-                ++herbivores;
+                herbivores += group.animals.Count();
             }
         }
         if (this.money >= moneyNeed && this.visitorsWaiting >= visitorsNeed && carnivores >= carnivoreNeed && herbivores >= herbivoreNeed)

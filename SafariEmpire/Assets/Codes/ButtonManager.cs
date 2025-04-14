@@ -12,6 +12,7 @@ public class ButtonManager : MonoBehaviour
     public Button shopBtn;
     public Button safariBtn;
     public Button exitBtn;
+    public Button WinButton;
     public GameObject layout;
     public GameObject timeButtons;
     public GameObject shop;
@@ -20,6 +21,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject rangers;
     public GameObject security;
     public GameObject priceInput;
+    public GameObject winConditions;
     private bool isPlacing;
     private string toBuy;
     void Start()
@@ -29,6 +31,7 @@ public class ButtonManager : MonoBehaviour
         safariBtn.onClick.AddListener(OnSafariClicked);
         exitBtn.onClick.AddListener(OnPlacementExitClicked);
         layout.GetComponent<Button>().onClick.AddListener(OnLayoutClicked);
+        WinButton.onClick.AddListener(OnWinClicked);
 
         //Adding listeners to the time buttons in the mainUI
         foreach (Transform child in timeButtons.transform)
@@ -210,6 +213,7 @@ public class ButtonManager : MonoBehaviour
     {
         shop.SetActive(!shop.activeSelf);
         safari.SetActive(false);
+        winConditions.SetActive(false);
     }
     void OnSetPriceClicked()
     {
@@ -221,9 +225,17 @@ public class ButtonManager : MonoBehaviour
         safari.SetActive(!safari.activeSelf);
         priceInput.GetComponent<TMP_InputField>().text = model.getTicketPrice().ToString();
         shop.SetActive(false);
+        winConditions.SetActive(false);
     }
     void OnLayoutClicked()
     {
+        safari.SetActive(false);
+        shop.SetActive(false);
+        winConditions.SetActive(false);
+    }
+    void OnWinClicked()
+    {
+        winConditions.SetActive(!winConditions.activeSelf);
         safari.SetActive(false);
         shop.SetActive(false);
     }
