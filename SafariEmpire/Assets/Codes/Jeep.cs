@@ -1,11 +1,14 @@
+using Codes.animal;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Jeep : Entity
 {
     public List<Path> path = new List<Path>();
+    public List<AnimalGroup> encounteredAnimals = new List<AnimalGroup>();
     public int idx = 0;
     public bool moving = false;
+    public bool isFinished = false; 
     public Jeep(Vector2 spawnPosition) : base(spawnPosition)
     {
         
@@ -15,7 +18,7 @@ public class Jeep : Entity
     {
         path = paths[UnityEngine.Random.Range(0, paths.Count)];
     }
-    public void move()
+    public bool move()
     {
         if (this.idx < path.Count)
         {
@@ -24,6 +27,7 @@ public class Jeep : Entity
             {
                 this.idx += 1;
             }
+            return false;
         }
         else
         {
@@ -32,7 +36,18 @@ public class Jeep : Entity
             {
                 moving = false;
                 this.idx = 0;
+
+                //biztosítja, hogy csak 1szer számolja, amikor beér
+                if (!isFinished)
+                {
+                    isFinished = true;
+                    return true;
+                }
+
+                return false;
             }
+            return false;
         }
+
     }
 }
