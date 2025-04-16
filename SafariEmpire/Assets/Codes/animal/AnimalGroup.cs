@@ -157,7 +157,7 @@ namespace Codes.animal
                     this.animals.Add(Born(this.animalType));
                     this.femaleCount = CountGender(this, 0);
                     this.maleCount = CountGender(this, 1);
-                   // Debug.Log("Baby " + animalType + " is born.");
+                   Debug.Log("Baby " + animalType + " is born.");
                 }
             }
 
@@ -415,8 +415,8 @@ namespace Codes.animal
         {
             foreach (Animal a in this.animals)
             {
-                a.Hunger -= (int) Math.Round(1 + 0.5 * a.Age, 0);
-                a.Thirst -= (int)Math.Round(1 + 0.3 * a.Age, 0);
+                a.Hunger -= (int) Math.Round(1 + 0.1 * Math.Sqrt(a.Age), 0);
+                a.Thirst -= (int)Math.Round(1 + 0.1 * Math.Sqrt(a.Age), 0);
             }
         }
         public AnimalType GetGroupType()
