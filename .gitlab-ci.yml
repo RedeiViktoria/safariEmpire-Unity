@@ -19,7 +19,6 @@ image: $IMAGE:$UNITY_VERSION-base-$IMAGE_VERSION
 get-unity-version:
   image: alpine
   stage: prepare
-  tags: [unity]
   variables:
     GIT_DEPTH: 1
   script:
