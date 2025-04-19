@@ -53,7 +53,7 @@ public class PlayModeTests
         var model = GameObject.Find("Model");
         Assert.IsNotNull(model, "Model not found in scene.");
 
-        Debug.Log("Test result: PASSED");
+        Debug.Log("Test result(ClickingMenuButtonLoadsGameScene): PASSED");
     }
 
     [UnityTest]
@@ -77,6 +77,6 @@ public class PlayModeTests
         var grass = GameObject.Find("GrassObject(Clone)");
         Assert.IsNotNull(grass, "Grass not found in scene.");
 
-        Debug.Log("Test result: PASSED");
+        Debug.Log("Test result(ObjectsLoadInGame): PASSED");
     }
 }
