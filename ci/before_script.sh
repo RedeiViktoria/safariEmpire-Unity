@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-UNITY_BUILDER=../unity-builder
+UNITY_BUILDER=../SafariEmpire/unity-builder
 
 # Function for retrying commands with exponential backoff
 retry_with_backoff() {
