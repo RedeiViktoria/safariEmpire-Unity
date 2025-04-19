@@ -72,14 +72,12 @@ get-unity-version:
 # Tests without junit reporting results in GitLab
 test-playmode:
   <<: *test
-  tags: [unity]
   variables:
     TEST_PLATFORM: playmode
     TESTING_TYPE: NUNIT
 
 test-editmode:
   <<: *test
-  tags: [unity]
   variables:
     TEST_PLATFORM: editmode
     TESTING_TYPE: NUNIT
@@ -110,14 +108,12 @@ test-editmode:
 
 test-playmode-with-junit-reports:
   <<: *test-with-junit-reports
-  tags: [unity]
   variables:
     TEST_PLATFORM: playmode
     TESTING_TYPE: JUNIT
 
 test-editmode-with-junit-reports:
   <<: *test-with-junit-reports
-  tags: [unity]
   variables:
     TEST_PLATFORM: editmode
     TESTING_TYPE: JUNIT
@@ -135,20 +131,17 @@ test-editmode-with-junit-reports:
 
 build-StandaloneLinux64:
   <<: *build
-  tags: [unity]
   variables:
     BUILD_TARGET: StandaloneLinux64
 
 build-StandaloneOSX:
   <<: *build
-  tags: [unity]
   image: $IMAGE:$UNITY_VERSION-mac-mono-$IMAGE_VERSION
   variables:
     BUILD_TARGET: StandaloneOSX
 
 build-StandaloneWindows64:
   <<: *build
-  tags: [unity]
   image: $IMAGE:$UNITY_VERSION-windows-mono-$IMAGE_VERSION
   variables:
     BUILD_TARGET: StandaloneWindows64
