@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\",
   "Documents": [
     {
+<<<<<<< HEAD
+=======
+      "AbsoluteMoniker": "D:0:0:{87852DCD-4FBE-C53D-B47C-F996D1427289}|PlayMode.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\tests\\playmode\\playmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87852DCD-4FBE-C53D-B47C-F996D1427289}|PlayMode.csproj|solutionrelative:assets\\tests\\playmode\\playmodetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> d8af6af (Installed needed test package)
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -48,13 +55,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 9,
+=======
+          "SelectedChildIndex": 1,
+>>>>>>> d8af6af (Installed needed test package)
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
+<<<<<<< HEAD
+=======
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayModeTests.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "RelativeDocumentMoniker": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "RelativeToolTip": "Assets\\Tests\\PlayMode\\PlayModeTests.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADcAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T16:27:26.779Z",
+              "EditorCaption": ""
+            },
+            {
+>>>>>>> d8af6af (Installed needed test package)
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
@@ -63,8 +90,17 @@
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
+<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 2,
+=======
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "Animal.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\Animal.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\Animal.cs",
@@ -76,7 +112,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
+=======
+              "DocumentIndex": 2,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "AnimalGroup.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
@@ -88,7 +128,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
+=======
+              "DocumentIndex": 6,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "Drone.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Drone.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Security\\Drone.cs",
@@ -100,7 +144,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
+=======
+              "DocumentIndex": 5,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "Camera.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\Camera.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Security\\Camera.cs",
@@ -112,7 +160,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
+=======
+              "DocumentIndex": 4,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "AirBalloon.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\AirBalloon.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Security\\AirBalloon.cs",
@@ -124,7 +176,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
+=======
+              "DocumentIndex": 7,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "Jeep.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Jeep.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Jeep.cs",
@@ -136,24 +192,37 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 1,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
               "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
+<<<<<<< HEAD
               "ViewState": "AQIAAGEFAAAAAAAAAAAQwGoFAAAFAAAA",
+=======
+              "ViewState": "AQIAAFUFAAAAAAAAAIBTwFgFAAAAAAAA",
+>>>>>>> d8af6af (Installed needed test package)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T08:20:04.03Z",
               "EditorCaption": ""
             },
             {
+<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+=======
+              "$type": "Document",
+              "DocumentIndex": 8,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "ButtonManager.cs",
               "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\ButtonManager.cs",
@@ -165,7 +234,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 8,
+=======
+              "DocumentIndex": 9,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "buttonManager.cs",
               "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\buttonManager.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\vikto\\OneDrive\\Asztali g\u00E9p\\buttonManager.cs",
@@ -177,7 +250,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 9,
+=======
+              "DocumentIndex": 10,
+>>>>>>> d8af6af (Installed needed test package)
               "Title": "model.cs",
               "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\model.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\vikto\\OneDrive\\Asztali g\u00E9p\\model.cs",

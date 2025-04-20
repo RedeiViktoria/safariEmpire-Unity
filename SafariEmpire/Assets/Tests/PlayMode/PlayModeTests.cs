@@ -31,6 +31,8 @@ public class PlayModeTests
         SceneManager.LoadScene("Menu");
         yield return new WaitForSeconds(1f); // Wait for the scene to load
 
+        Debug.Log("Starting test: ClickingMenuButtonLoadsGameScene");
+
         // 2. Find the GameModel in the scene
         var menuManager = GameObject.Find("MenuManager");
         Assert.IsNotNull(menuManager, "Menumanager not found in scene.");
@@ -51,14 +53,18 @@ public class PlayModeTests
         var model = GameObject.Find("Model");
         Assert.IsNotNull(model, "Model not found in scene.");
 
-
+        Debug.Log("Test result(ClickingMenuButtonLoadsGameScene): PASSED");
     }
 
     [UnityTest]
     public IEnumerator ObjectsLoadInGame()
     {
+        
         SceneManager.LoadScene("MainGame");
         yield return new WaitForSeconds(1f);
+
+        Debug.Log("Starting test: ObjectsLoadInGame");
+
         var hill = GameObject.Find("HillObject(Clone)");
         Assert.IsNotNull(hill, "Hill not found in scene.");
 
@@ -70,5 +76,7 @@ public class PlayModeTests
 
         var grass = GameObject.Find("GrassObject(Clone)");
         Assert.IsNotNull(grass, "Grass not found in scene.");
+
+        Debug.Log("Test result(ObjectsLoadInGame): PASSED");
     }
 }
