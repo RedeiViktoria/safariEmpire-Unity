@@ -12,7 +12,6 @@ public class Win : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("elindult");
         int weeks = PlayerPrefs.GetInt("weeks");
         int days = PlayerPrefs.GetInt("days");
         int hours = PlayerPrefs.GetInt("hours");
@@ -23,7 +22,6 @@ public class Win : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("új játék");
         SceneManager.LoadScene("Menu");
     }
 
