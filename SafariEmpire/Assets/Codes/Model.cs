@@ -5,6 +5,7 @@ using TMPro;
 using Codes.animal;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -1145,6 +1146,7 @@ public class Model : MonoBehaviour
         if (this.money <= 0)
         {
             //lose()
+            SceneManager.LoadScene("Lose");
         }
     }
 
@@ -1181,6 +1183,11 @@ public class Model : MonoBehaviour
             if (this.weeksUntilWin >= weeksToWin)
             {
                 //win()
+                PlayerPrefs.SetInt("weeks", this.week);
+                PlayerPrefs.SetInt("days", this.day);
+                PlayerPrefs.SetInt("hours", this.hour);
+                PlayerPrefs.Save();
+                SceneManager.LoadScene("Win");
             }
         }
         else
