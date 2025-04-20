@@ -12,8 +12,8 @@ namespace Codes.animal
     {
         protected HashSet<Vector2> waterPlaces;
         protected HashSet<Plant> plantPlaces;
-        protected int femaleCount;
-        protected int maleCount;
+        public int femaleCount;
+        public int maleCount;
         protected double averageAge;
         public List<Animal> animals;
         public AnimalType animalType;
@@ -22,6 +22,8 @@ namespace Codes.animal
         protected int vision;
         protected int reach;
         protected int sleep;
+
+        public string currentActivity;
 
         public AnimalGroup(Vector2 spawnPosition, AnimalType type) : base(spawnPosition)
         {
@@ -37,6 +39,7 @@ namespace Codes.animal
             this.animalType = type;
             this.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
             this.plantPlaces = new HashSet<Plant>();
+            this.currentActivity = "A csoport mozog";
         }
         public void SortAnimals()
         {
@@ -157,7 +160,8 @@ namespace Codes.animal
                     this.animals.Add(Born(this.animalType));
                     this.femaleCount = CountGender(this, 0);
                     this.maleCount = CountGender(this, 1);
-                   Debug.Log("Baby " + animalType + " is born.");
+                    this.currentActivity = "Született egy bébi";
+                   //Debug.Log("Baby " + animalType + " is born.");
                 }
             }
 
@@ -239,6 +243,7 @@ namespace Codes.animal
 
         public int Eat(int foodAmount)
         {
+            this.currentActivity = "A csoport eszik";
             //Debug.Log("Animal is eating");
             int foodForEach = (int)(System.Math.Round(foodAmount / (double)(animals.Count), 0));
             int leftOver = 0;
@@ -295,6 +300,7 @@ namespace Codes.animal
         }
         public void Drink()
         {
+            this.currentActivity = "A csoport iszik";
             foreach (Animal animal in animals)
             {
                 animal.Thirst = 100;

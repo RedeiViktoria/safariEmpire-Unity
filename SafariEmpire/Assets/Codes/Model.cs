@@ -8,6 +8,7 @@ using System;
 using UnityEngine.SceneManagement;
 using Codes.Security;
 using JetBrains.Annotations;
+using NUnit.Framework;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -194,7 +195,6 @@ public class Model : MonoBehaviour
             {
                 animal.obj = Instantiate(cheetahObject, animal.spawnPosition, Quaternion.identity);
             }
-
         }
 
         //ORVVADÁSZOK
@@ -677,6 +677,22 @@ public class Model : MonoBehaviour
         }
         return null;
     }
+    //általános detectAnimal
+    public AnimalGroup detectAnyAnimal(Vector2 position)
+    {
+        int range = 1;
+        foreach (AnimalGroup a in this.animalGroups)
+        {
+
+            float x = a.obj.transform.position.x;
+            float y = a.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return a;
+            }
+        }
+        return null;
+    }
     //Animal Stufff
     //------------------
 
@@ -752,6 +768,7 @@ public class Model : MonoBehaviour
     //GetGroupType() = animalType (adattag) Csak elfelejtettem hogy hivatkozhatunk r� 
     public void LookForObject(AnimalGroup group)
     {
+        group.currentActivity = "A csoport mozog";
         if (group.IsHerbivore())
         {
             List<Plant> plants = detectPlants(group);

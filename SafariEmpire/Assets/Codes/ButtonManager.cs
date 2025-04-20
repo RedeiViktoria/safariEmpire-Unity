@@ -4,6 +4,7 @@ using TMPro;
 using System.Net;
 using UnityEngine.EventSystems;
 using System;
+using Codes.animal;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -22,8 +23,17 @@ public class ButtonManager : MonoBehaviour
     public GameObject security;
     public GameObject priceInput;
     public GameObject winConditions;
+    public GameObject animalStats;
+    public TextMeshProUGUI animalTypeTEXT;
+    public TextMeshProUGUI femaleCountTEXT;
+    public TextMeshProUGUI maleCountTEXT;
+    public TextMeshProUGUI currentActivityTEXT;
     private bool isPlacing;
     private string toBuy;
+    private bool isAnimalCheckable;
+    private bool shouldIgnoreNextLayoutClick = false;
+    private bool animalStatsOpen;
+    private AnimalGroup lastGroup;
     void Start()
     {
         //Adding listeners to open the shop and the safari menu, and close if something else.
@@ -32,6 +42,8 @@ public class ButtonManager : MonoBehaviour
         exitBtn.onClick.AddListener(OnPlacementExitClicked);
         layout.GetComponent<Button>().onClick.AddListener(OnLayoutClicked);
         WinButton.onClick.AddListener(OnWinClicked);
+        this.isAnimalCheckable = true;
+        this.animalStatsOpen = false;
 
         //Adding listeners to the time buttons in the mainUI
         foreach (Transform child in timeButtons.transform)
@@ -180,9 +192,9 @@ public class ButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlacing)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (isPlacing)
             {
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
@@ -191,8 +203,40 @@ public class ButtonManager : MonoBehaviour
                     model.buy(toBuy, mousePosition);
                 }
                 //DetectObjectUnderMouse2D(); good for detecting 2d objects with colliders
+            } else if(this.isAnimalCheckable)
+            {
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                AnimalGroup group = model.detectAnyAnimal(mousePosition);
+                if (group!=null)
+                {
+                    Debug.Log(group.animalType);
+                    animalStats.SetActive(true);
+                    switch (group.animalType)
+                    {
+                        case AnimalType.Gepard:  this.animalTypeTEXT.text = "Gepárdok"; break;
+                        case AnimalType.Hippo:  this.animalTypeTEXT.text = "Vízilovak"; break;
+                        case AnimalType.Gazella:  this.animalTypeTEXT.text = "Gazellák"; break;
+                        case AnimalType.Crocodile:  this.animalTypeTEXT.text = "Krokodilok"; break;
+                    }
+                    this.femaleCountTEXT.text = "Nõstények: " + group.femaleCount + " db";
+                    this.maleCountTEXT.text = "Hímek: " + group.maleCount + " db";
+                    this.currentActivityTEXT.text = group.currentActivity;
+                    shouldIgnoreNextLayoutClick = true;
+                    this.animalStatsOpen = true;
+                    this.lastGroup = group;
+                }
             }
         }
+        if (animalStatsOpen)
+        {
+            if (this.lastGroup != null)
+            {
+                this.femaleCountTEXT.text = "Nõstények: " + this.lastGroup.femaleCount + " db";
+                this.maleCountTEXT.text = "Hímek: " + this.lastGroup.maleCount + " db";
+                this.currentActivityTEXT.text = this.lastGroup.currentActivity;
+            }
+        }
+
     }
     void DetectObjectUnderMouse2D()
     {
@@ -211,9 +255,12 @@ public class ButtonManager : MonoBehaviour
 
     void OnShopClicked()
     {
-        shop.SetActive(!shop.activeSelf);
+        shop.SetActive(true);
         safari.SetActive(false);
         winConditions.SetActive(false);
+        animalStats.SetActive(false);
+        this.animalStatsOpen = false;
+        this.isAnimalCheckable = false;
     }
     void OnSetPriceClicked()
     {
@@ -222,22 +269,35 @@ public class ButtonManager : MonoBehaviour
     }
     void OnSafariClicked()
     {
-        safari.SetActive(!safari.activeSelf);
+        safari.SetActive(true);
         priceInput.GetComponent<TMP_InputField>().text = model.getTicketPrice().ToString();
         shop.SetActive(false);
         winConditions.SetActive(false);
+        animalStats.SetActive(false);
+        this.animalStatsOpen = false;
+        this.isAnimalCheckable = false;
     }
     void OnLayoutClicked()
     {
+        if (shouldIgnoreNextLayoutClick)
+        {
+            shouldIgnoreNextLayoutClick = false; // lenyeltük az elsõ kattintást
+            return;
+        }
         safari.SetActive(false);
         shop.SetActive(false);
         winConditions.SetActive(false);
+        animalStats.SetActive(false);
+        this.animalStatsOpen = false;
+        this.isAnimalCheckable = true;
     }
     void OnWinClicked()
     {
-        winConditions.SetActive(!winConditions.activeSelf);
+        winConditions.SetActive(true);
         safari.SetActive(false);
         shop.SetActive(false);
+        animalStats.SetActive(false);
+        this.isAnimalCheckable = false;
     }
     void OnTimeClicked(int timeSpeed)
     {
