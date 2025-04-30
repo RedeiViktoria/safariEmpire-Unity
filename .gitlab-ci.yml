@@ -23,7 +23,6 @@ default:
   before_script:
     - chmod +x ./ci/before_script.sh && ./ci/before_script.sh
   needs:
-    - job: get-unity-version
       artifacts: true
 
 .unity_after_script: &unity_after_script
