@@ -1,5 +1,4 @@
 stages:
-  - prepare
   - build_and_test
   - deploy
 
@@ -8,6 +7,7 @@ stages:
 variables:
   BUILD_NAME: SafariEmpire
   IMAGE: unityci/editor # https://hub.docker.com/r/unityci/editor
+  UNITY_VERSION: "6000.0.41f1"
   IMAGE_VERSION: 3 # This will automatically use latest v3.x.x, see https://github.com/game-ci/docker/releases
   UNITY_DIR: $CI_PROJECT_DIR/SafariEmpire # this needs to be an absolute path. Defaults to the root of your tree.
   # You can expose this in Unity via Application.version
@@ -18,17 +18,6 @@ image: $IMAGE:$UNITY_VERSION-base-$IMAGE_VERSION
 
 default:
   tags: [ unity ]
-
-get-unity-version:
-  image: alpine
-  stage: prepare
-  variables:
-    GIT_DEPTH: 1
-  script:
-    - echo UNITY_VERSION=$(cat $UNITY_DIR/ProjectSettings/ProjectVersion.txt | grep "m_EditorVersion:.*" | awk '{ print $2}') | tee prepare.env
-  artifacts:
-    reports:
-      dotenv: prepare.env
 
 .unity_before_script: &unity_before_script
   before_script:
