@@ -16,6 +16,9 @@ variables:
 
 image: $IMAGE:$UNITY_VERSION-base-$IMAGE_VERSION
 
+default:
+  tags: [ unity ]
+
 get-unity-version:
   image: alpine
   stage: prepare
