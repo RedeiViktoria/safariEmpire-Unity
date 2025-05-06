@@ -8,6 +8,7 @@ using System;
 using UnityEngine.SceneManagement;
 using Codes.Security;
 using JetBrains.Annotations;
+using NUnit.Framework;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -111,8 +112,8 @@ public class Model : MonoBehaviour
         //terepi akadályok generálása
         //HEGYEK
         hills = new List<Hill>();
-        Hill hill1 = new Hill(new Vector2(5, 1));
-        Hill hill2 = new Hill(new Vector2(-3, 3));
+        Hill hill1 = new Hill(new Vector2(8, 8));
+        Hill hill2 = new Hill(new Vector2(-12, 5));
         Hill hill3 = new Hill(new Vector2(-7, -7));
         hills.Add(hill1);
         hills.Add(hill2);
@@ -124,7 +125,7 @@ public class Model : MonoBehaviour
         //FOLYÓK
         rivers = new List<River>();
         River river1 = new River(new Vector2(-4, -2));
-        River river2 = new River(new Vector2(-10, 6));
+        River river2 = new River(new Vector2(-9, 6));
         rivers.Add(river1);
         rivers.Add(river2);
         foreach (River river in rivers)
@@ -145,7 +146,7 @@ public class Model : MonoBehaviour
         //entityk generálása
         //NÖVÉNYEK
         plants = new List<Plant>();
-        Bush plant1 = new Bush(new Vector2(6, 8));
+        Bush plant1 = new Bush(new Vector2(4, 8));
         Tree plant2 = new Tree(new Vector2(5, 5));
         Grass plant3 = new Grass(new Vector2(7, 3));
         Grass plant4 = new Grass(new Vector2(-4, -6));
@@ -194,7 +195,6 @@ public class Model : MonoBehaviour
             {
                 animal.obj = Instantiate(cheetahObject, animal.spawnPosition, Quaternion.identity);
             }
-
         }
 
         //ORVVADÁSZOK
@@ -677,6 +677,22 @@ public class Model : MonoBehaviour
         }
         return null;
     }
+    //általános detectAnimal
+    public AnimalGroup detectAnyAnimal(Vector2 position)
+    {
+        int range = 1;
+        foreach (AnimalGroup a in this.animalGroups)
+        {
+
+            float x = a.obj.transform.position.x;
+            float y = a.obj.transform.position.y;
+            if ((x < position.x + range && x > position.x - range) && (y < position.y + range && y > position.y - range))
+            {
+                return a;
+            }
+        }
+        return null;
+    }
     //Animal Stufff
     //------------------
 
@@ -752,6 +768,7 @@ public class Model : MonoBehaviour
     //GetGroupType() = animalType (adattag) Csak elfelejtettem hogy hivatkozhatunk r� 
     public void LookForObject(AnimalGroup group)
     {
+        group.currentActivity = "A csoport mozog";
         if (group.IsHerbivore())
         {
             List<Plant> plants = detectPlants(group);

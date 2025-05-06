@@ -17,6 +17,8 @@ public class Plant : Entity
     {
         if (value < max_growth) value += grow_rate;
         else value = max_growth;
+
+        view();
     }
     public int Value
     {
@@ -26,7 +28,16 @@ public class Plant : Entity
     {
         int v = this.value;
         this.value = 0;
+        view();
         return v;
+    }
+
+    private void view()
+    {
+        SpriteRenderer sr = this.obj.GetComponent<SpriteRenderer>();
+        Color color = sr.color;
+        color.a = ((float)this.value) / ((float)this.max_growth);
+        sr.color = color;
     }
 }
 

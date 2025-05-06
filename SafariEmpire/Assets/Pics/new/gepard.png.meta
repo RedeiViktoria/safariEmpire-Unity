@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2bd93fbc883cf1b4fb163d43336a873d
+guid: 3de285b369f01354ea8e3be235f45535
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7443756053782179069
-    second: background_0
+      213: -1028233038809075855
+    second: gepard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_0
+      name: gepard_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 600
+        x: 49
+        y: 30
+        width: 392
+        height: 376
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30356abce4772b890800000000000000
-      internalID: -7443756053782179069
+      spriteID: 17fe67fbf7bfab1f0800000000000000
+      internalID: -1028233038809075855
       vertices: []
       indices: 
       edges: []
