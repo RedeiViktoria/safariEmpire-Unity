@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2bd93fbc883cf1b4fb163d43336a873d
+guid: 859896ae634fe2948b120de61c74b8eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7443756053782179069
-    second: background_0
+      213: -2257292171129640764
+    second: hippo_0
+  - first:
+      213: -4240803985971343812
+    second: hippo_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_0
+      name: hippo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 600
+        x: 10
+        y: 52
+        width: 427
+        height: 334
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30356abce4772b890800000000000000
-      internalID: -7443756053782179069
+      spriteID: 4c82c81eabc7ca0e0800000000000000
+      internalID: -2257292171129640764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hippo_1
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 59
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e0e165e33a525c0800000000000000
+      internalID: -4240803985971343812
       vertices: []
       indices: 
       edges: []
@@ -134,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hippo_0: -2257292171129640764
+      hippo_1: -4240803985971343812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,9 +4,12 @@
   "Documents": [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 =======
+=======
+>>>>>>> 73f5f35 (ui update)
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,12 +54,16 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
 >>>>>>> 5e78db2 (animalGroup statok megjelenítése)
+=======
+>>>>>>> 73f5f35 (ui update)
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
               "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "ViewState": "AgIAADECAAAAAAAAAAAiwEACAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -64,6 +71,10 @@
 =======
               "ViewState": "AgIAANsCAAAAAAAAAAAowJgCAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+=======
+              "ViewState": "AgIAANsCAAAAAAAAAAAowJgCAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+>>>>>>> 73f5f35 (ui update)
               "WhenOpened": "2025-04-20T16:23:40.523Z",
               "EditorCaption": ""
             },
@@ -91,7 +102,10 @@
               "ViewState": "AgIAAA8AAAAAAAAAAAAwwK4BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-20T16:15:19.48Z",
+<<<<<<< HEAD
 >>>>>>> 5e78db2 (animalGroup statok megjelenítése)
+=======
+>>>>>>> 73f5f35 (ui update)
               "EditorCaption": ""
             }
           ]

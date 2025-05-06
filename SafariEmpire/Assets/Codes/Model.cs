@@ -112,8 +112,8 @@ public class Model : MonoBehaviour
         //terepi akadályok generálása
         //HEGYEK
         hills = new List<Hill>();
-        Hill hill1 = new Hill(new Vector2(5, 1));
-        Hill hill2 = new Hill(new Vector2(-3, 3));
+        Hill hill1 = new Hill(new Vector2(8, 8));
+        Hill hill2 = new Hill(new Vector2(-12, 5));
         Hill hill3 = new Hill(new Vector2(-7, -7));
         hills.Add(hill1);
         hills.Add(hill2);
@@ -125,7 +125,7 @@ public class Model : MonoBehaviour
         //FOLYÓK
         rivers = new List<River>();
         River river1 = new River(new Vector2(-4, -2));
-        River river2 = new River(new Vector2(-10, 6));
+        River river2 = new River(new Vector2(-9, 6));
         rivers.Add(river1);
         rivers.Add(river2);
         foreach (River river in rivers)
@@ -146,7 +146,7 @@ public class Model : MonoBehaviour
         //entityk generálása
         //NÖVÉNYEK
         plants = new List<Plant>();
-        Bush plant1 = new Bush(new Vector2(6, 8));
+        Bush plant1 = new Bush(new Vector2(4, 8));
         Tree plant2 = new Tree(new Vector2(5, 5));
         Grass plant3 = new Grass(new Vector2(7, 3));
         Grass plant4 = new Grass(new Vector2(-4, -6));
