@@ -6,6 +6,7 @@ using Codes.animal;
 using System.Linq;
 using System;
 using UnityEngine.SceneManagement;
+using Codes.Security;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -31,8 +32,8 @@ public class Model : MonoBehaviour
     //entityk
     public GameObject jeepObject;
     public List<Jeep> jeeps;
-    //public List<SecuritySystem> security;
-    //public GameObject securityObject;
+    public List<SecuritySystem> security;
+    public GameObject securityObject;
 
     //vadőrök
     public List<Ranger> rangers;
@@ -467,6 +468,37 @@ public class Model : MonoBehaviour
             {
                 Ranger ranger = this.rangers[i];
                 moveRanger(ranger, ranger.targetPosition);
+            }
+        }
+
+        if (this.security.Count > 0)
+        {
+            foreach (SecuritySystem securitySystem in this.security)
+            {
+                if (securitySystem.GetType() == typeof(AirBalloon))
+                {
+                    AirBalloon airBalloon = (AirBalloon)securitySystem;
+                    airBalloon.Travel();
+                }
+                if (securitySystem.GetType() == typeof(Drone))
+                {
+                    Drone drone = (Drone)securitySystem;
+                    float x = drone.obj.transform.position.x;
+                    float y = drone.obj.transform.position.y;
+                    if ((x != drone.charger.x || y != drone.charger.y) && drone.battery > 1 ||
+                        (x == drone.charger.x && y == drone.charger.y) && drone.battery >= drone.MAX_BATTERY)
+                    {
+                        drone.Travel();
+                    }
+                    else if (x != drone.charger.x && y != drone.charger.y)
+                    {
+                        drone.GoBack();
+                    }
+                    else
+                    {
+                        if (drone.battery < drone.MAX_BATTERY) drone.Charge();
+                    }
+                }
             }
         }
     }
