@@ -34,7 +34,6 @@ public class Model : MonoBehaviour
     public GameObject jeepObject;
     public List<Jeep> jeeps;
     public List<SecuritySystem> security;
-    public GameObject securityObject;
     public GameObject airballoonObject;
     public GameObject droneObject;
     public GameObject cameraObject;
@@ -222,7 +221,7 @@ public class Model : MonoBehaviour
         waypoints2.Add(new Vector2(2, 1));
         Vector2 charger = new Vector2(0, 1);
 
-
+        
         security = new List<SecuritySystem>();
         Codes.Security.Camera camera = new Codes.Security.Camera(new Vector2(5, 1));
         AirBalloon airballon = new AirBalloon(new Vector2(-3, 3), waypoints1);
@@ -249,7 +248,7 @@ public class Model : MonoBehaviour
             }
 
         }
-
+        
         //JEEPS
 
 
@@ -283,7 +282,7 @@ public class Model : MonoBehaviour
         StartCoroutine(sendJeep());
         updateView();
     }
-
+   
     public void chooseSecurityPath(char i, List<Vector2> waypoints)
     {
         switch(i)
@@ -544,12 +543,12 @@ public class Model : MonoBehaviour
                 moveRanger(ranger, ranger.targetPosition);
             }
         }
-
+        
         if (this.security.Count > 0)
         {
             foreach (SecuritySystem securitySystem in this.security)
             {
-                detectPoacher(securitySystem.Position, securitySystem.Range);
+                //detectPoacher(securitySystem.Position, securitySystem.Range);
                 if (securitySystem.GetType() == typeof(AirBalloon))
                 {
                     AirBalloon airBalloon = (AirBalloon)securitySystem;

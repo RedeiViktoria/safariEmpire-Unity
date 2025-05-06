@@ -11406,6 +11406,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weeksUntilWin: 0
   jeepObject: {fileID: 8279535778963259092, guid: ceb5cb2798d29e34d91da3d493bd0bb9, type: 3}
+  airballoonObject: {fileID: 1542187927787776811, guid: 609b0631495d2ca489bc8c13bd9d0cd4, type: 3}
+  droneObject: {fileID: 394209376715557957, guid: 0a0c8cfda46129a41b43e7fcc6364fef, type: 3}
+  cameraObject: {fileID: 2982104493523741768, guid: 23e9ef40751913d4f8c4bbb03b677660, type: 3}
   rangerObject: {fileID: 7670175353959525270, guid: ecc42244dcc682a479bdbde88e466d2f, type: 3}
   poacherObject: {fileID: 1168272361583774332, guid: 8e9db66be1287b64aa93dd7910816b97, type: 3}
   cheetahObject: {fileID: 4479318961361759205, guid: 3fd15287b03305947839b019f2568ee4, type: 3}

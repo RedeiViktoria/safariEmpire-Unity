@@ -20,43 +20,42 @@ namespace Codes.Security
             this.waypoint_index = 0;
             this.charger = charger;
             battery = 200;
-            MAX_BATTERY = 200;
             fspeed = 1f;
+            MAX_BATTERY = 200;
         }
 
-        public int Travel()
+        public void Travel()
         {
-            obj.transform.position = Vector2.MoveTowards(obj.transform.position, waypoints[waypoint_index], fspeed * Time.deltaTime);
-            while (obj.transform.position.x != waypoints[waypoint_index].x && obj.transform.position.y != waypoints[waypoint_index].y)
+            this.obj.transform.position = Vector2.MoveTowards(this.obj.transform.position, waypoints[waypoint_index], fspeed * Time.deltaTime);
+            if (this.obj.transform.position.x != waypoints[waypoint_index].x && this.obj.transform.position.y != waypoints[waypoint_index].y)
             {
                 battery -= 1;
             }
-            if (waypoint_index + 1 < waypoints.Count)
+            if (this.obj.transform.position.x == waypoints[waypoint_index].x && this.obj.transform.position.y == waypoints[waypoint_index].y)
             {
-                waypoint_index++;
+                if (waypoint_index + 1 < waypoints.Count)
+                    waypoint_index++;
+                else waypoint_index = 0;
             }
-            else waypoint_index = 0;
-
-            return battery;
         }
 
         public void GoBack()
         {
 
-            obj.transform.position = Vector2.MoveTowards(obj.transform.position, charger, fspeed * Time.deltaTime);
+            this.obj.transform.position = Vector2.MoveTowards(this.obj.transform.position, charger, fspeed * Time.deltaTime);
             /*
             while (obj.transform.position.x != waypoints[waypoint_index].x && obj.transform.position.y != waypoints[waypoint_index].y)
             {
-                battery -= 1;
+                battery -= 2;
             }
             */
 
         }
 
-        public int Charge()
+        public void Charge()
         {
-            battery += 10;
-            return battery;
-        }    
+            battery += 5;
+            if (battery > MAX_BATTERY) battery = MAX_BATTERY;
+        }
     }
 }

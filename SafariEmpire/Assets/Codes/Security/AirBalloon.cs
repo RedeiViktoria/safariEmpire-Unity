@@ -22,13 +22,14 @@ namespace Codes.Security
 
         public void Travel()
         {
-            obj.transform.position = Vector2.MoveTowards(obj.transform.position, _waypoints[_waypoint_index], fspeed * Time.deltaTime);
-            
-            if (_waypoint_index + 1 < _waypoints.Count)
+            this.obj.transform.position = Vector2.MoveTowards(this.obj.transform.position, _waypoints[_waypoint_index], fspeed * Time.deltaTime);
+
+            if (this.obj.transform.position.x == _waypoints[_waypoint_index].x && this.obj.transform.position.y == _waypoints[_waypoint_index].y)
             {
-                _waypoint_index++;
+                if (_waypoint_index + 1 < _waypoints.Count)
+                    _waypoint_index++;
+                else _waypoint_index = 0;
             }
-            else _waypoint_index = 0;
 
         }
     }
