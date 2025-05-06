@@ -39,6 +39,7 @@ public class Model : MonoBehaviour
     public GameObject airballoonObject;
     public GameObject droneObject;
     public GameObject cameraObject;
+    public GameObject chargerObject;
 
     //vadőrök
     public List<Ranger> rangers;
@@ -212,6 +213,8 @@ public class Model : MonoBehaviour
         ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
 
         //MEGFIGYELŐ RENDSZER
+        this.security = new List<SecuritySystem>();
+        /*
         List<Vector2> waypoints1 = new List<Vector2>();
         waypoints1.Add(new Vector2(1, 1));
         waypoints1.Add(new Vector2(2, 1));
@@ -225,7 +228,7 @@ public class Model : MonoBehaviour
         
         security = new List<SecuritySystem>();
         Codes.Security.Camera camera = new Codes.Security.Camera(new Vector2(5, 1));
-        AirBalloon airballon = new AirBalloon(new Vector2(-3, 3), waypoints1);
+        AirBalloon airballon = new AirBalloon(new Vector2(-3, 3));
         Drone drone = new Drone(charger, waypoints2, charger);
         security.Add(camera);
         security.Add(airballon);
@@ -248,7 +251,7 @@ public class Model : MonoBehaviour
 
             }
 
-        }
+        }*/
         
         //JEEPS
 
@@ -1023,6 +1026,33 @@ public class Model : MonoBehaviour
             }
         }
     }
+    //SECURITY SYSTEM
+    public void setDronePath()
+    {
+        if (this.security.Count > 0)
+        {
+            foreach (SecuritySystem security in this.security)
+            {
+                if (security.GetType() == typeof(Drone))
+                {
+                    security.toggleSecurityPath();
+                }
+            }
+        }
+    }
+    public void setAirBalloonPath()
+    {
+        if (this.security.Count > 0)
+        {
+            foreach (SecuritySystem security in this.security)
+            {
+                if (security.GetType() == typeof(AirBalloon))
+                {
+                    security.toggleSecurityPath();
+                }
+            }
+        }
+    }
 
 
     //VÁSÁRLÁS
@@ -1154,6 +1184,16 @@ public class Model : MonoBehaviour
                     break;
                 case "drone":
                     Codes.Security.Drone drone = new Codes.Security.Drone(position);
+                    security.Add(drone);
+                    drone.obj = Instantiate(droneObject, drone.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
+                    this.chargerObject = Instantiate(chargerObject, new Vector2(0, 1), Quaternion.identity);
+                    break;
+                case "airballoon":
+                    Codes.Security.AirBalloon airballoon = new Codes.Security.AirBalloon(position);
+                    security.Add(airballoon);
+                    airballoon.obj = Instantiate(airballoonObject, airballoon.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
             }
         }
