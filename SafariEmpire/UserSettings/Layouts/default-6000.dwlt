@@ -8,7 +8,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -17,19 +17,9 @@ MonoBehaviour:
     x: 0
     y: 42.666668
     width: 1280
-<<<<<<< HEAD
-    height: 629.3334
-  m_ShowMode: 4
-  m_Title: Game
-=======
     height: 646.6667
   m_ShowMode: 4
-<<<<<<< HEAD
-  m_Title: Inspector
->>>>>>> 674693b (security view rész)
-=======
-  m_Title: Game
->>>>>>> de9dae5 (security system view része)
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -54,23 +44,11 @@ MonoBehaviour:
     x: 0
     y: 36
     width: 1280
-<<<<<<< HEAD
-    height: 573.3333
-  m_MinSize: {x: 300, y: 100}
-  m_MaxSize: {x: 24288, y: 16192}
-  vertical: 0
-  controlID: 93
-=======
     height: 590.6667
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 39
->>>>>>> 674693b (security view rész)
-=======
-  controlID: 150
->>>>>>> de9dae5 (security system view része)
+  controlID: 36
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -87,26 +65,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1015.3333
-    y: 0
-    width: 264.6667
-    height: 573.3333
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-=======
     x: 1041.3334
     y: 0
     width: 238.66663
     height: 590.6667
-<<<<<<< HEAD
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
->>>>>>> 674693b (security view rész)
-=======
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
->>>>>>> de9dae5 (security system view része)
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -129,17 +93,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 245.33333
-    height: 374.66666
+    width: 193.33333
+    height: 228.66667
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-=======
-    width: 193.33333
-    height: 540.6667
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
->>>>>>> 674693b (security view rész)
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -161,20 +118,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 374.66666
-<<<<<<< HEAD
-    width: 1015.3333
-    height: 198.66666
-=======
+    y: 228.66667
     width: 1041.3334
-    height: 216.00003
->>>>>>> 674693b (security view rész)
-=======
-    y: 540.6667
-    width: 1041.3334
-    height: 50
->>>>>>> de9dae5 (security system view része)
+    height: 362
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 12}
@@ -204,11 +150,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1280
-<<<<<<< HEAD
-    height: 629.3333
-=======
     height: 646.6667
->>>>>>> 674693b (security view rész)
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -253,11 +195,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 609.3333
-=======
     y: 626.6667
->>>>>>> 674693b (security view rész)
     width: 1280
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -281,17 +219,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1015.3333
-    height: 573.3333
-=======
     width: 1041.3334
     height: 590.6667
->>>>>>> 674693b (security view rész)
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 151
+  controlID: 37
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -312,20 +245,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1015.3333
-=======
     width: 1041.3334
-<<<<<<< HEAD
->>>>>>> 674693b (security view rész)
-    height: 374.66666
-=======
-    height: 540.6667
->>>>>>> de9dae5 (security system view része)
+    height: 228.66667
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 152
+  controlID: 38
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -342,20 +267,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 245.33333
-    y: 0
-    width: 770
-=======
     x: 193.33333
     y: 0
     width: 848.00006
-<<<<<<< HEAD
->>>>>>> 674693b (security view rész)
-    height: 374.66666
-=======
-    height: 540.6667
->>>>>>> de9dae5 (security system view része)
+    height: 228.66667
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 15}
@@ -386,20 +301,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-    y: 453.33334
-<<<<<<< HEAD
-    width: 1014.3333
-    height: 172.66666
-=======
+    y: 307.33334
     width: 1040.3334
-    height: 190.00003
->>>>>>> 674693b (security view rész)
-=======
-    y: 619.3334
-    width: 1040.3334
-    height: 24
->>>>>>> de9dae5 (security system view része)
+    height: 336
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -430,41 +334,18 @@ MonoBehaviour:
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
-  m_StartGridSize: 16
+  m_StartGridSize: 36
   m_LastFolders:
-<<<<<<< HEAD
-  - Assets/Codes
-<<<<<<< HEAD
-  m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\kelle\Desktop\Szofttech\safari-empire\SafariEmpire
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 68b70000
-    m_LastClickedID: 46952
-    m_ExpandedIDs: 0000000010b7000000ca9a3bffffff7f
-=======
-=======
   - Assets/Objects
->>>>>>> de9dae5 (security system view része)
   m_LastFoldersGridSize: 36
   m_LastProjectPath: "C:\\Users\\vikto\\OneDrive\\Asztali g\xE9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 43.99997}
-    m_SelectedIDs: 5eb70000
-    m_LastClickedID: 46942
-    m_ExpandedIDs: 000000002ab7000000ca9a3bffffff7f
->>>>>>> 674693b (security view rész)
-=======
     scrollPos: {x: 0, y: 111}
-    m_SelectedIDs: cab00000
-    m_LastClickedID: 45258
-    m_ExpandedIDs: 00000000c6b0000000ca9a3bffffff7f
->>>>>>> de9dae5 (security system view része)
+    m_SelectedIDs: 3ab20000
+    m_LastClickedID: 45626
+    m_ExpandedIDs: 000000008cb0000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -493,15 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000010b70000
-=======
-    m_ExpandedIDs: 000000002ab70000
->>>>>>> 674693b (security view rész)
-=======
-    m_ExpandedIDs: 00000000c6b0000000ca9a3bffffff7f
->>>>>>> de9dae5 (security system view része)
+    m_ExpandedIDs: 000000008cb00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -529,13 +402,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-<<<<<<< HEAD
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300001ecf0000
-=======
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300001ecf0000a8b700000eb100008ab200008cb200003eb300004c6f0000460601000000000044b5000062b40000e2b400008cb40000
->>>>>>> 674693b (security view rész)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -561,7 +429,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 16
+    m_GridSize: 36
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
 --- !u!114 &13
@@ -585,17 +453,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 1015.3334
-    y: 78.66667
-    width: 263.6667
-    height: 547.3333
-=======
     x: 1041.3334
     y: 78.66667
     width: 237.66663
     height: 564.6667
->>>>>>> 674693b (security view rész)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -610,7 +471,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -643,16 +504,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 78.66667
-<<<<<<< HEAD
-    width: 244.33333
-=======
     width: 192.33333
-<<<<<<< HEAD
->>>>>>> 674693b (security view rész)
-    height: 348.66666
-=======
-    height: 514.6667
->>>>>>> de9dae5 (security system view része)
+    height: 202.66667
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -667,21 +520,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0cfbffff
-=======
-      m_SelectedIDs: 68b30000
-      m_LastClickedID: 45928
-      m_ExpandedIDs: 5cccffff12d6ffff7cf9ffff94f9ffffb0f9ffff56faffff86faffff08b100001ab100009cb10000ceb1000052b20000e8b20000
->>>>>>> 674693b (security view rész)
-=======
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0af7ffff14f7ffff44f8ffff4ef8ffff50f8ffff2eb30000
->>>>>>> de9dae5 (security system view része)
+      m_ExpandedIDs: e2e8ffffb0f2ffff50faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -727,20 +568,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 245.33334
-    y: 78.66667
-    width: 768
-=======
     x: 193.33334
     y: 78.66667
     width: 846.00006
-<<<<<<< HEAD
->>>>>>> 674693b (security view rész)
-    height: 348.66666
-=======
-    height: 514.6667
->>>>>>> de9dae5 (security system view része)
+    height: 202.66667
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -778,17 +609,17 @@ MonoBehaviour:
       layout: 1
       size: {x: 0, y: 0}
       sizeOverridden: 0
-    - dockPosition: 1
-      containerId: overlay-toolbar__top
+    - dockPosition: 0
+      containerId: Floating
       displayed: 1
       id: unity-scene-view-toolbar
       index: 0
-      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-255.3333740234375,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":1,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
-      floating: 0
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":true,"m_FloatingSnapOffset":{"x":-284.6667175292969,"y":-280.0},"m_SnapOffsetDelta":{"x":-0.000030517578125,"y":77.33332824707031},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 1
       collapsed: 0
-      snapOffset: {x: -255.33337, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapOffset: {x: -284.66672, y: -280}
+      snapOffsetDelta: {x: -0.000030517578, y: 77.33333}
+      snapCorner: 3
       layout: 1
       size: {x: 0, y: 0}
       sizeOverridden: 0
@@ -796,7 +627,7 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       displayed: 0
       id: unity-search-toolbar
-      index: 2
+      index: 1
       contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":-24.0,"y":0.0},"m_FloatingSnapCorner":1,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
@@ -839,10 +670,10 @@ MonoBehaviour:
       displayed: 1
       id: Orientation
       index: 0
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":67.5,"y":86.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":67.5,"y":67.33333587646485},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 67.5, y: 86}
+      snapOffset: {x: 67.5, y: 67.333336}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       layout: 4
@@ -1048,11 +879,11 @@ MonoBehaviour:
       containerId: overlay-toolbar__top
       displayed: 1
       id: unity-scene-view-camera-mode-toolbar
-      index: 1
-      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      index: 0
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.333332061767579},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 24, y: 0}
+      snapOffset: {x: 24, y: 25.333332}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       layout: 1
@@ -1105,10 +936,10 @@ MonoBehaviour:
       displayed: 1
       id: Overlays/OverlayMenu
       index: 1
-      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":1,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.333332061767579},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 24, y: 0}
+      snapOffset: {x: 24, y: 25.333332}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       layout: 1
@@ -1214,15 +1045,15 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 1
       containerId: overlay-container--right
-      displayed: 0
+      displayed: 1
       id: SceneView/CamerasOverlay
       index: 14
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":-175.33334350585938},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":2,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 24, y: 0}
+      snapOffset: {x: 24, y: -175.33334}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 2
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
@@ -1254,6 +1085,20 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      displayed: 0
+      id: AINavigationOverlay
+      index: 17
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverridden: 0
     m_ContainerData:
     - containerId: overlay-toolbar__top
       scrollOffset: 0
@@ -1281,21 +1126,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 3.6221235, y: -1.6890858, z: -0.07721957}
+    m_Target: {x: 0, y: 0, z: 0}
     speed: 2
-    m_Value: {x: 3.6221235, y: -1.6890858, z: -0.07721957}
-=======
-    m_Target: {x: 1002.7538, y: 398.15607, z: -3.0789948}
-    speed: 2
-    m_Value: {x: 1002.7538, y: 398.15607, z: -3.0789948}
->>>>>>> 674693b (security view rész)
-=======
-    m_Target: {x: 833.7311, y: 329.86414, z: -6.85604}
-    speed: 2
-    m_Value: {x: 833.7311, y: 329.86414, z: -6.85604}
->>>>>>> de9dae5 (security system view része)
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1345,21 +1178,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: 17.72196
+    m_Target: 10
     speed: 2
-    m_Value: 17.72196
-=======
-    m_Target: 412.87384
-    speed: 2
-    m_Value: 412.87384
->>>>>>> 674693b (security view rész)
-=======
-    m_Target: 695.60345
-    speed: 2
-    m_Value: 695.60345
->>>>>>> de9dae5 (security system view része)
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1414,20 +1235,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 245.33334
-    y: 78.66667
-    width: 768
-=======
     x: 193.33334
     y: 78.66667
     width: 846.00006
-<<<<<<< HEAD
->>>>>>> 674693b (security view rész)
-    height: 348.66666
-=======
     height: 514.6667
->>>>>>> de9dae5 (security system view része)
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1445,7 +1256,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1280, y: 720}
+  m_TargetSize: {x: 1920, y: 1080}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -1454,16 +1265,16 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 07000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -426.6667
-    m_HBaseRangeMax: 426.6667
-    m_VBaseRangeMin: -240
-    m_VBaseRangeMax: 240
+    m_HBaseRangeMin: -640
+    m_HBaseRangeMax: 640
+    m_VBaseRangeMin: -360
+    m_VBaseRangeMax: 360
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1481,48 +1292,16 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-<<<<<<< HEAD
-      width: 768
-      height: 327.66666
-    m_Scale: {x: 0.6826389, y: 0.6826389}
-    m_Translation: {x: 384, y: 163.83333}
-=======
       width: 846.00006
-<<<<<<< HEAD
-      height: 327.66666
-    m_Scale: {x: 0.45509258, y: 0.45509258}
-    m_Translation: {x: 423.00003, y: 163.83333}
->>>>>>> 674693b (security view rész)
-=======
       height: 493.6667
     m_Scale: {x: 0.66093755, y: 0.66093755}
     m_Translation: {x: 423.00003, y: 246.83334}
->>>>>>> de9dae5 (security system view része)
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-      x: -562.5229
-      y: -240
-      width: 1125.0458
-      height: 480
-    m_MinimalGUI: 1
-  m_defaultScale: 0.6826389
-  m_LastWindowPixelSize: {x: 1152, y: 523}
-=======
-      x: -929.48126
-      y: -360
-      width: 1858.9625
-      height: 720
-    m_MinimalGUI: 1
-  m_defaultScale: 0.45509258
-  m_LastWindowPixelSize: {x: 1269.0001, y: 523}
->>>>>>> 674693b (security view rész)
-=======
       x: -640
       y: -373.4594
       width: 1280
@@ -1530,7 +1309,6 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.66093755
   m_LastWindowPixelSize: {x: 1269.0001, y: 772}
->>>>>>> de9dae5 (security system view része)
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1559,21 +1337,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    y: 453.33334
-    width: 1014.3333
-    height: 172.66666
-=======
-    y: 508.6667
-    width: 1041
-    height: 134.66669
->>>>>>> 674693b (security view rész)
-=======
-    y: 453.33334
+    y: 559.3334
     width: 1040.3334
-    height: 190.00003
->>>>>>> de9dae5 (security system view része)
+    height: 84.00003
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
