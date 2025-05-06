@@ -1,30 +1,23 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\",
+  "WorkspaceRootPath": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\",
   "Documents": [
     {
 <<<<<<< HEAD
-<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\kelle\\desktop\\szofttech\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-=======
->>>>>>> 73f5f35 (ui update)
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\security\\securitysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\security\\securitysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|c:\\users\\vikto\\onedrive\\asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\safariempire\\assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\buttonmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\animal\\animalgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5846CA9D-C375-7E5A-2766-0B58F2C4B65E}|Assembly-CSharp.csproj|solutionrelative:assets\\codes\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> 5e78db2 (animalGroup statok megjelenítése)
+>>>>>>> 674693b (security view rész)
     }
   ],
   "DocumentGroupContainers": [
@@ -34,78 +27,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
 <<<<<<< HEAD
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
 =======
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ButtonManager.cs",
               "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\ButtonManager.cs",
               "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\ButtonManager.cs",
               "RelativeToolTip": "Assets\\Codes\\ButtonManager.cs",
-              "ViewState": "AgIAANUAAAAAAAAAAAAQwOAAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwDMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T16:37:16.492Z",
+              "WhenOpened": "2025-05-06T17:39:38.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-<<<<<<< HEAD
->>>>>>> 5e78db2 (animalGroup statok megjelenítése)
-=======
->>>>>>> 73f5f35 (ui update)
+              "Title": "SecuritySystem.cs",
+              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\SecuritySystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Codes\\Security\\SecuritySystem.cs",
+              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Security\\SecuritySystem.cs",
+              "RelativeToolTip": "Assets\\Codes\\Security\\SecuritySystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T17:06:54.525Z",
+              "EditorCaption": ""
+>>>>>>> 674693b (security view rész)
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "DocumentMoniker": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeDocumentMoniker": "Assets\\Codes\\Model.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
+              "ToolTip": "C:\\Users\\kelle\\Desktop\\Szofttech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Model.cs",
               "RelativeToolTip": "Assets\\Codes\\Model.cs",
 <<<<<<< HEAD
-<<<<<<< HEAD
-              "ViewState": "AgIAADECAAAAAAAAAAAiwEACAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T16:49:37.415Z",
+              "ViewState": "AQIAAFIBAAAAAAAAAAAuwGUBAAAXAAAA",
 =======
-              "ViewState": "AgIAANsCAAAAAAAAAAAowJgCAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABABAAAAAAAAAAAAwBgBAAApAAAAAAAAAA==",
+>>>>>>> 674693b (security view rész)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-=======
-              "ViewState": "AgIAANsCAAAAAAAAAAAowJgCAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
->>>>>>> 73f5f35 (ui update)
-              "WhenOpened": "2025-04-20T16:23:40.523Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\Entity.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\Entity.cs",
-              "RelativeToolTip": "Assets\\Codes\\Entity.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T16:23:25.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AnimalGroup.cs",
-              "DocumentMoniker": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeDocumentMoniker": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ToolTip": "C:\\Users\\vikto\\OneDrive\\Asztali g\u00E9p\\suli\\szoftvertech\\safari-empire\\SafariEmpire\\Assets\\Codes\\animal\\AnimalGroup.cs",
-              "RelativeToolTip": "Assets\\Codes\\animal\\AnimalGroup.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwK4BAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T16:15:19.48Z",
-<<<<<<< HEAD
->>>>>>> 5e78db2 (animalGroup statok megjelenítése)
-=======
->>>>>>> 73f5f35 (ui update)
+              "WhenOpened": "2025-05-06T18:07:48.956Z",
               "EditorCaption": ""
             }
           ]

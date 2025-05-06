@@ -10,6 +10,7 @@ namespace Codes.Security
         private List<Vector2> _waypoints;
         private int _waypoint_index;
         private float fspeed;
+        public char pathOption;
 
         public AirBalloon(Vector2 spawnpoint, List<Vector2> waypoints) : base(spawnpoint)
         {
@@ -18,6 +19,8 @@ namespace Codes.Security
             _waypoints = waypoints;
             _waypoint_index = 0;
             fspeed = 1f;
+            this.pathOption = 'a';
+            toggleSecurityPath();
         }
 
         public void Travel()
@@ -31,6 +34,47 @@ namespace Codes.Security
                 else _waypoint_index = 0;
             }
 
+        }
+
+        public void toggleSecurityPath()
+        {
+            char i = 'a';
+            switch (this.pathOption)
+            {
+                case 'a': this.pathOption = 'b'; break;
+                case 'b': this.pathOption = 'c'; break;
+                case 'c': this.pathOption = 'a'; break;
+            }
+            this.waypoints.Clear();
+            switch (i)
+            {
+                case 'a':
+                    {
+                        this.waypoints.Add(new Vector2(1, 1));
+                        this.waypoints.Add(new Vector2(2, 1));
+                        this.waypoints.Add(new Vector2(1, 2));
+
+                    }
+                    break;
+                case 'b':
+                    {
+                        this.waypoints.Add(new Vector2(0, 2));
+                        this.waypoints.Add(new Vector2(1, 2));
+                        this.waypoints.Add(new Vector2(2, 1));
+                        this.waypoints.Add(new Vector2(2, 2));
+
+                    }
+                    break;
+                case 'c':
+                    {
+                        this.waypoints.Add(new Vector2(0, 1));
+                        this.waypoints.Add(new Vector2(1, 1));
+                        this.waypoints.Add(new Vector2(1, 2));
+                        this.waypoints.Add(new Vector2(2, 2));
+                        this.waypoints.Add(new Vector2(2, 1));
+                    }
+                    break;
+            }
         }
     }
 }

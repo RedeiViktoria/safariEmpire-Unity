@@ -5,6 +5,7 @@ using System.Net;
 using UnityEngine.EventSystems;
 using System;
 using Codes.animal;
+using JetBrains.Annotations;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class ButtonManager : MonoBehaviour
     public Button safariBtn;
     public Button exitBtn;
     public Button WinButton;
+    public Button buyDrone;
+    public Button buyAirBalloon;
+    public Button setDrone;
+    public Button setAirBalloon;
     public GameObject layout;
     public GameObject timeButtons;
     public GameObject shop;
@@ -44,6 +49,7 @@ public class ButtonManager : MonoBehaviour
         WinButton.onClick.AddListener(OnWinClicked);
         this.isAnimalCheckable = true;
         this.animalStatsOpen = false;
+        buyDrone.onClick.AddListener(OnBuyDroneClicked);
 
         //Adding listeners to the time buttons in the mainUI
         foreach (Transform child in timeButtons.transform)
@@ -67,6 +73,10 @@ public class ButtonManager : MonoBehaviour
 
             }
         }
+
+        //Security system
+        
+
 
         //Adding listeners to switch buttons in safari menu
         Transform switchButtons = safari.transform.Find("Buttons");

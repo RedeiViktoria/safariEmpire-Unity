@@ -11,6 +11,7 @@ namespace Codes.Security
         public int waypoint_index;
         public float fspeed;
         public int MAX_BATTERY;
+        public char pathOption;
 
         public Drone(Vector2 spawnpoint, List<Vector2> waypoints, Vector2 charger) : base(spawnpoint)
         {
@@ -22,6 +23,8 @@ namespace Codes.Security
             battery = 200;
             fspeed = 1f;
             MAX_BATTERY = 200;
+            this.pathOption = 'a';
+            toggleSecurityPath();
         }
 
         public void Travel()
@@ -56,6 +59,47 @@ namespace Codes.Security
         {
             battery += 5;
             if (battery > MAX_BATTERY) battery = MAX_BATTERY;
+        }
+
+        public void toggleSecurityPath()
+        {
+            char i = 'a';
+            switch (this.pathOption)
+            {
+                case 'a': this.pathOption = 'b'; break;
+                case 'b': this.pathOption = 'c'; break;
+                case 'c': this.pathOption = 'a'; break;
+            }
+            this.waypoints.Clear();
+            switch (i)
+            {
+                case 'a':
+                    {
+                        this.waypoints.Add(new Vector2(1, 1));
+                        this.waypoints.Add(new Vector2(2, 1));
+                        this.waypoints.Add(new Vector2(1, 2));
+
+                    }
+                    break;
+                case 'b':
+                    {
+                        this.waypoints.Add(new Vector2(0, 2));
+                        this.waypoints.Add(new Vector2(1, 2));
+                        this.waypoints.Add(new Vector2(2, 1));
+                        this.waypoints.Add(new Vector2(2, 2));
+
+                    }
+                    break;
+                case 'c':
+                    {
+                        this.waypoints.Add(new Vector2(0, 1));
+                        this.waypoints.Add(new Vector2(1, 1));
+                        this.waypoints.Add(new Vector2(1, 2));
+                        this.waypoints.Add(new Vector2(2, 2));
+                        this.waypoints.Add(new Vector2(2, 1));
+                    }
+                    break;
+            }
         }
     }
 }
