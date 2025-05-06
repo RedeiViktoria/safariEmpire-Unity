@@ -6,6 +6,8 @@ using Codes.animal;
 using System.Linq;
 using System;
 using UnityEngine.SceneManagement;
+using Codes.Security;
+using JetBrains.Annotations;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -31,8 +33,11 @@ public class Model : MonoBehaviour
     //entityk
     public GameObject jeepObject;
     public List<Jeep> jeeps;
-    //public List<SecuritySystem> security;
-    //public GameObject securityObject;
+    public List<SecuritySystem> security;
+    public GameObject securityObject;
+    public GameObject airballoonObject;
+    public GameObject droneObject;
+    public GameObject cameraObject;
 
     //vadőrök
     public List<Ranger> rangers;
@@ -207,6 +212,43 @@ public class Model : MonoBehaviour
         ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
 
         //MEGFIGYELŐ RENDSZER
+        List<Vector2> waypoints1 = new List<Vector2>();
+        waypoints1.Add(new Vector2(1, 1));
+        waypoints1.Add(new Vector2(2, 1));
+        waypoints1.Add(new Vector2(1, 2));
+        List<Vector2> waypoints2 = new List<Vector2>();
+        waypoints2.Add(new Vector2(0, 2));
+        waypoints2.Add(new Vector2(1, 2));
+        waypoints2.Add(new Vector2(2, 1));
+        Vector2 charger = new Vector2(0, 1);
+
+
+        security = new List<SecuritySystem>();
+        Codes.Security.Camera camera = new Codes.Security.Camera(new Vector2(5, 1));
+        AirBalloon airballon = new AirBalloon(new Vector2(-3, 3), waypoints1);
+        Drone drone = new Drone(charger, waypoints2, charger);
+        security.Add(camera);
+        security.Add(airballon);
+        security.Add(drone);
+        foreach (SecuritySystem s in security)
+        {
+            if (s.GetType() == typeof(AirBalloon))
+            {
+                s.obj = Instantiate(airballoonObject, s.spawnPosition, Quaternion.identity);
+
+            }
+            if (s.GetType() == typeof(Codes.Security.Camera))
+            {
+                s.obj = Instantiate(cameraObject, s.spawnPosition, Quaternion.identity);
+
+            }
+            if (s.GetType() == typeof(Drone))
+            {
+                s.obj = Instantiate(droneObject, s.spawnPosition, Quaternion.identity);
+
+            }
+
+        }
 
         //JEEPS
 
@@ -240,6 +282,39 @@ public class Model : MonoBehaviour
         StartCoroutine(TimerCoroutine());
         StartCoroutine(sendJeep());
         updateView();
+    }
+
+    public void chooseSecurityPath(char i, List<Vector2> waypoints)
+    {
+        switch(i)
+        {
+            case 'a':
+                {
+                    waypoints.Add(new Vector2(1, 1));
+                    waypoints.Add(new Vector2(2, 1));
+                    waypoints.Add(new Vector2(1, 2));
+                 
+                }
+                break;
+            case 'b':
+                {
+                    waypoints.Add(new Vector2(0, 2));
+                    waypoints.Add(new Vector2(1, 2));
+                    waypoints.Add(new Vector2(2, 1));
+                    waypoints.Add(new Vector2(2, 2));
+
+                }
+                break;
+            case 'c':
+                {
+                    waypoints.Add(new Vector2(0, 1));
+                    waypoints.Add(new Vector2(1, 1));
+                    waypoints.Add(new Vector2(1, 2));
+                    waypoints.Add(new Vector2(2, 2));
+                    waypoints.Add(new Vector2(2, 1));
+                }
+                break;
+        }
     }
     //TIME SYSTEM
     public void updateTime()
@@ -467,6 +542,38 @@ public class Model : MonoBehaviour
             {
                 Ranger ranger = this.rangers[i];
                 moveRanger(ranger, ranger.targetPosition);
+            }
+        }
+
+        if (this.security.Count > 0)
+        {
+            foreach (SecuritySystem securitySystem in this.security)
+            {
+                detectPoacher(securitySystem.Position, securitySystem.Range);
+                if (securitySystem.GetType() == typeof(AirBalloon))
+                {
+                    AirBalloon airBalloon = (AirBalloon)securitySystem;
+                    airBalloon.Travel();
+                }
+                if (securitySystem.GetType() == typeof(Drone))
+                {
+                    Drone drone = (Drone)securitySystem;
+                    float x = drone.obj.transform.position.x;
+                    float y = drone.obj.transform.position.y;
+                    if ((x != drone.charger.x || y != drone.charger.y) && drone.battery > 1 ||
+                        (x == drone.charger.x && y == drone.charger.y) && drone.battery >= drone.MAX_BATTERY)
+                    {
+                        drone.Travel();
+                    }
+                    else if (x != drone.charger.x && y != drone.charger.y)
+                    {
+                        drone.GoBack();
+                    }
+                    else
+                    {
+                        if (drone.battery < drone.MAX_BATTERY) drone.Charge();
+                    }
+                }
             }
         }
     }

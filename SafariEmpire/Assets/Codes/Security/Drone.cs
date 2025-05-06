@@ -5,47 +5,49 @@ namespace Codes.Security
 {
     public class Drone : SecuritySystem
     {
-        public List<Vector2> _waypoints;
-        public Vector2 _charger;
-        public int _battery;
-        public int _waypoint_index;
+        public List<Vector2> waypoints;
+        public Vector2 charger;
+        public int battery;
+        public int waypoint_index;
         public float fspeed;
+        public int MAX_BATTERY;
 
         public Drone(Vector2 spawnpoint, List<Vector2> waypoints, Vector2 charger) : base(spawnpoint)
         {
             //example range (idk)
             range = 5;
-            this._waypoints = waypoints;
-            this._waypoint_index = 0;
-            this._charger = charger;
-            _battery = 100;
+            this.waypoints = waypoints;
+            this.waypoint_index = 0;
+            this.charger = charger;
+            battery = 200;
+            MAX_BATTERY = 200;
             fspeed = 1f;
         }
 
         public int Travel()
         {
-            obj.transform.position = Vector2.MoveTowards(obj.transform.position, _waypoints[_waypoint_index], fspeed * Time.deltaTime);
-            while (obj.transform.position.x != _waypoints[_waypoint_index].x && obj.transform.position.y != _waypoints[_waypoint_index].y)
+            obj.transform.position = Vector2.MoveTowards(obj.transform.position, waypoints[waypoint_index], fspeed * Time.deltaTime);
+            while (obj.transform.position.x != waypoints[waypoint_index].x && obj.transform.position.y != waypoints[waypoint_index].y)
             {
-                _battery -= 2;
+                battery -= 1;
             }
-            if (_waypoint_index + 1 < _waypoints.Count)
+            if (waypoint_index + 1 < waypoints.Count)
             {
-                _waypoint_index++;
+                waypoint_index++;
             }
-            else _waypoint_index = 0;
+            else waypoint_index = 0;
 
-            return _battery;
+            return battery;
         }
 
         public void GoBack()
         {
 
-            obj.transform.position = Vector2.MoveTowards(obj.transform.position, _charger, fspeed * Time.deltaTime);
+            obj.transform.position = Vector2.MoveTowards(obj.transform.position, charger, fspeed * Time.deltaTime);
             /*
-            while (obj.transform.position.x != _waypoints[_waypoint_index].x && obj.transform.position.y != _waypoints[_waypoint_index].y)
+            while (obj.transform.position.x != waypoints[waypoint_index].x && obj.transform.position.y != waypoints[waypoint_index].y)
             {
-                _battery -= 2;
+                battery -= 1;
             }
             */
 
@@ -53,8 +55,8 @@ namespace Codes.Security
 
         public int Charge()
         {
-            _battery += 20;
-            return _battery;
+            battery += 10;
+            return battery;
         }    
     }
 }
