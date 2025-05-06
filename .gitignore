@@ -3,28 +3,28 @@
 # ==========================
 
 # Folders Unity generates automatically
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
-CrashReports/
+SafariEmpire/[Ll]ibrary/
+SafariEmpire/[Tt]emp/
+SafariEmpire/[Oo]bj/
+SafariEmpire/[Bb]uild/
+SafariEmpire/[Bb]uilds/
+SafariEmpire/[Ll]ogs/
+SafariEmpire/[Mm]emoryCaptures/
+SafariEmpire/CrashReports/
 
 # Asset Store packages
-Assets/AssetStoreTools*
+SafariEmpire/Assets/AssetStoreTools*
 
 # ====================================
 # Unity Editor & Layout-specific files
 # ====================================
 # Personal editor layout files (prevent conflicts)
-*.dwlt
-DocumentLayout.json
+SafariEmpire/*.dwlt
+SafariEmpire/DocumentLayout.json
 
 # Unity's project settings that don't need to be shared
-ProjectSettings/EditorBuildSettings.asset
-ProjectSettings/QualitySettings.asset
+SafariEmpire/ProjectSettings/EditorBuildSettings.asset
+SafariEmpire/ProjectSettings/QualitySettings.asset
 
 # ============================
 # OS-specific & Cache files
@@ -64,6 +64,6 @@ Desktop.ini
 *.swp
 *.lock
 *.meta~
-*.dwlt
-*/DocumentLayout.backup.json
-*/DocumentLayout.json
+SafariEmpire/*.dwlt
+SafariEmpire/**/DocumentLayout.backup.json
+SafariEmpire/**/DocumentLayout.json
