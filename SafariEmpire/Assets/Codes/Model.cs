@@ -39,6 +39,7 @@ public class Model : MonoBehaviour
     public GameObject airballoonObject;
     public GameObject droneObject;
     public GameObject cameraObject;
+    public GameObject chargerObject;
 
     //vadőrök
     public List<Ranger> rangers;
@@ -212,6 +213,8 @@ public class Model : MonoBehaviour
         ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
 
         //MEGFIGYELŐ RENDSZER
+        this.security = new List<SecuritySystem>();
+        /*
         List<Vector2> waypoints1 = new List<Vector2>();
         waypoints1.Add(new Vector2(1, 1));
         waypoints1.Add(new Vector2(2, 1));
@@ -225,7 +228,7 @@ public class Model : MonoBehaviour
         
         security = new List<SecuritySystem>();
         Codes.Security.Camera camera = new Codes.Security.Camera(new Vector2(5, 1));
-        AirBalloon airballon = new AirBalloon(new Vector2(-3, 3), waypoints1);
+        AirBalloon airballon = new AirBalloon(new Vector2(-3, 3));
         Drone drone = new Drone(charger, waypoints2, charger);
         security.Add(camera);
         security.Add(airballon);
@@ -248,7 +251,7 @@ public class Model : MonoBehaviour
 
             }
 
-        }
+        }*/
         
         //JEEPS
 
@@ -305,38 +308,6 @@ public class Model : MonoBehaviour
         }
     }
 
-    public void chooseSecurityPath(char i, List<Vector2> waypoints)
-    {
-        switch(i)
-        {
-            case 'a':
-                {
-                    waypoints.Add(new Vector2(1, 1));
-                    waypoints.Add(new Vector2(2, 1));
-                    waypoints.Add(new Vector2(1, 2));
-                 
-                }
-                break;
-            case 'b':
-                {
-                    waypoints.Add(new Vector2(0, 2));
-                    waypoints.Add(new Vector2(1, 2));
-                    waypoints.Add(new Vector2(2, 1));
-                    waypoints.Add(new Vector2(2, 2));
-
-                }
-                break;
-            case 'c':
-                {
-                    waypoints.Add(new Vector2(0, 1));
-                    waypoints.Add(new Vector2(1, 1));
-                    waypoints.Add(new Vector2(1, 2));
-                    waypoints.Add(new Vector2(2, 2));
-                    waypoints.Add(new Vector2(2, 1));
-                }
-                break;
-        }
-    }
     //TIME SYSTEM
     public void updateTime()
     {
@@ -1055,9 +1026,38 @@ public class Model : MonoBehaviour
             }
         }
     }
-    
+    //SECURITY SYSTEM
+    public void setDronePath()
+    {
+        if (this.security.Count > 0)
+        {
+            foreach (SecuritySystem security in this.security)
+            {
+                if (security.GetType() == typeof(Drone))
+                {
+                    security.toggleSecurityPath();
+                }
+            }
+        }
+    }
+    public void setAirBalloonPath()
+    {
+        if (this.security.Count > 0)
+        {
+            foreach (SecuritySystem security in this.security)
+            {
+                if (security.GetType() == typeof(AirBalloon))
+                {
+                    security.toggleSecurityPath();
+                }
+            }
+        }
+    }
+
 
     //VÁSÁRLÁS
+    public bool hasDrone = false; //csak 1 db drone lehet
+    public bool hasAirBalloon = false; //csak 1 db airballoon lehet
     public bool canBuy(string obj)
     {
         //még nincs megcsinálva, hogy ne lehessen egymásra helyezni itemeket
@@ -1076,9 +1076,8 @@ public class Model : MonoBehaviour
             case "jeep": moneyNeeded = 100; break;
             case "path": moneyNeeded = 100; break;
             case "camera": moneyNeeded = 100; break;
-            case "charger": moneyNeeded = 100; break;
-            case "drone": moneyNeeded = 100; break;
-            case "airballon": moneyNeeded = 100; break;
+            case "drone": moneyNeeded = 100; if (hasDrone) { return false; } break;
+            case "airballoon": moneyNeeded = 100; if (hasAirBalloon) { return false; } break;
 
         }
         return moneyNeeded <= this.money;
@@ -1178,29 +1177,23 @@ public class Model : MonoBehaviour
                     Debug.Log(validPaths.Count);
                     break;
                 case "camera":
-                    /* SecuritySystem securityItem = new SecuritySystem(position, "camera");
-                     * security.add(securityItem);
-                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
-                    //ellenőrizni kell még, hogy van-e hozzá már töltő
-                    break;
-                case "charger":
-                    /* SecuritySystem securityItem = new SecuritySystem(position, "charger");
-                     * security.add(securityItem);
-                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                    Codes.Security.Camera camera = new Codes.Security.Camera(position);
+                    security.Add(camera);
+                    camera.obj = Instantiate(cameraObject, camera.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
                 case "drone":
-                    /* SecuritySystem securityItem = new SecuritySystem(position, "drone");
-                     * security.add(securityItem);
-                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                    Codes.Security.Drone drone = new Codes.Security.Drone(position);
+                    security.Add(drone);
+                    drone.obj = Instantiate(droneObject, drone.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
+                    this.chargerObject = Instantiate(chargerObject, new Vector2(0, 1), Quaternion.identity);
                     break;
-                case "airballon":
-                    /* SecuritySystem securityItem = new SecuritySystem(position, "airballon");
-                     * security.add(securityItem);
-                     * securityItem.obj = Instantiate(securityObject, securityItem.spawnPosition, Quaternion.identity);
-                     this.money -= 100;*/
+                case "airballoon":
+                    Codes.Security.AirBalloon airballoon = new Codes.Security.AirBalloon(position);
+                    security.Add(airballoon);
+                    airballoon.obj = Instantiate(airballoonObject, airballoon.spawnPosition, Quaternion.identity);
+                    this.money -= 100;
                     break;
             }
         }

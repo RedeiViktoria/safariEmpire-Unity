@@ -5,6 +5,7 @@ using System.Net;
 using UnityEngine.EventSystems;
 using System;
 using Codes.animal;
+using JetBrains.Annotations;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class ButtonManager : MonoBehaviour
     public Button safariBtn;
     public Button exitBtn;
     public Button WinButton;
+    public Button buyDrone;
+    public Button buyAirBalloon;
+    public Button setDrone;
+    public Button setAirBalloon;
     public GameObject layout;
     public GameObject timeButtons;
     public GameObject shop;
@@ -34,6 +39,9 @@ public class ButtonManager : MonoBehaviour
     private bool shouldIgnoreNextLayoutClick = false;
     private bool animalStatsOpen;
     private AnimalGroup lastGroup;
+
+    private bool hasDrone = false;
+    private bool hasAirBalloon = false;
     void Start()
     {
         //Adding listeners to open the shop and the safari menu, and close if something else.
@@ -44,6 +52,10 @@ public class ButtonManager : MonoBehaviour
         WinButton.onClick.AddListener(OnWinClicked);
         this.isAnimalCheckable = true;
         this.animalStatsOpen = false;
+        buyDrone.onClick.AddListener(OnBuyDroneClicked);
+        buyAirBalloon.onClick.AddListener(OnAirBalloonClicked);
+        setDrone.onClick.AddListener(OnSetDroneClicked);
+        setAirBalloon.onClick.AddListener(OnSetAirBalloonClicked);
 
         //Adding listeners to the time buttons in the mainUI
         foreach (Transform child in timeButtons.transform)
@@ -67,6 +79,10 @@ public class ButtonManager : MonoBehaviour
 
             }
         }
+
+        //Security system
+        
+
 
         //Adding listeners to switch buttons in safari menu
         Transform switchButtons = safari.transform.Find("Buttons");
@@ -174,19 +190,6 @@ public class ButtonManager : MonoBehaviour
                 }
             }
         }
-
-        //Adding listeners to security path buttons
-        foreach (Transform parent in security.transform)
-        {
-            foreach (Transform child in parent)
-            {
-                Button button = child.GetComponent<Button>();
-                if (button != null)
-                {
-                    button.onClick.AddListener(() => OnSecurityPathClicked());
-                }
-            }
-        }
     }
 
     // Update is called once per frame
@@ -238,6 +241,55 @@ public class ButtonManager : MonoBehaviour
         }
 
     }
+    //SECURITY SYSTEM
+    void OnBuyDroneClicked()
+    {
+        model.buy("drone", new Vector2(0, 1));
+        TextMeshProUGUI droneText = buyDrone.GetComponentInChildren<TextMeshProUGUI>();
+        droneText.text = "Megvéve";
+        droneText.color = Color.green;
+        buyDrone.GetComponent<Image>().color = Color.black;
+        this.hasDrone = true;
+    }
+    void OnAirBalloonClicked()
+    {
+        model.buy("airballoon", new Vector2(0, 1));
+        TextMeshProUGUI airballoonText = buyAirBalloon.GetComponentInChildren<TextMeshProUGUI>();
+        airballoonText.text = "Megvéve";
+        airballoonText.color = Color.green;
+        buyAirBalloon.GetComponent<Image>().color = Color.black;
+        this.hasAirBalloon = true;
+    }
+    void OnSetDroneClicked()
+    {
+        if (this.hasDrone)
+        {
+            model.setDronePath();
+            TextMeshProUGUI droneText = setDrone.GetComponentInChildren<TextMeshProUGUI>();
+            switch (droneText.text)
+            {
+                case "1. Útvonal": droneText.text = "2. Útvonal"; break;
+                case "2. Útvonal": droneText.text = "3. Útvonal"; break;
+                case "3. Útvonal": droneText.text = "1. Útvonal"; break;
+            }
+        }
+    }
+    void OnSetAirBalloonClicked()
+    {
+        if (this.hasAirBalloon)
+        {
+            model.setAirBalloonPath();
+            TextMeshProUGUI airBalloonText = setAirBalloon.GetComponentInChildren<TextMeshProUGUI>();
+            switch (airBalloonText.text)
+            {
+                case "1. Útvonal": airBalloonText.text = "2. Útvonal"; break;
+                case "2. Útvonal": airBalloonText.text = "3. Útvonal"; break;
+                case "3. Útvonal": airBalloonText.text = "1. Útvonal"; break;
+            }
+        }
+    }
+
+    //-----
     void DetectObjectUnderMouse2D()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -359,11 +411,6 @@ public class ButtonManager : MonoBehaviour
     void OnRangerTargetClicked()
     {
         Debug.Log("Ranger clicked");
-    }
-
-    void OnSecurityPathClicked()
-    {
-        Debug.Log("Security path clicked");
     }
 
     void OnPlacementExitClicked()

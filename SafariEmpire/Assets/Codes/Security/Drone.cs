@@ -5,23 +5,26 @@ namespace Codes.Security
 {
     public class Drone : SecuritySystem
     {
-        public List<Vector2> waypoints;
+
         public Vector2 charger;
         public int battery;
         public int waypoint_index;
         public float fspeed;
         public int MAX_BATTERY;
 
-        public Drone(Vector2 spawnpoint, List<Vector2> waypoints, Vector2 charger) : base(spawnpoint)
+
+        public Drone(Vector2 spawnpoint) : base(spawnpoint)
         {
             //example range (idk)
             range = 5;
-            this.waypoints = waypoints;
             this.waypoint_index = 0;
-            this.charger = charger;
+            this.charger = new Vector2(0,1);
             battery = 200;
-            fspeed = 1f;
+            fspeed = 3f;
             MAX_BATTERY = 200;
+            this.pathOption = 'a';
+            this.waypoints = new List<Vector2>();
+            toggleSecurityPath();
         }
 
         public void Travel()
@@ -57,5 +60,7 @@ namespace Codes.Security
             battery += 5;
             if (battery > MAX_BATTERY) battery = MAX_BATTERY;
         }
+
+        
     }
 }
