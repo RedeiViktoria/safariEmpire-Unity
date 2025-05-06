@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      poacher_0: -551958979425026673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

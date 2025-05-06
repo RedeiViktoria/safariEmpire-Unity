@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 using Codes.Security;
 using JetBrains.Annotations;
 using NUnit.Framework;
+using System.Xml.Linq;
 public class Model : MonoBehaviour
 {
     //win conditions -> balanceolni kell
@@ -112,8 +113,8 @@ public class Model : MonoBehaviour
         //terepi akadályok generálása
         //HEGYEK
         hills = new List<Hill>();
-        Hill hill1 = new Hill(new Vector2(8, 8));
-        Hill hill2 = new Hill(new Vector2(-12, 5));
+        Hill hill1 = new Hill(new Vector2(-4, 8));
+        Hill hill2 = new Hill(new Vector2(-12, 2));
         Hill hill3 = new Hill(new Vector2(-7, -7));
         hills.Add(hill1);
         hills.Add(hill2);
@@ -146,9 +147,9 @@ public class Model : MonoBehaviour
         //entityk generálása
         //NÖVÉNYEK
         plants = new List<Plant>();
-        Bush plant1 = new Bush(new Vector2(4, 8));
-        Tree plant2 = new Tree(new Vector2(5, 5));
-        Grass plant3 = new Grass(new Vector2(7, 3));
+        Bush plant1 = new Bush(new Vector2(6, 8));
+        Tree plant2 = new Tree(new Vector2(1, 5));
+        Grass plant3 = new Grass(new Vector2(20, -1));
         Grass plant4 = new Grass(new Vector2(-4, -6));
         plants.Add(plant1);
         plants.Add(plant2);
@@ -280,9 +281,30 @@ public class Model : MonoBehaviour
         //idő telés:
         StartCoroutine(TimerCoroutine());
         StartCoroutine(sendJeep());
+        StartCoroutine(sortingOrderCoroutine());
         updateView();
     }
-   
+
+    IEnumerator sortingOrderCoroutine()
+    {
+        while (true) // Végtelen ciklus
+        {
+            foreach (AnimalGroup a in animalGroups)
+            {
+                changeSortingOrder(a);
+            }
+            foreach (Poacher a in poachers)
+            {
+                changeSortingOrder(a);
+            }
+            foreach (Ranger a in rangers)
+            {
+                changeSortingOrder(a);
+            }
+            yield return new WaitForSeconds(0.4f);
+        }
+    }
+
     public void chooseSecurityPath(char i, List<Vector2> waypoints)
     {
         switch(i)
@@ -423,7 +445,6 @@ public class Model : MonoBehaviour
         if ((Vector2)entity.obj.transform.position == p)
         {
             entity.targetPosition = new Vector2(UnityEngine.Random.Range(-14, 15), UnityEngine.Random.Range(-14, 15));
-            changeSortingOrder(entity);
         }
     }
     public void movePoacher(Poacher poacher, Vector2 p)
@@ -450,7 +471,6 @@ public class Model : MonoBehaviour
             {
                 //ha nem volt a közelében target type animalGroup akkor új random pozíció irányába indul cxy
                 poacher.targetPosition = new Vector2(poacher.obj.transform.position.x + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1), poacher.obj.transform.position.y + UnityEngine.Random.Range(-poacher.visionRange, poacher.visionRange+1));
-                changeSortingOrder(poacher);
             }
         }
     }
@@ -471,7 +491,6 @@ public class Model : MonoBehaviour
                 }
                 //ha talált poachert, ha nem, új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
-                changeSortingOrder(ranger);
             } else //ha valamilyen állat a targetje
             {
                 AnimalGroup group = detectAnimal(ranger.targetAnimal, ranger.obj.transform.position, ranger.visionRange);
@@ -490,20 +509,31 @@ public class Model : MonoBehaviour
                 }
                 //mindenképp új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
-                changeSortingOrder(ranger);
             }
         }
     }
     public void changeSortingOrder(Entity entity)
     {
         SpriteRenderer sr = entity.obj.GetComponent<SpriteRenderer>();
-        if (entity.targetPosition.y < entity.obj.transform.position.y)
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(entity.obj.transform.position, 1f);
+
+        float bottomA = entity.obj.GetComponent<SpriteRenderer>().bounds.min.y;
+        float bottomB=0;
+
+        foreach (Collider2D hit in hits)
         {
-            sr.sortingOrder = 0;
+            bottomB=hit.gameObject.GetComponent<SpriteRenderer>().bounds.min.y;
+            break;
+        }
+
+        if (bottomA < bottomB)
+        {
+            sr.sortingOrder = 10;
         }
         else
         {
-            sr.sortingOrder = 10;
+            sr.sortingOrder = 0;
         }
     }
     private void FixedUpdate()
