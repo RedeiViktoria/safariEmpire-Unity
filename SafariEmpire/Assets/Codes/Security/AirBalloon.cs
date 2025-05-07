@@ -13,7 +13,7 @@ namespace Codes.Security
         public AirBalloon(Vector2 spawnpoint) : base(spawnpoint)
         {
             //example range (idk)
-            range = 10;
+            range = 4;
             _waypoint_index = 0;
             fspeed = 1f;
             this.pathOption = 'a';

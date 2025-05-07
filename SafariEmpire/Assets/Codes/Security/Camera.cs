@@ -10,7 +10,7 @@ namespace Codes.Security
         public Camera(Vector2 spawnpoint) : base(spawnpoint)
         {
             //example range (idk)
-            range = 15;
+            range = 5;
         }
 
         //detect later

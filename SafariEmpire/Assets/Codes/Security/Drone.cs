@@ -16,7 +16,7 @@ namespace Codes.Security
         public Drone(Vector2 spawnpoint) : base(spawnpoint)
         {
             //example range (idk)
-            range = 5;
+            range = 4;
             this.waypoint_index = 0;
             this.charger = new Vector2(0,1);
             battery = 200;
