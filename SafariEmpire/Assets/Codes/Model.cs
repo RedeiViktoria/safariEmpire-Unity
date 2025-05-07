@@ -609,6 +609,15 @@ public class Model : MonoBehaviour
                 return true;
             }
         }
+        foreach (SecuritySystem s in this.security)
+        {
+            float x = s.obj.transform.position.x;
+            float y = s.obj.transform.position.y;
+            if ((x < position.x + s.Range && x > position.x - s.Range) && (y < position.y + s.Range && y > position.y - s.Range))
+            {
+                return true;
+            }
+        }
         return false;
     }
     //POACHER GENERÁTOR

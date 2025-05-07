@@ -11,6 +11,7 @@ namespace Codes.Security
         //egyelőre a range-eket 5, 10, és 15-re állítom, mert nem tudom ez hogy fog menni unityben
         //majd pontosat a megbeszélésen
         protected int range;
+        public int Range {  get { return range; } }
         public char pathOption;
         public List<Vector2> waypoints;
         public SecuritySystem(Vector2 spawnpoint) : base(spawnpoint) { }
