@@ -12,26 +12,24 @@ using NUnit.Framework;
 using System.Xml.Linq;
 public class Model : MonoBehaviour
 {
-    //win conditions -> balanceolni kell
     public const int herbivoreNeed = 5;
     public const int carnivoreNeed = 5;
     public const int visitorsNeed = 10;
     public const int moneyNeed = 1000;
     public int weeksUntilWin;
     private int difficulty; //1: easy, 2:medium, 3:hard
-    private int money;
+    public int money;
     //time
     public int hour;
     private int day;
     private int week;
-    private int timeSpeed; //0: óra, 1: nap, 2: hét (?)
+    private int timeSpeed; //0: óra, 1: nap, 2: hét
 
     private int DaysUntilWin; //1 hónap = 30 nap
     private int popularity;
     private int ticketPrice; //ticket az UML-ben
     private int visitorsWaiting;
     private int visitorCount;
-
     //entityk
     public GameObject jeepObject;
     public List<Jeep> jeeps;
@@ -40,11 +38,9 @@ public class Model : MonoBehaviour
     public GameObject droneObject;
     public GameObject cameraObject;
     public GameObject chargerObject;
-
     //vadőrök
     public List<Ranger> rangers;
     public GameObject rangerObject;
-
     //orvvadászok
     public List<Poacher> poachers;
     public GameObject poacherObject;
@@ -72,7 +68,6 @@ public class Model : MonoBehaviour
     public List<River> rivers;
     public GameObject pondObject;
     public List<Pond> ponds;
-
     //view cuccai:
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI timeText;
@@ -100,8 +95,6 @@ public class Model : MonoBehaviour
         paths.Add(startPath);
         paths.Add(endPath);
         paths.Add(between); //Start és end között
-
-
 
 
         this.difficulty = PlayerPrefs.GetInt("difficulty");
@@ -144,8 +137,6 @@ public class Model : MonoBehaviour
             pond.obj = Instantiate(pondObject, pond.spawnPosition, Quaternion.identity);
 
         }
-
-        //entityk generálása
         //NÖVÉNYEK
         plants = new List<Plant>();
         Bush plant1 = new Bush(new Vector2(6, 8));
@@ -170,7 +161,6 @@ public class Model : MonoBehaviour
             }
 
         }
-
         //ÁLLATOK
         animalGroups = new List<AnimalGroup>();
         AnimalGroup animal1 = new AnimalGroup(new Vector2(10, 0), Codes.animal.AnimalType.Gepard);
@@ -197,64 +187,17 @@ public class Model : MonoBehaviour
                 animal.obj = Instantiate(cheetahObject, animal.spawnPosition, Quaternion.identity);
             }
         }
-
         //ORVVADÁSZOK
         this.poachers = new List<Poacher>();
         Poacher poacher1 = new Poacher(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)));
         this.poachers.Add(poacher1);
         poacher1.obj = Instantiate(poacherObject, poacher1.spawnPosition, Quaternion.identity);
         InvokeRepeating("makePoacher", 0f, 30f);
-
         //VADŐRÖK
         this.rangers = new List<Ranger>();
-        /*Ranger ranger1 = new Ranger(new Vector2(UnityEngine.Random.Range(-15, 16), UnityEngine.Random.Range(-15, 16)), "0");
-        this.rangers.Add(ranger1);
-        ranger1.obj = Instantiate(rangerObject, ranger1.spawnPosition, Quaternion.identity);*/
-
         //MEGFIGYELŐ RENDSZER
         this.security = new List<SecuritySystem>();
-        /*
-        List<Vector2> waypoints1 = new List<Vector2>();
-        waypoints1.Add(new Vector2(1, 1));
-        waypoints1.Add(new Vector2(2, 1));
-        waypoints1.Add(new Vector2(1, 2));
-        List<Vector2> waypoints2 = new List<Vector2>();
-        waypoints2.Add(new Vector2(0, 2));
-        waypoints2.Add(new Vector2(1, 2));
-        waypoints2.Add(new Vector2(2, 1));
-        Vector2 charger = new Vector2(0, 1);
-
         
-        security = new List<SecuritySystem>();
-        Codes.Security.Camera camera = new Codes.Security.Camera(new Vector2(5, 1));
-        AirBalloon airballon = new AirBalloon(new Vector2(-3, 3));
-        Drone drone = new Drone(charger, waypoints2, charger);
-        security.Add(camera);
-        security.Add(airballon);
-        security.Add(drone);
-        foreach (SecuritySystem s in security)
-        {
-            if (s.GetType() == typeof(AirBalloon))
-            {
-                s.obj = Instantiate(airballoonObject, s.spawnPosition, Quaternion.identity);
-
-            }
-            if (s.GetType() == typeof(Codes.Security.Camera))
-            {
-                s.obj = Instantiate(cameraObject, s.spawnPosition, Quaternion.identity);
-
-            }
-            if (s.GetType() == typeof(Drone))
-            {
-                s.obj = Instantiate(droneObject, s.spawnPosition, Quaternion.identity);
-
-            }
-
-        }*/
-        
-        //JEEPS
-
-
         //felülírandók
         this.popularity = 1;
         this.visitorsWaiting = 0;
@@ -277,7 +220,6 @@ public class Model : MonoBehaviour
 
 
         StartCoroutine(AnimalTimeCoroutine());
-        //idő telés:
         StartCoroutine(TimerCoroutine());
         StartCoroutine(sendJeep());
         StartCoroutine(sortingOrderCoroutine());
@@ -378,25 +320,9 @@ public class Model : MonoBehaviour
     }
     public int newVisitors()
     {
-        //based on: ticketprice, popularity
-        //ticketprice: százas/ezres nagyságrend (feltételezés kb. 100-10.000)
-        //popularity: folyton nő max. kb 40-nel (a calulateSatisfaction() alapján)
-        //cél: naponta 1-30 látogató 
-
-        //normalizálás: kisebb ticketprice -> nagyobb embi szám
-        //1, ha a ticketprice minimális (100); 0, ha maximális (10000)
         double normA = 1.0 - ((ticketPrice - 100.0) / (10000.0 - 100.0)); 
-
-        //normalizálás: ugyanúgy 0 és 1 közé
-        //ez egy smooth növekedés, 200 felett stagnálni kezd (hogy ne várakozzon túl sok embi folyamatosan)
         double normB = Math.Tanh(popularity / 100.0); 
-
-        //magasabb ticketprice + alacsonyabb populatiry -> kevesebb ember
-        //alacsonyabb ticketprice + magasabb popularity -> több ember
-        //a 0 és 1 közötti számok kihozzák az arányokat
         double c = 4 + 16 * normA * normB;
-
-        //4 a minimum látogató, 20 a max, aki egy nap alatt jön
         return (int)Math.Round(c);
     }
 
@@ -405,7 +331,6 @@ public class Model : MonoBehaviour
      * moves an entity to a position
      */
     private float fspeed = 1f;
-    //a move jelenleg az animalGroupokat mozgatja random p hely felé
     public void move(Entity entity, Vector2 p)
     {
         entity.obj.transform.position = Vector2.MoveTowards(entity.obj.transform.position, p, fspeed * Time.deltaTime);
@@ -463,7 +388,6 @@ public class Model : MonoBehaviour
                 if (null != group)
                 {
                     //ha volt a közelében target type animalGroup akkor megöl belőle egy állatot, majd eltűnik ő maga is
-                    //killAnimal();
                     int survivors = group.killAnimal();
                     this.money += 500; //amit a kil�tt �llat�rt kapunk
                     if (survivors <= 0)
@@ -471,7 +395,6 @@ public class Model : MonoBehaviour
                         Destroy(group.obj);
                         this.animalGroups.Remove(group);
                     }
-                    //ranger.target = 0; //legyen megint poacher a targetje
                 }
                 //mindenképp új targetPosition-t kap
                 ranger.targetPosition = new Vector2(ranger.obj.transform.position.x + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1), ranger.obj.transform.position.y + UnityEngine.Random.Range(-ranger.visionRange, ranger.visionRange + 1));
@@ -508,7 +431,6 @@ public class Model : MonoBehaviour
         jeepMove();
         poacherVisibility();
     }
-    //ideiglenes mozgás
     public void tempMove()
     {
         if (this.animalGroups.Count > 0)
@@ -522,7 +444,6 @@ public class Model : MonoBehaviour
 
             }
         }
-
         if (this.poachers.Count > 0)
         {
             for (int i = 0; i < this.poachers.Count; i++)
@@ -539,7 +460,6 @@ public class Model : MonoBehaviour
                 moveRanger(ranger, ranger.targetPosition);
             }
         }
-        
         if (this.security.Count > 0)
         {
             foreach (SecuritySystem securitySystem in this.security)
@@ -583,7 +503,7 @@ public class Model : MonoBehaviour
             poacher.setVisibility(visible);
         }
     }
-    //poacher-nek kell hogy van-e a k�zel�ben jeep vagy ranger
+    //poacher-nek kell hogy van-e a k�zel�ben jeep vagy ranger (vagy security item)
     public bool detectRangerOrJeep(Vector2 position, int range)
     {
         foreach (Ranger r in this.rangers)
@@ -615,7 +535,7 @@ public class Model : MonoBehaviour
         }
         return false;
     }
-    //POACHER GENERÁTOR
+    //poacher generátor
     public void makePoacher()
     {
         Poacher poacher = new Poacher(new Vector2(UnityEngine.Random.Range(-15,16), UnityEngine.Random.Range(-15, 16)));
@@ -650,7 +570,6 @@ public class Model : MonoBehaviour
         }
         return null;
     }
-
     public AnimalGroup detectForSatisfaction(Jeep jeep, int range) 
     {
         foreach (AnimalGroup a in this.animalGroups)
@@ -1060,8 +979,6 @@ public class Model : MonoBehaviour
     public bool hasAirBalloon = false; //csak 1 db airballoon lehet
     public bool canBuy(string obj)
     {
-        //még nincs megcsinálva, hogy ne lehessen egymásra helyezni itemeket
-        //a drón vásárlásnak előfeltétele a töltőállomás
         int moneyNeeded = -1;
         switch (obj)
         {
@@ -1099,7 +1016,6 @@ public class Model : MonoBehaviour
         {
             switch (obj)
             {
-                //max mennyiséget kell írni bele(?)
                 case "water":
                     Pond pond = new Pond(position);
                     ponds.Add(pond);
@@ -1289,12 +1205,9 @@ public class Model : MonoBehaviour
         updateView();
         if (this.money <= 0)
         {
-            //lose()
             SceneManager.LoadScene("Lose");
         }
     }
-
-   
 
     /*
      * checks if we win or lose
@@ -1326,7 +1239,6 @@ public class Model : MonoBehaviour
             }
             if (this.weeksUntilWin >= weeksToWin)
             {
-                //win()
                 PlayerPrefs.SetInt("weeks", this.week);
                 PlayerPrefs.SetInt("days", this.day);
                 PlayerPrefs.SetInt("hours", this.hour);
