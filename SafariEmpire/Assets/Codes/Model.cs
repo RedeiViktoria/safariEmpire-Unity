@@ -21,7 +21,7 @@ public class Model : MonoBehaviour
     private int difficulty; //1: easy, 2:medium, 3:hard
     private int money;
     //time
-    private int hour;
+    public int hour;
     private int day;
     private int week;
     private int timeSpeed; //0: óra, 1: nap, 2: hét (?)
@@ -183,7 +183,6 @@ public class Model : MonoBehaviour
         animalGroups.Add(animal4);
         foreach (AnimalGroup animal in animalGroups)
         {
-            //Debug.Log(animal.animals[0].GetType());
             if (animal.animals[0].GetType() == typeof(Crocodile))
             {
                 animal.obj = Instantiate(crocodileObject, animal.spawnPosition, Quaternion.identity);
@@ -275,9 +274,6 @@ public class Model : MonoBehaviour
                 money = 3000;
                 break;
         }
-        //metódus tesztelések
-        buy("pond", new Vector2(0, 0));
-        //move(hill1, new Vector2(-2, -2));
 
 
         StartCoroutine(AnimalTimeCoroutine());
@@ -457,7 +453,6 @@ public class Model : MonoBehaviour
                 if (null != poacher)
                 {
                     Destroy(poacher.obj);
-                    //Debug.Log("ranger");
                     this.poachers.Remove(poacher);
                 }
                 //ha talált poachert, ha nem, új targetPosition-t kap
@@ -726,8 +721,7 @@ public class Model : MonoBehaviour
         {
             for (int i = 0; i < this.animalGroups.Count; i++)
             {
-                //Debug.Log("Group is starving: " + AnimalGroup.CountAverageHunger(animalGroups[i]) +"\n thirst = " + animalGroups[i].AverageThirst());
-                
+                             
                 animalGroups[i].Starve();
                 animalGroups[i].Age();
                 animalGroups[i].Die();
@@ -762,12 +756,10 @@ public class Model : MonoBehaviour
         }
         if (group.IsHungry())
         {
-           // Debug.Log("Group is hungry");
             TryToEat(group);
         }
         else if (group.IsThirsty())
         {
-        //    Debug.Log("Group is thirsty");
             GoDrink(group);
         }
         else
@@ -1024,7 +1016,6 @@ public class Model : MonoBehaviour
                     if (jeep.move())
                     {
                         popularity += calculateSatisfaction(jeep.encounteredAnimals);
-                        Debug.Log("Popularity: " + popularity);
                     }
                     else
                     {
@@ -1182,8 +1173,6 @@ public class Model : MonoBehaviour
                     Path end = paths.Find(p => p.spawnPosition == (Vector2)endObj.transform.position);
                     var uniquePaths = new HashSet<string>();
                     validPaths = CreateValidPaths(startObj.transform.position, endObj.transform.position, paths);
-
-                    Debug.Log(validPaths.Count);
                     break;
                 case "camera":
                     Codes.Security.Camera camera = new Codes.Security.Camera(position);

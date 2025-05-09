@@ -123,8 +123,6 @@ public class ButtonManager : MonoBehaviour
         //Adding listeners to ranger target buttons
         foreach (Transform parent in rangers.transform)
         {
-            Debug.Log("szia");
-
             Button targetButton = null; // ide mentjük a target gombot
 
             foreach (Transform child in parent)
@@ -132,8 +130,6 @@ public class ButtonManager : MonoBehaviour
                 Button button = child.GetComponent<Button>();
                 if (button != null)
                 {
-                    Debug.Log(parent.name);
-
                     if (button.name == "target")
                     {
                         button.GetComponent<Image>().color = Color.gray;
@@ -205,14 +201,12 @@ public class ButtonManager : MonoBehaviour
                     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     model.buy(toBuy, mousePosition);
                 }
-                //DetectObjectUnderMouse2D(); good for detecting 2d objects with colliders
             } else if(this.isAnimalCheckable)
             {
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 AnimalGroup group = model.detectAnyAnimal(mousePosition);
                 if (group!=null)
                 {
-                    Debug.Log(group.animalType);
                     animalStats.SetActive(true);
                     switch (group.animalType)
                     {
@@ -289,22 +283,6 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    //-----
-    void DetectObjectUnderMouse2D()
-    {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-
-        if (hit.collider != null)
-        {
-            Debug.Log("Clicked on: " + hit.collider.gameObject.name);
-        }
-        else
-        {
-            Debug.Log("No object clicked");
-        }
-    }
-
     void OnShopClicked()
     {
         shop.SetActive(true);
@@ -313,6 +291,7 @@ public class ButtonManager : MonoBehaviour
         animalStats.SetActive(false);
         this.animalStatsOpen = false;
         this.isAnimalCheckable = false;
+        OnPlacementExitClicked();
     }
     void OnSetPriceClicked()
     {
@@ -328,6 +307,7 @@ public class ButtonManager : MonoBehaviour
         animalStats.SetActive(false);
         this.animalStatsOpen = false;
         this.isAnimalCheckable = false;
+        OnPlacementExitClicked();
     }
     void OnLayoutClicked()
     {
@@ -350,6 +330,7 @@ public class ButtonManager : MonoBehaviour
         shop.SetActive(false);
         animalStats.SetActive(false);
         this.isAnimalCheckable = false;
+        OnPlacementExitClicked();
     }
     void OnTimeClicked(int timeSpeed)
     {
@@ -394,7 +375,6 @@ public class ButtonManager : MonoBehaviour
     {
         if (name == "jeep" && model.canBuy(name))
         {
-            Debug.Log("got here");
             model.buy(name, new Vector2(0,0));
             return;
         }
@@ -406,11 +386,6 @@ public class ButtonManager : MonoBehaviour
             exitBtn.gameObject.SetActive(true);
             layout.GetComponent<Image>().raycastTarget = false;
         }
-    }
-
-    void OnRangerTargetClicked()
-    {
-        Debug.Log("Ranger clicked");
     }
 
     void OnPlacementExitClicked()

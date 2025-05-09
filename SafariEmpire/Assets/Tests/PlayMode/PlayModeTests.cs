@@ -6,7 +6,9 @@ using UnityEngine.TestTools;
 using UnityEngine.UI;
 public class PlayModeTests
 {
-    // A Test behaves as an ordinary method
+
+    /*
+     * // A Test behaves as an ordinary method
     [Test]
     public void PlayModeTestsSimplePasses()
     {
@@ -22,6 +24,31 @@ public class PlayModeTests
         // Use the Assert class to test conditions.
         // Use yield to skip a frame.
         yield return null;
+    }
+     */
+    private Model model;
+
+    [UnitySetUp]
+    public IEnumerator SetUp()
+    {
+        SceneManager.LoadScene("MainGame");
+        yield return new WaitForSeconds(1f);
+
+        var modelGO = GameObject.Find("Model");
+        Assert.IsNotNull(modelGO, "Model GameObject not found in scene.");
+
+        model = modelGO.GetComponent<Model>();
+        Assert.IsNotNull(model, "Model component not found.");
+    }
+
+    [UnityTest]
+    public IEnumerator timeChangesTest(){
+        int kezdoOra = model.hour;
+        yield return new WaitForSeconds(2f);
+        int endOra = model.hour;
+
+        Assert.AreNotEqual(kezdoOra, endOra);
+        Debug.Log("Test result(timeChangesTest): PASSED");
     }
 
     [UnityTest]
@@ -79,4 +106,6 @@ public class PlayModeTests
 
         Debug.Log("Test result(ObjectsLoadInGame): PASSED");
     }
+
+    
 }
